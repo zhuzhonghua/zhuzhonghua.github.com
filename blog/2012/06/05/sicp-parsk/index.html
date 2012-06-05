@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>lisp-recursive-iteration - GNO Blog</title>
+  <title>sicp-parsk - GNO Blog</title>
   <meta name="author" content="zhuzhonghua">
 
   
-  <meta name="description" content="在common lisp 中，尾递归的概念确实很好 废话不多说，先上代码 以著名的斐波那契数列为例： 1，递归版 (defun fib(n) (cond ((= n 0) 0) ((= n 1) 1) (t (+ (fib (- n 1)) (fib (- n 2)))))) 2，迭代版（尾递归 &hellip;">
+  <meta name="description" content="SCIP上的一个习题 用递归输出PARSK三角，也有叫杨辉三角的 个人认为，使用递归更简单一些，不过作为练习，就这样了 上代码 (defun parsk(n) (if (= n 1) (let ((ret (list 1))) (echo-list ret) ret) (let ((resn ( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zhuzhonghua.github.com/blog/2012/06/05/lisp-recursive-iteration/">
+  <link rel="canonical" href="http://zhuzhonghua.github.com/blog/2012/06/05/sicp-parsk/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -67,7 +67,7 @@
   
   <header>
     
-      <h1 class="entry-title">Lisp-recursive-iteration</h1>
+      <h1 class="entry-title">Sicp-parsk</h1>
     
     
       <p class="meta">
@@ -83,40 +83,42 @@
   
 
 
-<time datetime="2012-06-05T12:51:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
+<time datetime="2012-06-05T17:15:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>在common lisp 中，尾递归的概念确实很好<br></p>
+<div class="entry-content"><p>SCIP上的一个习题  <br/>
+用递归输出PARSK三角，也有叫杨辉三角的  <br/>
+个人认为，使用递归更简单一些，不过作为练习，就这样了  <br/>
+上代码</p>
 
-<p>废话不多说，先上代码<br></p>
-
-<p>以著名的斐波那契数列为例：<br></p>
-
-<p>1，递归版<br></p>
-
-<pre><code>(defun fib(n)
-    (cond ((= n 0) 0)
-          ((= n 1) 1)
-          (t (+ (fib (- n 1))
-                (fib (- n 2))))))
+<pre><code>(defun parsk(n)
+  (if (= n 1)
+      (let ((ret (list 1)))
+    (echo-list ret)
+    ret)
+    (let ((resn (list 1))
+      (resn-1 (parsk (- n 1))))
+      (do ((i 0 (+ i 1)))
+      ((&gt; i (- (length resn-1) 2)) 'done)
+    (setq resn (append resn (list (+ (nth i resn-1)
+                     (nth (+ i 1) resn-1))))))
+      (setq resn (append resn (list 1)))
+      (echo-list resn)
+      resn)))
 </code></pre>
 
-<p>2，迭代版（尾递归）<br></p>
+<p>其中ECHO-LIST是个辅助函数，输出LIST</p>
 
-<pre><code>(defun fib(n)
-    (fib-iter 1 0 n))
-
-(defun fib-iter(a b count)
-    (if (= count 0)
-        b
-        (fib-iter (+ a b) a (- count 1))))
+<pre><code>(defun echo-list(lst)
+  (progn
+    (dolist (obj lst)
+      (format t "~A " obj))
+    (format t "~%")))
 </code></pre>
-
-<p>使用第二种方式，可以减少堆栈空间的使用</p>
 </div>
 
 
@@ -139,7 +141,7 @@
   
 
 
-<time datetime="2012-06-05T12:51:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
+<time datetime="2012-06-05T17:15:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
       
 
 
@@ -174,8 +176,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2012/06/05/lisp-recursive-iteration/" title="Previous Post: lisp-recursive-iteration">&laquo; lisp-recursive-iteration</a>
       
-        <a class="basic-alignment right" href="/blog/2012/06/05/sicp-parsk/" title="Next Post: sicp-parsk">sicp-parsk &raquo;</a>
       
     </p>
   </footer>
