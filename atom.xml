@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[GNO Blog]]></title>
   <link href="http://zhuzhonghua.github.com/atom.xml" rel="self"/>
   <link href="http://zhuzhonghua.github.com/"/>
-  <updated>2012-06-05T12:31:01+08:00</updated>
+  <updated>2012-06-05T13:18:57+08:00</updated>
   <id>http://zhuzhonghua.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[zhuzhonghua]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[lisp-recursive-iteration]]></title>
+    <link href="http://zhuzhonghua.github.com/blog/2012/06/05/lisp-recursive-iteration/"/>
+    <updated>2012-06-05T12:51:00+08:00</updated>
+    <id>http://zhuzhonghua.github.com/blog/2012/06/05/lisp-recursive-iteration</id>
+    <content type="html"><![CDATA[<p>在common lisp 中，尾递归的概念确实很好<br></p>
+
+<p>废话不多说，先上代码<br></p>
+
+<p>以著名的斐波那契数列为例：<br></p>
+
+<p>1，递归版<br></p>
+
+<pre><code>(defun fib(n)
+    (cond ((= n 0) 0)
+          ((= n 1) 1)
+          (t (+ (fib (- n 1))
+                (fib (- n 2))))))
+</code></pre>
+
+<p>2，迭代版（尾递归）<br></p>
+
+<pre><code>(defun fib(n)
+    (fib-iter 1 0 n))
+
+(defun fib-iter(a b count)
+    (if (= count 0)
+        b
+        (fib-iter (+ a b) a (- count 1))))
+</code></pre>
+
+<p>使用第二种方式，可以减少堆栈空间的使用</p>
+]]></content>
+  </entry>
   
 </feed>
