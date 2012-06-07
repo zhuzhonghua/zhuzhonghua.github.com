@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>GNO Blog</title>
+  <title>在mingw环境下编译最新版本gcc gdb - GNO Blog</title>
   <meta name="author" content="zhuzhonghua">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zhuzhonghua.github.com/">
+  <link rel="canonical" href="http://zhuzhonghua.github.com/blog/2012/06/07/mingw-gcc-gdb-environment/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -62,15 +62,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/06/07/mingw-gcc-gdb-environment/">在mingw环境下编译最新版本gcc Gdb</a></h1>
+      <h1 class="entry-title">在mingw环境下编译最新版本gcc Gdb</h1>
     
     
       <p class="meta">
@@ -93,7 +90,7 @@
   </header>
 
 
-  <div class="entry-content"><p>由于比较喜欢GCC的东西，又必须做WIN下的程序，但是考虑到效率问题  <br/>
+<div class="entry-content"><p>由于比较喜欢GCC的东西，又必须做WIN下的程序，但是考虑到效率问题  <br/>
 1，使用LINUX交叉编译MINGW下的程序  <br/>
 2，直接使用MINGW和MSYS编译WIN程序</p>
 
@@ -109,86 +106,16 @@
 
 <p>感谢GNU，感谢上帝。</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/05/sicp-parsk/">Sicp-parsk</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">zhuzhonghua</span></span>
 
-<time datetime="2012-06-05T17:15:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>SCIP上的一个习题  <br/>
-用递归输出PARSK三角，也有叫杨辉三角的  <br/>
-个人认为，使用递归更简单一些，不过作为练习，就这样了  <br/>
-上代码</p>
-
-<pre><code>(defun parsk(n)
-  (if (= n 1)
-      (let ((ret (list 1)))
-    (echo-list ret)
-    ret)
-    (let ((resn (list 1))
-      (resn-1 (parsk (- n 1))))
-      (do ((i 0 (+ i 1)))
-      ((&gt; i (- (length resn-1) 2)) 'done)
-    (setq resn (append resn (list (+ (nth i resn-1)
-                     (nth (+ i 1) resn-1))))))
-      (setq resn (append resn (list 1)))
-      (echo-list resn)
-      resn)))
-</code></pre>
-
-<p>其中ECHO-LIST是个辅助函数，输出LIST</p>
-
-<pre><code>(defun echo-list(lst)
-  (progn
-    (dolist (obj lst)
-      (format t "~A " obj))
-    (format t "~%")))
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/06/05/lisp-recursive-iteration/">Lisp-recursive-iteration</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -200,53 +127,50 @@
   
 
 
-<time datetime="2012-06-05T12:51:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
-        
-      </p>
+<time datetime="2012-06-07T13:40:00+08:00" pubdate data-updated="true">Jun 7<span>th</span>, 2012</time>
+      
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>在common lisp 中，尾递归的概念确实很好<br></p>
-
-<p>废话不多说，先上代码<br></p>
-
-<p>以著名的斐波那契数列为例：<br></p>
-
-<p>1，递归版<br></p>
-
-<pre><code>(defun fib(n)
-    (cond ((= n 0) 0)
-          ((= n 1) 1)
-          (t (+ (fib (- n 1))
-                (fib (- n 2))))))
-</code></pre>
-
-<p>2，迭代版（尾递归）<br></p>
-
-<pre><code>(defun fib(n)
-    (fib-iter 1 0 n))
-
-(defun fib-iter(a b count)
-    (if (= count 0)
-        b
-        (fib-iter (+ a b) a (- count 1))))
-</code></pre>
-
-<p>使用第二种方式，可以减少堆栈空间的使用</p>
+      <div class="sharing">
+  
+  
+  
+  
+    <!-- JiaThis Button BEGIN -->
+<div id="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_renren"></a>
+	<a class="jiathis_button_kaixin001"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
 </div>
-  
-  
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
+<!-- UY END -->
 
-    </article>
   
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/06/05/sicp-parsk/" title="Previous Post: sicp-parsk">&laquo; sicp-parsk</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -275,6 +199,7 @@
 
   
 </aside>
+
 
     </div>
   </div>

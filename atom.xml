@@ -4,7 +4,7 @@
   <title><![CDATA[GNO Blog]]></title>
   <link href="http://zhuzhonghua.github.com/atom.xml" rel="self"/>
   <link href="http://zhuzhonghua.github.com/"/>
-  <updated>2012-06-05T17:19:03+08:00</updated>
+  <updated>2012-06-07T13:50:48+08:00</updated>
   <id>http://zhuzhonghua.github.com/</id>
   <author>
     <name><![CDATA[zhuzhonghua]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[在mingw环境下编译最新版本gcc gdb]]></title>
+    <link href="http://zhuzhonghua.github.com/blog/2012/06/07/mingw-gcc-gdb-environment/"/>
+    <updated>2012-06-07T13:40:00+08:00</updated>
+    <id>http://zhuzhonghua.github.com/blog/2012/06/07/mingw-gcc-gdb-environment</id>
+    <content type="html"><![CDATA[<p>由于比较喜欢GCC的东西，又必须做WIN下的程序，但是考虑到效率问题  <br/>
+1，使用LINUX交叉编译MINGW下的程序  <br/>
+2，直接使用MINGW和MSYS编译WIN程序</p>
+
+<p>使用交叉编译的方法，在网上搜到的比较麻烦，而且又不是做嵌入式开发，必须用交叉编译;  <br/>
+所以决定使用第二种方法。</p>
+
+<p>目前已经成功编译了GDB7.4.1和最新的BINUTILS，还有MPC，MPFR，等GCC需要依赖的库。  <br/>
+晚上回去看一下GCC4.7.0的编译情况。</p>
+
+<p>不过在公司已经使用MINGW-GET拿到了GDB7.4和GCC4.6.2,而且使用正常。</p>
+
+<p>目前是使用VIM做编辑器，使用EMACS做调试器（是不是有点小奢侈啊），幸好这两个神器都有WIN版本。</p>
+
+<p>感谢GNU，感谢上帝。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[sicp-parsk]]></title>
