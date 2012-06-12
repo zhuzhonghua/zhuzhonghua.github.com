@@ -1,0 +1,670 @@
+---
+layout: post
+title: "创业究竟是神马"
+date: 2012-06-12 22:55
+comments: true
+categories: 
+---
+
+<a href="http://www.paulgrahamcn.com/article/really">创业究竟是神马</a>
+
+我并不清楚对创业学校有什么要说的。所以我决定问问我们所资助的这些创业者，还有什么是我没有写过的？
+
+我正处在一个不同寻常的位置，让我恰好可以来验证我所写的关于创业的那些文章。我希望我在其他话题上所写的文章也是正确的，可是我没有办法验证他们。但我写的关于创业的文章则每6个月就能被大约70人所验证。
+
+所以我给每个创业者发了一份电子邮件，问他们在进行一次创业的过程中，什么最令他们感到意外？这么多人问我是不是哪里搞错了，因为如果我把每件事都解释清楚了，应该没有什么能让他们感到意外的。
+
+我很自豪地告诉你们我收到这样一份回复：
+
+最令我吃惊的是几乎所有的事情都能被准确的预计到。
+
+但坏消息是我收到其他100多份回复列出了他们所遇到的惊喜。
+
+这些回复都有非常相同的模式；很明显的，人们总是被相同的事实所惊讶道。以下是它们中最常见的。
+
+1.小心你的合伙人
+
+这一条被最多创业者提到。通常有两种反馈：你需要小心挑选你的合伙人，并且你需要努力维持你们之间的伙伴关系。
+
+当人们选择合伙人时，他们总是希望花更多的时间在人品和性格上，而不是能力。而那些失败的创业案例中尤其能体现出这一点。从中我们能得到的教训就是：永远不要选那些会半途离开的人作为合伙人。
+
+这里有个典型的回复：
+
+只有当你和一个人一起创业后你才能看出一个人真正的面目。为什么说人品是那么重要呢，因为在创业这个环境中比其他任何环境都更能测试人性。一位创业者曾明确的说过，创业者之间的关系比能力更为重要：
+
+我宁可和一个朋友创业，也不要和一个能力很强的陌生人合伙。创业是如此的艰难而又情绪化的一个事情，友谊所带来的感情的纽带和社交的支持足以弥补能力上的差异。
+
+我们很早已经就意识到这一点了。如果你看看那些风投申请书你会发现，其中关于合伙人之间信任以及相互关系的问题要比他们能力的问题多得多。
+
+在那些成功的创业案例中，创业者很少谈如何选择合伙人，而是更多的谈论如何努力维持他们之间的良好关系。
+
+其中有件事让我很意外，那就是创业伙伴之间的关系如何从朋友进而成为夫妻。我和我合伙人的关系在最初的时候仅仅是每时每刻都会看得到的朋友而已，一起担忧公司的财务状况，一起清理垃圾，公司就像我们孩子一样。我曾经这样总结道：“这就像我们虽然已经结婚了但却没有做爱。”
+
+很多人都用结婚这个词，创业者之间的关系要比你通常看到的同事之间的关系更为紧密。部分原因是因为两者之间，所承受的要压力，差得很多，而另一部分原因则是在最初的时候创业者就是公司的全部了。所以它们之间的关系式建立在物质之上而且小心的维系着的。这是一切的基础。
+
+2.创业将会成为你生活的全部
+
+就像创业者之间的感情要比普通同事之间的感情更紧密一样，创业者和公司之间的关系也更为紧密。创业并不像打工或者上学那样，因为一旦你开始了就再也停不下来了。其中经历对大多数人来说太过于陌生以至于直到事情发生了他们才意识到。
+
+我当初并没有意识到我会将工作时间的每一分每一秒都花在创业上。当你的公司在和别人的公司PK时，你就会进入一个完全不同的生活方式。而这一情况也会因为创业阶段快速的生活节奏而愈演愈烈，甚至时间看上去都变慢了。
+
+我认为最令我意外的事情就是一个人通过创业，他对时间的看法会发生很大的变化。就拿我的创业来讲吧，我记得时间看上去就像在慢慢蠕动，一个月对我来说就是很长一段时间了。
+
+在最好的案例中，甚至存在达到忘我境界的人。连你自己也会对你沉浸其中的程度感到吃惊，你会不分日夜的考虑工作的事情，但却一点也不觉得是在工作。
+
+虽然我不得不说明，这引用了我们今年夏天资助的一位创业着的讲话。再过几年也许他就没法那么高兴了。
+
+3.这是一个大悲大喜的事
+
+还有一个事也让很多人感到惊讶，情绪的波动要比他们预想的极端得多。
+
+在创业中，事情一会看上去很完美，而下一刻又让人感觉毫无希望。这里的下一刻我指的是几个小时之后。对我来说情绪的波动是最大的意外。头一天我可能还想象自己的公司是下一个谷歌，做梦想着买小岛；之后又在想怎么和我们所爱的人说出自己即将到来失败。就这样不停的循环。
+
+很明显的，最难熬过去的是那些失落的时候。对很多创业者来说如何在困难的日子里激励每一个人，是最大的挑战。比如，在经过一段时间后，如果你不能取得一些成功来激励你自己，那么失败就会将你淘汰出局。
+
+我对创业者最基本的建议是“不要死”，但维持一个公司在困境中生存下去的能量并不是无穷无境的。这些能量都是从创业者身上压出来的。
+
+你能承受的压力总是有个极限的。如果你达到了你的极限，那么你就不能再做更多的事了。但这并不是世界末日，很多著名的创业者在他们的创业路途上都曾经有过几次失败的经历。
+
+4.创业可能很有意思
+
+好消息是，在你情绪高潮的时候也的确是非常的快乐。几位创业者说最令他们吃惊的是创业居然可以如此有趣：
+
+我想你可能忽略了创业是多么有趣这一事实。我比我任何一个没有创业的朋友都更能从工作中得到满足感。
+
+而这些创业者最喜欢的是工作的自由性：
+
+我最惊讶的是在与之前所做的那种普通雇员时相比，做一份如此有挑战性，创造性以及我所认同的工作，我会感觉如此良好。
+
+坦白来说，如果我在这里误导了人们，那么我宁愿不去修改这个错误。我宁可人人都觉得创业是一项无聊且困难的工作，而不是让他们抱着一种有趣的期望来创业。因为几个月后，他们会说“这应该是有趣的？你在开玩笑么？”
+
+事实是，对大多数人来说创业并不有趣。我们在申请程序中所极力想要做的，就是剔除那些不喜欢创业的人，不管是因为我们的原因还是他自己的原因使得他不喜欢。
+
+最好的方式来看待这个问题可能是这样的：如果你沉浸到创业中，那么开始一次创业是有趣的，一次生存训练课程是有趣的。换句话说，如果你没有沉浸其中，那么它一点都不有趣。
+
+5.坚持是关键
+
+很多创业者对坚持在创业中的重要程度而感到惊讶。这既是一个正面的也是一个负面的意外。
+
+每个人都说你需要下多大的决心，需要多大的弹性。但经历过这一切以后，我意识到，这些所宣称的程度还远远不够。
+
+并且关于坚持能解决什么程度的问题：如果你坚持不懈，那么即使是你无法控制的问题，例如，移民问题，也能够迎刃而解。
+
+几位创业者都提到了，坚持要比聪明重要得多。
+
+而我呢，我一次又一次的意识到坚持比智力要重要得太多太多。 一般来说，在申请中这里指的不仅仅是智力也包括能力，这也是为什么很多人说个性在选择合伙人中最重要。
+
+6.眼光要远
+
+你需要坚持，因为所有的事都会花费比你预想的更多的时间。很多人则对此感到意外
+
+就我自己而言，总是频繁地对每件事能花费那么多时间而感到意外。假设你的产品并没有像极个别产品那样发生爆炸性的增长。所有的事，从开发到销售（尤其是销售）看上去比你预期的要多花2到3倍的时间。
+
+创业者对此感到意外的原因之一是他们自己工作得很快，他们希望其他人也能有这种速度。当一个创业公司接触到一个多分枝的组织，例如一个大公司和一个风投基金的时候，就有很大数量的公司被淘汰出局。这就是为什么很多集资和企业加市场扼杀了那么多创业公司的原因。
+
+但我认为绝大多数创业者感到意外的原因是因为他们过于自信了。他们认为他们会像YouTube 和facebook一样马上就会取得成功。如果你告诉他们只有百分之一的创业企业能有那样的发展轨迹，那么他们会告诉你“我们就要成为那百分之一”
+
+可能他们会愿意听听最成功的创业者之一：在我开始创业之前最让我不明白的事情就是，坚持到底是这场游戏的全部。对大多数成功的创业者来说，这是一个漫长的过程，最少也要3年而一般来说都要5年以上。
+
+当然长期的考虑问题也有它积极的一面。你并不需要不停的修改重新设定你的计划，使每件事都花费更多的时间。如果你耐心地工作，那么你就不会那么有压力，也就能更好的完成工作。
+
+因为在放松的情况下，我们就更容易从工作中获得乐趣。失败就是笨拙紧张能量的聚合，而这些能量则是由不能失败的绝望的需求产生的。我们应该把注意力放在怎样为我们的产品，公司，职员和客户做到最好。
+
+这就是为什么当你达到你的预期收益率时，你会觉得一切都变得更顺利了，你会进入一种完全不同的工作模式。
+
+7.很多琐碎的事情
+
+我们常常强调很少有创业公司仅仅因为他们有一个很好的创意就获得成功的。我认为创业者现在就应该把这个刻进他们的脑子里。很多人创业以后才发现在创业中这条也是适用的。你必须做很多不同的事情：
+
+与其说创业是一个富有吸引力的事不如说是件苦差事。如果你随机的挑个时间来找我，那我很有可能在在处理瑞典语windows中一个奇怪的DLL文件加载问题，或者在董事会的前一夜，处理EXCEL表单中金融模型的一个错误，而不是突然有一个公司策略的好主意。
+
+绝大多数的IT创业者希望把他们所有的时间用在编写程序上。事实上你不可能做到这样，除非你的创业失败了。换句话说：如果你把你所有的时间都用在编程上， 你必定会失败。
+
+当然，这条定律并不仅仅针对编程。很少有仅仅是一个聪明的程序员就能保证创业的成功：
+
+我从我的经历中学到一点，永远不要将创业的成功赌在一个人的特长，一笔交易或者任何类似的东西上。创业从来就不是由一件事决定的。每件事对其都有所助益，而你要做的就是不停的做各种各样的事直到你达到一定程度。
+
+即使在那些极少数案例中，因为一个出色的程序员而获得成功。你也不太可能在事前就知道。事实上根本就没有所谓的决定性的一点。或者至少你事先不会知道是哪一点。
+
+所以最好的策略就是尝试很多不同的事情。不要把鸡蛋放在同一个篮子里，这个道理并不那么简单，即使在你知道哪个篮子是最好的，的情况下它也仍然适用，更何况在创业中你并不知道哪个是最好的。
+
+8.从小事做起
+
+很多创业者都提到要从最容易成功的事做起。到了这个时候，每个人都知道应该不断地快速发布产品。在我们风投行业更是如此。但依然有很多人因为没有这么做而被淘汰。完成一件最小的事也可以被认为是一次完整的应用然后把它装箱送出去。
+
+为什么人们总是在第一版的时候花费那么多时间呢？主要是因为自豪，他们不愿意在还能有所改进的时候就把产品发布到市场上。他们担心人们可能会指责这些缺陷。但你必须克服这样的心理。在一开始做一些简单的事情，并不意味着你没有做有意义的，可辩解的或者有价值的事情。不要担心人么会讲什么。如果你的第一版做得很完美，那么改进它就会变得毫无乐趣。你会等得太久而无法发布你的产品。
+
+一位创业者说对任何项目来说都应该遵循这一原则，并不仅仅是创业的时候。对此我也深有同感。
+
+现在，当我在编程的时候，我努力想：“我怎么能写这样的程序呢，如果人们看到的话，会为其只有那么小而感到惊讶。”
+
+过度设计对产品来说就是一剂毒药。这不像你为额外的信用而做额外的工作。这更像是你说了个慌，然后你不得不记住它，防止你自相矛盾。
+
+9.使用户参与其中
+
+产品开发就是一场与用户的对话，而通常这一过程并不会发生，直到你发布产品。在发布产品之前，你就像一个在把他第一稿的素描给目击人看之前的警察局的拼图师。
+
+快速的发布产品是如此的重要以至于你可以考虑不要将你的第一版作为一个产品，而是作为一个引起用户谈论，关注的策略。
+
+我从中学到，要把创业的初始阶段看做是一场巨大的实验。所有的产品都应该被纳入试验中。那些有市场的产品很快就会达到预期的结果。一旦你开始你与用户的对话，你会为他们和你说的感到意外。
+
+当你让顾客告诉你他们在追逐什么的时候，他们通常会揭示出一些惊人的细节，这些是他们觉得有意义的，同时也是他们愿意付钱的部分。
+
+当然这些意外既有正面的也有负面的。他们可能和你所预想的完全不同，但有些也可能很容易就能加入你原有的设计。只有当你通过发布一个错误的东西开始和客户的对话，他们才能表达出（或者意识到）什么是他们所盼望的。
+
+10.改变你的想法
+
+为了能从顾客参与的产品开发中获益，你必须愿意修改你的想法。我们常常鼓励创业者把创业的主意当做是一个假设而不是一个蓝图。但人们依然对做出改变后带来的好处感到惊讶。通常来说当你抱怨一件事很困难的时候，一般的建议就是更努力地工作。而在一个创业中，我认为你应该找出一个容易解决的问题。在答案中不断寻找完美的解决方案是我们所熟悉的。但如果你在问题的范围里多做点思考的话你会有巨大的收获。
+
+但如果只有决心没有灵活变通的能力的话，创业只对你只能是一个贪婪的过程，然后得到一个不好不坏的结果。
+
+当一个人下定决心以后，他仍然有走上一条又长又困难的不归路的风险。你想要有所进展，但在同时却不停的徘徊、游荡寻找一条最有希望的路。有一位创业者用非常简洁的语言归纳了这点：
+
+现在我再也不会嘲笑别人的想法了，因为我意识到我分别一个主意是好是坏的能力太差了。
+
+你永远不知道什么是行得通的。你只要在每一点上尽量做得最好就可以了。在YC中我们也执行这一条。我们依然不知道一个想法是否可行，但它看上去就像一连串的假设。
+
+11.不要担心有竞争者
+
+当你觉得你有一个很棒的想法时，这就像是对什么事有所愧疚一样。人们所做的就是看你的笑话，然后你就会想：“啊，他们知道”
+
+这些警告几乎总是错的：那些你第一眼看上去像是你竞争对手的公司通常在你仔细研究后会发现他们并不是。即使他们和你的公司在相同领域里，但你们有着不同的目标。
+
+人们对竞争反应过度的原因之一就是人们对创意的价值过分高估了。如果创意真的是成功的关键，那么有着相同创意的竞争者就会是一个真正的威胁。不过通常是执行力影响了最后的结果。：
+
+所有的恐惧，包括对一个新竞争对手的出现的都会在几周后被遗忘。最终你还是要回到你的产品上，然后将它发布到市场中。通常情况下这一条都是适用的，即使竞争对手获得了很多的关注。
+
+那些在博客排行榜上停留在前列的竞争者很少会成为最终的赢家，而且可能很快就从人么的视线中消失了。你所需要的最终也只是消费者而已，大肆宣传并不会带来满意的用户，至少对这么复杂的技术类产品商品不会。
+
+12.争取用户很困难
+
+很多创业者抱怨为了争取客户有多么困难。我也不知道吸引用户需要花费多少精力和时间。这是一个复杂的问题。当你没有用户的时候，很难说是否是缺乏宣传，或者仅仅是产品不够好。即使是好产品也可能因为置换成本和整合成本而不受欢迎。
+
+让人们开始使用一种全新的服务更是困难重重。这一点对那种其他公司也能提供的服务尤其困难，因为这要求它的开发商做更多的工作。如果你是很小的公司，那么他们不会觉得这是很紧急的事情。我们在YC面临的最尖锐的危机，正如我们的一位创业者所说的那样，不够专注于客户的获取。YC鼓励的是“做客户想要的东西”的理念，不断的改进一个又一个产品特性，直到有足够人感到满意或者产品下架为止。我们很少关注在客户获取方面的花费。
+
+这可能很严重；这可能是我们需要改进的地方，尤其对于游戏这一类的软件来说。如果你只是在技术上做一些有挑战的东西。那么你可以靠口口相传来争取你的用户，就像谷歌那样。一位创业者对这样做所取得的良好效果而感到意外：
+
+在创业的过程中你可能会产生一种非理性的恐惧，担心人们不会买你的产品。但如果你努力工作并不断完善你的产品，那么这完全是一种多余的担忧。
+
+但对其他类型的创业来说，关注交易和市场营销要比关注于产品更能给你带来成功。
+
+13.在交易中做最坏的打算
+
+生意失败。这是创业中的常事。创业总是很无力的，而好的创意看上去总是错的。所以每个人总是迫不及待地想要结束和你的交易，而你没办法改变他们。
+
+对投资者来说尤其是这样：
+
+回头来看，如果我们当初能以没有任何外部投资的假设去进行我们的创业的话，我们将会取得更大的成功。这样做会使我们更加专注于寻找利润来源。
+
+关于这一点我的建议是尽量保持悲观。假设你自己不会得到任何投资，即使你得到了一些投资，假设你不会再有更多的投资。
+
+如果一个人向你投资，那么接受它。你会谈论很多，但我觉得 你需要更重视它。去年我们曾有机会募集到比我们实际募集到的金额多得多钱。我真希望我们当时能抓住机会。
+
+为什么创业者往往会忽视这一点？主要是因为他们天生就是乐观主义者。而错就错在你不该对不在你掌控中的事乐观。你可以对的产品和你的能力尽一切可能的保持乐观，但如果你对大公司或者投资人保持乐观的话，那么你只是自讨苦吃而已。
+
+14.投资人都是无知的
+
+很多创业者都提到当他们意识到投资者是无知的时候有多惊讶。
+
+他们甚至都不了解他们所投资的东西到底是什么东西。我遇到过一些投资同一家硬件厂商的投资者，当我要求他们演示一下他们的产品时，他们居然连开关都有困难。
+
+天使投资在这方面要比风险投资要好一点，至少他们还是有创业的经历的。
+
+风投对他们所谈论的东西有一半以上是不懂的。而且他们的思想也远远落后于时代。只有一些是很好的，而我们所接触到的剩下的95%都是不专业的，看上去就不像是个做生意的料以及任何创造性的眼光。天使投资在这方面更值得交流。
+
+为什么创业者对投资人的无知会感到意外呢？我认为是因为在创业者眼中，投资人的形象是如此高大。
+
+而投资人看上去高大又是因为他们的专长就是如此。他们必须让资产经理信任他们，把几亿美元都委托给他们。如果是你你要怎么做？你必须显得很有自信，显得你很懂技术的样子。
+
+15.你可能不得不耍些小手段
+
+因为投资人在看人的时候太不准了。所以你不得不更加努力的推销你自己。一个创业者所说的最令他意外的经历是：你装的越自信，投资人就印象越好
+
+在YC创业者经历中这是最令我意外的了。这个夏天我们邀请了一些校友来和新学员一起讨论资金募集。几乎100%他们给的意见都是关于投资者心理学的。我以前一直认为我对投资者已经都敷衍了。但这些创业者则更加敷衍，很多创业者所做的仅仅只是装装样子而已，但它的确管用。
+
+风投自己并不知道他们所看中的那些创业者有多善于推销自己。而这又恰恰是我们在早先的阶段中所观察到的现象。风投通过在LP前装逼来拿到钱，创业者则在风投面前装逼来拿到钱。
+
+16.运气是个很重要的因素
+
+既然在创业者和钱之间的联系是如此的随机，那也就不应该奇怪运气在生意中式一个很重要的因素。但仍然有很多创业者对此感到意外。
+
+我当时并没有意识到运气扮演了多重要的一个角色，以及它是多么的不可控。
+
+如果你想想那些著名的创业公司，很明显运气都扮演了一个重要的角色。如果IBM坚持保有DOS系统的专利权，那么微软现在会在哪里呢？
+
+为什么创业者会被这点所蒙蔽呢？生意人可能不会，但黑客们早就习惯了一个技术至上的世界，你得到你所应得的。当我们开始我们的创业的时候，我承载了我们夸张的梦想：这只是一场技术的竞争而已。从某种角度来说的确是这样。技术是有价值的，所以它们也是这样被定义的。但运气好才是决定性的因素。
+
+准确来首，最好的模型会把一次创业的结局定义为技术，决心和运气的产物。无论你有多好的技巧，多大的决心，如果你的运气很差，那么结局也必然是失败的。
+
+这些话并不是那些失败的创业者说的。那些很快就失败的创业者都倾向于责怪他们自己。而那些很快就获得成功的人也不会意识到它们自己是多幸运。处在两者之间的人则刚刚好能看清运气的重要性。
+
+17.社区的价值
+
+有惊人数量的创业者提高了社区的价值。一些指的是YC学员这个小圈子：
+
+YC同辈学员之间的巨大价值，它们会在差不多相同的时间遇到相同的困难。但这并不应该让人感到意外，因为它就是这样被构建的。而其他人则在更大的范围内上感受创业社区的价值。住在硅谷有多大优势？在那里你会不断听到所有尖端的科学技术和创业消息，以及马上和有用的人面对面交流。而最令他们意外的是创业者之间普遍的慈善精神。
+
+我所看到最令我意外的就是人们都愿意帮助我们。即使他们不能从中得到些什么，他们还是会抽出时间帮我们获得成功。
+
+尤其是这一点如何无时无刻的伸展在你生活的每一处：
+
+最令我意外就是接触重要和有趣的人有多容易。你很容易就能和他们碰到然后马上得到反馈。这也是我选择成为他们中一员的原因。创造财富并不是一场零和博弈，所以你不需要把人家拉下来，以确保自己的胜利。
+
+18.你得不到尊重
+
+有一个创业者提出的意外是我宁可忘记的：在创业者的世界之外，创业者不会得到任何尊敬。
+
+在我们的社会设定中，我发现如果我说我在微软工作，会比说我在一家叫X的新创业的企业工作获得更多的尊敬。
+
+一部分是因为剩下的人并不创业，而另一部分原因是因为绝大多数的好的创业的想法看上去就很坏。
+
+如果你随机的向一个路人宣传你的想法，95%的人凭直觉会认为你的创意会失败，而你只是在浪费时间而已（虽然他们并不一定会那么直接的说出来）。
+
+不幸的是，这甚至蔓延到约会上了：
+
+让我感到意外的是，作为一个创业者并不能从女人那里获得更多的青睐。
+
+我的确知道这一点，但我宁可忘记它。
+
+19.你的事业和你一起在成长
+
+创业者们提到的最后一个意外就是，事情会随着你的成长而发生翻天覆地的变化。最大的改变就是你会做更少的编程工作。
+
+你作为一个技术型创业者或者CEO的角色，每6到12个月就会被重新定义一次。你将花更少的时间在编程上，花更多的时间在管理，计划，公司建设，人事，处理杂事以及在事情发生几个月前就安排好相关的事务。
+
+尤其是你现在需要开始和不同的员工打交道，而他们往往各自抱着不同的动机。
+
+我知道作为一个创业者需要关注什么方面，并且从我19岁想要创业的时候就已经开始关注了。但和一个雇员需要关注的东西是非常不同的，而这花了我一些时间来适应。幸运的是，在熟悉这些以后，你就不会觉得压力那么大了：
+
+和最初开始创业的时候相比，现在我们所承受的压力只有当初的25%。现在经营一个公司变得越来越有趣。我们熬夜奋战的次数少了，我们睡眠的时间多了。
+
+我希望我能够说所有成功的创业都是这样的，但75%的都是始终处在很大的压力之下的。
+
+超级模式
+
+当然还存在着许多其他的模式，但是这些是最重要的。任何一个人第一眼看到这些的时候都是问这是不是一个超级模式，模式中的模式。
+
+我马上就意识到了这一点，同时我读给一位YC的创立者听，他也马上意识到了。如果这些都是我没有告诉过人们的话，这些的确可以是一种意外。但他们之间都有一些共通点，他们都是我曾经说过的。如果我用相同的大纲写一篇新的文章，那不会是一篇对创业者反馈的总结，每个人都会说我已经才思枯竭，并且在重复自己的东西而已。
+
+然后呢？
+
+当我看到这些回复的时候，通常的主题都是说创业绝大部分都像我所说的那样，但远不仅仅是那样。所以人们知道自己亲身去做才知道创业有多困难。为什么会这样呢？问题的关键就在于要问，和什么相比创业是困难的。一旦你开始这样想以后，答案就很明显了：和打工相比。每个人对工作的概念一开始都是打工。这一条是非常普遍的。即使你从来没有打过工，你的爸妈可能打过，即使他们也没有，你成长道路上遇到的每个成年人都可能打过。
+
+无形中，人们就对创业抱有一种打工的期望，这就解释了绝大部分的意外。这一条解释了为什么人们对要多么仔细挑选合伙人，多努力去维持你们的关系而感到意外了。在同事之间你就不需要这样做。它也解释了为什么人们对情绪的波动感到极端的意外。在打工过程中，生活总是显得很沉闷。这也解释了为什么好的时候感觉会那么棒：大多数的人都无法想象这种自由。当你浏览这份列表的时候，几乎所有的意外都是对于创业和打工之间的区别的。
+
+你似乎不能轻易的改变一些如此普遍而又随着你的成长不断加深的关于工作的期望。所以最好的解决办法就是不断有意识的提醒自己。当你走进创业的世界的时，你会觉得每个人讲的都很极端。然后你的下一个想法就是“但我不相信事情会那么差。”如果你想要避免被惊讶到，那么你下一个想法就应该是：“我不能相信事情会变得那么差是因为我对工作的期望是打工。”
+
+===============================
+
+What Startups Are Really Like
+
+October 2009
+
+(This essay is derived from a talk at the 2009 Startup School.)
+
+I wasn't sure what to talk about at Startup School, so I decided to ask the founders of the startups we'd funded. What hadn't I written about yet?
+
+I'm in the unusual position of being able to test the essays I write about startups. I hope the ones on other topics are right, but I have no way to test them. The ones on startups get tested by about 70 people every 6 months.
+
+So I sent all the founders an email asking what surprised them about starting a startup. This amounts to asking what I got wrong, because if I'd explained things well enough, nothing should have surprised them.
+
+I'm proud to report I got one response saying:
+
+What surprised me the most is that everything was actually fairly predictable!
+
+The bad news is that I got over 100 other responses listing the surprises they encountered.
+
+There were very clear patterns in the responses; it was remarkable how often several people had been surprised by exactly the same thing. These were the biggest:
+
+1. Be Careful with Cofounders
+
+This was the surprise mentioned by the most founders. There were two types of responses: that you have to be careful who you pick as a cofounder, and that you have to work hard to maintain your relationship.
+
+What people wished they'd paid more attention to when choosing cofounders was character and commitment, not ability. This was particularly true with startups that failed. The lesson: don't pick cofounders who will flake.
+
+Here's a typical reponse:
+
+You haven't seen someone's true colors unless you've worked with them on a startup.
+
+The reason character is so important is that it's tested more severely than in most other situations. One founder said explicitly that the relationship between founders was more important than ability:
+
+I would rather cofound a startup with a friend than a stranger with higher output. Startups are so hard and emotional that the bonds and emotional and social support that come with friendship outweigh the extra output lost.
+
+We learned this lesson a long time ago. If you look at the YC application, there are more questions about the commitment and relationship of the founders than their ability.
+
+Founders of successful startups talked less about choosing cofounders and more about how hard they worked to maintain their relationship.
+
+One thing that surprised me is how the relationship of startup founders goes from a friendship to a marriage. My relationship with my cofounder went from just being friends to seeing each other all the time, fretting over the finances and cleaning up shit. And the startup was our baby. I summed it up once like this: "It's like we're married, but we're not fucking."
+
+Several people used that word "married." It's a far more intense relationship than you usually see between coworkers—partly because the stresses are so much greater, and partly because at first the founders are the whole company. So this relationship has to be built of top quality materials and carefully maintained. It's the basis of everything.
+
+2. Startups Take Over Your Life
+
+Just as the relationship between cofounders is more intense than it usually is between coworkers, so is the relationship between the founders and the company. Running a startup is not like having a job or being a student, because it never stops. This is so foreign to most people's experience that they don't get it till it happens. [1]
+
+I didn't realize I would spend almost every waking moment either working or thinking about our startup. You enter a whole different way of life when it's your company vs. working for someone else's company.
+
+It's exacerbated by the fast pace of startups, which makes it seem like time slows down:
+
+I think the thing that's been most surprising to me is how one's perspective on time shifts. Working on our startup, I remember time seeming to stretch out, so that a month was a huge interval.
+
+In the best case, total immersion can be exciting:
+
+It's surprising how much you become consumed by your startup, in that you think about it day and night, but never once does it feel like "work."
+
+Though I have to say, that quote is from someone we funded this summer. In a couple years he may not sound so chipper.
+
+3. It's an Emotional Roller-coaster
+
+This was another one lots of people were surprised about. The ups and downs were more extreme than they were prepared for.
+
+In a startup, things seem great one moment and hopeless the next. And by next, I mean a couple hours later.
+
+The emotional ups and downs were the biggest surprise for me. One day, we'd think of ourselves as the next Google and dream of buying islands; the next, we'd be pondering how to let our loved ones know of our utter failure; and on and on.
+
+The hard part, obviously, is the lows. For a lot of founders that was the big surprise:
+
+How hard it is to keep everyone motivated during rough days or weeks, i.e. how low the lows can be.
+
+After a while, if you don't have significant success to cheer you up, it wears you out:
+
+Your most basic advice to founders is "just don't die," but the energy to keep a company going in lieu of unburdening success isn't free; it is siphoned from the founders themselves.
+
+There's a limit to how much you can take. If you get to the point where you can't keep working anymore, it's not the end of the world. Plenty of famous founders have had some failures along the way.
+
+4. It Can Be Fun
+
+The good news is, the highs are also very high. Several founders said what surprised them most about doing a startup was how fun it was:
+
+I think you've left out just how fun it is to do a startup. I am more fulfilled in my work than pretty much any of my friends who did not start companies.
+
+What they like most is the freedom:
+
+I'm surprised by how much better it feels to be working on something that is challenging and creative, something I believe in, as opposed to the hired-gun stuff I was doing before. I knew it would feel better; what's surprising is how much better.
+
+Frankly, though, if I've misled people here, I'm not eager to fix that. I'd rather have everyone think starting a startup is grim and hard than have founders go into it expecting it to be fun, and a few months later saying "This is supposed to be fun? Are you kidding?"
+
+The truth is, it wouldn't be fun for most people. A lot of what we try to do in the application process is to weed out the people who wouldn't like it, both for our sake and theirs.
+
+The best way to put it might be that starting a startup is fun the way a survivalist training course would be fun, if you're into that sort of thing. Which is to say, not at all, if you're not.
+
+5. Persistence Is the Key
+
+A lot of founders were surprised how important persistence was in startups. It was both a negative and a positive surprise: they were surprised both by the degree of persistence required
+
+Everyone said how determined and resilient you must be, but going through it made me realize that the determination required was still understated.
+
+and also by the degree to which persistence alone was able to dissolve obstacles:
+
+If you are persistent, even problems that seem out of your control (i.e. immigration) seem to work themselves out.
+
+Several founders mentioned specifically how much more important persistence was than intelligence.
+
+I've been surprised again and again by just how much more important persistence is than raw intelligence.
+
+This applies not just to intelligence but to ability in general, and that's why so many people said character was more important in choosing cofounders.
+
+6. Think Long-Term
+
+You need persistence because everything takes longer than you expect. A lot of people were surprised by that.
+
+I'm continually surprised by how long everything can take. Assuming your product doesn't experience the explosive growth that very few products do, everything from development to dealmaking (especially dealmaking) seems to take 2-3x longer than I always imagine.
+
+One reason founders are surprised is that because they work fast, they expect everyone else to. There's a shocking amount of shear stress at every point where a startup touches a more bureaucratic organization, like a big company or a VC fund. That's why fundraising and the enterprise market kill and maim so many startups. [2]
+
+But I think the reason most founders are surprised by how long it takes is that they're overconfident. They think they're going to be an instant success, like YouTube or Facebook. You tell them only 1 out of 100 successful startups has a trajectory like that, and they all think "we're going to be that 1."
+
+Maybe they'll listen to one of the more successful founders:
+
+The top thing I didn't understand before going into it is that persistence is the name of the game. For the vast majority of startups that become successful, it's going to be a really long journey, at least 3 years and probably 5+.
+
+There is a positive side to thinking longer-term. It's not just that you have to resign yourself to everything taking longer than it should. If you work patiently it's less stressful, and you can do better work:
+
+Because we're relaxed, it's so much easier to have fun doing what we do. Gone is the awkward nervous energy fueled by the desperate need to not fail guiding our actions. We can concentrate on doing what's best for our company, product, employees and customers.
+
+That's why things get so much better when you hit ramen profitability. You can shift into a different mode of working.
+
+7. Lots of Little Things
+
+We often emphasize how rarely startups win simply because they hit on some magic idea. I think founders have now gotten that into their heads. But a lot were surprised to find this also applies within startups. You have to do lots of different things:
+
+It's much more of a grind than glamorous. A timeslice selected at random would more likely find me tracking down a weird DLL loading bug on Swedish Windows, or tracking down a bug in the financial model Excel spreadsheet the night before a board meeting, rather than having brilliant flashes of strategic insight.
+
+Most hacker-founders would like to spend all their time programming. You won't get to, unless you fail. Which can be transformed into: If you spend all your time programming, you will fail.
+
+The principle extends even into programming. There is rarely a single brilliant hack that ensures success:
+
+I learnt never to bet on any one feature or deal or anything to bring you success. It is never a single thing. Everything is just incremental and you just have to keep doing lots of those things until you strike something.
+
+Even in the rare cases where a clever hack makes your fortune, you probably won't know till later:
+
+There is no such thing as a killer feature. Or at least you won't know what it is.
+
+So the best strategy is to try lots of different things. The reason not to put all your eggs in one basket is not the usual one, which applies even when you know which basket is best. In a startup you don't even know that.
+
+8. Start with Something Minimal
+
+Lots of founders mentioned how important it was to launch with the simplest possible thing. By this point everyone knows you should release fast and iterate. It's practically a mantra at YC. But even so a lot of people seem to have been burned by not doing it:
+
+Build the absolute smallest thing that can be considered a complete application and ship it.
+
+Why do people take too long on the first version? Pride, mostly. They hate to release something that could be better. They worry what people will say about them. But you have to overcome this:
+
+Doing something "simple" at first glance does not mean you aren't doing something meaningful, defensible, or valuable.
+
+Don't worry what people will say. If your first version is so impressive that trolls don't make fun of it, you waited too long to launch. [3]
+
+One founder said this should be your approach to all programming, not just startups, and I tend to agree.
+
+Now, when coding, I try to think "How can I write this such that if people saw my code, they'd be amazed at how little there is and how little it does?"
+
+Over-engineering is poison. It's not like doing extra work for extra credit. It's more like telling a lie that you then have to remember so you don't contradict it.
+
+9. Engage Users
+
+Product development is a conversation with the user that doesn't really start till you launch. Before you launch, you're like a police artist before he's shown the first version of his sketch to the witness.
+
+It's so important to launch fast that it may be better to think of your initial version not as a product, but as a trick for getting users to start talking to you.
+
+I learned to think about the initial stages of a startup as a giant experiment. All products should be considered experiments, and those that have a market show promising results extremely quickly.
+
+Once you start talking to users, I guarantee you'll be surprised by what they tell you.
+
+When you let customers tell you what they're after, they will often reveal amazing details about what they find valuable as well what they're willing to pay for.
+
+The surprise is generally positive as well as negative. They won't like what you've built, but there will be other things they would like that would be trivially easy to implement. It's not till you start the conversation by launching the wrong thing that they can express (or perhaps even realize) what they're looking for.
+
+10. Change Your Idea
+
+To benefit from engaging with users you have to be willing to change your idea. We've always encouraged founders to see a startup idea as a hypothesis rather than a blueprint. And yet they're still surprised how well it works to change the idea.
+
+Normally if you complain about something being hard, the general advice is to work harder. With a startup, I think you should find a problem that's easy for you to solve. Optimizing in solution-space is familiar and straightforward, but you can make enormous gains playing around in problem-space.
+
+Whereas mere determination, without flexibility, is a greedy algorithm that may get you nothing more than a mediocre local maximum:
+
+When someone is determined, there's still a danger that they'll follow a long, hard path that ultimately leads nowhere.
+
+You want to push forward, but at the same time twist and turn to find the most promising path. One founder put it very succinctly:
+
+Fast iteration is the key to success.
+
+One reason this advice is so hard to follow is that people don't realize how hard it is to judge startup ideas, particularly their own. Experienced founders learn to keep an open mind:
+
+Now I don't laugh at ideas anymore, because I realized how terrible I was at knowing if they were good or not.
+
+You can never tell what will work. You just have to do whatever seems best at each point. We do this with YC itself. We still don't know if it will work, but it seems like a decent hypothesis.
+
+11. Don't Worry about Competitors
+
+When you think you've got a great idea, it's sort of like having a guilty conscience about something. All someone has to do is look at you funny, and you think "Oh my God, they know."
+
+These alarms are almost always false:
+
+Companies that seemed like competitors and threats at first glance usually never were when you really looked at it. Even if they were operating in the same area, they had a different goal.
+
+One reason people overreact to competitors is that they overvalue ideas. If ideas really were the key, a competitor with the same idea would be a real threat. But it's usually execution that matters:
+
+All the scares induced by seeing a new competitor pop up are forgotten weeks later. It always comes down to your own product and approach to the market.
+
+This is generally true even if competitors get lots of attention.
+
+Competitors riding on lots of good blogger perception aren't really the winners and can disappear from the map quickly. You need consumers after all.
+
+Hype doesn't make satisfied users, at least not for something as complicated as technology.
+
+12. It's Hard to Get Users
+
+A lot of founders complained about how hard it was to get users, though.
+
+I had no idea how much time and effort needed to go into attaining users.
+
+This is a complicated topic. When you can't get users, it's hard to say whether the problem is lack of exposure, or whether the product's simply bad. Even good products can be blocked by switching or integration costs:
+
+Getting people to use a new service is incredibly difficult. This is especially true for a service that other companies can use, because it requires their developers to do work. If you're small, they don't think it is urgent. [4]
+
+The sharpest criticism of YC came from a founder who said we didn't focus enough on customer acquisition:
+
+YC preaches "make something people want" as an engineering task, a never ending stream of feature after feature until enough people are happy and the application takes off. There's very little focus on the cost of customer acquisition.
+
+This may be true; this may be something we need to fix, especially for applications like games. If you make something where the challenges are mostly technical, you can rely on word of mouth, like Google did. One founder was surprised by how well that worked for him:
+
+There is an irrational fear that no one will buy your product. But if you work hard and incrementally make it better, there is no need to worry.
+
+But with other types of startups you may win less by features and more by deals and marketing.
+
+13. Expect the Worst with Deals
+
+Deals fall through. That's a constant of the startup world. Startups are powerless, and good startup ideas generally seem wrong. So everyone is nervous about closing deals with you, and you have no way to make them.
+
+This is particularly true with investors:
+
+In retrospect, it would have been much better if we had operated under the assumption that we would never get any additional outside investment. That would have focused us on finding revenue streams early.
+
+My advice is generally pessimistic. Assume you won't get money, and if someone does offer you any, assume you'll never get any more.
+
+If someone offers you money, take it. You say it a lot, but I think it needs even more emphasizing. We had the opportunity to raise a lot more money than we did last year and I wish we had.
+
+Why do founders ignore me? Mostly because they're optimistic by nature. The mistake is to be optimistic about things you can't control. By all means be optimistic about your ability to make something great. But you're asking for trouble if you're optimistic about big companies or investors.
+
+14. Investors Are Clueless
+
+A lot of founders mentioned how surprised they were by the cluelessness of investors:
+
+They don't even know about the stuff they've invested in. I met some investors that had invested in a hardware device and when I asked them to demo the device they had difficulty switching it on.
+
+Angels are a bit better than VCs, because they usually have startup experience themselves:
+
+VC investors don't know half the time what they are talking about and are years behind in their thinking. A few were great, but 95% of the investors we dealt with were unprofessional, didn't seem to be very good at business or have any kind of creative vision. Angels were generally much better to talk to.
+
+Why are founders surprised that VCs are clueless? I think it's because they seem so formidable.
+
+The reason VCs seem formidable is that it's their profession to. You get to be a VC by convincing asset managers to trust you with hundreds of millions of dollars. How do you do that? You have to seem confident, and you have to seem like you understand technology. [5]
+
+15. You May Have to Play Games
+
+Because investors are so bad at judging you, you have to work harder than you should at selling yourself. One founder said the thing that surprised him most was
+
+The degree to which feigning certitude impressed investors.
+
+This is the thing that has surprised me most about YC founders' experiences. This summer we invited some of the alumni to talk to the new startups about fundraising, and pretty much 100% of their advice was about investor psychology. I thought I was cynical about VCs, but the founders were much more cynical.
+
+A lot of what startup founders do is just posturing. It works.
+
+VCs themselves have no idea of the extent to which the startups they like are the ones that are best at selling themselves to VCs. [6] It's exactly the same phenomenon we saw a step earlier. VCs get money by seeming confident to LPs, and founders get money by seeming confident to VCs.
+
+16. Luck Is a Big Factor
+
+With two such random linkages in the path between startups and money, it shouldn't be surprising that luck is a big factor in deals. And yet a lot of founders are surprised by it.
+
+I didn't realize how much of a role luck plays and how much is outside of our control.
+
+If you think about famous startups, it's pretty clear how big a role luck plays. Where would Microsoft be if IBM insisted on an exclusive license for DOS?
+
+Why are founders fooled by this? Business guys probably aren't, but hackers are used to a world where skill is paramount, and you get what you deserve.
+
+When we started our startup, I had bought the hype of the startup founder dream: that this is a game of skill. It is, in some ways. Having skill is valuable. So is being determined as all hell. But being lucky is the critical ingredient.
+
+Actually the best model would be to say that the outcome is the product of skill, determination, and luck. No matter how much skill and determination you have, if you roll a zero for luck, the outcome is zero.
+
+These quotes about luck are not from founders whose startups failed. Founders who fail quickly tend to blame themselves. Founders who succeed quickly don't usually realize how lucky they were. It's the ones in the middle who see how important luck is.
+
+17. The Value of Community
+
+A surprising number of founders said what surprised them most about starting a startup was the value of community. Some meant the micro-community of YC founders:
+
+The immense value of the peer group of YC companies, and facing similar obstacles at similar times.
+
+which shouldn't be that surprising, because that's why it's structured that way. Others were surprised at the value of the startup community in the larger sense:
+
+How advantageous it is to live in Silicon Valley, where you can't help but hear all the cutting-edge tech and startup news, and run into useful people constantly.
+
+The specific thing that surprised them most was the general spirit of benevolence:
+
+One of the most surprising things I saw was the willingness of people to help us. Even people who had nothing to gain went out of their way to help our startup succeed.
+
+and particularly how it extended all the way to the top:
+
+The surprise for me was how accessible important and interesting people are. It's amazing how easily you can reach out to people and get immediate feedback.
+
+This is one of the reasons I like being part of this world. Creating wealth is not a zero-sum game, so you don't have to stab people in the back to win.
+
+18. You Get No Respect
+
+There was one surprise founders mentioned that I'd forgotten about: that outside the startup world, startup founders get no respect.
+
+In social settings, I found that I got a lot more respect when I said, "I worked on Microsoft Office" instead of "I work at a small startup you've never heard of called x."
+
+Partly this is because the rest of the world just doesn't get startups, and partly it's yet another consequence of the fact that most good startup ideas seem bad:
+
+If you pitch your idea to a random person, 95% of the time you'll find the person instinctively thinks the idea will be a flop and you're wasting your time (although they probably won't say this directly).
+
+Unfortunately this extends even to dating:
+
+It surprised me that being a startup founder does not get you more admiration from women.
+
+I did know about that, but I'd forgotten.
+
+19. Things Change as You Grow
+
+The last big surprise founders mentioned is how much things changed as they grew. The biggest change was that you got to program even less:
+
+Your job description as technical founder/CEO is completely rewritten every 6-12 months. Less coding, more managing/planning/company building, hiring, cleaning up messes, and generally getting things in place for what needs to happen a few months from now.
+
+In particular, you now have to deal with employees, who often have different motivations:
+
+I knew the founder equation and had been focused on it since I knew I wanted to start a startup as a 19 year old. The employee equation is quite different so it took me a while to get it down.
+
+Fortunately, it can become a lot less stressful once you reach cruising altitude:
+
+I'd say 75% of the stress is gone now from when we first started. Running a business is so much more enjoyable now. We're more confident. We're more patient. We fight less. We sleep more.
+
+I wish I could say it was this way for every startup that succeeded, but 75% is probably on the high side.
+
+The Super-Pattern
+
+There were a few other patterns, but these were the biggest. One's first thought when looking at them all is to ask if there's a super-pattern, a pattern to the patterns.
+
+I saw it immediately, and so did a YC founder I read the list to. These are supposed to be the surprises, the things I didn't tell people. What do they all have in common? They're all things I tell people. If I wrote a new essay with the same outline as this that wasn't summarizing the founders' responses, everyone would say I'd run out of ideas and was just repeating myself.
+
+What is going on here?
+
+When I look at the responses, the common theme is that starting a startup was like I said, but way more so. People just don't seem to get how different it is till they do it. Why? The key to that mystery is to ask, how different from what? Once you phrase it that way, the answer is obvious: from a job. Everyone's model of work is a job. It's completely pervasive. Even if you've never had a job, your parents probably did, along with practically every other adult you've met.
+
+Unconsciously, everyone expects a startup to be like a job, and that explains most of the surprises. It explains why people are surprised how carefully you have to choose cofounders and how hard you have to work to maintain your relationship. You don't have to do that with coworkers. It explains why the ups and downs are surprisingly extreme. In a job there is much more damping. But it also explains why the good times are surprisingly good: most people can't imagine such freedom. As you go down the list, almost all the surprises are surprising in how much a startup differs from a job.
+
+You probably can't overcome anything so pervasive as the model of work you grew up with. So the best solution is to be consciously aware of that. As you go into a startup, you'll be thinking "everyone says it's really extreme." Your next thought will probably be "but I can't believe it will be that bad." If you want to avoid being surprised, the next thought after that should be: "and the reason I can't believe it will be that bad is that my model of work is a job."
+
+Notes
+
+[1] Graduate students might understand it. In grad school you always feel you should be working on your thesis. It doesn't end every semester like classes do.
+
+[2] The best way for a startup to engage with slow-moving organizations is to fork off separate processes to deal with them. It's when they're on the critical path that they kill you—when you depend on closing a deal to move forward. It's worth taking extreme measures to avoid that.
+
+[3] This is a variant of Reid Hoffman's principle that if you aren't embarrassed by what you launch with, you waited too long to launch.
+
+[4] The question to ask about what you've built is not whether it's good, but whether it's good enough to supply the activation energy required.
+
+[5] Some VCs seem to understand technology because they actually do, but that's overkill; the defining test is whether you can talk about it well enough to convince limited partners.
+
+[6] This is the same phenomenon you see with defense contractors or fashion brands. The dumber the customers, the more effort you expend on the process of selling things to them rather than making the things you sell.
+

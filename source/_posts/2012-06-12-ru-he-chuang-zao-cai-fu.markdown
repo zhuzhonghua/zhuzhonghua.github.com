@@ -1,0 +1,556 @@
+---
+layout: post
+title: "如何创造财富"
+date: 2012-06-12 22:37
+comments: true
+categories: 
+---
+<a href="http://www.paulgrahamcn.com/article/wealth">如何创造财富</a>
+
+保罗·格雷厄姆
+
+原文：http://www.paulgraham.com/wealth.html
+
+译者：<a href="http://www.sophiazheng.com" target="_blank">郑思</a>，转载请联系。
+
+(原文写于2004年5月)
+
+（本文最初发表在《黑客与画家》一书中）。
+
+如果你想致富，你会怎么做呢？我认为，你最好把赌注压在一个创业公司上，你可以加入或创建一家创业公司。几百年来，创业都是致富的好方法。尽管 “创业”这个字眼是在20世纪60年代才出现的，但创业行为却像中世纪受资出海的贸易行为一样古老。
+
+初创企业通常都要涉及技术，以至于“高科技创业公司”这个词显得相当啰嗦。创业公司虽然小，却能够解决过硬的技术问题。
+
+不少人空有追逐财富的野心，却缺乏相关知识。假如你要做个优秀的投手，你不必懂物理学。但我认为，物理学可以给你展现基本原则的一个侧面。创业公司为什么非小不可？当创业公司日益茁壮之后，它是否不可避免地丧失了创业公司的特性？为什么创业公司经常开发新技术？为什么有有这么多创业公司纷纷销售新药物、新的计算机软件，却没有人去卖玉米油与洗衣粉呢？
+
+财富问题
+
+以经济学的视角而言，你不妨将创业公司想象为将您的整个工作生涯压缩到短短几年的一种方法。抛弃以低强度工作四十年的方法，你卯尽全力工作。尤其是在技术领域里，你能从自己迅速的执行中获得丰厚溢价。
+
+让我们为这个经济问题做一番简单计算。假设你是一位二十几岁的黑客，你可以找到一份年薪80,000美元左右的工作。因此，平均一位黑客必须能够为公司每年至少创造80,000美元的价值，这还仅仅是收支平衡的状况。作为一名企业员工，你的效率或许是他人的两倍，假使你非常专注，你一个小时能完成别人3个小时才能做完的事。 [1]由于你有效地消除了不好说话的中层经理带来的阻力，你还有可能将自己的效率再翻上两倍。再有一个得分点：你究竟比你的职位描述聪明多少倍呢？我们假设有三倍好了。综合这些因素，我宣布，比起在某家公司工作而言，你能创造出36倍之多生产力价值。 [2]假如一位优秀的黑客就职于一家大公司，每年获得80,000元作为回报，那么，一位摆脱大公司繁冗缛节的精明黑客，勤奋工作，他一年应该能够创造出大约300万美元的价值。
+
+我这里不过是举了个例子，这其间的数字值得商榷。我并不打算确证这些数字。然而，我支持这种计算方式。我觉得倍数不见得有36倍之多，但我认为，肯定远远超过10，不太可能超过100。
+
+假如300万美元的年薪看起来过高了，请记住，我们设定的是一个极端情况：在上面的例子里，你非但一点闲暇时间都没有，你还像个铁人一般，不断辛勤工作，直到你的健康严重透支为止。
+
+创业不是魔术，无法改变创造财富的法则。创业只是代表曲线的尽头一个点。工作中存在守恒定律：如果你想赚一百万美元，你不得不忍受价值一百万美元的痛苦。比如说，赚到一百万美元的方式之一，是用你的全部生命为邮政局工作，节省你的每一分薪水。请想象一下在邮政局工作五十年的压力。你可以开始创业，并将这股压力压缩成三或四年。假如你大批量地购买痛苦，你往往会得到一定的折扣。但你不能回避的基本守恒定律。如果创业有那么容易的话，每个人都会创业去了。
+
+从小处着手
+
+如果在一些人眼中，三百万美元年薪太夸张了，对另一些人来说，三百万却少得可怜。只有三百万？我怎么才能比尔·盖茨那样的亿万富翁呢？
+
+因此，让我们现在就把比尔·盖茨排除在讨论之外。使用名人的发家史当例子，这可不是一个好主意。因为记者通常只报道世界首富，其他富人都被关在媒体门外。比尔·盖茨是一个聪明，坚定，勤奋的人，但想要赚到他这么多钱，你还需要格外走运才行。
+
+任何一家公司的成功，随机因素都占了很大比例。因此，能让你在报纸上读到的那些成功人士，他们不仅很聪明，全心奉献，更是赢得了命运的青睐。当然，比尔·盖茨聪明也敬业，但微软碰巧同时也是商业历史上最壮观失误的受益人之一：DOS许可协议。毫无疑问，比尔·盖茨用尽全力促使IBM犯下这个失误，同时，他也完美地利用了IBM的失误。然而，如果IBM稍有头脑的话，微软的结局就很难说了。那时，微软比IBM的影响小的多。他们不过是个零部件供应商。如果IBM申请了独家授权，并且他们理应如此，微软仍然会签署协议。那份合约对微软来说意味着一大笔钱，而IBM可以轻松地将操作系统应用在其他地方。
+
+相反，IBM结束了市场推广，并让微软制定PC标准。对此，微软只能以执行回应。他们从未大胆决策，去赌上公司的未来。他们想做的，是紧紧地握好许可证这张牌，同时迅速、及时地复制更多的创新产品。
+
+如果IBM没有犯下这个错误，微软将仍然是一个成功的公司，但它不可能迅速地成长为一代霸主。比尔·盖茨也还是个有钱人，但他将会与他的同龄人一起，排在“福布斯”400名附近的位置。
+
+致富的方法千千万，我只写了一条。本文讨论如何通过创造财富赢得金钱，并确实将回报收到手中。还有不少其他方式也能赚到钱，比如：机会、投机、婚姻、继承遗产、盗窃、敲诈、欺诈、垄断、贪污、游说、造假与开矿。大部分大笔财富都有可能来源于上述领域。
+
+创业致富的优势不仅在于它合法（不少其他方法已经被判为非法），更在于它更简单。你不得不做出点人们需要的东西。
+
+金钱不是财富
+
+如果你想创造财富，下文会告诉你什么是财富。财富和金钱不同。 [3]
+
+财富与人类历史一样古老；甚或更古老：蚂蚁也有财富。相对而言，金钱是不久才发明的新玩意。
+
+财富相当根本。财富是我们需要的东西：食物，衣服，房屋，汽车，小工具，前往有趣的地方旅行，等等。你不需要有钱才能获得财富。如果你有一个神奇的万能机器，你一声令下，它就会变成汽车、帮你煮晚餐、洗衣服，完成任何你想让它做的事儿，那你压根就不需要钱。又假如你住在南极洲的中央，那里没什么可买的，你有多少钱也就不再重要了。
+
+财富是你想拥有的东西，而不是钱。但是，假如财富才是根本，那为什么大家都在讨论赚钱呢？这是一种速记法：货币是财富流动的一种方式，并在实践中，钱与财富通常可以互换。但它们并不相同，除非你想获得通过制造伪币致富。过度关注赚钱会让一个人难以理解赚钱的方式。
+
+钱是专业化带来的副作用。在一个高度分工的社会，你无法自己制造大部分你所需要的东西。比如，你想要一只土豆、一根铅笔、一处住地，你必须与他人交换。
+
+你如何能让种植土豆的人给你一些？你要给予对方他想要的回报。但你也不能总靠直接制造别人需要的东西进行交换。如果你会做小提琴，可是当地农民没人想要小提琴，到时你将以何为食呢？
+
+日益专业化的社会发现了解决方案，将交易分为两个步骤。你先用小提琴交换到白银，然后你再用白银去交易你所需之物，而不是直接拿小提琴去换土豆。这中间的交换媒介本可以是任意罕见、便携的物品。历史上，金属一直是最常见的货币，但最近我们一直在使用的交换媒介是实际并不存在的美元。因为它的稀有性由美国政府担保。
+
+交换媒介的优势是，它加速了贸易进行。缺点是，它往往掩盖贸易的真正含义。人们认为，一个企业的目的是赚钱。但钱只是中间阶段 ——一种速记法——用于去交换人们所需之物。大多数企业确实在创造财富。他们制造出人们想要的东西。 [4]
+
+蛋糕的谬论
+
+数量惊人的人仍然保留着童年的天真想法，世界上存在着亘古不变的财富总数。也就是说，每个普通家庭，在任何时刻所拥有的金钱数额总是固定的。但是，这其实是两码事。
+
+宏观经济学里的财富，通常被描述为一个蛋糕。 “你没法做出更大的蛋糕，”政治家说。就你的家庭银行帐户上的资金而言，又或你向政府提供的年税收额来看，这确实是事实。如果一个人得到的多，那别人就得到的就少了。
+
+我记得，当我还是个孩子，我相信少数富人坐拥大部分财富，只留给其余的人一点点。许多人成人之后，似乎仍然继续相信这一点。当你听到有人谈论x％的人口拥有y%的财富时，这一谬论正在背后发挥作用。如果你计划开始创业，那么，不管你是否意识到，你都在试图反驳蛋糕的谬论。
+
+什么使得人们错误地相信金钱的谬论？金钱绝非财富。金钱只是我们用来使财富移动的道具。因此，尽管有时（如您的家人，这个月）能拿来与他人交换货币数额或许是个定值，但是并不存在固定数额的财富这档子事儿。你能够创造更多的财富。人类历史一直源源不断地创造财富、销毁财富（整体看来，创造更多些）。
+
+假设你拥有一辆旧车。你可以花时间保养你的车，让它恢复如新，而不是一整个夏天无所事事。当你这么做，你就在创造财富。世界的财富—— 特别是你的财富——增长了。我说这些并不仅仅是隐喻。如果你卖掉你的车，你会得到更多。
+
+借着将旧车翻新，你增加了自己的财富。你也没有让其他人变得贫穷。显然，固定尺寸的蛋糕并不存在。实际上，当你不再相信固定的财富时，你会怀疑为什么还有人这么认为。 [5]
+
+孩子们都知道——尽管他们不知道自己知道——他们可以创造财富。如果你需要给别人礼物，你又没钱，你就自己做。但是，孩子们不擅长制造，结果，他们认为自制的礼物既古怪又低劣，比不上从商店买来的东西 – 这仅仅是世俗偏见的一种体现。确实，我们为父母做的烟灰缸在零售市场上可不多见。
+
+工匠
+
+最有可能创造财富的人是那些善于做事的匠人。他们的手工制品在商店里出售。但随着工业化的兴起，工匠越来越少。留下来的人数较多的工匠群之一，是程序员。
+
+程序员坐在电脑面前，就能创造财富。一款优秀的软件本身即是价值。让我说得明确点儿。经你键入的那些字符是一个完整、完成的产品。如果有人坐下来，写了一个能够使用的浏览器（顺便说一下，这主意不赖），世界上的财富便增加了。[5B]
+
+公司里，大家齐心协力创造财富，制造大众所需的产品。许多员工（比如收发室的收发员或者人事部门的HR）并没有实际制作产品。程序员并非如此。他们确实思考着产品，一次写下一行代码。 所以对程序员而言，他们更容易理解财富是被创造出来的，而并不是被某个假想的爸爸切下来分好的一块蛋糕。 对程序员而言，以下事实也显而易见：创造财富的效率可以发成巨大变化。在Viaweb，一位程序员是个生产力怪物。我记得，我曾目睹他一天内所做的事情，并估计他已经为该公司的市场价值增加了几十万美元。一个伟大的程序员可以在几个星期内创造一百万美元的财富价值。同时，一个平庸的程序员将产生零甚至是负财富（例如，制造bug）。
+
+这就是为什么这么多杰出的程序员都是自由主义者。在我们的世界，你要么下沉，要么奋力游泳，没有任何借口。当那些远离财富创造的人 – 大学生，记者，政治家 – 听见最富有的5％的人拥有总财富的一半，他们常常认为这不公平！一个有经验的程序员会更容易想到，就这么多吗？要知道，前5％的程序员能写完99%的杰出软件。
+
+创造财富无需出售财富。科学家，起码截止我行文之时，都捐出了他们创造的财富。我们知道青霉素，光是这一知识，就使得我们变得富有。因为我们不太可能死于感染。财富是人们的欲求，而生命每个人都想要。黑客经常编写开源软件，任何人都可以免费使用他们的成果。借由使用FreeBSD的操作系统，我多多少少变得富有了。这个系统目前正在我使用的计算机上运行着。雅虎也因此受益，因为所有的服务器上都运行着FreeBSD。
+
+什么是“工作”？
+在工业化国家，人们起码在二十岁前都属于某个机构。毕竟这些年来，你习惯地在某一个小团体找寻归属感，这群人每天早上起床，去往某栋大楼，做些他们并不喜欢做的事情。从属于这样一个群体成为你自我认同的一部分：姓名，年龄，角色，机构。如果你要做自我介绍，或者当别人介绍你，大概是这样：约翰·史密斯，10岁，某某小学的学生，或约翰·史密斯，20岁，某某大专的学生。
+
+当约翰·史密斯完成学业，他有望得到一份工作。和找工作似乎意味着加入另一个机构。从表面上看，公司与大学很相似。你选择你想要为之工作的公司，并申请加入他们的行列。如果有人青睐你，你便成为了新组织的一员。你早上起床，进入另一栋大楼，并做通常意义上你不喜欢做的事情。唯一不同的是：生活并不仅仅是享乐，你得到报酬，而不用像你上大学那样，还需要支付学费。尽管如此，相似还是胜过了差异。约翰·史密斯现在是约翰·史密斯，22岁，在某某公司的软件开发人员。
+
+事实上，约翰·史密斯的生活发生了天翻地覆的变化，他还没有完全意识到这一点。从社会的角度而言，公司看起来很像大学，但你越深入到现实，就越能发现其中的不同。假如一家公司想要基业长青，那么它应该做、并且必须做的一件事是赚钱。大多数公司赚钱的方式就是创造财富。公司的高度专业化使得不同公司相似的盈利性不容易辨识，但是，绝非只有制造企业才创造财富。财富组成部分之一是地点。记得那部神奇的万能机器吗？能变成汽车、为你煮晚餐？假如它把你的晚餐丢在中亚的随便什么地方，那它对你也就没那么有用。如果财富是指人们想要什么，那么，能搬运物资的公司也创造着财富。同上，许多其他类型的企业并不生产实体。然而，几乎所有的公司都在创造人们想要的东西。
+
+这就是当你为公司工作时所做的事儿。但这里有另有他意，往往使人忽略了潜在的现实。在公司，你所做的贡献要与他人均摊。你甚至可能不知道你在创造人们想要的东西。你的贡献可能很间接。但该公司作为一个整体，必须给人们提供出他们想要的东西，否则他们就赚不到钱。如果他们付钱给你X美元一年，那么你必须至少贡献出X美元一年的平均价值，不然公司将入不敷出，最终歇业。
+
+不少从大学毕业的人认为，他需要得到一份工作。别人也是如此告诉他们的。那论调仿佛在说成为一个机构的成员是最重要的事。达到这个目标的更直接的事情：你需要开始做人们想要的东西。做到这一点，你不需要加入一个公司。公司不过是一群人在一起工作，创造人们想要的东西。做人们需要的事才最重要，而不是加入某个组织。 [6]
+
+对于大多数人来说，最好的解决办法就是去一些现有的公司上班。但是理解你在做些什么也非常重要。工作意味着，创造他人所需，并与公司里的其他人分享。
+
+卖力工作
+
+平均分配是一个问题。我觉得困扰大公司的最大的问题是，很难给每个人的工作分配出一个确定的难度。对于大多数人而言，他们碌碌无为。在一家大公司里，你卖力工作，获得一大笔预料之中的薪水。没人希望你无能或懒惰，但你也没有预料到，你的整个生命将投入到你的工作里去。事实证明，投入工作的时间与你得到的回报之间确实存在规模经济。在正当的行业里，那些真正献身于工作的人可以产生比平均员工多达10甚至100倍多的财富。举例，一个程序员可以写出一整个新软件，并用该软件创造出新的收入来源，而不是把时间浪费在维护和更新已有软件上。
+
+公司并不会设奖鼓励人们做到这一点。你没法去找你的老板，说，“我想以十倍的努力工作，所以请你付我十倍的薪水吧。官方说法是，你已经卖力工作了。但更严重的问题是，该公司有没有办法衡量你的工作的价值。
+
+推销员是一个例外。可以很容易地测量销售为公司带来的收入，他们通常按销售比例提成。假如一位推销员要更加努力地工作，那么他便可放手去做，他将自动获得更多的报酬。
+
+除了销售以外，大公司还可以聘请一流的人：高层管理职位。出于同样的原因：他们的表现可以测量。高层管理者负责整个公司的业绩。因为一个普通雇员的表现通常无法测量，没人期望他能比老实干活做的更多。而高层管理人员与销售人员一样，要增加实际数字。该公司的首席执行官，在坚实的努力前无法申辩。如果该公司的业绩垮了，那他显然做得很糟。
+
+如果一家公司能够以让员工负责的方法去支付他们的薪水，这家公司将取得巨大的成功。假如员工能得到报酬，他们将更卖力地工作。更重要的是，这样的公司会吸引到努力工作的员工。这可是粉碎竞争对手的有利出击。
+
+不幸的是，公司无法按照推销员的支付方式去付给每个人薪水。推销员独自工作。大多数员工的工作纠缠在一起。假设一家公司为消费者设计小工具。工程师制作出带有各种新功能、质量可靠的小工具，;工业设计师为它设计一个美丽的外表;营销人说服大家去买这个小东西，他们得有。你怎么知道销售人员从每个小组的努力中获得了多少利益？或者，就这个例子而言，有多少功劳要归于该公司之前产品的创造者，这些人为公司赢得了良好声誉？没有办法算清所有的贡献。即使你会读心术，看穿消费者的心思，你也会发现这些因素纠缠在一起，难舍难分。
+
+如果你想走得更快，将你的工作贡献与其他人的纠结在一起是一个问题。在大的集团中，你的表现无法单独衡量 – 其余部分只会拖慢你的速度。
+可评估性与杠杆效应
+
+要致富，你必须为自己在机构中寻得两样道具：可评估性与杠杆。你需要留在一个能够评估你的表现的岗位上。要不然，你做更多事也不会得到报酬。同时，你必须取得杠杆效应，也就是说，在某种意义上，你的决定能够带来很大影响。
+
+仅有可评估性是不够的。仅有可评估性而不存在杠杆效应的一个例子是在血汗工厂做计件工作。尽管衡量你的表现是你将获得相应的报酬，但你没有决定权。你唯一的决定权是，以什么样的速度工作。因此，大概只有两个或三个因素能增加你的收入。
+
+一个既有评估标准又有杠杆效应的工作是电影里的男主角。电影的票房总可以衡量你的表现。你的表现将带来杠杆效应。CEO们也都拥有评估标准与杠杆效应。他们在公司的表现就是评估他们的方法。而他们的决策左右了整个公司的走向，这也是杠杆效应。
+
+我认为每个通过个人努力致富的人，都拥有评估标准与杠杆效应。我能想到的人确实如此：CEO，影视明星，对冲基金经理，专业运动员。杠杆的存在，是对失败可能性的暗示。有得必有失，因此，如果某处存在获利的巨大可能，损失的可能性也越大。CEO、明星、基金经理与运动员每个人的头上都悬着一把剑，当他们开始停滞，他们就出局了。如果你想在工作中获得安全感，你就发不了财。因为假若不存在危险，几乎可以肯定这儿没有杠杆效应。
+
+但你不必成为一个CEO或电影明星才能从评估标准与杠杆中获利。你需要做的不过是成为解决困难的问题的小团体中的一份子。
+
+小巧=可评估性
+如果你无法评估员工个人所创造的工作价值，你可以再缩小点范围。你能够评估一个小团体所创造出的工作价值。你可以从整个公司的水平上精确地评估员工所产生的价值。当一个公司很小的时候，你就很容易衡量每一位员工的贡献。一个可行创业公司或许只有10名员工，这便要求你以”十“来衡量个人努力。
+
+开始或加入一个创业公司，很接近大多数人所说的”当老板”。我想十倍努力的工作，因此，请付我十倍之多。这儿有两点不同：你不会直接对你的老板说这么多，而是直接对客户说（你的老板对他们来说，只是代理人罢了）；第二，你无法单独将其完成，你需要与其他小组有野心的人一起。一般情况下，你需要一个团队。除去某些个别工作，比如演戏与写作，一个人是开不了公司的。同时，与你工作的人也得不差，因为你将与他们分享你的工作成果。
+
+一家大公司像一艘千人划桨的巨船。影响巨船速度的有两件事：一，赛艇运动员看不到更加努力工作的结果。二，在一千人中，划船得到的回报很可能会被均摊掉。
+
+如果你随机从巨船上抽出十个人，并让他们自己开船，他们也许可以走得更快。他们身后有胡萝卜加大棒。一个充满活力的运动员将从他创造的实际效果中得到激励。如果有人偷懒，别人很容易发现，并开始抱怨。十人船的真正优势是，当你把十个最好的赛艇运动员挑出来，并把他们放在一条船上，他们将从小团体中获得更多的动力。更重要的是，通过选择，一个小团队有机会成为最好的赛艇。每个人都是顶端的1％。对他们来说，与他们的同等水平的小团体共享财富，而不是与每个人均分，这笔交易很划算。
+
+这是真正的创业公司。理想的情况下，与你走到一起的其他人也卖力工作，并比他们在一家大公司付出得更多。因为初创企业往往是由一小组自我选择、雄心勃勃的人所创建的，他们早已认识彼此（起码听闻过大名），测量的水平比你从渺小仅得到更精确。创业不仅是10人开公司，而是与十个像你这样优秀的人开公司。
+
+史蒂夫·乔布斯曾经说过，创业的成败取决于前十名员工。我同意。它更像是第一个五年。小，本身并不是创业的成功要点，关键是选对了小团体。你不会想成为小村的一员，但想要成为全明星队的一员。
+
+团队越大，其成员的紧密性就将被整体人口平均掉。因此，所有其他的事情都是平等的。在一家大公司非常能干的人可能得不到应有的回报，因为他的表现被其他整体较低的人群所拖累。当然，所有其他的东西往往仍旧不相等：能干的人可能不在乎钱，或者可能更喜欢置身大公司的稳定性。但是，一个非常能干的人，又在乎钱，通常他能做的更好，同时离开这里，并与能与其能力匹敌的人工作。
+
+科技=杠杆
+
+初创企业提供给每一个人评估手段与杠杆效应。他们可估算，因为他们不大，他们能提供杠杆效应，因为他们通过发明新科技赚钱。
+
+什么是科技？科技就是技术。这是我们做事的方式。当你发现一种新的方式来做事，它的价值要与所有使用它的人数相乘。这是众所周知的鱼竿，而不是鱼。这也与开办一间餐厅或理发店不同。你一次煎一只鸡蛋，为一位顾客理发。而如果你解决一个很多人关心的技术问题，又帮助每个人使用您的解决方案。这就带来了杠杆效应。
+
+如果回顾历史，大多数的人都是通过开发新技术而致富的。你不能炒鸡蛋或给别人理发，赚钱速度不够快。是什么让佛罗伦萨于公元1200年致富？是发现了新技术——精细织造布。是什么使荷兰在公元1600年变得富裕？是造船与航海技术，让他们能够称霸远东海域。
+
+幸运的是，精巧与解决困难的问题是天作之合。领先的技术优势行动迅速。今天宝贵的技术可能在几年内就一文不名了。小公司在这个世界更如鱼得水，因为他们官僚层来拖住他们的脚步。此外，技术进步往往来自非正统的方法，小企业较少受公约约束。
+
+大企业可以开发技术。但他们不够快。它们的庞大使他们行动迟缓，以至于他们阻止了他们奖励员工做出杰出贡献。所以大公司只有在需要大量资本的情况下才派得上用场，拥有竞争门槛的技术领域，如微处理器，发电厂，或客机。甚至在这些领域，他们还是依赖于创业公司提供的组件与创意。
+
+很明显，生物技术或软件创业公司的存在是为了努力解决技术问题。但我在那些似乎与技术无关的企业也发现了这一点。例如，麦当劳设计出了一个系统，麦当劳的特许经营权，并将门店布满地球的每一个角落，静候生意发展。麦当劳的特许经营的设计是如此精确，它实际是一个软件控制规则。编写一次，到处运行。同上，沃尔玛也做到了这一点。山姆·沃尔顿并不是通过成为零售商致富的，他是通过设计一种新的商店致富的。
+将困难当向导，不只是在选择公司的总体目标，而且也是决策的重点。在Viaweb，我们每一个规则都是向上攀登。假设你个头不大，很灵活，正被一个彪悍的胖家伙追赶。你打开一扇门，发现自己面对着台阶间。你是跑上去还是向下去？要我说，上。假如跑下楼的话，大胖墩和你一样轻而易举。如果要跑上楼，他的大块头将成为他的缺点。向上爬对你来说确实很难，但对他来说，更难。
+
+在实践中，我们特意寻找难题。如果我们能为我们的软件增加两个特性，这两个特性从价值上、难度上都相同，我们总是选更难的那一个。不是仅仅因为它是更有价值，而是因为它更难。我们很高兴在难度上甩开较大、速度较慢的竞争对手。创业就像游击队，喜欢山地势险要，在那些领域，中央政府的正规军可跟不上。我还记得，当我们每天都与一些可怕的技术问题脚力，用尽全力的时候，我非常高兴。因为这些对我们来说艰难的事情，对我们的竞争对手来说，几乎是不可能的。
+
+这不仅仅是一个创业的好方式。这更是创业公司的本质。风险资本家理解这一点，并给它用短语命名：进入壁垒。如果你带着你的新想法，去找一个风险投资人，问他要投资，他会问的第一件事情或许是：要别人来开发需要多长时间？也就是说，在你和潜在的追兵之间，你已经克服了多少困难？ [7]你最好能对你的技术为什么很难复制给出一个令人信服的解释。否则，在大公司意识到这一点后，他们会做出自己的产品，并以自己的品牌、资本和影响力，一夜之间带走你的市场。你会像那些在宽广领域被正规军部队包围的游击队。
+
+进入壁垒的方法之一是专利。但是，专利可能无法提供更多的保护。竞争对手通常能找到办法来解决专利。而且，如果他们不能，他们可能根本就违反法律，然后邀请您来起诉他们。一家大公司从不害怕起诉；对他们来说，这是日常之事。他们将确保，起诉他们很昂贵，费力持久。菲洛·泰勒·法恩斯沃你听过吗？他发明了电视。你从来没有听说过他的理由是，他的公司没从中赚到钱。 [8]赚到钱的公司是RCA，法恩斯沃努力的回报是长达10年的专利诉讼。
+
+在这里，通常来说，最好的防御就是挑战。如果你能开发出很难以为竞争对手复制的技术，你就不需要依靠其他手段防御。开始解决一个困难问题，然后在每一个决策点，都采取更难的选择。 [9]
+
+为难之处
+
+如果一切不过是比普通员工更加努力工作，并得到适当报酬的问题，那么自行创业实在再好不过。当你攀登到某处，你将获得更多乐趣。我并不认为人们喜欢步伐缓慢的大公司、无休止的会议、无趣的谈话、无能的中层管理人员、等等。
+
+不幸的是，鱼和熊掌不能兼得。其一，你不能选择你的出生地点。你也不能决定，你只是想在工作中偶尔努力那么两三回，就获得更多的报酬。当你启动创业公司时，你的竞争对手决定了你的工作有多困难。他们几乎都作出了相同的决定：尽可能的努力。
+
+其他美中不足的是，你不能选择的还有你的平均收益。如我以前说过，任何一个公司的成功是一个大型随机乘数。因此，在实践中，并不是你达到你的工作效率的30倍，就能为你的生产力获得30倍之多的报酬。实情是，你创造出30倍的生产力，得到的回报将在0到1000倍之间。如果平均是30倍，中位数可能是零。大多数成功的创业公司，并不仅仅我们在互联网泡沫期间能在门户网站上看到的。想要开发出真正的好产品，却采取太长的开发周期，结果，钱用完了，不得不关闭，这种情况在创业公司中很常见。
+
+创业就像是一只蚊子。熊能承受重击，螃蟹也有甲壳保护自己，但蚊子只做一件事：进球。不浪费能量防守。作为一个物种，蚊子的防御力便是其种族的繁多，但这对个别蚊子不过是一点安慰罢了。
+
+创业，和蚊子一样，往往是一个全或无的命题。你一般不知道你会得到什么，直到最后一分钟为止。 有几次，viaweb很接近成功。我们的轨迹像一个正弦波。幸运的是我们买在周期的顶部，但它很快停止了。当我们去加利福尼亚州访问雅虎，商谈将公司卖给他们的事宜，我们不得不借用一间会议室，以安抚投资者，他们将为我们提供新一轮的支持我们生存的资金。
+
+初创企业的”要么成功，要么滚蛋“这不是我们想要的东西。 viaweb的黑客都极其厌恶风险。如果曾有有一个方法，能让人努力工作，又得到回报，哈不需要冒风险，我们会非常高兴。我们会更喜欢以100%的几率得到100万美元，而不是以20%的机会得到10亿美元，即使从理论上说，第二个目标的回报是第一个的两倍之多。不幸的是，目前在商业世界的空间里，你没有机会能得到这样的第一笔交易。
+
+你可以得到最接近的是在早期阶段销售创业公司，放弃在规模上的攀升（与风险），但保证收益。我们有机会做到这一点，因为我们当时愚蠢地认为，让还是算了吧。之后，我们滑稽地急于出售。在未来一年左右，如果有人表示对Viaweb存在丝毫的好奇，我们都会尽量向他们出售我们的公司。但没人买帐，所以我们不得不继续下去。
+
+这本来是在早期阶段，我们的价格很低，但做收购的公司没人在寻找便宜货。能收购初创公司的大公司一般都大到了相当保守的地步，公司内负责收购的人也很保守，因为他们很可能是后期加入公司、从商业学校出来的类型。他们宁愿多付点钱，只要更安全。因此很容易卖一个成熟的创业公司，即使价格比较高也比早期的公司好卖。
+
+抓住用户
+
+我认为被收购是一个好主意，如果你能被收购的话。运营企业与发展企业不同。一旦你达到巡航高度，让一家大公司接手比较好。这从财政上看也更明智。因为销售允许你多样化。当一个财务顾问把他​客户的所有资产变成不稳定的股票，你会怎样想？
+
+你如何得到收购？这和如果你不打算出售公司一样，做同样的事情。例如，盈利。但是被收购也是一门艺术，我们花了很多时间将其试图掌握。
+潜在买家会一直拖延。被收购的难点是逼迫他们采取行动。对于大多数人来说，最强大的动力不是获得希望的增益，而是避免损失的恐惧。对于潜在的收购者，最强大的动力是他们的竞争对手之一会买你的前景。这一点，我们发现，导致老总采取红眼。第二个担心是，如果他们现在不买你的公司，你将继续快速增长，之后他们将花费更多钱收购你，甚至你还会成为竞争对手。
+
+在上述两种情况下，一切都归结到用户身上。你认为公司收购你的时候，会去做大量的研究，并自行决定你的技术是多么宝贵？不尽然。他们通过你的用户了解你。实际上，收购方假设客户知道谁拥有最好的技术。这一招要比它听起来的高明的多。用户是你在创造财富的唯一真正的证明。财富是人们想要什么，如果人们不使用你的软件，这也许并不仅仅因为你没做营销。也许是因为你做的东西他们不想要。
+
+风险资本家将危险的迹象做成列表一一查看。在列表顶部，是由那些由极客们解决有趣的技术问题，而不是让用户满意的技术怪人运行的公司。在创业之前，你不仅试图解决问题。你更要试图解决用户关心的问题。
+
+所以，我觉得你应该让用户测试，就像收购者做的那样。将创业公司视为通过用户的数量来衡量的一个创化解决方案。任何试图优化软件的人都知道，关键是评估。当您尝试猜测让你的程序慢下来的原因，并想要使其更快，你几乎总是猜错了。用户数量可能不会是个完美的测试结果，但它会很接近。这就是收购者所关心的。这也是收益的来源。这是惹毛竞争对手的原因。这是让记者和潜在的新用户印象深刻的原因。当然，它比你要优先解决哪些问题更重要，不管你是如何在技术上善于测试。说说其他的事情。
+
+把一个创业公司视为最佳优化方案，将有助于你避免另一个风险投资者担心的事实—— 花费很长时间来开发产品。现在，我们可以承认一些黑客已经知道怎么避免过早的优化。尽快做出版本1.0。直到你有一些用户来衡量，你才能在猜测的基础上开始优化。
+
+在这里，你需要保持你所关心的财富遵循了人们想要什么的基本原则。如果你打算通过创业创造财富，你就要知道人们想要什么。因此，少数企业真正重视如何使客户满意。你经常走进一家商店，或打通一家公司的电话号码，却有恐惧的感觉萦绕心头？当你听到“您的来电对我们很重要，请别挂机，”你觉得，哦，好，一切都会顺利吗？
+
+一个餐厅可以承担起某一顿饭烧糊了。但在技术上，一旦你搞砸了一件事，大家就都没得吃。因此，人们想要什么与你提供的之间的矛盾也是成倍增长的。你取悦或烦扰所有客户。你越接近他们想要的东西，你所创造的财富就越多。
+
+财富与权力
+
+财富并不是让你致富的唯一途径。从人类历史上看，这并不是最常见的方式。直到几个世纪以前，财富的主要来源都是矿山、农奴与奴隶、土地、牛；获得财富的唯一途径是通过继承、结姻、征服、或没收。自然财富的声誉不大好。
+
+两件事情改变上述情况。首先是法治。对于大多数世界的历史，如果你没有积累起财富，统治者或他的追随者将找到一种方法偷掉你的钱。但在中世纪的欧洲发生了一些新的情况。新的阶层：商人与工厂主开始在城镇集合。 [10]他们有能力成为当地封建领主。因此，在我们历史上第一回，恶霸停止了偷书呆子的午餐钱。自然，这是一个很大的激励，可能确实是第二大的变化——工业化的主要原因。
+
+工业革命的原因之一是一笔交易，这笔交易的一个必要但不充分的条件是：取得财富的人能够享受和平享受他们的财富。[11]其中一个反例是，那些试图像苏联一样返回到旧模式的国家，比如在20世纪60年代和70年代初的英国工党政府，没有财富的激励，技术创新嘎然而止。
+
+请记住什么是创业的经济学说法：我想工作得更快。而不是慢慢积累，得到五十年的固定工资的回报，我要让回报尽快到来。因此，政府不许你积累财富，实际上，政府是在下令你慢慢工作。他们愿意让你赚了五十多年的3万美元，但他们不愿意让你这么努力，一下子赚到这么多钱。他们就像企业的老板，你不能去告诉老板，我想十倍努力的工作，所以请付我十倍的薪水。除非你可以逃走，开创你自己的公司。
+
+缓慢工作的问题是，它不但使得技术革新变慢，它还扼杀革新。只有当你刻意寻找困难的问题（也也是将好刀用在刀刃上的最佳方式），那你就解决了此项问题。开发新技术很痛苦。就像爱迪生说：百分之一的灵感加上百分之九十九的汗水。没有财富的诱惑，没有人愿意这样做。工程师愿意从事如战斗机和登月火箭那样性感的项目，即使薪金很普通，但必须为企业家发展更加世俗技术，比如灯泡或半导体技术。
+
+创业不只是发生在过去的几十年在硅谷发展。因为它成为可能通过创造财富变得富有，那么，完成的每个人都已经基本上使用相同的配方：可评估性与杠杆效应。评估是量化一个小组的工作，而开发新技术带来杠杆效应。配方都是一样的，和1200年的弗洛洛萨与圣克拉拉没什么两样。
+
+了解这可能有助于回答一个重要的问题：为什么欧洲变得如此强大。是欧洲地理决定的吗？是欧洲人在某种程度上优于其他宗族吗？是他们的宗教吗？答案或许是（至少是最可能的答案）欧洲人借住一个强大理念的力量：让那些创造了财富的人保有财富。
+
+一旦你允许这样做，想发财的人就可以创造财富而不是偷来获得财富。随着而来的科技发展不仅创造了财富，也增进了军事力量的发展。发明隐形飞机的理念是由苏联的数学家创造的。但因为苏联没有计算机行业，其理念仍然停留在纸面上。他们没有能够执行的计算能力去完成飞机实际设计的硬件。
+在这方面，冷战与二战都给了我们不少教训。因为财富，人们发动了近代历史上的大多数战争。不要让战士与政治家挤碎企业家。相同的配方，使个人富裕，使国家强大。让书呆子看好他们的午餐钱，而你统治世界。
+
+注释：
+[1]有样东西很有价值，只有在创业公司才能得到，就是不间断性。不同种类的工作有不同的时间份额。校对手稿的人很可能每十五分钟就被中断一次，每一次损失一点儿生产力。但黑客的时间量子是很长，一个小时只不过是将一个问题加载到脑中罢了。
+
+因此，一个人力资源的人告诉你你忘记填写了一张表格，那么这样的损失将会是巨大的。这就是为什么黑客从屏幕前转过头来回答你的问题时，他们狠狠地盯了你一眼。叠在他们头上的扑克牌搭建的房子正摇摇欲坠呢。
+
+仅仅是被打扰的可能性就让黑客无法专注在难题上。这就是为什么他们往往工作到深夜，也是为什么在一个隔间里不可能写出伟大的软件（深夜除外）。
+
+初创公司的一个巨大优势是，他们还没有任何人能来打断你。
+
+没有人事部门，因此，不需要任何形式，也没有任何人打电话给你。
+
+[2]面对这样一个主意，为初创企业工作的人可能会产出20或30倍于为大公司工作的生产力。大公司的高管，自然会觉得奇怪，我怎么能为我工作的人做这件事呢？答案很简单：支付他们。
+
+国内大多数企业都像共产主义国家。如果你相信在自由市场，为什么不把你的公司变成自由市场？假设：当A公司的每个员工以他们所产生的最大财富比例支付时，该公司将获得最大的利益。
+
+[3]直到最近，甚至政府都没有掌握金钱与财富之间的区别。亚当·斯密（国富论，V：I）中提到了几个试图通过禁止出口的黄金或白银保留他们的财富。但是拥有更多的交换媒介不会使一个国家变得富裕，如果你有更多的钱追逐同样数量的物质财富，唯一的结果就是价格变高了。
+
+[4]围绕着“财富”有许多意义，并非所有意义都指出财富是物质。我并不想在这里作出深刻的哲学阐释，分清哪些是真哪些是假。我正在写关于一个特定的而不是技术意义上的“财富”：那些能让别人为你付钱的东西。这是一个有趣的财富分类研究，因为它能让你免于忍饥挨饿。什么人给你钱取决于他们，而不是你。
+
+当你刚开始创业，很容易滑入以为客户需要你做些什么。在互联网泡沫期间，我跟一位喜欢户外活动的女性聊天，她开设了“户外门户。”你知道，如果你喜欢户外活动，你应该开创什么样的企业呢？其中一项是从坠毁的硬盘中恢复数据。
+
+这中间有什么相同点？压根没有。而这恰恰是我的观点。如果你想创造财富（狭窄地说，就是不被饿死），那么你就应该对任何计划都保持怀疑态度，也包括你喜欢做的事情。从而你可以懂得，什么是有价值的，至少是最有可能配合其他人的。
+
+[5]平均看来，在车的修复中，你可能在微观上为别人带来损害，因为给环境带来了微量损害。环境成本应该被考虑进去，他们不会导致财富的零和游戏。例如，如果你修复一个破碎机，因为部分已经拧开，假如你没有增加环境成本，那么你就增加了财富成本。
+
+[5B]写这篇文章之时，火狐还没有出现。
+
+[6]许多人在二十多岁的时候感到困惑和沮丧。在大学生活乐趣多多。嗯，当然是。不要被表面现象所愚弄了。你已经从客人变成了仆人。在新的世界可能挺有乐趣的。不管其他，你现在可以躲在门后，门上写着，“非请勿入。”但是，这些变化一开始挺令人惊讶的，最糟糕的是，假如你没有意识到这一点。
+
+[7]当VC要求我们回答，另一家创业公司复制我们的软件需要多久的时候，我们说：他们压根复制不了。我觉得，这使我们看起来要么很幼稚，要么很忽悠。
+
+[8]一些技术有一位明确的发明者。因此，作为一项规则，如果你知道某样发明的“发明者”（电话，装配生产线，飞机，电灯泡，晶体管），是因为他们的公司赚到了钱，还有该公司的公关人工作努力，传播这些故事。如果你不知道是谁发明的东西（汽车，电视，电脑，喷气发动机，激光），这是因为其他公司都赚到了钱。
+
+[9]这从来都是生活中下判断一个好方法。如果你有两个选择，选择难的那一个。如果你想决定是否要出去跑步，或者坐在家里看电视；去跑步。这招好使的原因是，当你有两个选择，其中有一个很难，那你还在考的唯一原因是因为你懒惰。你知道什么是正确的事情，这一招只是迫使你承认这一点。
+
+[10]中产阶级第一次出现在意大利北部和其他海拔较低的国家或许并非偶然，因为那里有没有强有力的中央政府。这两个地区在那时最为富有，并成为文艺复兴时期的文明辐射的双中心。如果他们不再扮演这一角色，这是因为其他地方，比如美国，已经更为彻底地贯彻这一法则。
+
+[11]这可能确实是一个充分条件。但即便如此，为什么工业革命没有更早发生？两种可能（并非互斥不）答案：（a）已然发生。工业革命便是其中的一系列。 （b）由于垄断和行规盛行于中世纪的城镇，放慢了新生产手段的发展。
+
+************************************************
+************************************************
+
+May 2004
+
+(This essay was originally published in Hackers & Painters.)
+
+If you wanted to get rich, how would you do it? I think your best bet would be to start or join a startup. That's been a reliable way to get rich for hundreds of years. The word "startup" dates from the 1960s, but what happens in one is very similar to the venture-backed trading voyages of the Middle Ages.
+
+Startups usually involve technology, so much so that the phrase "high-tech startup" is almost redundant. A startup is a small company that takes on a hard technical problem.
+
+Lots of people get rich knowing nothing more than that. You don't have to know physics to be a good pitcher. But I think it could give you an edge to understand the underlying principles. Why do startups have to be small? Will a startup inevitably stop being a startup as it grows larger? And why do they so often work on developing new technology? Why are there so many startups selling new drugs or computer software, and none selling corn oil or laundry detergent?
+
+The Proposition
+
+Economically, you can think of a startup as a way to compress your whole working life into a few years. Instead of working at a low intensity for forty years, you work as hard as you possibly can for four. This pays especially well in technology, where you earn a premium for working fast.
+
+Here is a brief sketch of the economic proposition. If you're a good hacker in your mid twenties, you can get a job paying about $80,000 per year. So on average such a hacker must be able to do at least $80,000 worth of work per year for the company just to break even. You could probably work twice as many hours as a corporate employee, and if you focus you can probably get three times as much done in an hour. [1] You should get another multiple of two, at least, by eliminating the drag of the pointy-haired middle manager who would be your boss in a big company. Then there is one more multiple: how much smarter are you than your job description expects you to be? Suppose another multiple of three. Combine all these multipliers, and I'm claiming you could be 36 times more productive than you're expected to be in a random corporate job. [2] If a fairly good hacker is worth $80,000 a year at a big company, then a smart hacker working very hard without any corporate bullshit to slow him down should be able to do work worth about $3 million a year.
+
+Like all back-of-the-envelope calculations, this one has a lot of wiggle room. I wouldn't try to defend the actual numbers. But I stand by the structure of the calculation. I'm not claiming the multiplier is precisely 36, but it is certainly more than 10, and probably rarely as high as 100.
+
+If $3 million a year seems high, remember that we're talking about the limit case: the case where you not only have zero leisure time but indeed work so hard that you endanger your health.
+
+Startups are not magic. They don't change the laws of wealth creation. They just represent a point at the far end of the curve. There is a conservation law at work here: if you want to make a million dollars, you have to endure a million dollars' worth of pain. For example, one way to make a million dollars would be to work for the Post Office your whole life, and save every penny of your salary. Imagine the stress of working for the Post Office for fifty years. In a startup you compress all this stress into three or four years. You do tend to get a certain bulk discount if you buy the economy-size pain, but you can't evade the fundamental conservation law. If starting a startup were easy, everyone would do it.
+
+Millions, not Billions
+
+If $3 million a year seems high to some people, it will seem low to others. Three million? How do I get to be a billionaire, like Bill Gates?
+
+So let's get Bill Gates out of the way right now. It's not a good idea to use famous rich people as examples, because the press only write about the very richest, and these tend to be outliers. Bill Gates is a smart, determined, and hardworking man, but you need more than that to make as much money as he has. You also need to be very lucky.
+
+There is a large random factor in the success of any company. So the guys you end up reading about in the papers are the ones who are very smart, totally dedicated, and win the lottery. Certainly Bill is smart and dedicated, but Microsoft also happens to have been the beneficiary of one of the most spectacular blunders in the history of business: the licensing deal for DOS. No doubt Bill did everything he could to steer IBM into making that blunder, and he has done an excellent job of exploiting it, but if there had been one person with a brain on IBM's side, Microsoft's future would have been very different. Microsoft at that stage had little leverage over IBM. They were effectively a component supplier. If IBM had required an exclusive license, as they should have, Microsoft would still have signed the deal. It would still have meant a lot of money for them, and IBM could easily have gotten an operating system elsewhere.
+
+Instead IBM ended up using all its power in the market to give Microsoft control of the PC standard. From that point, all Microsoft had to do was execute. They never had to bet the company on a bold decision. All they had to do was play hardball with licensees and copy more innovative products reasonably promptly.
+
+If IBM hadn't made this mistake, Microsoft would still have been a successful company, but it could not have grown so big so fast. Bill Gates would be rich, but he'd be somewhere near the bottom of the Forbes 400 with the other guys his age.
+
+There are a lot of ways to get rich, and this essay is about only one of them. This essay is about how to make money by creating wealth and getting paid for it. There are plenty of other ways to get money, including chance, speculation, marriage, inheritance, theft, extortion, fraud, monopoly, graft, lobbying, counterfeiting, and prospecting. Most of the greatest fortunes have probably involved several of these.
+
+The advantage of creating wealth, as a way to get rich, is not just that it's more legitimate (many of the other methods are now illegal) but that it's more straightforward. You just have to do something people want.
+
+Money Is Not Wealth
+
+If you want to create wealth, it will help to understand what it is. Wealth is not the same thing as money. [3] Wealth is as old as human history. Far older, in fact; ants have wealth. Money is a comparatively recent invention.
+
+Wealth is the fundamental thing. Wealth is stuff we want: food, clothes, houses, cars, gadgets, travel to interesting places, and so on. You can have wealth without having money. If you had a magic machine that could on command make you a car or cook you dinner or do your laundry, or do anything else you wanted, you wouldn't need money. Whereas if you were in the middle of Antarctica, where there is nothing to buy, it wouldn't matter how much money you had.
+
+Wealth is what you want, not money. But if wealth is the important thing, why does everyone talk about making money? It is a kind of shorthand: money is a way of moving wealth, and in practice they are usually interchangeable. But they are not the same thing, and unless you plan to get rich by counterfeiting, talking about making money can make it harder to understand how to make money.
+
+Money is a side effect of specialization. In a specialized society, most of the things you need, you can't make for yourself. If you want a potato or a pencil or a place to live, you have to get it from someone else.
+
+How do you get the person who grows the potatoes to give you some? By giving him something he wants in return. But you can't get very far by trading things directly with the people who need them. If you make violins, and none of the local farmers wants one, how will you eat?
+
+The solution societies find, as they get more specialized, is to make the trade into a two-step process. Instead of trading violins directly for potatoes, you trade violins for, say, silver, which you can then trade again for anything else you need. The intermediate stuff-- the medium of exchange-- can be anything that's rare and portable. Historically metals have been the most common, but recently we've been using a medium of exchange, called the dollar, that doesn't physically exist. It works as a medium of exchange, however, because its rarity is guaranteed by the U.S. Government.
+
+The advantage of a medium of exchange is that it makes trade work. The disadvantage is that it tends to obscure what trade really means. People think that what a business does is make money. But money is just the intermediate stage-- just a shorthand-- for whatever people want. What most businesses really do is make wealth. They do something people want. [4]
+
+The Pie Fallacy
+
+A surprising number of people retain from childhood the idea that there is a fixed amount of wealth in the world. There is, in any normal family, a fixed amount of money at any moment. But that's not the same thing.
+
+When wealth is talked about in this context, it is often described as a pie. "You can't make the pie larger," say politicians. When you're talking about the amount of money in one family's bank account, or the amount available to a government from one year's tax revenue, this is true. If one person gets more, someone else has to get less.
+
+I can remember believing, as a child, that if a few rich people had all the money, it left less for everyone else. Many people seem to continue to believe something like this well into adulthood. This fallacy is usually there in the background when you hear someone talking about how x percent of the population have y percent of the wealth. If you plan to start a startup, then whether you realize it or not, you're planning to disprove the Pie Fallacy.
+
+What leads people astray here is the abstraction of money. Money is not wealth. It's just something we use to move wealth around. So although there may be, in certain specific moments (like your family, this month) a fixed amount of money available to trade with other people for things you want, there is not a fixed amount of wealth in the world. You can make more wealth. Wealth has been getting created and destroyed (but on balance, created) for all of human history.
+
+Suppose you own a beat-up old car. Instead of sitting on your butt next summer, you could spend the time restoring your car to pristine condition. In doing so you create wealth. The world is-- and you specifically are-- one pristine old car the richer. And not just in some metaphorical way. If you sell your car, you'll get more for it.
+
+In restoring your old car you have made yourself richer. You haven't made anyone else poorer. So there is obviously not a fixed pie. And in fact, when you look at it this way, you wonder why anyone would think there was. [5]
+
+Kids know, without knowing they know, that they can create wealth. If you need to give someone a present and don't have any money, you make one. But kids are so bad at making things that they consider home-made presents to be a distinct, inferior, sort of thing to store-bought ones-- a mere expression of the proverbial thought that counts. And indeed, the lumpy ashtrays we made for our parents did not have much of a resale market.
+
+Craftsmen
+
+The people most likely to grasp that wealth can be created are the ones who are good at making things, the craftsmen. Their hand-made objects become store-bought ones. But with the rise of industrialization there are fewer and fewer craftsmen. One of the biggest remaining groups is computer programmers.
+
+A programmer can sit down in front of a computer and create wealth. A good piece of software is, in itself, a valuable thing. There is no manufacturing to confuse the issue. Those characters you type are a complete, finished product. If someone sat down and wrote a web browser that didn't suck (a fine idea, by the way), the world would be that much richer. [5b]
+
+Everyone in a company works together to create wealth, in the sense of making more things people want. Many of the employees (e.g. the people in the mailroom or the personnel department) work at one remove from the actual making of stuff. Not the programmers. They literally think the product, one line at a time. And so it's clearer to programmers that wealth is something that's made, rather than being distributed, like slices of a pie, by some imaginary Daddy.
+
+It's also obvious to programmers that there are huge variations in the rate at which wealth is created. At Viaweb we had one programmer who was a sort of monster of productivity. I remember watching what he did one long day and estimating that he had added several hundred thousand dollars to the market value of the company. A great programmer, on a roll, could create a million dollars worth of wealth in a couple weeks. A mediocre programmer over the same period will generate zero or even negative wealth (e.g. by introducing bugs).
+
+This is why so many of the best programmers are libertarians. In our world, you sink or swim, and there are no excuses. When those far removed from the creation of wealth-- undergraduates, reporters, politicians-- hear that the richest 5% of the people have half the total wealth, they tend to think injustice! An experienced programmer would be more likely to think is that all? The top 5% of programmers probably write 99% of the good software.
+
+Wealth can be created without being sold. Scientists, till recently at least, effectively donated the wealth they created. We are all richer for knowing about penicillin, because we're less likely to die from infections. Wealth is whatever people want, and not dying is certainly something we want. Hackers often donate their work by writing open source software that anyone can use for free. I am much the richer for the operating system FreeBSD, which I'm running on the computer I'm using now, and so is Yahoo, which runs it on all their servers.
+
+What a Job Is
+
+In industrialized countries, people belong to one institution or another at least until their twenties. After all those years you get used to the idea of belonging to a group of people who all get up in the morning, go to some set of buildings, and do things that they do not, ordinarily, enjoy doing. Belonging to such a group becomes part of your identity: name, age, role, institution. If you have to introduce yourself, or someone else describes you, it will be as something like, John Smith, age 10, a student at such and such elementary school, or John Smith, age 20, a student at such and such college.
+
+When John Smith finishes school he is expected to get a job. And what getting a job seems to mean is joining another institution. Superficially it's a lot like college. You pick the companies you want to work for and apply to join them. If one likes you, you become a member of this new group. You get up in the morning and go to a new set of buildings, and do things that you do not, ordinarily, enjoy doing. There are a few differences: life is not as much fun, and you get paid, instead of paying, as you did in college. But the similarities feel greater than the differences. John Smith is now John Smith, 22, a software developer at such and such corporation.
+
+In fact John Smith's life has changed more than he realizes. Socially, a company looks much like college, but the deeper you go into the underlying reality, the more different it gets.
+
+What a company does, and has to do if it wants to continue to exist, is earn money. And the way most companies make money is by creating wealth. Companies can be so specialized that this similarity is concealed, but it is not only manufacturing companies that create wealth. A big component of wealth is location. Remember that magic machine that could make you cars and cook you dinner and so on? It would not be so useful if it delivered your dinner to a random location in central Asia. If wealth means what people want, companies that move things also create wealth. Ditto for many other kinds of companies that don't make anything physical. Nearly all companies exist to do something people want.
+
+And that's what you do, as well, when you go to work for a company. But here there is another layer that tends to obscure the underlying reality. In a company, the work you do is averaged together with a lot of other people's. You may not even be aware you're doing something people want. Your contribution may be indirect. But the company as a whole must be giving people something they want, or they won't make any money. And if they are paying you x dollars a year, then on average you must be contributing at least x dollars a year worth of work, or the company will be spending more than it makes, and will go out of business.
+
+Someone graduating from college thinks, and is told, that he needs to get a job, as if the important thing were becoming a member of an institution. A more direct way to put it would be: you need to start doing something people want. You don't need to join a company to do that. All a company is is a group of people working together to do something people want. It's doing something people want that matters, not joining the group. [6]
+
+For most people the best plan probably is to go to work for some existing company. But it is a good idea to understand what's happening when you do this. A job means doing something people want, averaged together with everyone else in that company.
+
+Working Harder
+
+That averaging gets to be a problem. I think the single biggest problem afflicting large companies is the difficulty of assigning a value to each person's work. For the most part they punt. In a big company you get paid a fairly predictable salary for working fairly hard. You're expected not to be obviously incompetent or lazy, but you're not expected to devote your whole life to your work.
+
+It turns out, though, that there are economies of scale in how much of your life you devote to your work. In the right kind of business, someone who really devoted himself to work could generate ten or even a hundred times as much wealth as an average employee. A programmer, for example, instead of chugging along maintaining and updating an existing piece of software, could write a whole new piece of software, and with it create a new source of revenue.
+
+Companies are not set up to reward people who want to do this. You can't go to your boss and say, I'd like to start working ten times as hard, so will you please pay me ten times as much? For one thing, the official fiction is that you are already working as hard as you can. But a more serious problem is that the company has no way of measuring the value of your work.
+
+Salesmen are an exception. It's easy to measure how much revenue they generate, and they're usually paid a percentage of it. If a salesman wants to work harder, he can just start doing it, and he will automatically get paid proportionally more.
+
+There is one other job besides sales where big companies can hire first-rate people: in the top management jobs. And for the same reason: their performance can be measured. The top managers are held responsible for the performance of the entire company. Because an ordinary employee's performance can't usually be measured, he is not expected to do more than put in a solid effort. Whereas top management, like salespeople, have to actually come up with the numbers. The CEO of a company that tanks cannot plead that he put in a solid effort. If the company does badly, he's done badly.
+
+A company that could pay all its employees so straightforwardly would be enormously successful. Many employees would work harder if they could get paid for it. More importantly, such a company would attract people who wanted to work especially hard. It would crush its competitors.
+
+Unfortunately, companies can't pay everyone like salesmen. Salesmen work alone. Most employees' work is tangled together. Suppose a company makes some kind of consumer gadget. The engineers build a reliable gadget with all kinds of new features; the industrial designers design a beautiful case for it; and then the marketing people convince everyone that it's something they've got to have. How do you know how much of the gadget's sales are due to each group's efforts? Or, for that matter, how much is due to the creators of past gadgets that gave the company a reputation for quality? There's no way to untangle all their contributions. Even if you could read the minds of the consumers, you'd find these factors were all blurred together.
+
+If you want to go faster, it's a problem to have your work tangled together with a large number of other people's. In a large group, your performance is not separately measurable-- and the rest of the group slows you down.
+
+Measurement and Leverage
+
+To get rich you need to get yourself in a situation with two things, measurement and leverage. You need to be in a position where your performance can be measured, or there is no way to get paid more by doing more. And you have to have leverage, in the sense that the decisions you make have a big effect.
+
+Measurement alone is not enough. An example of a job with measurement but not leverage is doing piecework in a sweatshop. Your performance is measured and you get paid accordingly, but you have no scope for decisions. The only decision you get to make is how fast you work, and that can probably only increase your earnings by a factor of two or three.
+
+An example of a job with both measurement and leverage would be lead actor in a movie. Your performance can be measured in the gross of the movie. And you have leverage in the sense that your performance can make or break it.
+
+CEOs also have both measurement and leverage. They're measured, in that the performance of the company is their performance. And they have leverage in that their decisions set the whole company moving in one direction or another.
+
+I think everyone who gets rich by their own efforts will be found to be in a situation with measurement and leverage. Everyone I can think of does: CEOs, movie stars, hedge fund managers, professional athletes. A good hint to the presence of leverage is the possibility of failure. Upside must be balanced by downside, so if there is big potential for gain there must also be a terrifying possibility of loss. CEOs, stars, fund managers, and athletes all live with the sword hanging over their heads; the moment they start to suck, they're out. If you're in a job that feels safe, you are not going to get rich, because if there is no danger there is almost certainly no leverage.
+
+But you don't have to become a CEO or a movie star to be in a situation with measurement and leverage. All you need to do is be part of a small group working on a hard problem.
+
+Smallness = Measurement
+
+If you can't measure the value of the work done by individual employees, you can get close. You can measure the value of the work done by small groups.
+
+One level at which you can accurately measure the revenue generated by employees is at the level of the whole company. When the company is small, you are thereby fairly close to measuring the contributions of individual employees. A viable startup might only have ten employees, which puts you within a factor of ten of measuring individual effort.
+
+Starting or joining a startup is thus as close as most people can get to saying to one's boss, I want to work ten times as hard, so please pay me ten times as much. There are two differences: you're not saying it to your boss, but directly to the customers (for whom your boss is only a proxy after all), and you're not doing it individually, but along with a small group of other ambitious people.
+
+It will, ordinarily, be a group. Except in a few unusual kinds of work, like acting or writing books, you can't be a company of one person. And the people you work with had better be good, because it's their work that yours is going to be averaged with.
+
+A big company is like a giant galley driven by a thousand rowers. Two things keep the speed of the galley down. One is that individual rowers don't see any result from working harder. The other is that, in a group of a thousand people, the average rower is likely to be pretty average.
+
+If you took ten people at random out of the big galley and put them in a boat by themselves, they could probably go faster. They would have both carrot and stick to motivate them. An energetic rower would be encouraged by the thought that he could have a visible effect on the speed of the boat. And if someone was lazy, the others would be more likely to notice and complain.
+
+But the real advantage of the ten-man boat shows when you take the ten best rowers out of the big galley and put them in a boat together. They will have all the extra motivation that comes from being in a small group. But more importantly, by selecting that small a group you can get the best rowers. Each one will be in the top 1%. It's a much better deal for them to average their work together with a small group of their peers than to average it with everyone.
+
+That's the real point of startups. Ideally, you are getting together with a group of other people who also want to work a lot harder, and get paid a lot more, than they would in a big company. And because startups tend to get founded by self-selecting groups of ambitious people who already know one another (at least by reputation), the level of measurement is more precise than you get from smallness alone. A startup is not merely ten people, but ten people like you.
+
+Steve Jobs once said that the success or failure of a startup depends on the first ten employees. I agree. If anything, it's more like the first five. Being small is not, in itself, what makes startups kick butt, but rather that small groups can be select. You don't want small in the sense of a village, but small in the sense of an all-star team.
+
+The larger a group, the closer its average member will be to the average for the population as a whole. So all other things being equal, a very able person in a big company is probably getting a bad deal, because his performance is dragged down by the overall lower performance of the others. Of course, all other things often are not equal: the able person may not care about money, or may prefer the stability of a large company. But a very able person who does care about money will ordinarily do better to go off and work with a small group of peers.
+
+Technology = Leverage
+
+Startups offer anyone a way to be in a situation with measurement and leverage. They allow measurement because they're small, and they offer leverage because they make money by inventing new technology.
+
+What is technology? It's technique. It's the way we all do things. And when you discover a new way to do things, its value is multiplied by all the people who use it. It is the proverbial fishing rod, rather than the fish. That's the difference between a startup and a restaurant or a barber shop. You fry eggs or cut hair one customer at a time. Whereas if you solve a technical problem that a lot of people care about, you help everyone who uses your solution. That's leverage.
+
+If you look at history, it seems that most people who got rich by creating wealth did it by developing new technology. You just can't fry eggs or cut hair fast enough. What made the Florentines rich in 1200 was the discovery of new techniques for making the high-tech product of the time, fine woven cloth. What made the Dutch rich in 1600 was the discovery of shipbuilding and navigation techniques that enabled them to dominate the seas of the Far East.
+
+Fortunately there is a natural fit between smallness and solving hard problems. The leading edge of technology moves fast. Technology that's valuable today could be worthless in a couple years. Small companies are more at home in this world, because they don't have layers of bureaucracy to slow them down. Also, technical advances tend to come from unorthodox approaches, and small companies are less constrained by convention.
+
+Big companies can develop technology. They just can't do it quickly. Their size makes them slow and prevents them from rewarding employees for the extraordinary effort required. So in practice big companies only get to develop technology in fields where large capital requirements prevent startups from competing with them, like microprocessors, power plants, or passenger aircraft. And even in those fields they depend heavily on startups for components and ideas.
+
+It's obvious that biotech or software startups exist to solve hard technical problems, but I think it will also be found to be true in businesses that don't seem to be about technology. McDonald's, for example, grew big by designing a system, the McDonald's franchise, that could then be reproduced at will all over the face of the earth. A McDonald's franchise is controlled by rules so precise that it is practically a piece of software. Write once, run everywhere. Ditto for Wal-Mart. Sam Walton got rich not by being a retailer, but by designing a new kind of store.
+
+Use difficulty as a guide not just in selecting the overall aim of your company, but also at decision points along the way. At Viaweb one of our rules of thumb was run upstairs. Suppose you are a little, nimble guy being chased by a big, fat, bully. You open a door and find yourself in a staircase. Do you go up or down? I say up. The bully can probably run downstairs as fast as you can. Going upstairs his bulk will be more of a disadvantage. Running upstairs is hard for you but even harder for him.
+
+What this meant in practice was that we deliberately sought hard problems. If there were two features we could add to our software, both equally valuable in proportion to their difficulty, we'd always take the harder one. Not just because it was more valuable, but because it was harder. We delighted in forcing bigger, slower competitors to follow us over difficult ground. Like guerillas, startups prefer the difficult terrain of the mountains, where the troops of the central government can't follow. I can remember times when we were just exhausted after wrestling all day with some horrible technical problem. And I'd be delighted, because something that was hard for us would be impossible for our competitors.
+
+This is not just a good way to run a startup. It's what a startup is. Venture capitalists know about this and have a phrase for it: barriers to entry. If you go to a VC with a new idea and ask him to invest in it, one of the first things he'll ask is, how hard would this be for someone else to develop? That is, how much difficult ground have you put between yourself and potential pursuers? [7] And you had better have a convincing explanation of why your technology would be hard to duplicate. Otherwise as soon as some big company becomes aware of it, they'll make their own, and with their brand name, capital, and distribution clout, they'll take away your market overnight. You'd be like guerillas caught in the open field by regular army forces.
+
+One way to put up barriers to entry is through patents. But patents may not provide much protection. Competitors commonly find ways to work around a patent. And if they can't, they may simply violate it and invite you to sue them. A big company is not afraid to be sued; it's an everyday thing for them. They'll make sure that suing them is expensive and takes a long time. Ever heard of Philo Farnsworth? He invented television. The reason you've never heard of him is that his company was not the one to make money from it. [8] The company that did was RCA, and Farnsworth's reward for his efforts was a decade of patent litigation.
+
+Here, as so often, the best defense is a good offense. If you can develop technology that's simply too hard for competitors to duplicate, you don't need to rely on other defenses. Start by picking a hard problem, and then at every decision point, take the harder choice. [9]
+
+The Catch(es)
+
+If it were simply a matter of working harder than an ordinary employee and getting paid proportionately, it would obviously be a good deal to start a startup. Up to a point it would be more fun. I don't think many people like the slow pace of big companies, the interminable meetings, the water-cooler conversations, the clueless middle managers, and so on.
+
+Unfortunately there are a couple catches. One is that you can't choose the point on the curve that you want to inhabit. You can't decide, for example, that you'd like to work just two or three times as hard, and get paid that much more. When you're running a startup, your competitors decide how hard you work. And they pretty much all make the same decision: as hard as you possibly can.
+
+The other catch is that the payoff is only on average proportionate to your productivity. There is, as I said before, a large random multiplier in the success of any company. So in practice the deal is not that you're 30 times as productive and get paid 30 times as much. It is that you're 30 times as productive, and get paid between zero and a thousand times as much. If the mean is 30x, the median is probably zero. Most startups tank, and not just the dogfood portals we all heard about during the Internet Bubble. It's common for a startup to be developing a genuinely good product, take slightly too long to do it, run out of money, and have to shut down.
+
+A startup is like a mosquito. A bear can absorb a hit and a crab is armored against one, but a mosquito is designed for one thing: to score. No energy is wasted on defense. The defense of mosquitos, as a species, is that there are a lot of them, but this is little consolation to the individual mosquito.
+
+Startups, like mosquitos, tend to be an all-or-nothing proposition. And you don't generally know which of the two you're going to get till the last minute. Viaweb came close to tanking several times. Our trajectory was like a sine wave. Fortunately we got bought at the top of the cycle, but it was damned close. While we were visiting Yahoo in California to talk about selling the company to them, we had to borrow a conference room to reassure an investor who was about to back out of a new round of funding that we needed to stay alive.
+
+The all-or-nothing aspect of startups was not something we wanted. Viaweb's hackers were all extremely risk-averse. If there had been some way just to work super hard and get paid for it, without having a lottery mixed in, we would have been delighted. We would have much preferred a 100% chance of $1 million to a 20% chance of $10 million, even though theoretically the second is worth twice as much. Unfortunately, there is not currently any space in the business world where you can get the first deal.
+
+The closest you can get is by selling your startup in the early stages, giving up upside (and risk) for a smaller but guaranteed payoff. We had a chance to do this, and stupidly, as we then thought, let it slip by. After that we became comically eager to sell. For the next year or so, if anyone expressed the slightest curiousity about Viaweb we would try to sell them the company. But there were no takers, so we had to keep going.
+
+It would have been a bargain to buy us at an early stage, but companies doing acquisitions are not looking for bargains. A company big enough to acquire startups will be big enough to be fairly conservative, and within the company the people in charge of acquisitions will be among the more conservative, because they are likely to be business school types who joined the company late. They would rather overpay for a safe choice. So it is easier to sell an established startup, even at a large premium, than an early-stage one.
+
+Get Users
+
+I think it's a good idea to get bought, if you can. Running a business is different from growing one. It is just as well to let a big company take over once you reach cruising altitude. It's also financially wiser, because selling allows you to diversify. What would you think of a financial advisor who put all his client's assets into one volatile stock?
+
+How do you get bought? Mostly by doing the same things you'd do if you didn't intend to sell the company. Being profitable, for example. But getting bought is also an art in its own right, and one that we spent a lot of time trying to master.
+
+Potential buyers will always delay if they can. The hard part about getting bought is getting them to act. For most people, the most powerful motivator is not the hope of gain, but the fear of loss. For potential acquirers, the most powerful motivator is the prospect that one of their competitors will buy you. This, as we found, causes CEOs to take red-eyes. The second biggest is the worry that, if they don't buy you now, you'll continue to grow rapidly and will cost more to acquire later, or even become a competitor.
+
+In both cases, what it all comes down to is users. You'd think that a company about to buy you would do a lot of research and decide for themselves how valuable your technology was. Not at all. What they go by is the number of users you have.
+
+In effect, acquirers assume the customers know who has the best technology. And this is not as stupid as it sounds. Users are the only real proof that you've created wealth. Wealth is what people want, and if people aren't using your software, maybe it's not just because you're bad at marketing. Maybe it's because you haven't made what they want.
+
+Venture capitalists have a list of danger signs to watch out for. Near the top is the company run by techno-weenies who are obsessed with solving interesting technical problems, instead of making users happy. In a startup, you're not just trying to solve problems. You're trying to solve problems that users care about.
+
+So I think you should make users the test, just as acquirers do. Treat a startup as an optimization problem in which performance is measured by number of users. As anyone who has tried to optimize software knows, the key is measurement. When you try to guess where your program is slow, and what would make it faster, you almost always guess wrong.
+
+Number of users may not be the perfect test, but it will be very close. It's what acquirers care about. It's what revenues depend on. It's what makes competitors unhappy. It's what impresses reporters, and potential new users. Certainly it's a better test than your a priori notions of what problems are important to solve, no matter how technically adept you are.
+
+Among other things, treating a startup as an optimization problem will help you avoid another pitfall that VCs worry about, and rightly-- taking a long time to develop a product. Now we can recognize this as something hackers already know to avoid: premature optimization. Get a version 1.0 out there as soon as you can. Until you have some users to measure, you're optimizing based on guesses.
+
+The ball you need to keep your eye on here is the underlying principle that wealth is what people want. If you plan to get rich by creating wealth, you have to know what people want. So few businesses really pay attention to making customers happy. How often do you walk into a store, or call a company on the phone, with a feeling of dread in the back of your mind? When you hear "your call is important to us, please stay on the line," do you think, oh good, now everything will be all right?
+
+A restaurant can afford to serve the occasional burnt dinner. But in technology, you cook one thing and that's what everyone eats. So any difference between what people want and what you deliver is multiplied. You please or annoy customers wholesale. The closer you can get to what they want, the more wealth you generate.
+
+Wealth and Power
+
+Making wealth is not the only way to get rich. For most of human history it has not even been the most common. Until a few centuries ago, the main sources of wealth were mines, slaves and serfs, land, and cattle, and the only ways to acquire these rapidly were by inheritance, marriage, conquest, or confiscation. Naturally wealth had a bad reputation.
+
+Two things changed. The first was the rule of law. For most of the world's history, if you did somehow accumulate a fortune, the ruler or his henchmen would find a way to steal it. But in medieval Europe something new happened. A new class of merchants and manufacturers began to collect in towns. [10] Together they were able to withstand the local feudal lord. So for the first time in our history, the bullies stopped stealing the nerds' lunch money. This was naturally a great incentive, and possibly indeed the main cause of the second big change, industrialization.
+
+A great deal has been written about the causes of the Industrial Revolution. But surely a necessary, if not sufficient, condition was that people who made fortunes be able to enjoy them in peace. [11] One piece of evidence is what happened to countries that tried to return to the old model, like the Soviet Union, and to a lesser extent Britain under the labor governments of the 1960s and early 1970s. Take away the incentive of wealth, and technical innovation grinds to a halt.
+
+Remember what a startup is, economically: a way of saying, I want to work faster. Instead of accumulating money slowly by being paid a regular wage for fifty years, I want to get it over with as soon as possible. So governments that forbid you to accumulate wealth are in effect decreeing that you work slowly. They're willing to let you earn $3 million over fifty years, but they're not willing to let you work so hard that you can do it in two. They are like the corporate boss that you can't go to and say, I want to work ten times as hard, so please pay me ten times a much. Except this is not a boss you can escape by starting your own company.
+
+The problem with working slowly is not just that technical innovation happens slowly. It's that it tends not to happen at all. It's only when you're deliberately looking for hard problems, as a way to use speed to the greatest advantage, that you take on this kind of project. Developing new technology is a pain in the ass. It is, as Edison said, one percent inspiration and ninety-nine percent perspiration. Without the incentive of wealth, no one wants to do it. Engineers will work on sexy projects like fighter planes and moon rockets for ordinary salaries, but more mundane technologies like light bulbs or semiconductors have to be developed by entrepreneurs.
+
+Startups are not just something that happened in Silicon Valley in the last couple decades. Since it became possible to get rich by creating wealth, everyone who has done it has used essentially the same recipe: measurement and leverage, where measurement comes from working with a small group, and leverage from developing new techniques. The recipe was the same in Florence in 1200 as it is in Santa Clara today.
+
+Understanding this may help to answer an important question: why Europe grew so powerful. Was it something about the geography of Europe? Was it that Europeans are somehow racially superior? Was it their religion? The answer (or at least the proximate cause) may be that the Europeans rode on the crest of a powerful new idea: allowing those who made a lot of money to keep it.
+
+Once you're allowed to do that, people who want to get rich can do it by generating wealth instead of stealing it. The resulting technological growth translates not only into wealth but into military power. The theory that led to the stealth plane was developed by a Soviet mathematician. But because the Soviet Union didn't have a computer industry, it remained for them a theory; they didn't have hardware capable of executing the calculations fast enough to design an actual airplane.
+
+In that respect the Cold War teaches the same lesson as World War II and, for that matter, most wars in recent history. Don't let a ruling class of warriors and politicians squash the entrepreneurs. The same recipe that makes individuals rich makes countries powerful. Let the nerds keep their lunch money, and you rule the world.
+
+
+
+Notes
+
+[1] One valuable thing you tend to get only in startups is uninterruptability. Different kinds of work have different time quanta. Someone proofreading a manuscript could probably be interrupted every fifteen minutes with little loss of productivity. But the time quantum for hacking is very long: it might take an hour just to load a problem into your head. So the cost of having someone from personnel call you about a form you forgot to fill out can be huge.
+
+This is why hackers give you such a baleful stare as they turn from their screen to answer your question. Inside their heads a giant house of cards is tottering.
+
+The mere possibility of being interrupted deters hackers from starting hard projects. This is why they tend to work late at night, and why it's next to impossible to write great software in a cubicle (except late at night).
+
+One great advantage of startups is that they don't yet have any of the people who interrupt you. There is no personnel department, and thus no form nor anyone to call you about it.
+
+[2] Faced with the idea that people working for startups might be 20 or 30 times as productive as those working for large companies, executives at large companies will naturally wonder, how could I get the people working for me to do that? The answer is simple: pay them to.
+
+Internally most companies are run like Communist states. If you believe in free markets, why not turn your company into one?
+
+Hypothesis: A company will be maximally profitable when each employee is paid in proportion to the wealth they generate.
+
+[3] Until recently even governments sometimes didn't grasp the distinction between money and wealth. Adam Smith (Wealth of Nations, v:i) mentions several that tried to preserve their "wealth" by forbidding the export of gold or silver. But having more of the medium of exchange would not make a country richer; if you have more money chasing the same amount of material wealth, the only result is higher prices.
+
+[4] There are many senses of the word "wealth," not all of them material. I'm not trying to make a deep philosophical point here about which is the true kind. I'm writing about one specific, rather technical sense of the word "wealth." What people will give you money for. This is an interesting sort of wealth to study, because it is the kind that prevents you from starving. And what people will give you money for depends on them, not you.
+
+When you're starting a business, it's easy to slide into thinking that customers want what you do. During the Internet Bubble I talked to a woman who, because she liked the outdoors, was starting an "outdoor portal." You know what kind of business you should start if you like the outdoors? One to recover data from crashed hard disks.
+
+What's the connection? None at all. Which is precisely my point. If you want to create wealth (in the narrow technical sense of not starving) then you should be especially skeptical about any plan that centers on things you like doing. That is where your idea of what's valuable is least likely to coincide with other people's.
+
+[5] In the average car restoration you probably do make everyone else microscopically poorer, by doing a small amount of damage to the environment. While environmental costs should be taken into account, they don't make wealth a zero-sum game. For example, if you repair a machine that's broken because a part has come unscrewed, you create wealth with no environmental cost.
+
+[5b] This essay was written before Firefox.
+
+[6] Many people feel confused and depressed in their early twenties. Life seemed so much more fun in college. Well, of course it was. Don't be fooled by the surface similarities. You've gone from guest to servant. It's possible to have fun in this new world. Among other things, you now get to go behind the doors that say "authorized personnel only." But the change is a shock at first, and all the worse if you're not consciously aware of it.
+
+[7] When VCs asked us how long it would take another startup to duplicate our software, we used to reply that they probably wouldn't be able to at all. I think this made us seem naive, or liars.
+
+[8] Few technologies have one clear inventor. So as a rule, if you know the "inventor" of something (the telephone, the assembly line, the airplane, the light bulb, the transistor) it is because their company made money from it, and the company's PR people worked hard to spread the story. If you don't know who invented something (the automobile, the television, the computer, the jet engine, the laser), it's because other companies made all the money.
+
+[9] This is a good plan for life in general. If you have two choices, choose the harder. If you're trying to decide whether to go out running or sit home and watch TV, go running. Probably the reason this trick works so well is that when you have two choices and one is harder, the only reason you're even considering the other is laziness. You know in the back of your mind what's the right thing to do, and this trick merely forces you to acknowledge it.
+
+[10] It is probably no accident that the middle class first appeared in northern Italy and the low countries, where there were no strong central governments. These two regions were the richest of their time and became the twin centers from which Renaissance civilization radiated. If they no longer play that role, it is because other places, like the United States, have been truer to the principles they discovered.
+
+[11] It may indeed be a sufficient condition. But if so, why didn't the Industrial Revolution happen earlier? Two possible (and not incompatible) answers: (a) It did. The Industrial Revolution was one in a series. (b) Because in medieval towns, monopolies and guild regulations initially slowed the development of new means of production.
