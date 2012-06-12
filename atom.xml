@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[GNO Blog]]></title>
+  <link href="http://zhuzhonghua.github.com/atom.xml" rel="self"/>
+  <link href="http://zhuzhonghua.github.com/"/>
+  <updated>2012-06-12T15:07:44+08:00</updated>
+  <id>http://zhuzhonghua.github.com/</id>
+  <author>
+    <name><![CDATA[zhuzhonghua]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[在mingw环境下编译最新版本gcc gdb]]></title>
+    <link href="http://zhuzhonghua.github.com/blog/2012/06/07/mingw-gcc-gdb-environment/"/>
+    <updated>2012-06-07T13:40:00+08:00</updated>
+    <id>http://zhuzhonghua.github.com/blog/2012/06/07/mingw-gcc-gdb-environment</id>
+    <content type="html"><![CDATA[<p>由于比较喜欢GCC的东西，又必须做WIN下的程序，但是考虑到效率问题  <br/>
+1，使用LINUX交叉编译MINGW下的程序  <br/>
+2，直接使用MINGW和MSYS编译WIN程序</p>
+
+<p>使用交叉编译的方法，在网上搜到的比较麻烦，而且又不是做嵌入式开发，必须用交叉编译;  <br/>
+所以决定使用第二种方法。</p>
+
+<p>目前已经成功编译了GDB7.4.1和最新的BINUTILS，还有MPC，MPFR，等GCC需要依赖的库。  <br/>
+晚上回去看一下GCC4.7.0的编译情况。</p>
+
+<p>不过在公司已经使用MINGW-GET拿到了GDB7.4和GCC4.6.2,而且使用正常。</p>
+
+<p>目前是使用VIM做编辑器，使用EMACS做调试器（是不是有点小奢侈啊），幸好这两个神器都有WIN版本。</p>
+
+<h1>感谢GNU，感谢上帝。</h1>
+
+<p>2012-06-08</p>
+
+<p>昨晚回去，出现了诡异的dllcrt2.o文件找不到的问题  <br/>
+由于时间有限，又急着建立开发环境，所以决定把公司里使用mingw-get的版本拿回去。  <br/>
+奇怪的是，家里使用mingw-get无法获取各种包，也就是不能用。</p>
+
+<p>今天在公司，不甘心，利用业余时间终于把这个问题搞定。</p>
+
+<p>网上也有人遇到这个问题，文件是有的，在/mingw/lib下</p>
+
+<p>刚开始使用LDFLAGS无效，后来使用GCC_EXEC_PREFIX连configure都无法通过。</p>
+
+<p>在这个命令的下面看到了，LIBRARY_PATH，于是灵光一现，配置好/mingw/lib</p>
+
+<p>结果编译了一个下午, 公司的电脑还算好的。</p>
+
+<p>自己编译GCC真不是玩的。花的时间太久了。</p>
+
+<p>不过总算了解了自己的一个心病。</p>
+
+<p>而且在网上差资料，关于dllcrt2.o的东西，都是外文。这里也算有个中文的关于这个的资料吧。</p>
+
+<p>tips:</p>
+
+<p>1, BINUTILS要使用最新版本，这个编译起来很快。  <br/>
+要不然会出现unknown-pseudo .cfi_sections
+2, 还有它依赖的其他库文件</p>
+
+<p>其他问题就不大了，祝各位看官好运</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[sicp-parsk]]></title>
+    <link href="http://zhuzhonghua.github.com/blog/2012/06/05/sicp-parsk/"/>
+    <updated>2012-06-05T17:15:00+08:00</updated>
+    <id>http://zhuzhonghua.github.com/blog/2012/06/05/sicp-parsk</id>
+    <content type="html"><![CDATA[<p>SCIP上的一个习题  <br/>
+用递归输出PARSK三角，也有叫杨辉三角的  <br/>
+个人认为，使用递归更简单一些，不过作为练习，就这样了  <br/>
+上代码</p>
+
+<pre><code>(defun parsk(n)
+  (if (= n 1)
+      (let ((ret (list 1)))
+    (echo-list ret)
+    ret)
+    (let ((resn (list 1))
+      (resn-1 (parsk (- n 1))))
+      (do ((i 0 (+ i 1)))
+      ((&gt; i (- (length resn-1) 2)) 'done)
+    (setq resn (append resn (list (+ (nth i resn-1)
+                     (nth (+ i 1) resn-1))))))
+      (setq resn (append resn (list 1)))
+      (echo-list resn)
+      resn)))
+</code></pre>
+
+<p>其中ECHO-LIST是个辅助函数，输出LIST</p>
+
+<pre><code>(defun echo-list(lst)
+  (progn
+    (dolist (obj lst)
+      (format t "~A " obj))
+    (format t "~%")))
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[lisp-recursive-iteration]]></title>
+    <link href="http://zhuzhonghua.github.com/blog/2012/06/05/lisp-recursive-iteration/"/>
+    <updated>2012-06-05T12:51:00+08:00</updated>
+    <id>http://zhuzhonghua.github.com/blog/2012/06/05/lisp-recursive-iteration</id>
+    <content type="html"><![CDATA[<p>在common lisp 中，尾递归的概念确实很好<br></p>
+
+<p>废话不多说，先上代码<br></p>
+
+<p>以著名的斐波那契数列为例：<br></p>
+
+<p>1，递归版<br></p>
+
+<pre><code>(defun fib(n)
+    (cond ((= n 0) 0)
+          ((= n 1) 1)
+          (t (+ (fib (- n 1))
+                (fib (- n 2))))))
+</code></pre>
+
+<p>2，迭代版（尾递归）<br></p>
+
+<pre><code>(defun fib(n)
+    (fib-iter 1 0 n))
+
+(defun fib-iter(a b count)
+    (if (= count 0)
+        b
+        (fib-iter (+ a b) a (- count 1))))
+</code></pre>
+
+<p>使用第二种方式，可以减少堆栈空间的使用</p>
+]]></content>
+  </entry>
+  
+</feed>
