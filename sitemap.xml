@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://zhuzhonghua.github.com/blog/2012/06/05/lisp-recursive-iteration/</loc>
+        <lastmod>2012-06-05T13:18:42+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://zhuzhonghua.github.com/blog/2012/06/05/sicp-parsk/</loc>
+        <lastmod>2012-06-05T17:18:53+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://zhuzhonghua.github.com/blog/2012/06/07/mingw-gcc-gdb-environment/</loc>
+        <lastmod>2012-06-08T18:17:54+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://zhuzhonghua.github.com/blog/2012/06/12/as3rao-ren-yi-dian-xuan-zhuan/</loc>
+        <lastmod>2012-06-12T15:57:30+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://zhuzhonghua.github.com/blog/archives/</loc>
+        <lastmod>2012-06-12T15:57:30+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://zhuzhonghua.github.com/</loc>
+        <lastmod>2012-06-12T15:57:30+08:00</lastmod>
+    </url>
+</urlset>
