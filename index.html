@@ -9,7 +9,9 @@
   <meta name="author" content="zhuzhonghua">
 
   
-  <meta name="description" content="由于比较喜欢GCC的东西，又必须做WIN下的程序，但是考虑到效率问题 1，使用LINUX交叉编译MINGW下的程序 2，直接使用MINGW和MSYS编译WIN程序 使用交叉编译的方法，在网上搜到的比较麻烦，而且又不是做嵌入式开发，必须用交叉编译; 所以决定使用第二种方法。 &hellip;">
+  <meta name="description" content="OK， 我们先写一段代码 var g:Graphics = graphics; var startX:Number = 100;
+var startY:Number = 100; var originX:Number = 125;
+var originY:Number = 125; g. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -64,6 +66,108 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/12/as3rao-ren-yi-dian-xuan-zhuan/">As3绕任意点旋转</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-12T15:42:00+08:00" pubdate data-updated="true">Jun 12<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>OK， 我们先写一段代码</p>
+
+<pre><code>var g:Graphics = graphics;
+
+var startX:Number = 100;
+var startY:Number = 100;
+
+var originX:Number = 125;
+var originY:Number = 125;
+
+g.beginFill(0xff0000);
+g.drawRect(startX, startY, 300, 50);
+g.endFill();
+
+var shape:Shape = new Shape();
+shape.x = startX;
+shape.y = startY;
+
+shape.graphics.beginFill(0x000000);
+shape.graphics.drawRect(0, 0, 300, 50);
+shape.graphics.endFill();
+
+addChild(shape);
+</code></pre>
+
+<p>解释一下的话，就是以100,100为点画一个矩形，300, 50.
+先用红色的画，再用黑色的画，之后我们要让shape绕着125,125点自转。</p>
+
+<p>于是看起来的效果就是，红色的矩形作为标准，不动。
+黑色的矩形绕着125,125自转。</p>
+
+<p>开始转了</p>
+
+<pre><code>var angle:Number = 10;
+var raidan:Number = angle * (Math.PI/180);
+var arr:Array = [Math.cos(radian), -Math.sin(radian), Math.sin(radian), Math.cos(radian)];
+
+var timer:Timer = new Timer(1);
+
+timer.addEventListener(TimerEvent.TIMER, function(e:Event):void
+{
+    shape.rotation += angle;
+
+    var x1:Number = shape.x - originX;
+    var y1:Number = shape.y - originY;
+
+    var x:Number = arr[0] * x1 + arr[1] * y1;
+    var y:Number = arr[2] * x1 + arr[3] * y1;
+
+    shape.x = x + originX;
+    shape.y = y + originY;
+});
+
+timer.start()
+</code></pre>
+
+<p>解释一下：
+使用shape.rotation.rotation += angle
+来旋转图形</p>
+
+<p>但是这是围绕它本身的0,0点，也就是100, 100点旋转的，我们是要围绕125,125点旋转</p>
+
+<p>其实，不管围绕哪一点旋转，转的角度都是一样，只是位移不一样，也就是shape的x y 坐标不同。
+于是我们只需要移动x, y 坐标就行了。</p>
+
+<p>既然我们是期望围绕125,125旋转，那么100,100点也得围绕125,125旋转，于是计算出了100,100点围绕125,125点旋转后的点
+位移过去OK了。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -282,6 +386,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/06/12/as3rao-ren-yi-dian-xuan-zhuan/">as3绕任意点旋转</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/06/07/mingw-gcc-gdb-environment/">在mingw环境下编译最新版本gcc gdb</a>

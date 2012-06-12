@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>lisp-recursive-iteration - GNO Blog</title>
+  <title>as3绕任意点旋转 - GNO Blog</title>
   <meta name="author" content="zhuzhonghua">
 
   
-  <meta name="description" content="在common lisp 中，尾递归的概念确实很好 废话不多说，先上代码 以著名的斐波那契数列为例： 1，递归版 (defun fib(n) (cond ((= n 0) 0) ((= n 1) 1) (t (+ (fib (- n 1)) (fib (- n 2)))))) 2，迭代版（尾递归 &hellip;">
+  <meta name="description" content="OK， 我们先写一段代码 var g:Graphics = graphics; var startX:Number = 100;
+var startY:Number = 100; var originX:Number = 125;
+var originY:Number = 125; g. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zhuzhonghua.github.com/blog/2012/06/05/lisp-recursive-iteration/">
+  <link rel="canonical" href="http://zhuzhonghua.github.com/blog/2012/06/12/as3rao-ren-yi-dian-xuan-zhuan/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -67,7 +69,7 @@
   
   <header>
     
-      <h1 class="entry-title">Lisp-recursive-iteration</h1>
+      <h1 class="entry-title">As3绕任意点旋转</h1>
     
     
       <p class="meta">
@@ -83,40 +85,80 @@
   
 
 
-<time datetime="2012-06-05T12:51:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
+<time datetime="2012-06-12T15:42:00+08:00" pubdate data-updated="true">Jun 12<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>在common lisp 中，尾递归的概念确实很好<br></p>
+<div class="entry-content"><p>OK， 我们先写一段代码</p>
 
-<p>废话不多说，先上代码<br></p>
+<pre><code>var g:Graphics = graphics;
 
-<p>以著名的斐波那契数列为例：<br></p>
+var startX:Number = 100;
+var startY:Number = 100;
 
-<p>1，递归版<br></p>
+var originX:Number = 125;
+var originY:Number = 125;
 
-<pre><code>(defun fib(n)
-    (cond ((= n 0) 0)
-          ((= n 1) 1)
-          (t (+ (fib (- n 1))
-                (fib (- n 2))))))
+g.beginFill(0xff0000);
+g.drawRect(startX, startY, 300, 50);
+g.endFill();
+
+var shape:Shape = new Shape();
+shape.x = startX;
+shape.y = startY;
+
+shape.graphics.beginFill(0x000000);
+shape.graphics.drawRect(0, 0, 300, 50);
+shape.graphics.endFill();
+
+addChild(shape);
 </code></pre>
 
-<p>2，迭代版（尾递归）<br></p>
+<p>解释一下的话，就是以100,100为点画一个矩形，300, 50.
+先用红色的画，再用黑色的画，之后我们要让shape绕着125,125点自转。</p>
 
-<pre><code>(defun fib(n)
-    (fib-iter 1 0 n))
+<p>于是看起来的效果就是，红色的矩形作为标准，不动。
+黑色的矩形绕着125,125自转。</p>
 
-(defun fib-iter(a b count)
-    (if (= count 0)
-        b
-        (fib-iter (+ a b) a (- count 1))))
+<p>开始转了</p>
+
+<pre><code>var angle:Number = 10;
+var raidan:Number = angle * (Math.PI/180);
+var arr:Array = [Math.cos(radian), -Math.sin(radian), Math.sin(radian), Math.cos(radian)];
+
+var timer:Timer = new Timer(1);
+
+timer.addEventListener(TimerEvent.TIMER, function(e:Event):void
+{
+    shape.rotation += angle;
+
+    var x1:Number = shape.x - originX;
+    var y1:Number = shape.y - originY;
+
+    var x:Number = arr[0] * x1 + arr[1] * y1;
+    var y:Number = arr[2] * x1 + arr[3] * y1;
+
+    shape.x = x + originX;
+    shape.y = y + originY;
+});
+
+timer.start()
 </code></pre>
 
-<p>使用第二种方式，可以减少堆栈空间的使用</p>
+<p>解释一下：
+使用shape.rotation.rotation += angle
+来旋转图形</p>
+
+<p>但是这是围绕它本身的0,0点，也就是100, 100点旋转的，我们是要围绕125,125点旋转</p>
+
+<p>其实，不管围绕哪一点旋转，转的角度都是一样，只是位移不一样，也就是shape的x y 坐标不同。
+于是我们只需要移动x, y 坐标就行了。</p>
+
+<p>既然我们是期望围绕125,125旋转，那么100,100点也得围绕125,125旋转，于是计算出了100,100点围绕125,125点旋转后的点
+位移过去OK了。</p>
 </div>
 
 
@@ -139,7 +181,7 @@
   
 
 
-<time datetime="2012-06-05T12:51:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
+<time datetime="2012-06-12T15:42:00+08:00" pubdate data-updated="true">Jun 12<span>th</span>, 2012</time>
       
 
 
@@ -174,8 +216,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2012/06/07/mingw-gcc-gdb-environment/" title="Previous Post: 在mingw环境下编译最新版本gcc gdb">&laquo; 在mingw环境下编译最新版本gcc gdb</a>
       
-        <a class="basic-alignment right" href="/blog/2012/06/05/sicp-parsk/" title="Next Post: sicp-parsk">sicp-parsk &raquo;</a>
       
     </p>
   </footer>
