@@ -5,11 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>在mingw环境下编译最新版本gcc gdb - GNO Blog</title>
+  <title>PaulGraham.com - GNO Blog</title>
   <meta name="author" content="zhuzhonghua">
 
   
-  <meta name="description" content="由于比较喜欢GCC的东西，又必须做WIN下的程序，但是考虑到效率问题 1，使用LINUX交叉编译MINGW下的程序 2，直接使用MINGW和MSYS编译WIN程序 使用交叉编译的方法，在网上搜到的比较麻烦，而且又不是做嵌入式开发，必须用交叉编译; 所以决定使用第二种方法。 &hellip;">
+  <meta name="description" content="PaulGraham.com中文 Hackers and Painters 这本书2004,2005年就出版了。
+虽然那时他还不是投资人，但依然不影响这本书的价值。
+中文版 黑客与画家 却在2010年左右才出来。
+中间差了5,6年的时间，我们才能看到中文版本。 多么悲哀的一件事情。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zhuzhonghua.github.com/blog/2012/06/07/mingw-gcc-gdb-environment/">
+  <link rel="canonical" href="http://zhuzhonghua.github.com/blog/2012/07/04/paulgraham-dot-com/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -68,7 +71,7 @@
   
   <header>
     
-      <h1 class="entry-title">在mingw环境下编译最新版本gcc Gdb</h1>
+      <h1 class="entry-title">PaulGraham.com</h1>
     
     
       <p class="meta">
@@ -84,58 +87,23 @@
   
 
 
-<time datetime="2012-06-07T13:40:00+08:00" pubdate data-updated="true">Jun 7<span>th</span>, 2012</time>
+<time datetime="2012-07-04T14:23:00+08:00" pubdate data-updated="true">Jul 4<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>由于比较喜欢GCC的东西，又必须做WIN下的程序，但是考虑到效率问题  <br/>
-1，使用LINUX交叉编译MINGW下的程序  <br/>
-2，直接使用MINGW和MSYS编译WIN程序</p>
+<div class="entry-content"><p>PaulGraham.com中文</p>
 
-<p>使用交叉编译的方法，在网上搜到的比较麻烦，而且又不是做嵌入式开发，必须用交叉编译;  <br/>
-所以决定使用第二种方法。</p>
+<p>Hackers and Painters 这本书2004,2005年就出版了。
+虽然那时他还不是投资人，但依然不影响这本书的价值。
+中文版 黑客与画家 却在2010年左右才出来。
+中间差了5,6年的时间，我们才能看到中文版本。</p>
 
-<p>目前已经成功编译了GDB7.4.1和最新的BINUTILS，还有MPC，MPFR，等GCC需要依赖的库。  <br/>
-晚上回去看一下GCC4.7.0的编译情况。</p>
-
-<p>不过在公司已经使用MINGW-GET拿到了GDB7.4和GCC4.6.2,而且使用正常。</p>
-
-<p>目前是使用VIM做编辑器，使用EMACS做调试器（是不是有点小奢侈啊），幸好这两个神器都有WIN版本。</p>
-
-<h1>感谢GNU，感谢上帝。</h1>
-
-<p>2012-06-08</p>
-
-<p>昨晚回去，出现了诡异的dllcrt2.o文件找不到的问题  <br/>
-由于时间有限，又急着建立开发环境，所以决定把公司里使用mingw-get的版本拿回去。  <br/>
-奇怪的是，家里使用mingw-get无法获取各种包，也就是不能用。</p>
-
-<p>今天在公司，不甘心，利用业余时间终于把这个问题搞定。</p>
-
-<p>网上也有人遇到这个问题，文件是有的，在/mingw/lib下</p>
-
-<p>刚开始使用LDFLAGS无效，后来使用GCC_EXEC_PREFIX连configure都无法通过。</p>
-
-<p>在这个命令的下面看到了，LIBRARY_PATH，于是灵光一现，配置好/mingw/lib</p>
-
-<p>结果编译了一个下午, 公司的电脑还算好的。</p>
-
-<p>自己编译GCC真不是玩的。花的时间太久了。</p>
-
-<p>不过总算了解了自己的一个心病。</p>
-
-<p>而且在网上差资料，关于dllcrt2.o的东西，都是外文。这里也算有个中文的关于这个的资料吧。</p>
-
-<p>tips:</p>
-
-<p>1, BINUTILS要使用最新版本，这个编译起来很快。  <br/>
-要不然会出现unknown-pseudo .cfi_sections
-2, 还有它依赖的其他库文件</p>
-
-<p>其他问题就不大了，祝各位看官好运</p>
+<p>多么悲哀的一件事情。
+所以我要做这样一个网站。把5，6年的时间缩短为5，6天的时间。
+www.paulgrahamcn.com</p>
 </div>
 
 
@@ -158,7 +126,7 @@
   
 
 
-<time datetime="2012-06-07T13:40:00+08:00" pubdate data-updated="true">Jun 7<span>th</span>, 2012</time>
+<time datetime="2012-07-04T14:23:00+08:00" pubdate data-updated="true">Jul 4<span>th</span>, 2012</time>
       
 
 
@@ -193,10 +161,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/06/05/sicp-parsk/" title="Previous Post: sicp-parsk">&laquo; sicp-parsk</a>
+        <a class="basic-alignment left" href="/blog/2012/06/13/lispgen-yuan/" title="Previous Post: Lisp根源">&laquo; Lisp根源</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/06/12/as3rao-ren-yi-dian-xuan-zhuan/" title="Next Post: as3绕任意点旋转">as3绕任意点旋转 &raquo;</a>
       
     </p>
   </footer>

@@ -4,7 +4,7 @@
   <title><![CDATA[GNO Blog]]></title>
   <link href="http://zhuzhonghua.github.com/atom.xml" rel="self"/>
   <link href="http://zhuzhonghua.github.com/"/>
-  <updated>2012-06-13T20:50:06+08:00</updated>
+  <updated>2012-07-04T14:25:40+08:00</updated>
   <id>http://zhuzhonghua.github.com/</id>
   <author>
     <name><![CDATA[zhuzhonghua]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[PaulGraham.com]]></title>
+    <link href="http://zhuzhonghua.github.com/blog/2012/07/04/paulgraham-dot-com/"/>
+    <updated>2012-07-04T14:23:00+08:00</updated>
+    <id>http://zhuzhonghua.github.com/blog/2012/07/04/paulgraham-dot-com</id>
+    <content type="html"><![CDATA[<p>PaulGraham.com中文</p>
+
+<p>Hackers and Painters 这本书2004,2005年就出版了。
+虽然那时他还不是投资人，但依然不影响这本书的价值。
+中文版 黑客与画家 却在2010年左右才出来。
+中间差了5,6年的时间，我们才能看到中文版本。</p>
+
+<p>多么悲哀的一件事情。
+所以我要做这样一个网站。把5，6年的时间缩短为5，6天的时间。
+www.paulgrahamcn.com</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Lisp根源]]></title>
