@@ -4,7 +4,7 @@
   <title><![CDATA[GNO Blog]]></title>
   <link href="http://zhuzhonghua.github.com/atom.xml" rel="self"/>
   <link href="http://zhuzhonghua.github.com/"/>
-  <updated>2012-07-13T16:30:29+08:00</updated>
+  <updated>2012-07-13T16:35:37+08:00</updated>
   <id>http://zhuzhonghua.github.com/</id>
   <author>
     <name><![CDATA[zhuzhonghua]]></name>
@@ -18,7 +18,12 @@
     <link href="http://zhuzhonghua.github.com/blog/2012/07/13/zai-vimzhong-pa-xing/"/>
     <updated>2012-07-13T16:29:00+08:00</updated>
     <id>http://zhuzhonghua.github.com/blog/2012/07/13/zai-vimzhong-pa-xing</id>
-    <content type="html"><![CDATA[<p>一切从足够无知开始。在大学第一年，你尝试过几次，但Nano和Pico很容易且很接近你高中时期在Windows和Mac上的使用体验。但随着时间的推移，而且随着你在大学计算机课程上获得更多的经验，你开始注意到一些事情：所有真正伟大的程序员-用4行代码搞定你用10页代码搞定的任务；一天写了很多可笑并且丰富的类工程，而你却好几个星期挣扎在基础上-没有人使用Nano或者Pico。</p>
+    <content type="html"><![CDATA[<p>原文
+http://www.rudism.com/s/vimcreep
+HackerNews 精彩评论
+http://news.ycombinator.com/item?id=4235876</p>
+
+<p>一切从足够无知开始。在大学第一年，你尝试过几次，但Nano和Pico很容易且很接近你高中时期在Windows和Mac上的使用体验。但随着时间的推移，而且随着你在大学计算机课程上获得更多的经验，你开始注意到一些事情：所有真正伟大的程序员-用4行代码搞定你用10页代码搞定的任务；一天写了很多可笑并且丰富的类工程，而你却好几个星期挣扎在基础上-没有人使用Nano或者Pico。</p>
 
 <p>你熬夜很晚来完成午夜要完成的任务，碰巧瞥了安静的超级程序员的肩膀一瞥。你的眼睛闪烁发光，看着显示器上一行一行的亮光，在深夜的计算机实验室，你看到了让人敬畏的不可能的代码模式和文本操作，在屏幕上闪过。</p>
 
