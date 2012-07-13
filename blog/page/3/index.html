@@ -5,14 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>PaulGraham.com - GNO Blog</title>
+  <title>GNO Blog</title>
   <meta name="author" content="zhuzhonghua">
 
   
-  <meta name="description" content="PaulGraham.com中文 Hackers and Painters 这本书2004,2005年就出版了。
-虽然那时他还不是投资人，但依然不影响这本书的价值。
-中文版 黑客与画家 却在2010年左右才出来。
-中间差了5,6年的时间，我们才能看到中文版本。 多么悲哀的一件事情。 &hellip;">
+  <meta name="description" content="在common lisp 中，尾递归的概念确实很好 废话不多说，先上代码 以著名的斐波那契数列为例： 1，递归版 (defun fib(n) (cond ((= n 0) 0) ((= n 1) 1) (t (+ (fib (- n 1)) (fib (- n 2)))))) 2，迭代版（尾递归 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zhuzhonghua.github.com/blog/2012/07/04/paulgraham-dot-com/">
+  <link rel="canonical" href="http://zhuzhonghua.github.com/blog/page/3/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -66,12 +63,15 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      <h1 class="entry-title">PaulGraham.com</h1>
+      <h1 class="entry-title"><a href="/blog/2012/06/05/lisp-recursive-iteration/">Lisp-recursive-iteration</a></h1>
     
     
       <p class="meta">
@@ -87,91 +87,55 @@
   
 
 
-<time datetime="2012-07-04T14:23:00+08:00" pubdate data-updated="true">Jul 4<span>th</span>, 2012</time>
+<time datetime="2012-06-05T12:51:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>PaulGraham.com中文</p>
+  <div class="entry-content"><p>在common lisp 中，尾递归的概念确实很好<br></p>
 
-<p>Hackers and Painters 这本书2004,2005年就出版了。
-虽然那时他还不是投资人，但依然不影响这本书的价值。
-中文版 黑客与画家 却在2010年左右才出来。
-中间差了5,6年的时间，我们才能看到中文版本。</p>
+<p>废话不多说，先上代码<br></p>
 
-<p>多么悲哀的一件事情。
-所以我要做这样一个网站。把5，6年的时间缩短为5，6天的时间。
-www.paulgrahamcn.com</p>
+<p>以著名的斐波那契数列为例：<br></p>
+
+<p>1，递归版<br></p>
+
+<pre><code>(defun fib(n)
+    (cond ((= n 0) 0)
+          ((= n 1) 1)
+          (t (+ (fib (- n 1))
+                (fib (- n 2))))))
+</code></pre>
+
+<p>2，迭代版（尾递归）<br></p>
+
+<pre><code>(defun fib(n)
+    (fib-iter 1 0 n))
+
+(defun fib-iter(a b count)
+    (if (= count 0)
+        b
+        (fib-iter (+ a b) a (- count 1))))
+</code></pre>
+
+<p>使用第二种方式，可以减少堆栈空间的使用</p>
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">zhuzhonghua</span></span>
-
-      
-
-
-
-
-
-
-
-
   
 
 
-<time datetime="2012-07-04T14:23:00+08:00" pubdate data-updated="true">Jul 4<span>th</span>, 2012</time>
-      
-
-
-    </p>
+    </article>
+  
+  <div class="pagination">
     
-      <div class="sharing">
-  
-  
-  
-  
-    <!-- JiaThis Button BEGIN -->
-<div id="jiathis_style_32x32">
-	<a class="jiathis_button_qzone"></a>
-	<a class="jiathis_button_tsina"></a>
-	<a class="jiathis_button_tqq"></a>
-	<a class="jiathis_button_renren"></a>
-	<a class="jiathis_button_kaixin001"></a>
-	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-
-<!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
-<!-- UY END -->
-
-  
-</div>
-
+    <a href="/blog/archives">Blog Archives</a>
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2012/06/13/lispgen-yuan/" title="Previous Post: Lisp根源">&laquo; Lisp根源</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2012/07/11/dota2-valve-bram-cohen-bt/" title="Next Post: dota2 valve Bram Cohen BT">dota2 valve Bram Cohen BT &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
+    <a class="next" href="/blog/page/2/">Newer &rarr;</a>
+    
+  </div>
 </div>
-
 <aside class="sidebar">
   
     <section>
@@ -215,7 +179,6 @@ www.paulgrahamcn.com</p>
 
   
 </aside>
-
 
     </div>
   </div>
