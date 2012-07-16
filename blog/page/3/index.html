@@ -9,7 +9,7 @@
   <meta name="author" content="zhuzhonghua">
 
   
-  <meta name="description" content="在common lisp 中，尾递归的概念确实很好 废话不多说，先上代码 以著名的斐波那契数列为例： 1，递归版 (defun fib(n) (cond ((= n 0) 0) ((= n 1) 1) (t (+ (fib (- n 1)) (fib (- n 2)))))) 2，迭代版（尾递归 &hellip;">
+  <meta name="description" content="SCIP上的一个习题 用递归输出PARSK三角，也有叫杨辉三角的 个人认为，使用递归更简单一些，不过作为练习，就这样了 上代码 (defun parsk(n) (if (= n 1) (let ((ret (list 1))) (echo-list ret) ret) (let ((resn ( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,70 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/05/sicp-parsk/">Sicp-parsk</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-05T17:15:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>SCIP上的一个习题  <br/>
+用递归输出PARSK三角，也有叫杨辉三角的  <br/>
+个人认为，使用递归更简单一些，不过作为练习，就这样了  <br/>
+上代码</p>
+
+<pre><code>(defun parsk(n)
+  (if (= n 1)
+      (let ((ret (list 1)))
+    (echo-list ret)
+    ret)
+    (let ((resn (list 1))
+      (resn-1 (parsk (- n 1))))
+      (do ((i 0 (+ i 1)))
+      ((&gt; i (- (length resn-1) 2)) 'done)
+    (setq resn (append resn (list (+ (nth i resn-1)
+                     (nth (+ i 1) resn-1))))))
+      (setq resn (append resn (list 1)))
+      (echo-list resn)
+      resn)))
+</code></pre>
+
+<p>其中ECHO-LIST是个辅助函数，输出LIST</p>
+
+<pre><code>(defun echo-list(lst)
+  (progn
+    (dolist (obj lst)
+      (format t "~A " obj))
+    (format t "~%")))
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -143,6 +207,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/07/16/you-xi-li-qian-ru-yu-yin-xi-tong/">游戏里嵌入语音系统</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/07/13/zai-vimzhong-pa-xing/">在Vim中爬行</a>
       </li>
     
@@ -156,10 +224,6 @@
     
       <li class="post">
         <a href="/blog/2012/06/13/lispgen-yuan/">Lisp根源</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/06/12/chen-lun-yu-hai/">沉沦欲海</a>
       </li>
     
   </ul>
