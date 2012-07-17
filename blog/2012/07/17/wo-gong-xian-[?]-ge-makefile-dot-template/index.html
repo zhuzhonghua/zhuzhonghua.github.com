@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>lisp-recursive-iteration - GNO Blog</title>
+  <title>我贡献一个makefile.template - GNO Blog</title>
   <meta name="author" content="zhuzhonghua">
 
   
-  <meta name="description" content="在common lisp 中，尾递归的概念确实很好 废话不多说，先上代码 以著名的斐波那契数列为例： 1，递归版 (defun fib(n) (cond ((= n 0) 0) ((= n 1) 1) (t (+ (fib (- n 1)) (fib (- n 2)))))) 2，迭代版（尾递归 &hellip;">
+  <meta name="description" content="伟大的Makefile，伟大的Make， 伟大的GNU 只不过规则前面的Tab有时很让人蛋疼，不知道是只能这样？还是有其他更好的替代方案？不知道，留待以后更聪明的人解答吧。 Make会生成一堆的中间文件，如果和原文件混杂在一起，就会比较混乱，所以一般期望的是中间文件单独放在一起。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zhuzhonghua.github.com/blog/2012/06/05/lisp-recursive-iteration/">
+  <link rel="canonical" href="http://zhuzhonghua.github.com/blog/2012/07/17/wo-gong-xian-%5B%3F%5D-ge-makefile-dot-template/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Lisp-recursive-iteration</h1>
+      <h1 class="entry-title">我贡献一个makefile.template</h1>
     
     
       <p class="meta">
@@ -84,40 +84,57 @@
   
 
 
-<time datetime="2012-06-05T12:51:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
+<time datetime="2012-07-17T09:54:00+08:00" pubdate data-updated="true">Jul 17<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>在common lisp 中，尾递归的概念确实很好<br></p>
+<div class="entry-content"><p>伟大的Makefile，伟大的Make， 伟大的GNU</p>
 
-<p>废话不多说，先上代码<br></p>
+<p>只不过规则前面的Tab有时很让人蛋疼，不知道是只能这样？还是有其他更好的替代方案？不知道，留待以后更聪明的人解答吧。</p>
 
-<p>以著名的斐波那契数列为例：<br></p>
+<p>Make会生成一堆的中间文件，如果和原文件混杂在一起，就会比较混乱，所以一般期望的是中间文件单独放在一起。</p>
 
-<p>1，递归版<br></p>
+<p>在网上也查了很多资料，当然会查到云风的博客上，我这里提供另外一种思路。</p>
 
-<pre><code>(defun fib(n)
-    (cond ((= n 0) 0)
-          ((= n 1) 1)
-          (t (+ (fib (- n 1))
-                (fib (- n 2))))))
+<p>原来依赖<em>.o的，现在一律依赖build/</em>.o</p>
+
+<p>原来的<em>.o生成规则，现在一律是build/</em>.o生成规则。</p>
+
+<pre><code>TMP=build    
+
+sources:=main.cpp    
+
+OBJS=$(sources:%.cpp=$(TMP)/%.o)
+
+DEST:$(OBJS)
 </code></pre>
 
-<p>2，迭代版（尾递归）<br></p>
+<p>接下来是一些依赖关系，使用sed流操作，把依赖关系生成到单独的文件中</p>
 
-<pre><code>(defun fib(n)
-    (fib-iter 1 0 n))
+<pre><code>#.o:.cpp
+include $(sources:%.cpp=$(TMP)/%.d1)
+#.d:.cpp
+include $(sources:%.cpp=$(TMP)/%.d2)
 
-(defun fib-iter(a b count)
-    (if (= count 0)
-        b
-        (fib-iter (+ a b) a (- count 1))))
+$(TMP)/%.d1:%.cpp
+    set -e;rm -f $@;\
+    g++ -MM $(CPPFLAGS) $&lt; &gt; $*.$$$$;\
+    sed 's,\($*\)\.o[ :]*,$(TMP)/$*.o : ,g' &lt; $*.$$$$ &gt; $*.$$$$.$$$$;\
+    rm -f $*.$$$$; \
+    sed '$$a\   g++ -c $&lt; -o $(TMP)/$*.o $(CPPFLAGS)' &lt; $*.$$$$.$$$$ &gt; $@; \
+    rm -f $*.$$$$.$$$$
+
+$(TMP)/%.d2:%.cpp
+    set -e;rm -f $@;\
+    g++ -MM $(CPPFLAGS) $&lt; &gt; $@.$$$$;\
+    sed 's,\($*\)\.o[ :]*,$(TMP)/$*.d1 $@ : ,g' &lt; $@.$$$$ &gt; $@;\
+    rm -f $@.$$$$; \
 </code></pre>
 
-<p>使用第二种方式，可以减少堆栈空间的使用</p>
+<p>这样，所有的中间文件都在build/下面，也不会污染代码目录了</p>
 </div>
 
 
@@ -140,7 +157,7 @@
   
 
 
-<time datetime="2012-06-05T12:51:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
+<time datetime="2012-07-17T09:54:00+08:00" pubdate data-updated="true">Jul 17<span>th</span>, 2012</time>
       
 
 
@@ -175,8 +192,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2012/07/16/you-xi-li-qian-ru-yu-yin-xi-tong/" title="Previous Post: 游戏里嵌入语音系统">&laquo; 游戏里嵌入语音系统</a>
       
-        <a class="basic-alignment right" href="/blog/2012/06/05/sicp-parsk/" title="Next Post: sicp-parsk">sicp-parsk &raquo;</a>
       
     </p>
   </footer>

@@ -4,7 +4,7 @@
   <title><![CDATA[GNO Blog]]></title>
   <link href="http://zhuzhonghua.github.com/atom.xml" rel="self"/>
   <link href="http://zhuzhonghua.github.com/"/>
-  <updated>2012-07-17T09:53:19+08:00</updated>
+  <updated>2012-07-17T11:10:22+08:00</updated>
   <id>http://zhuzhonghua.github.com/</id>
   <author>
     <name><![CDATA[zhuzhonghua]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[我贡献一个makefile.template]]></title>
+    <link href="http://zhuzhonghua.github.com/blog/2012/07/17/wo-gong-xian-%5B%3F%5D-ge-makefile-dot-template/"/>
+    <updated>2012-07-17T09:54:00+08:00</updated>
+    <id>http://zhuzhonghua.github.com/blog/2012/07/17/wo-gong-xian-[?]-ge-makefile-dot-template</id>
+    <content type="html"><![CDATA[<p>伟大的Makefile，伟大的Make， 伟大的GNU</p>
+
+<p>只不过规则前面的Tab有时很让人蛋疼，不知道是只能这样？还是有其他更好的替代方案？不知道，留待以后更聪明的人解答吧。</p>
+
+<p>Make会生成一堆的中间文件，如果和原文件混杂在一起，就会比较混乱，所以一般期望的是中间文件单独放在一起。</p>
+
+<p>在网上也查了很多资料，当然会查到云风的博客上，我这里提供另外一种思路。</p>
+
+<p>原来依赖<em>.o的，现在一律依赖build/</em>.o</p>
+
+<p>原来的<em>.o生成规则，现在一律是build/</em>.o生成规则。</p>
+
+<pre><code>TMP=build    
+
+sources:=main.cpp    
+
+OBJS=$(sources:%.cpp=$(TMP)/%.o)
+
+DEST:$(OBJS)
+</code></pre>
+
+<p>接下来是一些依赖关系，使用sed流操作，把依赖关系生成到单独的文件中</p>
+
+<pre><code>#.o:.cpp
+include $(sources:%.cpp=$(TMP)/%.d1)
+#.d:.cpp
+include $(sources:%.cpp=$(TMP)/%.d2)
+
+$(TMP)/%.d1:%.cpp
+    set -e;rm -f $@;\
+    g++ -MM $(CPPFLAGS) $&lt; &gt; $*.$$$$;\
+    sed 's,\($*\)\.o[ :]*,$(TMP)/$*.o : ,g' &lt; $*.$$$$ &gt; $*.$$$$.$$$$;\
+    rm -f $*.$$$$; \
+    sed '$$a\   g++ -c $&lt; -o $(TMP)/$*.o $(CPPFLAGS)' &lt; $*.$$$$.$$$$ &gt; $@; \
+    rm -f $*.$$$$.$$$$
+
+$(TMP)/%.d2:%.cpp
+    set -e;rm -f $@;\
+    g++ -MM $(CPPFLAGS) $&lt; &gt; $@.$$$$;\
+    sed 's,\($*\)\.o[ :]*,$(TMP)/$*.d1 $@ : ,g' &lt; $@.$$$$ &gt; $@;\
+    rm -f $@.$$$$; \
+</code></pre>
+
+<p>这样，所有的中间文件都在build/下面，也不会污染代码目录了</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[游戏里嵌入语音系统]]></title>
@@ -4136,59 +4188,6 @@ timer.start()
 
 <p>既然我们是期望围绕125,125旋转，那么100,100点也得围绕125,125旋转，于是计算出了100,100点围绕125,125点旋转后的点
 位移过去OK了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[在mingw环境下编译最新版本gcc gdb]]></title>
-    <link href="http://zhuzhonghua.github.com/blog/2012/06/07/mingw-gcc-gdb-environment/"/>
-    <updated>2012-06-07T13:40:00+08:00</updated>
-    <id>http://zhuzhonghua.github.com/blog/2012/06/07/mingw-gcc-gdb-environment</id>
-    <content type="html"><![CDATA[<p>由于比较喜欢GCC的东西，又必须做WIN下的程序，但是考虑到效率问题  <br/>
-1，使用LINUX交叉编译MINGW下的程序  <br/>
-2，直接使用MINGW和MSYS编译WIN程序</p>
-
-<p>使用交叉编译的方法，在网上搜到的比较麻烦，而且又不是做嵌入式开发，必须用交叉编译;  <br/>
-所以决定使用第二种方法。</p>
-
-<p>目前已经成功编译了GDB7.4.1和最新的BINUTILS，还有MPC，MPFR，等GCC需要依赖的库。  <br/>
-晚上回去看一下GCC4.7.0的编译情况。</p>
-
-<p>不过在公司已经使用MINGW-GET拿到了GDB7.4和GCC4.6.2,而且使用正常。</p>
-
-<p>目前是使用VIM做编辑器，使用EMACS做调试器（是不是有点小奢侈啊），幸好这两个神器都有WIN版本。</p>
-
-<h1>感谢GNU，感谢上帝。</h1>
-
-<p>2012-06-08</p>
-
-<p>昨晚回去，出现了诡异的dllcrt2.o文件找不到的问题  <br/>
-由于时间有限，又急着建立开发环境，所以决定把公司里使用mingw-get的版本拿回去。  <br/>
-奇怪的是，家里使用mingw-get无法获取各种包，也就是不能用。</p>
-
-<p>今天在公司，不甘心，利用业余时间终于把这个问题搞定。</p>
-
-<p>网上也有人遇到这个问题，文件是有的，在/mingw/lib下</p>
-
-<p>刚开始使用LDFLAGS无效，后来使用GCC_EXEC_PREFIX连configure都无法通过。</p>
-
-<p>在这个命令的下面看到了，LIBRARY_PATH，于是灵光一现，配置好/mingw/lib</p>
-
-<p>结果编译了一个下午, 公司的电脑还算好的。</p>
-
-<p>自己编译GCC真不是玩的。花的时间太久了。</p>
-
-<p>不过总算了解了自己的一个心病。</p>
-
-<p>而且在网上差资料，关于dllcrt2.o的东西，都是外文。这里也算有个中文的关于这个的资料吧。</p>
-
-<p>tips:</p>
-
-<p>1, BINUTILS要使用最新版本，这个编译起来很快。  <br/>
-要不然会出现unknown-pseudo .cfi_sections
-2, 还有它依赖的其他库文件</p>
-
-<p>其他问题就不大了，祝各位看官好运</p>
 ]]></content>
   </entry>
   
