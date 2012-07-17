@@ -4,7 +4,7 @@
   <title><![CDATA[GNO Blog]]></title>
   <link href="http://zhuzhonghua.github.com/atom.xml" rel="self"/>
   <link href="http://zhuzhonghua.github.com/"/>
-  <updated>2012-07-17T11:10:22+08:00</updated>
+  <updated>2012-07-17T16:04:16+08:00</updated>
   <id>http://zhuzhonghua.github.com/</id>
   <author>
     <name><![CDATA[zhuzhonghua]]></name>
@@ -46,7 +46,7 @@ include $(sources:%.cpp=$(TMP)/%.d1)
 #.d:.cpp
 include $(sources:%.cpp=$(TMP)/%.d2)
 
-$(TMP)/%.d1:%.cpp
+$(TMP)/%.d1:%.cpp Makefile
     set -e;rm -f $@;\
     g++ -MM $(CPPFLAGS) $&lt; &gt; $*.$$$$;\
     sed 's,\($*\)\.o[ :]*,$(TMP)/$*.o : ,g' &lt; $*.$$$$ &gt; $*.$$$$.$$$$;\
@@ -54,7 +54,7 @@ $(TMP)/%.d1:%.cpp
     sed '$$a\   g++ -c $&lt; -o $(TMP)/$*.o $(CPPFLAGS)' &lt; $*.$$$$.$$$$ &gt; $@; \
     rm -f $*.$$$$.$$$$
 
-$(TMP)/%.d2:%.cpp
+$(TMP)/%.d2:%.cpp Makefile
     set -e;rm -f $@;\
     g++ -MM $(CPPFLAGS) $&lt; &gt; $@.$$$$;\
     sed 's,\($*\)\.o[ :]*,$(TMP)/$*.d1 $@ : ,g' &lt; $@.$$$$ &gt; $@;\
@@ -62,6 +62,10 @@ $(TMP)/%.d2:%.cpp
 </code></pre>
 
 <p>这样，所有的中间文件都在build/下面，也不会污染代码目录了</p>
+
+<p>=========分割线=======================</p>
+
+<p>出现个问题，如果makefile更新，d1，d2文件也要更新，所以要在d1和d2文件的依赖后面添加Makefile</p>
 ]]></content>
   </entry>
   
