@@ -4,7 +4,7 @@
   <title><![CDATA[GNO Blog]]></title>
   <link href="http://zhuzhonghua.github.com/atom.xml" rel="self"/>
   <link href="http://zhuzhonghua.github.com/"/>
-  <updated>2012-07-17T16:04:16+08:00</updated>
+  <updated>2012-07-18T13:58:27+08:00</updated>
   <id>http://zhuzhonghua.github.com/</id>
   <author>
     <name><![CDATA[zhuzhonghua]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[爱惜小拇指，远离Emacs，伟大的Emacs  ASCII图模式]]></title>
+    <link href="http://zhuzhonghua.github.com/blog/2012/07/18/ai-xi-xiao-mu-zhi-%2Cyuan-chi-emacs%2Cwei-da-de-emacs-asciitu-mo-shi/"/>
+    <updated>2012-07-18T11:33:00+08:00</updated>
+    <id>http://zhuzhonghua.github.com/blog/2012/07/18/ai-xi-xiao-mu-zhi-,yuan-chi-emacs,wei-da-de-emacs-asciitu-mo-shi</id>
+    <content type="html"><![CDATA[<p>今天介绍一下Emacs的ASCII图模式。</p>
+
+<p>我经常会在工作的时候，手边有一个笔记，写写画画，把自己的思路写出来。</p>
+
+<p>有时候要画框架图，又很想跟同事分享，总不能拿个本子，到处晃荡。而且还得保证不能弄丢，弄脏。</p>
+
+<p>这时候Emacs的ASCII图模式出场了。</p>
+
+<p>最终的结果是个平文本，你拿着平文本想干什么干什么，给别人分享，发表，保存，只要你做的事情支持平文本就行。</p>
+
+<p>别人的电脑上也不用装什么特别的软件，Notepad就可以了。</p>
+
+<p>随便打开一个文件，M-x edit-picture就可以进入这个模式。</p>
+
+<p>ASCII图就是线，各种线，就和我们在笔记上画图一个效果。</p>
+
+<p>向左画条线，使用C-c &lt;就可以一直向左画。向右你猜一下。向上其实你可以猜到。  <br/>
+向下是，C-c .  <br/>
+左上是，C-c ` 就是主键盘区左上那个   <br/>
+右上是，C-c &#8217; 就是主键盘区双引号那个  <br/>
+如果左下是 C-c /    你猜猜右下是那个</p>
+
+<p>八个方向都有了，你可以想往哪画就往哪画了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[我贡献一个makefile.template]]></title>
@@ -4117,81 +4148,6 @@ Beating The Averages</p>
 <p>[10] It is probably no accident that the middle class first appeared in northern Italy and the low countries, where there were no strong central governments. These two regions were the richest of their time and became the twin centers from which Renaissance civilization radiated. If they no longer play that role, it is because other places, like the United States, have been truer to the principles they discovered.</p>
 
 <p>[11] It may indeed be a sufficient condition. But if so, why didn&#8217;t the Industrial Revolution happen earlier? Two possible (and not incompatible) answers: (a) It did. The Industrial Revolution was one in a series. (b) Because in medieval towns, monopolies and guild regulations initially slowed the development of new means of production.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[as3绕任意点旋转]]></title>
-    <link href="http://zhuzhonghua.github.com/blog/2012/06/12/as3rao-ren-yi-dian-xuan-zhuan/"/>
-    <updated>2012-06-12T15:42:00+08:00</updated>
-    <id>http://zhuzhonghua.github.com/blog/2012/06/12/as3rao-ren-yi-dian-xuan-zhuan</id>
-    <content type="html"><![CDATA[<p>OK， 我们先写一段代码</p>
-
-<pre><code>var g:Graphics = graphics;
-
-var startX:Number = 100;
-var startY:Number = 100;
-
-var originX:Number = 125;
-var originY:Number = 125;
-
-g.beginFill(0xff0000);
-g.drawRect(startX, startY, 300, 50);
-g.endFill();
-
-var shape:Shape = new Shape();
-shape.x = startX;
-shape.y = startY;
-
-shape.graphics.beginFill(0x000000);
-shape.graphics.drawRect(0, 0, 300, 50);
-shape.graphics.endFill();
-
-addChild(shape);
-</code></pre>
-
-<p>解释一下的话，就是以100,100为点画一个矩形，300, 50.
-先用红色的画，再用黑色的画，之后我们要让shape绕着125,125点自转。</p>
-
-<p>于是看起来的效果就是，红色的矩形作为标准，不动。
-黑色的矩形绕着125,125自转。</p>
-
-<p>开始转了</p>
-
-<pre><code>var angle:Number = 10;
-var raidan:Number = angle * (Math.PI/180);
-var arr:Array = [Math.cos(radian), -Math.sin(radian), Math.sin(radian), Math.cos(radian)];
-
-var timer:Timer = new Timer(1);
-
-timer.addEventListener(TimerEvent.TIMER, function(e:Event):void
-{
-    shape.rotation += angle;
-
-    var x1:Number = shape.x - originX;
-    var y1:Number = shape.y - originY;
-
-    var x:Number = arr[0] * x1 + arr[1] * y1;
-    var y:Number = arr[2] * x1 + arr[3] * y1;
-
-    shape.x = x + originX;
-    shape.y = y + originY;
-});
-
-timer.start()
-</code></pre>
-
-<p>解释一下：
-使用shape.rotation.rotation += angle
-来旋转图形</p>
-
-<p>但是这是围绕它本身的0,0点，也就是100, 100点旋转的，我们是要围绕125,125点旋转</p>
-
-<p>其实，不管围绕哪一点旋转，转的角度都是一样，只是位移不一样，也就是shape的x y 坐标不同。
-于是我们只需要移动x, y 坐标就行了。</p>
-
-<p>既然我们是期望围绕125,125旋转，那么100,100点也得围绕125,125旋转，于是计算出了100,100点围绕125,125点旋转后的点
-位移过去OK了。</p>
 ]]></content>
   </entry>
   
