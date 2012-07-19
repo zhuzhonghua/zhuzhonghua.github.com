@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>lisp-recursive-iteration - GNO Blog</title>
+  <title>珍爱生命，使用Python - GNO Blog</title>
   <meta name="author" content="zhuzhonghua">
 
   
-  <meta name="description" content="在common lisp 中，尾递归的概念确实很好 废话不多说，先上代码 以著名的斐波那契数列为例： 1，递归版 (defun fib(n) (cond ((= n 0) 0) ((= n 1) 1) (t (+ (fib (- n 1)) (fib (- n 2)))))) 2，迭代版（尾递归 &hellip;">
+  <meta name="description" content="今天在写测试程序时，用到了Python的多线程。 首先声明，在真实环境中不要使用Python的多线程，如果要用，那也得用C写的扩展。 碰到一个所有人都会遇到的问题，要结束，强制结束某一个线程。 网上也查了很多资料，一般都是要DIY设计，通过信号啊，变量啊，等等。 我宁愿用异常让整个程序退出， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zhuzhonghua.github.com/blog/2012/06/05/lisp-recursive-iteration/">
+  <link rel="canonical" href="http://zhuzhonghua.github.com/blog/2012/07/19/zhen-ai-sheng-ming-%2Cshi-yong-python/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Lisp-recursive-iteration</h1>
+      <h1 class="entry-title">珍爱生命，使用Python</h1>
     
     
       <p class="meta">
@@ -84,40 +84,49 @@
   
 
 
-<time datetime="2012-06-05T12:51:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
+<time datetime="2012-07-19T17:14:00+08:00" pubdate data-updated="true">Jul 19<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>在common lisp 中，尾递归的概念确实很好<br></p>
+<div class="entry-content"><p>今天在写测试程序时，用到了Python的多线程。</p>
 
-<p>废话不多说，先上代码<br></p>
+<p>首先声明，在真实环境中不要使用Python的多线程，如果要用，那也得用C写的扩展。</p>
 
-<p>以著名的斐波那契数列为例：<br></p>
+<p>碰到一个所有人都会遇到的问题，要结束，强制结束某一个线程。</p>
 
-<p>1，递归版<br></p>
+<p>网上也查了很多资料，一般都是要DIY设计，通过信号啊，变量啊，等等。</p>
 
-<pre><code>(defun fib(n)
-    (cond ((= n 0) 0)
-          ((= n 1) 1)
-          (t (+ (fib (- n 1))
-                (fib (- n 2))))))
-</code></pre>
+<p>我宁愿用异常让整个程序退出，也不愿这么写。</p>
 
-<p>2，迭代版（尾递归）<br></p>
+<p>当然Python的设计哲学是不建议强制结束线程的。</p>
 
-<pre><code>(defun fib(n)
-    (fib-iter 1 0 n))
+<p>在查看Thread的所有方法时，发现了一个_Thread__stop()的方法，果然好用。</p>
 
-(defun fib-iter(a b count)
-    (if (= count 0)
-        b
-        (fib-iter (+ a b) a (- count 1))))
-</code></pre>
+<p>在此做个记录。</p>
 
-<p>使用第二种方式，可以减少堆栈空间的使用</p>
+<p>再次声明，这只是在测试时，为了简单，直接，才使用的方法。</p>
+
+<p>如果在真实环境中使用，后果自负。</p>
+
+<p>======分割线==================
+C++真的不适合网络游戏开发。</p>
+
+<p>我们先建立几个共识，这样分析起来比较方便。</p>
+
+<p>1，C++代码要比Python代码效率不止高一点两点，有人做过测试，大概是20倍左右。</p>
+
+<p>2，看代码的时间要比写代码的时间多很多，而且大部分时间在改BUG。</p>
+
+<p>3，最经常出现的，也是最痛苦的BUG，内存泄露，空指针，野指针，内存写坏。</p>
+
+<p>4，团队里上面这些BUG也许只占5%，但是会占用95%的时间，而且有些BUG是在正式运营的时候才出现的，所以你知道这造成的影响。而且即使出现了这些BUG，一时半会也不一定能改掉。</p>
+
+<p>5，Python写起来要比C++写起来快。</p>
+
+<p>6，如果你用了线程，那么就和3一样了。</p>
 </div>
 
 
@@ -140,7 +149,7 @@
   
 
 
-<time datetime="2012-06-05T12:51:00+08:00" pubdate data-updated="true">Jun 5<span>th</span>, 2012</time>
+<time datetime="2012-07-19T17:14:00+08:00" pubdate data-updated="true">Jul 19<span>th</span>, 2012</time>
       
 
 
@@ -175,8 +184,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2012/07/18/ai-xi-xiao-mu-zhi-%2Cyuan-chi-emacs%2Cwei-da-de-emacs-asciitu-mo-shi/" title="Previous Post: 爱惜小拇指，远离Emacs，伟大的Emacs  ASCII图模式">&laquo; 爱惜小拇指，远离Emacs，伟大的Emacs  ASCII图模式</a>
       
-        <a class="basic-alignment right" href="/blog/2012/06/05/sicp-parsk/" title="Next Post: sicp-parsk">sicp-parsk &raquo;</a>
       
     </p>
   </footer>
