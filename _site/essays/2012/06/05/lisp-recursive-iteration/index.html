@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>lisp的尾递归</title>
+    
+    <meta name="author" content="zhonghua">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">非著名程序</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/about.html">关于</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>lisp的尾递归<small>非著名程序</small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    
+
+<p>在common lisp 中，尾递归的概念确实很好<br></p>
+
+<p>废话不多说，先上代码<br></p>
+
+<p>以著名的斐波那契数列为例：<br></p>
+
+<p>1，递归版<br></p>
+
+<pre><code>(defun fib(n)
+    (cond ((= n 0) 0)
+          ((= n 1) 1)
+          (t (+ (fib (- n 1))
+                (fib (- n 2))))))
+</code></pre>
+
+<p>2，迭代版（尾递归）<br></p>
+
+<pre><code>(defun fib(n)
+    (fib-iter 1 0 n))
+
+(defun fib-iter(a b count)
+    (if (= count 0)
+        b
+        (fib-iter (+ a b) a (- count 1))))
+</code></pre>
+
+<p>使用第二种方式，可以减少堆栈空间的使用</p>
+
+    <hr>
+    <!--
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev disabled"><a>&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/essays/2012/06/05/sicp-parsk" title="sicp上的练习题Parsk三角">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    -->
+    <hr>
+    
+  </div>
+  
+  <!--
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>05 June 2012</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#essays-ref">essays <span>9</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+  -->
+  <div class="span4">
+    
+<p>1, 程序</p>
+
+<p>2, 当你年老时不会因为虚度年华而悔恨，不会因为碌碌无为而羞耻</p>
+
+<p>3, 欢迎技术讨论</p>
+<ul>
+<li>secondsquare@gmail.com</li>
+<li>406344976</li>
+</ul>
+
+  </div>
+</div>
+
+
+      </div>
+
+<!--      <footer>
+        <p>&copy; zhonghua 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+      -->
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

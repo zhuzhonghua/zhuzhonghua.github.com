@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>非著名程序</title>
+ <link href="http://zhuzhonghua.github.com/atom.xml" rel="self"/>
+ <link href="http://zhuzhonghua.github.com"/>
+ <updated>2012-10-27T16:49:40+08:00</updated>
+ <id>http://zhuzhonghua.github.com</id>
+ <author>
+   <name>zhonghua</name>
+   <email>secondsquare@gmail.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>珍爱生命，使用Python</title>
+   <link href="http://zhuzhonghua.github.com/essays/2012/07/19/zhenaishengming-shiyongpython"/>
+   <updated>2012-07-19T00:00:00+08:00</updated>
+   <id>http://zhuzhonghua.github.com/essays/2012/07/19/zhenaishengming-shiyongpython</id>
+   <content type="html">
+
+&lt;p&gt;今天在写测试程序时，用到了Python的多线程。&lt;/p&gt;
+
+&lt;p&gt;首先声明，在真实环境中不要使用Python的多线程，如果要用，那也得用C写的扩展。&lt;/p&gt;
+
+&lt;p&gt;碰到一个所有人都会遇到的问题，要结束，强制结束某一个线程。&lt;/p&gt;
+
+&lt;p&gt;网上也查了很多资料，一般都是要DIY设计，通过信号啊，变量啊，等等。&lt;/p&gt;
+
+&lt;p&gt;我宁愿用异常让整个程序退出，也不愿这么写。&lt;/p&gt;
+
+&lt;p&gt;当然Python的设计哲学是不建议强制结束线程的。&lt;/p&gt;
+
+&lt;p&gt;在查看Thread的所有方法时，发现了一个_Thread__stop()的方法，果然好用。&lt;/p&gt;
+
+&lt;p&gt;在此做个记录。&lt;/p&gt;
+
+&lt;p&gt;再次声明，这只是在测试时，为了简单，直接，才使用的方法。&lt;/p&gt;
+
+&lt;p&gt;如果在真实环境中使用，后果自负。&lt;/p&gt;
+
+&lt;p&gt;======分割线==================
+C++真的不适合网络游戏开发。&lt;/p&gt;
+
+&lt;p&gt;我们先建立几个共识，这样分析起来比较方便。&lt;/p&gt;
+
+&lt;p&gt;1，C++代码要比Python代码效率不止高一点两点，有人做过测试，大概是20倍左右。&lt;/p&gt;
+
+&lt;p&gt;2，看代码的时间要比写代码的时间多很多，而且大部分时间在改BUG。&lt;/p&gt;
+
+&lt;p&gt;3，最经常出现的，也是最痛苦的BUG，内存泄露，空指针，野指针，内存写坏。&lt;/p&gt;
+
+&lt;p&gt;4，团队里上面这些BUG也许只占5%，但是会占用95%的时间，而且有些BUG是在正式运营的时候才出现的，所以你知道这造成的影响。而且即使出现了这些BUG，一时半会也不一定能改掉。&lt;/p&gt;
+
+&lt;p&gt;5，Python写起来要比C++写起来快。&lt;/p&gt;
+
+&lt;p&gt;6，如果你用了线程，那么就和3一样了。&lt;/p&gt;
+
+&lt;p&gt;如果我做一个策划的需求，使用Python要比使用C++写的快，不止快一点。&lt;/p&gt;
+
+&lt;p&gt;而且你也知道，策划的需求变化是随时的，经常的，如果使用C++来应对这种变化，明显是慢的。&lt;/p&gt;
+
+&lt;p&gt;但是如果使用Python来做，就会很快了；而且策划也可以配合修改。&lt;/p&gt;
+
+&lt;p&gt;使用C++改BUG时，如果是碰到野指针，内存写坏，内存泄露，那你就祈祷吧。&lt;/p&gt;
+
+&lt;p&gt;使用Python就不会出现这个问题。&lt;/p&gt;
+
+&lt;p&gt;而且改其他的BUG，Python也更容易修改，当然也更快了。&lt;/p&gt;
+
+&lt;p&gt;使用C++很容易写出Hard-Test的代码，于是正确性就有问题了。&lt;/p&gt;
+
+&lt;p&gt;这方面可以参考PG的H&amp;amp;P。&lt;/p&gt;
+
+&lt;p&gt;当然C++的优势在效率，而且可以利用多核的优势。&lt;/p&gt;
+
+&lt;p&gt;在此奉劝使用多线程的C++使用者，能用多进程，就不要用多线程。&lt;/p&gt;
+
+&lt;p&gt;于是我可以使用多进程的方式来利用多核的优势。&lt;/p&gt;
+
+&lt;p&gt;效率上达不到要求，那我就多开几个进程，来保证业务及时完成。&lt;/p&gt;
+
+&lt;p&gt;这样确实硬件成本增加了，要多买几台机器来多运行几个进程。&lt;/p&gt;
+
+&lt;p&gt;可是这多出来的几个硬件成本，相对于研发的成本不知道省了多少。&lt;/p&gt;
+
+&lt;p&gt;包括待遇，时间，以及过长时间带来的其它非研发人员的成本，
+以及使用C++导致的BUG带来的各种损失，包括不能及时改掉BUG带来的时间损失，以及程序出错带来的运营损失。等。&lt;/p&gt;
+
+&lt;p&gt;所以从总体上来看，这其实是节省了成本。&lt;/p&gt;
+
+&lt;p&gt;而且按照这种思路，以大局考虑，总体考虑，来分析下面的问题。&lt;/p&gt;
+
+&lt;p&gt;二八原理，当分析程序的效率时，只需要找出那20%的代码，来优化，就可以达到很好的效果。&lt;/p&gt;
+
+&lt;p&gt;而且按照上帝的说法，过早优化是万恶之源。&lt;/p&gt;
+
+&lt;p&gt;所以可以使用C++写扩展来改写那20%的代码，就可以达到优化的目的。&lt;/p&gt;
+
+&lt;p&gt;而且从总体上来看，这才是优化之道。&lt;/p&gt;
+
+&lt;p&gt;这样看来，使用Python代替C++的前提是你得有一个可以多进程代替多线程的服务器机制。&lt;/p&gt;
+
+&lt;p&gt;C++有自己的优势，而且使用C++的人，尤其是使用C++写服务器的人，天生对内存和效率敏感。&lt;/p&gt;
+
+&lt;p&gt;总结下来，C++适合写稳定的，不会随便改动的代码，比如网络层。而Python适合写经常变化的代码，比如策划的需求。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>爱惜小拇指，远离Emacs，伟大的Emacs  ASCII图模式</title>
+   <link href="http://zhuzhonghua.github.com/essays/2012/07/18/emacs-ascii"/>
+   <updated>2012-07-18T00:00:00+08:00</updated>
+   <id>http://zhuzhonghua.github.com/essays/2012/07/18/emacs-ascii</id>
+   <content type="html">
+
+&lt;p&gt;今天介绍一下Emacs的ASCII图模式。&lt;/p&gt;
+
+&lt;p&gt;我经常会在工作的时候，手边有一个笔记，写写画画，把自己的思路写出来。&lt;/p&gt;
+
+&lt;p&gt;有时候要画框架图，又很想跟同事分享，总不能拿个本子，到处晃荡。而且还得保证不能弄丢，弄脏。&lt;/p&gt;
+
+&lt;p&gt;这时候Emacs的ASCII图模式出场了。&lt;/p&gt;
+
+&lt;p&gt;最终的结果是个平文本，你拿着平文本想干什么干什么，给别人分享，发表，保存，只要你做的事情支持平文本就行。&lt;/p&gt;
+
+&lt;p&gt;别人的电脑上也不用装什么特别的软件，Notepad就可以了。&lt;/p&gt;
+
+&lt;p&gt;随便打开一个文件，M-x edit-picture就可以进入这个模式。&lt;/p&gt;
+
+&lt;p&gt;ASCII图就是线，各种线，就和我们在笔记上画图一个效果。&lt;/p&gt;
+
+&lt;p&gt;向左画条线，使用C-c &amp;lt;就可以一直向左画。向右你猜一下。向上其实你可以猜到。  &lt;br/&gt;
+向下是，C-c .  &lt;br/&gt;
+左上是，C-c ` 就是主键盘区左上那个   &lt;br/&gt;
+右上是，C-c &amp;#8217; 就是主键盘区双引号那个  &lt;br/&gt;
+如果左下是 C-c /    你猜猜右下是那个&lt;/p&gt;
+
+&lt;p&gt;八个方向都有了，你可以想往哪画就往哪画了。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>我贡献一个makefile.template</title>
+   <link href="http://zhuzhonghua.github.com/essays/2012/07/17/wogongxianyigemakefiletemplate"/>
+   <updated>2012-07-17T00:00:00+08:00</updated>
+   <id>http://zhuzhonghua.github.com/essays/2012/07/17/wogongxianyigemakefiletemplate</id>
+   <content type="html">
+
+&lt;p&gt;伟大的Makefile，伟大的Make， 伟大的GNU&lt;/p&gt;
+
+&lt;p&gt;只不过规则前面的Tab有时很让人蛋疼，不知道是只能这样？还是有其他更好的替代方案？不知道，留待以后更聪明的人解答吧。&lt;/p&gt;
+
+&lt;p&gt;Make会生成一堆的中间文件，如果和原文件混杂在一起，就会比较混乱，所以一般期望的是中间文件单独放在一起。&lt;/p&gt;
+
+&lt;p&gt;在网上也查了很多资料，当然会查到云风的博客上，我这里提供另外一种思路。&lt;/p&gt;
+
+&lt;p&gt;原来依赖&lt;em&gt;.o的，现在一律依赖build/&lt;/em&gt;.o&lt;/p&gt;
+
+&lt;p&gt;原来的&lt;em&gt;.o生成规则，现在一律是build/&lt;/em&gt;.o生成规则。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;TMP=build    
+
+sources:=main.cpp    
+
+OBJS=$(sources:%.cpp=$(TMP)/%.o)
+
+DEST:$(OBJS)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;接下来是一些依赖关系，使用sed流操作，把依赖关系生成到单独的文件中&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#.o:.cpp
+include $(sources:%.cpp=$(TMP)/%.d1)
+#.d:.cpp
+include $(sources:%.cpp=$(TMP)/%.d2)
+
+$(TMP)/%.d1:%.cpp Makefile
+    set -e;rm -f $@;\
+    g++ -MM $(CPPFLAGS) $&amp;lt; &amp;gt; $*.$$$$;\
+    sed 's,\($*\)\.o[ :]*,$(TMP)/$*.o : ,g' &amp;lt; $*.$$$$ &amp;gt; $*.$$$$.$$$$;\
+    rm -f $*.$$$$; \
+    sed '$$a\   g++ -c $&amp;lt; -o $(TMP)/$*.o $(CPPFLAGS)' &amp;lt; $*.$$$$.$$$$ &amp;gt; $@; \
+    rm -f $*.$$$$.$$$$
+
+$(TMP)/%.d2:%.cpp Makefile
+    set -e;rm -f $@;\
+    g++ -MM $(CPPFLAGS) $&amp;lt; &amp;gt; $@.$$$$;\
+    sed 's,\($*\)\.o[ :]*,$(TMP)/$*.d1 $@ : ,g' &amp;lt; $@.$$$$ &amp;gt; $@;\
+    rm -f $@.$$$$; \
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样，所有的中间文件都在build/下面，也不会污染代码目录了&lt;/p&gt;
+
+&lt;p&gt;=========分割线=======================&lt;/p&gt;
+
+&lt;p&gt;出现个问题，如果makefile更新，d1，d2文件也要更新，所以要在d1和d2文件的依赖后面添加Makefile&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>游戏里嵌入语音系统</title>
+   <link href="http://zhuzhonghua.github.com/essays/2012/07/16/youxiliqianruyuyinxitong"/>
+   <updated>2012-07-16T00:00:00+08:00</updated>
+   <id>http://zhuzhonghua.github.com/essays/2012/07/16/youxiliqianruyuyinxitong</id>
+   <content type="html">
+
+&lt;p&gt;中国的玩家一般都会使用YY作为语音交流系统。&lt;/p&gt;
+
+&lt;p&gt;我说的不是这个。&lt;/p&gt;
+
+&lt;p&gt;今天听到同事，在说游戏里一个好玩的人，看到游戏里红名的人，就一顿爆揍，之后说一句“汝知错否？！”&lt;/p&gt;
+
+&lt;p&gt;配合上当时的情景，确实挺好玩。&lt;/p&gt;
+
+&lt;p&gt;我突然想到，如果这句搞笑的话，在游戏里是用语音的形式播放给周围的玩家，是不是更好玩一些？&lt;/p&gt;
+
+&lt;p&gt;现在游戏里的声音，基本上都是固定好的，比如砍人，比如碰撞，这些声音都是事先录制好的。&lt;/p&gt;
+
+&lt;p&gt;如果多一些随机的，玩家自己的声音，是不是要有趣一些？！&lt;/p&gt;
+
+&lt;p&gt;前段时间比较火的Tom猫，就是用户自己的声音，换个人说出来，就体现出一些好玩的事情。&lt;/p&gt;
+
+&lt;p&gt;当然它还有一些其它玩法。&lt;/p&gt;
+
+&lt;p&gt;如果这些声音再配合上不同的语调，语气，。。。。&lt;/p&gt;
+
+&lt;p&gt;我只是在这里瞎想，不知道有没有公司已经做出这样的系统出来了。&lt;/p&gt;
+
+&lt;p&gt;李开复先生就是靠语音系统成名的，而且现在也有很多成熟的技术，我知道的就有读电子书的软件。&lt;/p&gt;
+
+&lt;p&gt;所以技术上，应该是可行的。&lt;/p&gt;
+
+&lt;p&gt;在此留作Memo，将来自己有机会去主持这样一个游戏的时候，可以试着加入这样的系统。&lt;/p&gt;
+
+&lt;p&gt;======分割线=========================================================
+Next day 更新。&lt;/p&gt;
+
+&lt;p&gt;Siri不是挺火的么？！然后很多公司都去做这样的语音助手。&lt;/p&gt;
+
+&lt;p&gt;如果游戏里也加入这样的语音助手，不知道会怎么样？&lt;/p&gt;
+
+&lt;p&gt;但目前看到，这是将来的一个技术发展方向。&lt;/p&gt;
+
+&lt;p&gt;所以如果想玩，还是有很多东西可以继续玩的。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>在Vim中爬行</title>
+   <link href="http://zhuzhonghua.github.com/essays/2012/07/13/zai-vimzhong-pa-xing"/>
+   <updated>2012-07-13T00:00:00+08:00</updated>
+   <id>http://zhuzhonghua.github.com/essays/2012/07/13/zai-vimzhong-pa-xing</id>
+   <content type="html">
+
+http://www.rudism.com/s/vimcreep
+HackerNews 精彩评论
+http://news.ycombinator.com/item?id=4235876&lt;/p&gt;
+
+&lt;p&gt;一切从足够无知开始。在大学第一年，你尝试过几次，但Nano和Pico很容易且很接近你高中时期在Windows和Mac上的使用体验。但随着时间的推移，而且随着你在大学计算机课程上获得更多的经验，你开始注意到一些事情：所有真正伟大的程序员-用4行代码搞定你用10页代码搞定的任务；一天写了很多可笑并且丰富的类工程，而你却好几个星期挣扎在基础上-没有人使用Nano或者Pico。&lt;/p&gt;
+
+&lt;p&gt;你熬夜很晚来完成午夜要完成的任务，碰巧瞥了安静的超级程序员的肩膀一瞥。你的眼睛闪烁发光，看着显示器上一行一行的亮光，在深夜的计算机实验室，你看到了让人敬畏的不可能的代码模式和文本操作，在屏幕上闪过。&lt;/p&gt;
+
+&lt;p&gt;“你如何做到的？”你怀疑的问道。&lt;/p&gt;
+
+&lt;p&gt;简单的回应了永远改变你的生活的一声：“Vim”&lt;/p&gt;
+
+&lt;p&gt;起初，你很沮丧，没有效果。你的浏览器的历史基本上是一个完整在线VIM文档的索引;你的使用Nano和Pico的朋友觉得你疯了；您的使用Emacs的朋友乞求你改变主意；你花了点钱买了一个Vim小抄本为方便参考。即使过了好几个星期的训练后，你仍想要去拿鼠标，然后停下来，意识到，你必须开网页，再学习正确的方法来执行一些平凡的任务，你以前甚至从未想过。&lt;/p&gt;
+
+&lt;p&gt;但是，随着时间的推移，你挣扎地越来越少。你不知道什么时候发生的，但Vim不再是一个障碍。相反，它大大超过你的预期。它不再是单纯的文字编辑器，绑定了快捷键，它已经成为你身体的延伸。而且是，作为一个程序员，你的本质延伸。&lt;/p&gt;
+
+&lt;p&gt;单独编辑源代码，现在看起来没有充分的使用VIM。你把它装在家里的所有机器上，并用它来写一切，从电子邮件到英语试卷。你在便携设备上安装了一个便携式版本，连同一个很好调试过的，定制过的.vimrc，这样你可以在你去过的任何地方带着vim，陪着你，安慰你，让你觉得你有有一点家的感觉在你的口袋里，无论你在哪里。&lt;/p&gt;
+
+&lt;p&gt;VIM进入了你在线生活的每部分。不满足于ViewSourceWith的少量功能，你开始使用Vimperator，然后Pentadactyl。你以前只是在网上冲浪。现在，你就是网络。当你决定写一个iPhone应用程序，你做的第一件事是把XCode的默认编辑器设为MacVim。当你找到了一份工作，写.NET代码，你马上购买了为Visual Studio定制的ViEmu（不满意他的免费表弟，VsVim）。&lt;/p&gt;
+
+&lt;p&gt;深夜，当你在你的小房间，让你的键盘奴隶一样的，勤奋的工作，完成一个第二天早上截止的项目，你对自己笑了，因为你知道没有普通的程序员可以在截止日期前完成手头的任务。你录制了宏，你用一个手指轻轻的挪动了整个代码块，你使用了几十个寄存器，你改写和重构整个组件，甚至没有看你的鼠标一眼。这时候，你注意到了您的显示器的反射。瞪着大眼的同事从后面看过来你的肩膀。你停了下来，让他知道，你知道他的存在。&lt;/p&gt;
+
+&lt;p&gt;“你如何做到的？”他问道，的声音充满了敬畏。&lt;/p&gt;
+
+&lt;p&gt;你微微一笑，准备说出一个字，那曾经改变了你的生活。你的同事应该选择追逐，这个字会引导他进入相同的兔子洞，一个无限组合，无限可能的天地，产生一个高效的形式，那以前只在他最疯狂的梦想中出现过。他提醒你自己，很多年前站在漆黑的实验室，当你说出这个字时，你感觉到他有一丝激动。&lt;/p&gt;
+
+&lt;p&gt;“VIM”。&lt;/p&gt;
+
+&lt;p&gt;：WQ&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>dota2 valve Bram Cohen BT</title>
+   <link href="http://zhuzhonghua.github.com/essays/2012/07/11/dota2-valve-braham-cohen-bt"/>
+   <updated>2012-07-11T00:00:00+08:00</updated>
+   <id>http://zhuzhonghua.github.com/essays/2012/07/11/dota2-valve-braham-cohen-bt</id>
+   <content type="html">
+
+&lt;p&gt;新闻说，Dota2的中国代理给完美了。   &lt;br/&gt;
+多么伟大的游戏，希望完美别浪费了。&lt;/p&gt;
+
+&lt;p&gt;只是很多人担心它的收费问题。确实它不像普通的MMO游戏，或者FPS游戏可以卖道具。  &lt;br/&gt;
+并且听说它还要免费玩，那就不能通过时间收费了。  &lt;br/&gt;
+以前看到别人玩过，说是要靠卖英雄，有些英雄不免费供给玩家用。  &lt;br/&gt;
+最新的消息，他们说这会影响游戏的平衡。   &lt;br/&gt;
+于是他们要通过商城卖装饰，来盈利。&lt;/p&gt;
+
+&lt;p&gt;这是一个点，而且我以前也看到过一个游戏，强大的Avatar系统。
+通过切身体验，我会感觉别人的装饰很好玩，很有感。&lt;/p&gt;
+
+&lt;p&gt;或许他们应该通过限时装饰来收费，这样能多赚一些钱。  &lt;br/&gt;
+而且现实生活中也有这样的情景，女人喜欢买很多衣服。&lt;/p&gt;
+
+&lt;p&gt;在这里我构想另一种收费方式。付费战场和免费战场。&lt;/p&gt;
+
+&lt;p&gt;付费战场满足人民币玩家花钱的欲望，获得快感。而且让人民币玩家和人民币玩家对抗，产生对抗快感。  &lt;br/&gt;
+人民币玩家还可以赠送免费玩家道具来帮助人民币玩家在游戏里和别人对抗。 &lt;br/&gt;
+现实生活中就有很多这样的场景，我就曾经玩街机时，被人赠送游戏币，陪玩。&lt;/p&gt;
+
+&lt;p&gt;免费战场还是按照原来的方式吸引人气，通过装饰挣钱。
+或许付费战场还可以分等级，有些道具很贵只能在有些战场能用。&lt;/p&gt;
+
+&lt;p&gt;人法地，地法天，天法道，道法自然。  &lt;br/&gt;
+如果没有思路了，可以参考一下现实生活中的例子。&lt;/p&gt;
+
+&lt;p&gt;IceFrog原来在Valve工作，哎，暴雪怎么没开发一个Dota类型的网游呢？！  &lt;br/&gt;
+不过如果暴雪开发的话，又要耗时好几年，跳几次票，才能出来。 &lt;br/&gt;
+不知道这种开发方式好，还是不好。&lt;/p&gt;
+
+&lt;p&gt;Valve没有上市，只有250名员工。很多人猜测它的盈利利润其实远远超过了Google这样的巨型公司了。  &lt;br/&gt;
+闷声赚大钱的典范。
+而且它的文化是，没有老板。Github也采用了这样的文化。&lt;/p&gt;
+
+&lt;p&gt;Steam是为了解决他们公司游戏版本更新的问题。
+这样不错哦。&lt;/p&gt;
+
+&lt;p&gt;游戏的推广确实是个大手笔。  &lt;br/&gt;
+像腾讯这样的公司，有自己的推广平台，几乎不要什么钱。这样等于节省了成本，当然盈利也就多了。  &lt;br/&gt;
+如果没有什么自己的推广平台，那就要花钱去别人的平台上推广，这样就等于增加了成本。  &lt;br/&gt;
+而且这个成本不是一点半点。要比研发费用高很多。  &lt;br/&gt;
+不过这样的平台建立也不是容易的。&lt;/p&gt;
+
+&lt;p&gt;而Steam最初为了解决版本更新问题，到后来可以发展为推广平台了。而且已经有很多游戏和Steam合作了。&lt;/p&gt;
+
+&lt;p&gt;这个思路不错，不知道国内有没有人采用这种方式。
+一解决了游戏更新的问题，二可以作为一个推广平台来运营。 岂不是一举两得。&lt;/p&gt;
+
+&lt;p&gt;这些东西的背后当然要感谢BT了，那就是感谢BT的作者。&lt;/p&gt;
+
+&lt;p&gt;Bram Cohen 生于1975，当然是伟大的程序员了，为什么非得说是计算机程序员呢？！难道还有第二种程序员？！  &lt;br/&gt;
+1993年毕业于Stuyvesant中学，难道没有上过大学？！牛X。  &lt;br/&gt;
+他曾在几家网络公司工作过，做过的最后一个项目是MojoNation，从事他最为擅长的“网络数据分布传输技术”的研发。
+之后因为老板没有接受他的意见，推广它，所以他不干了。
+此后他离职在家，潜心研发这种新技术。BT的Beta测试版在2001年问世了。
+在同年的一次Linux开源软件大会中，他的BT软件首次亮相。
+试用时，极客们发现，在传输百兆以上的大型文件时，BT的速度要比普通的ADSL快上千倍。
+而且使用的人数越多，种子就越多，速度也就越快，因此数据传输不再受带宽和流量的限制。
+极客们如获至宝般争相下载BT软件，并把它作为传播Linux和大型程序的主要工具。
+2002年，在一场黑客论坛上，他公开了BT的所有源代码，表示希望以开源的方式让BT更加完善。
+这一举动让BT声名大噪，使用人数成倍增长。
+BitTorrent真正流行起来是在2003年初，它被用来发布一个新版的Linux。
+与此同时，还有一些日本卡通的fans凭籍它来共享动画片。
+当然他为了推广，吸引更多的人来使用这个软件，并测试它，也做了很多其它事情。这里就不说了。
+BitTorrent对于Cohen来说，一直是一种脑力训练而不是一种赚钱的途径。
+BitTorrent不但是免费的，而且还是开源的。
+这意味着只要有足够能力，你完全可以把BitTorrent融入到你自己的程序里面。
+尽管BitTorrent获得了如此巨大的成功，但它并没有为Cohen带来过一分钱。
+他当时只好利用一张信用卡的免息期来透支，填补另一张信用卡的帐单来过活。
+Cohen那时并不知道，BitTorrent会为他带来一份工作。
+某天，他的事情为Valve软件公司的常务董事Gabe Newell所获悉。
+尽管Valve正在开发令游戏玩家望眼欲穿的Half-Life 2，但是它同时也在建立一个名为Steam的在线分发网络。
+由于Cohen掌握这个领域的技术，所以Valve为他提供了一个职位。
+Cohen从十月 份起搬到西雅图，开始了他的工作。
+一直以来，Cohen都有通过他的网站bitconjurer.org来接受BitTorrent用户的捐款，但是这笔金额一直很少。
+然而从10月份开始，Cohen父亲鼓励他请求的更直接一点。
+如今，Cohen称，他每天都能收到上百美元的捐款。
+“在过去的几个月，我的生活方式发生了相当戏剧性的变化，获得工作还有捐款的到来，”Cohen说，“这好极了。”
+Cohen患有Asperger综合症，中文名为孤独样精神障碍，这使他具有高度的集中力，但是在社交上存在障碍。
+Cohen目前和他的妻子孩子居住在华盛顿的Bellevue。&lt;/p&gt;
+
+&lt;p&gt;这里做个评论，BT从原型开发，到测试版本开发，到可用，到流行，到为作者带来收入，这中间也经历了好几年。  &lt;br/&gt;
+那同样作为程序员的我们，不要想着某一天写了一个XX软件，第二天就爆发了。  &lt;br/&gt;
+这告诉我们，要懂得积累，沉淀，专注。&lt;/p&gt;
+
+&lt;p&gt;他的个人网站上，有他的twitter地址。前面说他接受捐款的网站就是他的个人网站了。
+他的facebook主页： www.facebook.com/bram.cohen&lt;/p&gt;
+
+&lt;p&gt;他现在在bittorrent.com工作，作为老板。  &lt;br/&gt;
+最新的消息是这个http://www.36kr.com/p/83143.html&lt;/p&gt;
+
+&lt;p&gt;让我们拭目以待他目标实现的那一天吧。&lt;/p&gt;
+
+&lt;p&gt;BT这个伟大的东东，中国也有个国内版本，那就是bitcomet。  &lt;br/&gt;
+当时在市场上也是曾经的王者。  &lt;br/&gt;
+只不过迅雷加入了这个战场，而bitcomet的作者又因为无厘头的原因，最终就变成这个状态了。  &lt;br/&gt;
+现在他们已经转战游戏了，希望能在游戏领域获得成功。 &lt;br/&gt;
+只是目前还没有什么成名作。&lt;/p&gt;
+
+&lt;p&gt;BT这个东西是好东西，就看你能不能发挥了。Valve用它作出了自己的Steam平台，或许我们也可以考虑一下这个方向。&lt;/p&gt;
+
+&lt;p&gt;我最近使用了一个快玩的软件，就是流氓快播的公司开发的。 &lt;br/&gt;
+不知道他下载游戏时，是不是用的P2P？如果是的话，那就在这个领域前进了一步了。&lt;/p&gt;
+
+&lt;p&gt;而且任何做游戏，尤其是端游的团队，都应该研究一下BT这个东西，解决下载的问题。  &lt;br/&gt;
+微端游戏或许应该走这样一个方向。 另外一个方向，是我在研究的。不过Beta版本还没有出来，等出来再炫耀吧。&lt;/p&gt;
+
+&lt;p&gt;现在一般页游都是通过CDN来解决问题的，如果WEB也有了P2P的东东，那岂不是和谐的世界。  &lt;br/&gt;
+我已经加入了一个WebP2P的邮件列表，关注一下这个方向的最新进展。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>在mingw环境下编译最新版本gcc gdb</title>
+   <link href="http://zhuzhonghua.github.com/essays/2012/06/07/mingw-gcc-gdb-environment"/>
+   <updated>2012-06-07T00:00:00+08:00</updated>
+   <id>http://zhuzhonghua.github.com/essays/2012/06/07/mingw-gcc-gdb-environment</id>
+   <content type="html">
+
+&lt;p&gt;由于比较喜欢GCC的东西，又必须做WIN下的程序，但是考虑到效率问题  &lt;br/&gt;
+1，使用LINUX交叉编译MINGW下的程序  &lt;br/&gt;
+2，直接使用MINGW和MSYS编译WIN程序&lt;/p&gt;
+
+&lt;p&gt;使用交叉编译的方法，在网上搜到的比较麻烦，而且又不是做嵌入式开发，必须用交叉编译;  &lt;br/&gt;
+所以决定使用第二种方法。&lt;/p&gt;
+
+&lt;p&gt;目前已经成功编译了GDB7.4.1和最新的BINUTILS，还有MPC，MPFR，等GCC需要依赖的库。  &lt;br/&gt;
+晚上回去看一下GCC4.7.0的编译情况。&lt;/p&gt;
+
+&lt;p&gt;不过在公司已经使用MINGW-GET拿到了GDB7.4和GCC4.6.2,而且使用正常。&lt;/p&gt;
+
+&lt;p&gt;目前是使用VIM做编辑器，使用EMACS做调试器（是不是有点小奢侈啊），幸好这两个神器都有WIN版本。&lt;/p&gt;
+
+&lt;h1&gt;感谢GNU，感谢上帝。&lt;/h1&gt;
+
+&lt;p&gt;2012-06-08&lt;/p&gt;
+
+&lt;p&gt;昨晚回去，出现了诡异的dllcrt2.o文件找不到的问题  &lt;br/&gt;
+由于时间有限，又急着建立开发环境，所以决定把公司里使用mingw-get的版本拿回去。  &lt;br/&gt;
+奇怪的是，家里使用mingw-get无法获取各种包，也就是不能用。&lt;/p&gt;
+
+&lt;p&gt;今天在公司，不甘心，利用业余时间终于把这个问题搞定。&lt;/p&gt;
+
+&lt;p&gt;网上也有人遇到这个问题，文件是有的，在/mingw/lib下&lt;/p&gt;
+
+&lt;p&gt;刚开始使用LDFLAGS无效，后来使用GCC_EXEC_PREFIX连configure都无法通过。&lt;/p&gt;
+
+&lt;p&gt;在这个命令的下面看到了，LIBRARY_PATH，于是灵光一现，配置好/mingw/lib&lt;/p&gt;
+
+&lt;p&gt;结果编译了一个下午, 公司的电脑还算好的。&lt;/p&gt;
+
+&lt;p&gt;自己编译GCC真不是玩的。花的时间太久了。&lt;/p&gt;
+
+&lt;p&gt;不过总算了解了自己的一个心病。&lt;/p&gt;
+
+&lt;p&gt;而且在网上差资料，关于dllcrt2.o的东西，都是外文。这里也算有个中文的关于这个的资料吧。&lt;/p&gt;
+
+&lt;p&gt;tips:&lt;/p&gt;
+
+&lt;p&gt;1, BINUTILS要使用最新版本，这个编译起来很快。  &lt;br/&gt;
+要不然会出现unknown-pseudo .cfi_sections
+2, 还有它依赖的其他库文件&lt;/p&gt;
+
+&lt;p&gt;其他问题就不大了，祝各位看官好运&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>sicp上的练习题Parsk三角</title>
+   <link href="http://zhuzhonghua.github.com/essays/2012/06/05/sicp-parsk"/>
+   <updated>2012-06-05T00:00:00+08:00</updated>
+   <id>http://zhuzhonghua.github.com/essays/2012/06/05/sicp-parsk</id>
+   <content type="html">
+
+&lt;p&gt;SCIP上的一个习题  &lt;br/&gt;
+用递归输出PARSK三角，也有叫杨辉三角的  &lt;br/&gt;
+个人认为，使用递归更简单一些，不过作为练习，就这样了  &lt;br/&gt;
+上代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun parsk(n)
+  (if (= n 1)
+      (let ((ret (list 1)))
+    (echo-list ret)
+    ret)
+    (let ((resn (list 1))
+      (resn-1 (parsk (- n 1))))
+      (do ((i 0 (+ i 1)))
+      ((&amp;gt; i (- (length resn-1) 2)) 'done)
+    (setq resn (append resn (list (+ (nth i resn-1)
+                     (nth (+ i 1) resn-1))))))
+      (setq resn (append resn (list 1)))
+      (echo-list resn)
+      resn)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中ECHO-LIST是个辅助函数，输出LIST&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun echo-list(lst)
+  (progn
+    (dolist (obj lst)
+      (format t &quot;~A &quot; obj))
+    (format t &quot;~%&quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>lisp的尾递归</title>
+   <link href="http://zhuzhonghua.github.com/essays/2012/06/05/lisp-recursive-iteration"/>
+   <updated>2012-06-05T00:00:00+08:00</updated>
+   <id>http://zhuzhonghua.github.com/essays/2012/06/05/lisp-recursive-iteration</id>
+   <content type="html">
+
+&lt;p&gt;在common lisp 中，尾递归的概念确实很好&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;废话不多说，先上代码&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;以著名的斐波那契数列为例：&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;1，递归版&lt;br&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun fib(n)
+    (cond ((= n 0) 0)
+          ((= n 1) 1)
+          (t (+ (fib (- n 1))
+                (fib (- n 2))))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2，迭代版（尾递归）&lt;br&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun fib(n)
+    (fib-iter 1 0 n))
+
+(defun fib-iter(a b count)
+    (if (= count 0)
+        b
+        (fib-iter (+ a b) a (- count 1))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用第二种方式，可以减少堆栈空间的使用&lt;/p&gt;
+</content>
+ </entry>
+ 
+ 
+</feed>

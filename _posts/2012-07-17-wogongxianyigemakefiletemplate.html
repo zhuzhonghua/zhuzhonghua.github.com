@@ -1,0 +1,56 @@
+---
+layout: post
+title : 我贡献一个makefile.template
+category : essays
+tags : [essays]
+---
+{% include JB/setup %}
+
+<p>伟大的Makefile，伟大的Make， 伟大的GNU</p>
+
+<p>只不过规则前面的Tab有时很让人蛋疼，不知道是只能这样？还是有其他更好的替代方案？不知道，留待以后更聪明的人解答吧。</p>
+
+<p>Make会生成一堆的中间文件，如果和原文件混杂在一起，就会比较混乱，所以一般期望的是中间文件单独放在一起。</p>
+
+<p>在网上也查了很多资料，当然会查到云风的博客上，我这里提供另外一种思路。</p>
+
+<p>原来依赖<em>.o的，现在一律依赖build/</em>.o</p>
+
+<p>原来的<em>.o生成规则，现在一律是build/</em>.o生成规则。</p>
+
+<pre><code>TMP=build    
+
+sources:=main.cpp    
+
+OBJS=$(sources:%.cpp=$(TMP)/%.o)
+
+DEST:$(OBJS)
+</code></pre>
+
+<p>接下来是一些依赖关系，使用sed流操作，把依赖关系生成到单独的文件中</p>
+
+<pre><code>#.o:.cpp
+include $(sources:%.cpp=$(TMP)/%.d1)
+#.d:.cpp
+include $(sources:%.cpp=$(TMP)/%.d2)
+
+$(TMP)/%.d1:%.cpp Makefile
+    set -e;rm -f $@;\
+    g++ -MM $(CPPFLAGS) $&lt; &gt; $*.$$$$;\
+    sed 's,\($*\)\.o[ :]*,$(TMP)/$*.o : ,g' &lt; $*.$$$$ &gt; $*.$$$$.$$$$;\
+    rm -f $*.$$$$; \
+    sed '$$a\   g++ -c $&lt; -o $(TMP)/$*.o $(CPPFLAGS)' &lt; $*.$$$$.$$$$ &gt; $@; \
+    rm -f $*.$$$$.$$$$
+
+$(TMP)/%.d2:%.cpp Makefile
+    set -e;rm -f $@;\
+    g++ -MM $(CPPFLAGS) $&lt; &gt; $@.$$$$;\
+    sed 's,\($*\)\.o[ :]*,$(TMP)/$*.d1 $@ : ,g' &lt; $@.$$$$ &gt; $@;\
+    rm -f $@.$$$$; \
+</code></pre>
+
+<p>这样，所有的中间文件都在build/下面，也不会污染代码目录了</p>
+
+<p>=========分割线=======================</p>
+
+<p>出现个问题，如果makefile更新，d1，d2文件也要更新，所以要在d1和d2文件的依赖后面添加Makefile</p>

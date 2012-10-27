@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>珍爱生命，使用Python</title>
+    
+    <meta name="author" content="zhonghua">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">非著名程序</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/about.html">关于</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>珍爱生命，使用Python<small>非著名程序</small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    
+
+<p>今天在写测试程序时，用到了Python的多线程。</p>
+
+<p>首先声明，在真实环境中不要使用Python的多线程，如果要用，那也得用C写的扩展。</p>
+
+<p>碰到一个所有人都会遇到的问题，要结束，强制结束某一个线程。</p>
+
+<p>网上也查了很多资料，一般都是要DIY设计，通过信号啊，变量啊，等等。</p>
+
+<p>我宁愿用异常让整个程序退出，也不愿这么写。</p>
+
+<p>当然Python的设计哲学是不建议强制结束线程的。</p>
+
+<p>在查看Thread的所有方法时，发现了一个_Thread__stop()的方法，果然好用。</p>
+
+<p>在此做个记录。</p>
+
+<p>再次声明，这只是在测试时，为了简单，直接，才使用的方法。</p>
+
+<p>如果在真实环境中使用，后果自负。</p>
+
+<p>======分割线==================
+C++真的不适合网络游戏开发。</p>
+
+<p>我们先建立几个共识，这样分析起来比较方便。</p>
+
+<p>1，C++代码要比Python代码效率不止高一点两点，有人做过测试，大概是20倍左右。</p>
+
+<p>2，看代码的时间要比写代码的时间多很多，而且大部分时间在改BUG。</p>
+
+<p>3，最经常出现的，也是最痛苦的BUG，内存泄露，空指针，野指针，内存写坏。</p>
+
+<p>4，团队里上面这些BUG也许只占5%，但是会占用95%的时间，而且有些BUG是在正式运营的时候才出现的，所以你知道这造成的影响。而且即使出现了这些BUG，一时半会也不一定能改掉。</p>
+
+<p>5，Python写起来要比C++写起来快。</p>
+
+<p>6，如果你用了线程，那么就和3一样了。</p>
+
+<p>如果我做一个策划的需求，使用Python要比使用C++写的快，不止快一点。</p>
+
+<p>而且你也知道，策划的需求变化是随时的，经常的，如果使用C++来应对这种变化，明显是慢的。</p>
+
+<p>但是如果使用Python来做，就会很快了；而且策划也可以配合修改。</p>
+
+<p>使用C++改BUG时，如果是碰到野指针，内存写坏，内存泄露，那你就祈祷吧。</p>
+
+<p>使用Python就不会出现这个问题。</p>
+
+<p>而且改其他的BUG，Python也更容易修改，当然也更快了。</p>
+
+<p>使用C++很容易写出Hard-Test的代码，于是正确性就有问题了。</p>
+
+<p>这方面可以参考PG的H&amp;P。</p>
+
+<p>当然C++的优势在效率，而且可以利用多核的优势。</p>
+
+<p>在此奉劝使用多线程的C++使用者，能用多进程，就不要用多线程。</p>
+
+<p>于是我可以使用多进程的方式来利用多核的优势。</p>
+
+<p>效率上达不到要求，那我就多开几个进程，来保证业务及时完成。</p>
+
+<p>这样确实硬件成本增加了，要多买几台机器来多运行几个进程。</p>
+
+<p>可是这多出来的几个硬件成本，相对于研发的成本不知道省了多少。</p>
+
+<p>包括待遇，时间，以及过长时间带来的其它非研发人员的成本，
+以及使用C++导致的BUG带来的各种损失，包括不能及时改掉BUG带来的时间损失，以及程序出错带来的运营损失。等。</p>
+
+<p>所以从总体上来看，这其实是节省了成本。</p>
+
+<p>而且按照这种思路，以大局考虑，总体考虑，来分析下面的问题。</p>
+
+<p>二八原理，当分析程序的效率时，只需要找出那20%的代码，来优化，就可以达到很好的效果。</p>
+
+<p>而且按照上帝的说法，过早优化是万恶之源。</p>
+
+<p>所以可以使用C++写扩展来改写那20%的代码，就可以达到优化的目的。</p>
+
+<p>而且从总体上来看，这才是优化之道。</p>
+
+<p>这样看来，使用Python代替C++的前提是你得有一个可以多进程代替多线程的服务器机制。</p>
+
+<p>C++有自己的优势，而且使用C++的人，尤其是使用C++写服务器的人，天生对内存和效率敏感。</p>
+
+<p>总结下来，C++适合写稳定的，不会随便改动的代码，比如网络层。而Python适合写经常变化的代码，比如策划的需求。</p>
+
+    <hr>
+    <!--
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/essays/2012/07/18/emacs-ascii" title="爱惜小拇指，远离Emacs，伟大的Emacs  ASCII图模式">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a>
+      
+      </ul>
+    </div>
+    -->
+    <hr>
+    
+  </div>
+  
+  <!--
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>19 July 2012</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#essays-ref">essays <span>9</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+  -->
+  <div class="span4">
+    
+<p>1, 程序</p>
+
+<p>2, 当你年老时不会因为虚度年华而悔恨，不会因为碌碌无为而羞耻</p>
+
+<p>3, 欢迎技术讨论</p>
+<ul>
+<li>secondsquare@gmail.com</li>
+<li>406344976</li>
+</ul>
+
+  </div>
+</div>
+
+
+      </div>
+
+<!--      <footer>
+        <p>&copy; zhonghua 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+      -->
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+
