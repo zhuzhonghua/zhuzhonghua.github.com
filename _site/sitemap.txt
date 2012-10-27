@@ -8,6 +8,7 @@ http://zhuzhonghua.github.com/tags.html
 http://zhuzhonghua.github.com/atom.xml
 http://zhuzhonghua.github.com/sitemap.txt
 
+http://zhuzhonghua.github.com/essays/2012/10/27/jekyll-liquid-assign-bug
 http://zhuzhonghua.github.com/essays/2012/07/19/zhenaishengming-shiyongpython
 http://zhuzhonghua.github.com/essays/2012/07/18/emacs-ascii
 http://zhuzhonghua.github.com/essays/2012/07/17/wogongxianyigemakefiletemplate

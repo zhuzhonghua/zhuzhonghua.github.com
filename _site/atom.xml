@@ -4,13 +4,48 @@
  <title>非著名程序</title>
  <link href="http://zhuzhonghua.github.com/atom.xml" rel="self"/>
  <link href="http://zhuzhonghua.github.com"/>
- <updated>2012-10-27T16:49:40+08:00</updated>
+ <updated>2012-10-27T17:36:08+08:00</updated>
  <id>http://zhuzhonghua.github.com</id>
  <author>
    <name>zhonghua</name>
    <email>secondsquare@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>使用jekyll时，发现liquid的一个小问题</title>
+   <link href="http://zhuzhonghua.github.com/essays/2012/10/27/jekyll-liquid-assign-bug"/>
+   <updated>2012-10-27T00:00:00+08:00</updated>
+   <id>http://zhuzhonghua.github.com/essays/2012/10/27/jekyll-liquid-assign-bug</id>
+   <content type="html">&lt;p&gt;想实现的效果是正序排列，而不是默认的逆序排列。&lt;/p&gt;
+
+&lt;p&gt;使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;site.posts | sort:&amp;quot;date&amp;quot;   &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;能够达到效果。&lt;/p&gt;
+
+&lt;p&gt;但是使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;assign pages_list = site.posts | sort:&amp;quot;date&amp;quot;   &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;就不行。&lt;/p&gt;
+
+&lt;p&gt;在github的liquid项目里也提了issue, &lt;a href='https://github.com/Shopify/liquid/issues/154'&gt;https://github.com/Shopify/liquid/issues/154&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;有人回答说，把空格去掉，也就是&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;assign pages_list = site.posts|sort:&amp;quot;date&amp;quot;   &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;但是经过测试，还是不行。&lt;/p&gt;
+
+&lt;p&gt;我使用的是jekyll-bootstrap，从github上clone下来的。&lt;/p&gt;
+
+&lt;p&gt;目前，我使用的是如下方式:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;for item in site.posts reversed     
+endfor    &lt;/code&gt;&lt;/pre&gt;</content>
+ </entry>
  
  <entry>
    <title>珍爱生命，使用Python</title>
