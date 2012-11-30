@@ -1,39 +1,43 @@
 ---
 layout: post
-title : swf文件格式9之字体和文本(fonts and text)
+title : SWF9文件格式-字体和文本(SWF File Format Version9 - Fonts and Text)
 category : essays
 tags : [essays]
 ---
 {% include JB/setup %}
 
-SWF8文件格式说明支持多种画文本的方法。在SWF6和之后的文件中，所有的文本都使用Unicode编码表示，消除了文本和字符串不同地区之间的区别。这里提醒一下，尽管FP是完全支持Unicode的，但是它仅仅能画从左到右的简单脚本，目前还不支持Hebrew，Arabic，Thai和其它复杂脚本。  
+SWF8支持很多渲染文本的方法。在SWF6之后，所有的文本都使用Unicode编码，避免了不同地区之间文本和字符串的区别。提醒一下，尽管FP是完全支持Unicode的，但是它仅仅支持从左到右的简单文本，还不支持Hebrew，Arabic，Thai等其它复杂的文本。  
 
 
 #字型文本和设备文本  
 
-swf文件格式支持两种文本：字型文本和设备文本。字型文本通过在swf中嵌入字符形状，设备文本使用的是播放平台的文本渲染能力。  
+SWF支持两种文本：字型文本和设备文本。字型文本通过在SWF中嵌入字符形状实现，设备文本使用的是当前平台的文本渲染功能。  
 
-字型文本在所有平台上看起来都一样。可以通过图形使用标准反锯齿，也可以在swf8之后，通过使用高级文本渲染引擎实现。使用字型文本会比设备文本产生更大的swf文件，尤其是在一个很大的字符集里使用了很多字符。  
+字型文本在所有平台上看起来都一样。并且可以使用标准反锯齿功能。在SWF8之后，也可以使用高级文本渲染引擎实现。相对设备文本，使用字型文本会产生更大的SWF文件，尤其是在一个很大的字符集里使用了很多字符。  
 
-设备字体通过操作系统本身实现反锯齿，不同平台表现不一样。有两种方式指定设备文本：直接的通过字体名称在系统中查找，一个特殊的字体名称，映射到平台的高可用字体，尽量选择相近的字体。  
+设备字体由操作系统本身实现反锯齿效果，不同平台表现不一样。有两种方式指定设备文本：通过字体名称在系统中查找，或使用一个特殊的字体名称，映射到系统的高可用字体，尽量选择相近的字体。  
 
-字型文本字符通过DefineFont，DefineFont2，DefineFont3标签定义。设备文本字体通过DefineFont和DefineFontInfo标签一起定义，或者直接通过DefineFont2定义。定义设备文本字体的DefineFont2，如果用在动态文本中的话，不需要包含任何字符图像，尽管包含进来更好，为了防止在任何平台上的任何时刻，字符是否可用。DefineFont和DefineFont2标签可以同时为某些文本提供字型文本，为其它提供设备文本支持，只要提供了图像和字符编码。  
+字型文本字符通过DefineFont，DefineFont2，DefineFont3定义。设备文本字体通过DefineFont和DefineFontInfo一起定义，或者直接通过DefineFont2定义。定义设备文本字体的DefineFont2，如果用于动态文本的话，不需要包含任何字符图像。DefineFont和DefineFont2标签可以同时为某些文本提供字型文本支持，并且为其它文本提供设备文本支持，只要提供了图像和字符编码。  
 
 #静态文本和动态文本  
 
-文本可以被定义为静态的，或者在swf4之后，动态的。动态文本可以在运行时改变，并且还可以变为可编辑。动态文本可以模拟几乎静态文本的所有特性。除了静态文本精确的单个字符的位置，不考虑实现难度和版本兼容性。动态文本还有很多格式化的功能，静态文本没有的。丰富的格式化功能是HTML－文本标记的一个子集。  
+文本可以被定义为静态的，或者在SWF4之后，动态的。动态文本可以在运行时改变，并且还可以编辑。动态文本可以模拟几乎静态文本的所有特性。除了静态文本精确的单个字符的位置，如果不考虑实现难度和版本兼容性的话。动态文本还有很多静态文本没有的格式化功能。丰富的格式化功能由HTML的一个子集支持。  
 
-静态文本通过DefineText定义。动态文本通过DefineEditText定义。这两个标签都可以引用DefineFont或者DefineFont2来获取字符来源。DefineEditText使用的DefineFont2，而不是DefineFont。DefineText既可以使用DefineFont也可以使用DefineFont2。  
+静态文本通过DefineText定义。动态文本通过DefineEditText定义。这两个标签都可以引用DefineFont或者DefineFont2来获取字符来源。DefineEditText使用DefineFont2，而不是DefineFont。DefineText既可以使用DefineFont也可以使用DefineFont2。  
 
-DefineEditText提供了一个标记，来指明使用字型文本还是设备文本。DefineText并没有。这意味着在静态文本中，swf文件格式没办法指明使用字型文本还是设备文本。这个问题由运行时标记解决。一般，所有静态文本都使用字型文本。当FP插件被嵌入到HTML页面中，一个叫devicefont的HTML标签选项会让FP把所有静态文本都渲染成设备文本。字型文本所有后备。DefineEditText能够指明使用静态文本还是字型文本的能力是被认为好于DefineText的另一个原因。  
+DefineEditText提供了一个标记，来指明使用字型文本还是设备文本(译者注：如果有谁知道这个标记请告诉我，我没找到)，而DefineText并没有。这意味着在静态文本中，SWF没办法指明使用字型文本还是设备文本。这个问题由运行时标记解决。一般情况下，所有静态文本都使用字型文本。当FP插件被嵌入到HTML页面中，一个叫devicefont的HTML标签选项会让FP把所有静态文本都渲染成设备文本。字型文本作为后备。DefineEditText能够指明使用静态文本还是字型文本的能力是被认为好于DefineText的另一个原因。  
 
 #字型文本  
 
 ##字型定义  
 
-字型是在一个称为EMSquare的标准坐标空间里定义的。相同的字型集合被使用于每一个给定的字体大小。为了以不同的大小渲染字型，FP通过把EM坐标缩放到点阵坐标。![glyphdef](/assets/glyphdefinitions.png)  
+字型是在一个称为EMSquare的标准坐标空间里定义的。相同的字型集合被用于每一个给定的字体大小。为了以不同的大小渲染字型，FP通过把EM坐标缩放到点阵坐标。
+  
 
-字行字体－不使用高级文本渲染引擎－没有包含任何提高小字体大小的指示信息。然而反矩阵会很好的提高缩小字体的易读性。在12点的大小时(看作100％)，字型文本还是易读的。12点或更低，在渲染可读文本时，建议采用高级反锯齿效果。这会提供小字体大小的优秀文本质量，还包含其它字体元信息来提高渲染效果。  
+![glyphdef](/assets/glyphdefinitions.png)  
+
+
+字型字体－不使用高级文本渲染引擎－没有包含任何提高小字体可读性的提示信息。然而反锯齿会很好的提高缩小字体的可读性。即使在12点的大小时(看作100％)，字型文本还是易读的。12点或更低，在渲染可读文本时，建议采用高级反锯齿。这样小字体也会有很好的可读性，并且还会包含额外字体元信息来提高渲染效果。  
 
 TTF可以很好的转为SWF字型。一个简单的算法是使用Quadratic Bezier 曲线替换Quadratic B－splines。  
 
@@ -43,7 +47,9 @@ TTF可以很好的转为SWF字型。一个简单的算法是使用Quadratic Bezi
 
 ##EM Square  
 
-EMSquare 是想象的空间，用于字型大小和对齐。EMSquare足够大，包含了所有字型，包括重音字型。包括字体的上部，下部，还有一些额外空间来避免文本线的冲突。![emsquare](/assets/emsquare.png)  
+EMSquare 是想象的空间，用于字型大小和对齐。EMSquare足够大，包含了所有字型，包括重音字型。包括字体的上部，下部，还有一些额外空间来避免文本线的冲突。  
+
+![emsquare](/assets/emsquare.png)  
 
 SWF字型是在1024＊1024的空间中定义的。其它来源的字型(如TTF)会有不同的EMSquare。为了使用这些字型，应该缩放到1024大小。  
 
@@ -51,13 +57,15 @@ SWF字型是在1024＊1024的空间中定义的。其它来源的字型(如TTF)�
 
 TTF字型是使用Quadratic B－Splines定义的，这可以很容易的转换为SWF字型的Quadratic Bezier曲线。  
 
-一个TTF B－splines是由一个在on-curve点和很多off-curve点，再跟着一个on-curve点组成的。两个off-curve点的中点保证在曲线上。SWF的Bezier曲线是由一个on-curve点和一个off-curve点，再跟一个on-curve点。  
+一个TTF B－splines是由一个on-curve点和很多off-curve点，再跟着一个on-curve点组成的。两个off-curve点的中点保证在曲线上。SWF的Bezier曲线是由一个on-curve点和一个off-curve点，再跟一个on-curve点组成。  
 
 从TTF到SWF曲线的转换就是在两个off-curve点的中点插入一个on-curve点。  
 
 例子：  
 
-下面是4个点的B－splines，P0和P3是on-curve点，P1和P2是连续的off-curve点。![bsplines](/assets/bsplines.png)  
+下面是4个点的B－splines，P0和P3是on-curve点，P1和P2是连续的off-curve点。  
+
+![bsplines](/assets/bsplines.png)  
 
 这个曲线可以由两个Bezier曲线组成，在P1和P2的中点插入M，结果就是两个Bezier曲线，P0P1M和MP2P3。  
 
@@ -69,7 +77,9 @@ TTF字型是使用Quadratic B－Splines定义的，这可以很容易的转换�
 
 ##字距和差值信息  
 
-字距指的是两个字型之间的水平距离。有些字体系统在每个字体定义时都存储了字距信息。SWF文件存储的是每个字型实例(字型文本块的每个字符)的字距信息。这样成为差值。![kerning](/assets/kerning.png)  
+字距指的是两个字型之间的水平距离。有些字体系统在每个字体定义时都存储了字距信息。SWF文件存储的是每个字型实例(字型文本块的每个字符)的字距信息。这样称为差值。  
+
+![kerning](/assets/kerning.png)  
 
 在前面的例子里，A字型和V字型重叠了。这种情况下，差值要比A的宽度窄。  
 
@@ -87,15 +97,15 @@ TTF字型是使用Quadratic B－Splines定义的，这可以很容易的转换�
 
 高级文本渲染引擎的一个局限是，它没有字型文本那样的动画效果。  
 
-高级文本渲染引擎使用Continuous Stroke Modulation(CSM)参数来调整表现。CSM是一种笔画粗细和边缘锐度的连续调整。CSM使用两种渲染参数：内部和外部切断。这些参数的最佳值是有很大的主观性，并且依赖于用户的喜好，照明条件，显示属性，字样，前景和背景颜色，还有大小。然而大部分情况下，可以通过一小部分内插值的方法来实现高质量类型。  
+高级文本渲染引擎使用Continuous Stroke Modulation(CSM)参数来调整表现。CSM是一种笔画粗细和边缘锐度的连续调整。CSM使用两种渲染参数：内部和外部切断。这些参数的最佳值是有很大的主观性，并且依赖于用户的喜好，照明条件，显示属性，字样，前景和背景颜色，还有大小。然而大部分情况下，可以通过一小部分内插值的方法来实现高质量效果。  
 
-创建高级反锯齿边缘的功能，有外切断(在这之下，边缘不画)和内切断(在这之上，边缘不透明)。在两个切断值之间是一个线性函数，从外切断的0到内切断的最大值。  
+创建了高级反锯齿边缘的功能，含有外切断(在这之下，边缘不画)和内切断(在这之上，边缘不透明)。在两个切断值之间是一个线性函数，从外切断的0到内切断的最大值。  
 
-调整内外切断的值会影响笔画粗细和边缘锐度。两个参数之间的空间是经典的反锯齿方法的过滤半径的两倍。窄一些的空间提供了更锐利的边缘，而宽一些的空间提供了更柔和的边缘。空间是0时，生成的图像是双层图像；当空间很大时，会生成像水一样的边缘。一般的，在小字体情况下，用户喜欢锐利的，高对比度的边缘；而对于动画效果的文本和大字体，喜欢更柔和的边缘。  
+调整内外切断的值会影响笔画粗细和边缘锐度。两个参数之间的空间是经典的反锯齿方法中的过滤半径的两倍。窄一些的空间提供了更锐利的边缘，而宽一些的空间提供了更柔和的边缘。空间是0时，生成的图像是双层图像；当空间很大时，会生成像水一样的边缘。一般的，在小字体情况下，用户喜欢锐利的，高对比度的边缘；而对于动画效果的文本和大字体，喜欢更柔和的边缘。  
 
 外切断是负值，内切断是正值，中点一般在0左右。把中点调向负的方向，会增加笔画粗细；调向正的方向，会减少笔画粗细。外切断应该永远小于等于内切断。  
 
-FP创建了一个CSM的表格，为每个高级反锯齿字体提供文本大小和文本颜色的功能。这个表格提供了一个CSM设置的集合，包含了很大范围的字体大小。你还可以定义一个用户自定义的表格，来代替默认值，使用AS的函数，setAdvancedAntiAliasingTable()  
+FP创建了一个CSM的表格，为每个高级反锯齿字体提供文本大小和文本颜色。这个表格提供了一个CSM设置的集合，包含了很大范围的字体大小。你还可以定义一个用户自定义的表格，来代替默认值，使用AS的函数，setAdvancedAntiAliasingTable()  
 
 ##DefineFont 和 DefineText  
 
@@ -106,9 +116,9 @@ FP创建了一个CSM的表格，为每个高级反锯齿字体提供文本大小
 + DefineFont定义字型集合  
 + DefineText定义使用那个字体显示的文本字符串  
 
-DefineFont标签定义了所有用户DefineText的字型。DefineFont包含了一组SHAPERECORD，描述了字型的边缘。这些SHAPERECORD同样用于DefineShape，定义非文本内容。为了把文件大小降到最低，只有使用的字型才会包含进来。DefineText存储的是实际要显示的文本字符串，由字型下标表示。还有文本的包围盒，转换矩阵，属性如颜色，大小。  
+DefineFont标签定义了所有用户DefineText的字型。DefineFont包含了一组SHAPERECORD，描述了字型的边缘。这些SHAPERECORD同样用于DefineShape，定义的是非文本内容。为了把文件大小降到最低，只有使用的字型才会包含进来。DefineText存储的是实际要显示的文本字符串，由字型下标表示。还有文本的包围盒，转换矩阵，属性如颜色，大小。  
 
-DefineText包含了一组TEXTRECORD。TEXTRECORD记录了字体，颜色，大小，还有下一个字符的XY坐标。这个类型会应用到接下来的所有字符，直到另一个TEXTRECORD。TEXTRECORD还包含一组下标，引用了当前字体的字型表。字符不是由字符编码引用，而是由字型表的下标引用。字型数据还包含文本中每个字符的差值。  
+DefineText包含了一组TEXTRECORD。TEXTRECORD记录了字体，颜色，大小，还有下一个字符的XY坐标。这个类型会应用到接下来的所有字符，直到另一个TEXTRECORD出现。TEXTRECORD还包含一组下标，引用了当前字体的字型表。字符不是由字符编码引用，而是由字型表的下标引用。字型数据还包含文本中每个字符的差值。  
 
 ##静态字型文本举例  
 
@@ -119,6 +129,7 @@ DefineText包含了一组TEXTRECORD。TEXTRECORD记录了字体，颜色，大�
 第二，使用DefineText定义文本。TEXTRECORD设置第一个字符的位置，选择Arial字体，设置大小为24，这样字体被缩放到正确大小。(字型是在EMSquare坐标系中定义的，大小是DefineText的一部分)还包含一组GLYPHENTRY。每一个GLYPHENTRY都引用字体形状数组的一个下标。在这个例子里，第一个GLYPHENTRY引用下标0(对应字符b)，第二个引用下标1(o)，第三个引用下标0(b)。每个GLYPHENTRY还包含差值来精确定位字型的位置。  
 
 下面的图描述了DefineText如何与DefineFont交互。  
+
 ![definetextfont](/assets/definetextfont.png)  
 
 #字体标签  
@@ -133,9 +144,9 @@ DefineFont定义了特定字体的每个字型的边框形状。只有在DefineT
 
 字体ID唯一标识了这个字体。可以用于DefineText引用。在SWF文件中字体ID也必须唯一。  
 
-如果DefineFontInfo和DefineFont一起，要注意DefineFont中的字型顺序要和DefineFontInfo中的字符顺序一致，以字符码排序。OffsetTable和GlyphShapeTable一起使用。这两个表有相同数量的条目，offsets中的顺序和shape中的顺序，一一顺序对应。OffsetTable指定了在GlyphShapeTable中的位置。每一个Offset条目存储的是offset table开始到相应shape的差值(BYTES)。因为GlyphShapeTable与OffsetTable相邻，那么每个表格中的条目数量(字体定义的字型数目)可以通过offsettable中的第一个条目除以2得到。  
+如果DefineFontInfo和DefineFont一起的话，要注意DefineFont中的字型顺序要和DefineFontInfo中的字符顺序一致，以字符码排序。OffsetTable和GlyphShapeTable一起使用。这两个表有相同数量的条目，offsets中的顺序和shape中的顺序，一一对应。OffsetTable指定了在GlyphShapeTable中的位置。每一个Offset条目存储的是offset table开始到相应shape的差值(BYTES)。因为GlyphShapeTable与OffsetTable相邻，那么每个表格中的条目数量(字体定义的字型数目)可以通过offsettable中的第一个条目除以2得到（译者注：读者可以自己计算一下，提示：offsetTable中条目的类型。如果不懂，可以联系译者）。  
 
-在GlyphShapeTable中的每一个SHAPE的第一个STYLECHANGERECORD不使用LineStyle和LineStyles字段。另外这种情况下，这两个字段都被设为1。  
+在GlyphShapeTable中的每一个SHAPE的第一个STYLECHANGERECORD不使用LineStyle和LineStyles字段。这种情况下，这两个字段都被设为1。  
 
 ##DefineFontInfo  
 
@@ -150,9 +161,9 @@ DefineFontInfo并不会强制把字型文本转换为设备文本。它仅仅是
 
 CodeTable中的条目必须是字码的升序排序。同时CodeTable中条目的顺序必须和引用的DefineFont中的字型顺序一致。这也要求DefineFont中的字型顺序要保持一致。  
 
-SWF6和之后的文件都要求Unicode文本编码。这样所有的字符编码表都用的是UCS－2(UCS－2是第一个UTF－16的64K字符码)。这种编码为每个字符使用固定2字节大小。这就是说，如果DefineFontInfo出现在SWF6或之后的文件中，那么FontFlagsWideCodes一定被设为1，FontFlagsShiftJIS和FontFlagsANSI一定设为0，CodeTable一定使用的是UI16的UCS－2的编码组成。  
+SWF6和之后的文件中的文本都要求Unicode文本编码。这样所有的字符编码表都用的是UCS－2(UCS－2是第一个UTF－16的64K字符码)。这种编码为每个字符使用固定2字节大小。这就是说，如果DefineFontInfo出现在SWF6或之后的文件中，那么FontFlagsWideCodes一定被设为1，FontFlagsShiftJIS和FontFlagsANSI一定设为0，CodeTable一定使用的是UI16的UCS－2的编码组成。  
 
-另外一点是在SWF6和之后的文件中，字体名一定是用UTF8编码的。在SWF5或之前，文件名是以平台特定的方式编码的，使用系统的码页。平台会使用当前的码页来显示，导致不一样的平台之间的不一致结果。如果平台是ANSI系统，字体名称就是ANSI字符串。如果平台是日本的Shift－JIS系统，字体名就会被翻译为Shift－JIS字符串。还有很多其他平台的码页。这种本地依赖非常不好，这也是为什么SWF6转向了统一编码。需要注意的是DefineFontInfo中的字体名不是空字符串结尾的。而是通过FontNameLen来定义长度的。FontNameLen指定了FontName需要的字节数，这不一定要和字符数量一致，因为有些编码，每个字符会使用多于1个字节。  
+另外一点是在SWF6和之后的文件中，字体名一定是用UTF8编码的。在SWF5或之前，文件名是以平台特定的方式编码的，使用系统的码页。平台会使用当前的码页来显示，这样导致不一样的平台之间的显示不一样。如果平台是ANSI系统，字体名称就是ANSI字符串。如果平台是日本的Shift－JIS系统，字体名就会被翻译为Shift－JIS字符串。还有很多其他平台的码页。这种本地依赖非常不好，这也是为什么SWF6转向了统一编码。需要注意的是DefineFontInfo中的字体名不是空字符串结尾的。而是通过FontNameLen来定义长度的。FontNameLen指定了FontName需要的字节数，这不一定要和字符数量一致，因为有些编码，每个字符会使用多于1个字节。  
 
 字体名是逐字使用的，直接传入平台的字体系统，定位字体。然而有很多特殊的间接字体名是,根据不同平台映射到不同的字体的。这些间接映射是硬编码到平台特定的FP中的，这些字体是在平台默认字体和最可用字体之间选择的。或者这样考虑，间接映射是为了让所有平台看起来尽可能一致。  
 
@@ -192,7 +203,7 @@ DefineFont2是唯一能用于动态文本的标签。
 
 就像在DefineFont里一样，DefineFont2里每个SHAPE的第一个STYLECHANGERECORD也不使用LineStyle和LineStyles字段，并且也被设置为1。  
 
-DefeinFont2还保留了字体边框表和字距表。这些信息在FP7之后就不用了，但是必须被保留下来，为了DefineFont2的一致性。为FontBoundTable提供一个最小的RECT，把KerningCount永远设置为0，这样可以让FontKerningTable忽略掉。
+DefeinFont2还保留了字体边框表和字距表。这些信息在FP7之后就不用了，但是必须被保留下来，为了DefineFont2的一致性。为FontBoundTable提供一个最小的RECT，把KerningCount永远设置为0，这样可以忽略掉FontKerningTable。
 
 ##DefineFont3  
 
@@ -302,19 +313,15 @@ DefineEditText定义的是动态文本对象，或者文本域。
 最低的版本要求是SWF4。  
 
 ![defineedittext](/assets/defineedittext1.png)  
-
 ![defineedittext](/assets/defineedittext2.png)  
-
 ![defineedittext](/assets/defineedittext3.png)  
-
 ![defineedittext](/assets/defineedittext4.png)  
-
 ![defineedittext](/assets/defineedittext5.png)  
 
 如果HTML字段设置了，InitialText的内容就会被解释为HTML的一个子集。下面是所有支持的标签。  
 
 ![html](/assets/html1.png)  
-![html](/assets/html1.png)  
+![html](/assets/html2.png)  
 
 ##CSMTextSettings  
 

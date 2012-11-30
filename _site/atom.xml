@@ -4,7 +4,7 @@
  <title>非著名程序</title>
  <link href="http://zhuzhonghua.github.com/atom.xml" rel="self"/>
  <link href="http://zhuzhonghua.github.com"/>
- <updated>2012-11-15T20:41:54+08:00</updated>
+ <updated>2012-11-15T21:01:28+08:00</updated>
  <id>http://zhuzhonghua.github.com</id>
  <author>
    <name>zhonghua</name>
@@ -19,7 +19,7 @@
    <id>http://zhuzhonghua.github.com/essays/2012/11/13/swf-spec-9-font-text</id>
    <content type="html">&lt;p&gt;SWF8文件格式说明支持多种画文本的方法。在SWF6和之后的文件中，所有的文本都使用Unicode编码表示，消除了文本和字符串不同地区之间的区别。这里提醒一下，尽管FP是完全支持Unicode的，但是它仅仅能画从左到右的简单脚本，目前还不支持Hebrew，Arabic，Thai和其它复杂脚本。&lt;/p&gt;
 
-&lt;h1 id='id21'&gt;字型文本和设备文本&lt;/h1&gt;
+&lt;h1 id='id1'&gt;字型文本和设备文本&lt;/h1&gt;
 
 &lt;p&gt;swf文件格式支持两种文本：字型文本和设备文本。字型文本通过在swf中嵌入字符形状，设备文本使用的是播放平台的文本渲染能力。&lt;/p&gt;
 
@@ -29,7 +29,7 @@
 
 &lt;p&gt;字型文本字符通过DefineFont，DefineFont2，DefineFont3标签定义。设备文本字体通过DefineFont和DefineFontInfo标签一起定义，或者直接通过DefineFont2定义。定义设备文本字体的DefineFont2，如果用在动态文本中的话，不需要包含任何字符图像，尽管包含进来更好，为了防止在任何平台上的任何时刻，字符是否可用。DefineFont和DefineFont2标签可以同时为某些文本提供字型文本，为其它提供设备文本支持，只要提供了图像和字符编码。&lt;/p&gt;
 
-&lt;h1 id='id22'&gt;静态文本和动态文本&lt;/h1&gt;
+&lt;h1 id='id2'&gt;静态文本和动态文本&lt;/h1&gt;
 
 &lt;p&gt;文本可以被定义为静态的，或者在swf4之后，动态的。动态文本可以在运行时改变，并且还可以变为可编辑。动态文本可以模拟几乎静态文本的所有特性。除了静态文本精确的单个字符的位置，不考虑实现难度和版本兼容性。动态文本还有很多格式化的功能，静态文本没有的。丰富的格式化功能是HTML－文本标记的一个子集。&lt;/p&gt;
 
@@ -37,9 +37,9 @@
 
 &lt;p&gt;DefineEditText提供了一个标记，来指明使用字型文本还是设备文本。DefineText并没有。这意味着在静态文本中，swf文件格式没办法指明使用字型文本还是设备文本。这个问题由运行时标记解决。一般，所有静态文本都使用字型文本。当FP插件被嵌入到HTML页面中，一个叫devicefont的HTML标签选项会让FP把所有静态文本都渲染成设备文本。字型文本所有后备。DefineEditText能够指明使用静态文本还是字型文本的能力是被认为好于DefineText的另一个原因。&lt;/p&gt;
 
-&lt;h1 id='id23'&gt;字型文本&lt;/h1&gt;
+&lt;h1 id='id3'&gt;字型文本&lt;/h1&gt;
 
-&lt;h2 id='id24'&gt;字型定义&lt;/h2&gt;
+&lt;h2 id='id4'&gt;字型定义&lt;/h2&gt;
 
 &lt;p&gt;字型是在一个称为EMSquare的标准坐标空间里定义的。相同的字型集合被使用于每一个给定的字体大小。为了以不同的大小渲染字型，FP通过把EM坐标缩放到点阵坐标。&lt;img alt='glyphdef' src='/assets/glyphdefinitions.png' /&gt;&lt;/p&gt;
 
@@ -75,13 +75,13 @@
 
 &lt;p&gt;1，Y坐标反向（TTF中Y向上，SWF中Y向下）&lt;br /&gt;2，把TTF中EMSquare坐标缩放到SWFEMSquare坐标中。&lt;br /&gt;3，在每对off-curve的中点插入on-curve点。&lt;/p&gt;
 
-&lt;h2 id='id25'&gt;字距和差值信息&lt;/h2&gt;
+&lt;h2 id='id5'&gt;字距和差值信息&lt;/h2&gt;
 
 &lt;p&gt;字距指的是两个字型之间的水平距离。有些字体系统在每个字体定义时都存储了字距信息。SWF文件存储的是每个字型实例(字型文本块的每个字符)的字距信息。这样成为差值。&lt;img alt='kerning' src='/assets/kerning.png' /&gt;&lt;/p&gt;
 
 &lt;p&gt;在前面的例子里，A字型和V字型重叠了。这种情况下，差值要比A的宽度窄。&lt;/p&gt;
 
-&lt;h2 id='id26'&gt;高级文本渲染引擎&lt;/h2&gt;
+&lt;h2 id='id6'&gt;高级文本渲染引擎&lt;/h2&gt;
 
 &lt;p&gt;字型可以使用普通的FP渲染器渲染，或者在SWF8之后，使用高级文本渲染引擎渲染。&lt;/p&gt;
 
@@ -117,7 +117,7 @@
 
 &lt;p&gt;DefineText包含了一组TEXTRECORD。TEXTRECORD记录了字体，颜色，大小，还有下一个字符的XY坐标。这个类型会应用到接下来的所有字符，直到另一个TEXTRECORD。TEXTRECORD还包含一组下标，引用了当前字体的字型表。字符不是由字符编码引用，而是由字型表的下标引用。字型数据还包含文本中每个字符的差值。&lt;/p&gt;
 
-&lt;h2 id='id27'&gt;静态字型文本举例&lt;/h2&gt;
+&lt;h2 id='id7'&gt;静态字型文本举例&lt;/h2&gt;
 
 &lt;p&gt;考虑一下使用24大小，以Arial字体显示bob。&lt;/p&gt;
 
@@ -127,7 +127,7 @@
 
 &lt;p&gt;下面的图描述了DefineText如何与DefineFont交互。&lt;br /&gt;&lt;img alt='definetextfont' src='/assets/definetextfont.png' /&gt;&lt;/p&gt;
 
-&lt;h1 id='id28'&gt;字体标签&lt;/h1&gt;
+&lt;h1 id='id8'&gt;字体标签&lt;/h1&gt;
 
 &lt;h2 id='definefont'&gt;DefineFont&lt;/h2&gt;
 
@@ -237,7 +237,7 @@
 
 &lt;p&gt;&lt;img alt='definefontname' src='/assets/definefontname1.png' /&gt;&lt;br /&gt;&lt;img alt='definefontname' src='/assets/definefontname2.png' /&gt;&lt;/p&gt;
 
-&lt;h1 id='id29'&gt;静态文本标签&lt;/h1&gt;
+&lt;h1 id='id9'&gt;静态文本标签&lt;/h1&gt;
 
 &lt;h2 id='definetext'&gt;DefineText&lt;/h2&gt;
 
@@ -285,7 +285,7 @@
 
 &lt;p&gt;&lt;img alt='definetext2' src='/assets/definetext21.png' /&gt;&lt;br /&gt;&lt;img alt='definetext2' src='/assets/definetext22.png' /&gt;&lt;/p&gt;
 
-&lt;h1 id='id30'&gt;动态文本标签&lt;/h1&gt;
+&lt;h1 id='id10'&gt;动态文本标签&lt;/h1&gt;
 
 &lt;h2 id='defineedittext'&gt;DefineEditText&lt;/h2&gt;
 
