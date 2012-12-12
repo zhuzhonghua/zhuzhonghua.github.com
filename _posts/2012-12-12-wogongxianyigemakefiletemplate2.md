@@ -1,6 +1,6 @@
 ---
 layout: post
-title : 我贡献一个makefile.template<2>
+title : 我贡献一个makefile.template(2)
 category : essays
 tags : [essays]
 ---
