@@ -114,4 +114,10 @@ tags : [essays]
 补充：
 
 
-PyArg_ParseTuple中的关于传递object对象的格式字符串是大写o，不是0，也不是小写o。是大写O。
+PyArg_ParseTuple中的关于传递object对象的格式字符串是大写o，不是0，也不是小写o。是大写O。 
+
+
+
+\=====================================================
+
+同样可想而知，如果在CPP内分配了一段内存，如new char[]，通过buildvalue传递给py时，自己也要记得delete。  
