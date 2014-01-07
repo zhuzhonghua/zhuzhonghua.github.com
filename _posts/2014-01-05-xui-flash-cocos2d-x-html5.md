@@ -21,7 +21,8 @@ tags : [essays]
 并且也做了一个小小的demo    
 虽然很不完善，但是该有的都有了		  
 
-####自己发了两个帖子，做了小小的推广，不过效果不是很好，就当自己做着玩了		
+####自己发了几个帖子，做了小小的推广    
 [http://www.v2ex.com/t/95663#reply3](http://www.v2ex.com/t/95663#reply3)		
-[http://www.cocoachina.com/bbs/read.php?tid=178076](http://www.cocoachina.com/bbs/read.php?tid=178076)		
+[http://www.cocoachina.com/bbs/read.php?tid=178076](http://www.cocoachina.com/bbs/read.php?tid=178076)
+[http://news.dbanotes.net/item?id=12780](http://news.dbanotes.net/item?id=12780)    
 
