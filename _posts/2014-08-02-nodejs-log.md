@@ -1,6 +1,10 @@
-# 在项目中使用Nodejs
-
-标签（空格分隔）： 杂谈 技术 nodejs
+---
+layout: post
+title : 在项目中使用Nodejs
+category : essays
+tags : [essays 杂谈 技术 nodejs]
+---
+{% include JB/setup %}
 
 ---
 
