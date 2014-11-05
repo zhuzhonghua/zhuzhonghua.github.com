@@ -36,3 +36,7 @@ decoda是开源的，试用效果不错，就是每次需要手动填一些参�
 
 [patch2](https://github.com/zhuzhonghua/leiningen/commit/3a66434bdd72c3af34112b0ea632f9293f33285d)
 
+---
+update
+[lein-run-single-common-file](https://github.com/technomancy/leiningen/pull/1751)
+
