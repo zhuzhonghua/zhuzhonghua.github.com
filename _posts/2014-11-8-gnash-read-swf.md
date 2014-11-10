@@ -8,7 +8,7 @@ tags : [essays gnash gameswf flash swf]
 
 ---
 
-![frame](http://cu.nj02.dl2.baidupcs.com/file/c3e267ea94cf28be474326b8b6e6fe70?bkt=p2-nj-787&fid=83981061-250528-944239277629096&time=1415452078&sign=FDTAXERB-DCb740ccc5511e5e8fedcff06b081203-1aJqQW5PSMte4qeyZvOpYpcbvgA%3D&to=ncp&fm=Nan,B,U,nc&newver=1&newfm=1&flow_ver=3&expires=8h&rt=sh&r=233673108&mlogid=3223764340&vuk=83981061&vbdid=1144638747&fin=gnash-swf-read.png&fn=gnash-swf-read.png)
+![frame](/assets/gnash-swf-read.png)
 
 
 从gui/gnash.cpp中的main函数进入
