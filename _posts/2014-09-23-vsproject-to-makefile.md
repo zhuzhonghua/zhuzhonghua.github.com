@@ -51,3 +51,54 @@ vs2010的工程文件后缀是.vcxproj，假设是helloworld.vcxproj。
 [configure.in](https://gist.github.com/zhuzhonghua/84a680e49ad9088731a7)
 
 [make_version.sh](https://gist.github.com/zhuzhonghua/5d8e9796eb8e8664468e)
+
+---
+
+update 2014/11/11
+
+在vs下开发完成后，需要打包
+
+	import os
+	
+	import tarfile
+	
+	def is_exclude(fullpath):
+		if -1 == fullpath.find(".svn") and \
+			-1 == fullpath.find(".opensdf") and \
+			-1 == fullpath.find(".obj") and \
+			-1 == fullpath.find(".log") and \
+			-1 == fullpath.find("Debug") and \
+			-1 == fullpath.find("ReadMe.txt") and \
+			-1 == fullpath.find(".vcxproj.filters") and \
+			-1 == fullpath.find(".vcxproj.user") and \
+			-1 == fullpath.find("libprotobuf") and \
+			-1 == fullpath.find("node_modules") and \
+			-1 == fullpath.find("build") and \
+			-1 == fullpath.find("ipch") and \
+			-1 == fullpath.find(".zip") and \
+			-1 == fullpath.find(".py") and \
+			-1 == fullpath.find(".bat") and \
+			-1 == fullpath.find("\\test\\") and \
+			-1 == fullpath.find(".sdf"):
+			return False
+		else:
+			return True
+	
+	def add_tar(path, tarfile):
+		for root,dir,files in os.walk(path):
+			for file in files:
+				fullpath = os.path.join(root,file)		
+				if False == is_exclude(fullpath):
+					print fullpath
+					try:
+						tarfile.add(fullpath)
+					except Exception, e:
+						print e
+	
+	raw_input("click to start")
+	
+	tar = tarfile.open("server.tar.gz","w:gz")
+	
+	add_tar(".\\Server", tar)
+	
+	raw_input("click to close")
