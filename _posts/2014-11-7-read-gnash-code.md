@@ -52,3 +52,10 @@ GNash依赖的库还是很多的，环境不同遇到的问题也会很多
     #!/bin/sh
     libtool --mode=execute gdb --args gui/sdl-gnash
     
+---
+###补充 
+2014/11/26
+使用Emacs24调试 
+
+    gdb -i=mi gui/.libs/lt-sdl-gnash
+    
