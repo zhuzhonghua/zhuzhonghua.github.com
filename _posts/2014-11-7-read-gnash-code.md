@@ -53,9 +53,22 @@ GNash依赖的库还是很多的，环境不同遇到的问题也会很多
     libtool --mode=execute gdb --args gui/sdl-gnash
     
 ---
-###补充 
+###补充
+
 2014/11/26
+
 使用Emacs24调试 
 
     gdb -i=mi gui/.libs/lt-sdl-gnash
     
+###补充2
+
+2014／11／29
+
+使用
+
+    make CXXFLAGS="-g -std=c++11 -fPIC"
+
+编译一个不优化，方便调试的版本
+
+在使用gdb调试前，需要先使用上面的libtool来生成一下对应的lt-sdl-gnash
