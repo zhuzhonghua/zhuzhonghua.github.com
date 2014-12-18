@@ -26,6 +26,16 @@
 </p>
 
 <p>
-我的支付宝 secondsquare #AT# qq.com
+or
+</p>
+
+<p>
+	<form action="https://shenghuo.alipay.com/send/payment/fill.htm" accept-charset="gbk" id="dinggou" method="post" name="dinggou" target="_blank">
+	<input type="image" src="https://i.alipayobjects.com/e/201310/1H9cugk9Ut_src.png" border="0" name="submit" alt="Alipay">
+	<input name="optEmail" type="hidden" value="secondsquare@qq.com"> 
+	<input name="memo" type="hidden" value=""> 
+	<input id="payAmount" name="payAmount" type="hidden" value="0.99"> 
+	<input id="title" name="title" type="hidden" value="">
+	</form>
 </p>
 
