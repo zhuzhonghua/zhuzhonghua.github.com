@@ -11,15 +11,15 @@ tags : [egret protobuf import]
 egret是什么  
 [http://www.egret.com/](http://www.egret.com/)
 
-[http://bbs.egret-labs.org/thread-5800-1-1.html](http://bbs.egret-labs.org/thread-5800-1-1.html) 
-[http://bbs.egret-labs.org/thread-915-1-1.html](http://bbs.egret-labs.org/thread-915-1-1.html) 
-[http://bbs.egret-labs.org/thread-6260-1-1.html](http://bbs.egret-labs.org/thread-6260-1-1.html) 
+[http://bbs.egret-labs.org/thread-5800-1-1.html](http://bbs.egret-labs.org/thread-5800-1-1.html)   
+[http://bbs.egret-labs.org/thread-915-1-1.html](http://bbs.egret-labs.org/thread-915-1-1.html)  
+[http://bbs.egret-labs.org/thread-6260-1-1.html](http://bbs.egret-labs.org/thread-6260-1-1.html)   
 
-使用websocket，再配合Protobuf，通信消息的大小可以节省很多。 
-上面找了很多例子，在项目里使用，无法编译通过 
+使用websocket，再配合Protobuf，通信消息的大小可以节省很多。  
+上面找了很多例子，在项目里使用，无法编译通过  
 egret build -e 总是提示 no such file or directory xxxx/bin/protobuf	
 
-最后尝试了各种关键词，baidu, google各种搜索，发现了这个       
+最后尝试了各种关键词，baidu, google各种搜索，发现了这个  
 [http://edn.egret.com/cn/index.php?g=&m=article&a=index&id=172](http://edn.egret.com/cn/index.php?g=&m=article&a=index&id=172)  
 
 这里是关于第三方的配置，使用。  
