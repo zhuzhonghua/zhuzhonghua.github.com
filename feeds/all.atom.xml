@@ -167,18 +167,6 @@
 
 &lt;p&gt;根据完成度，来决定是否把这个导出资源和代码的工具开源。&lt;/p&gt;</content></entry>
  <entry>
-  <title type="text">在使用JSFL时出错的记录</title>
-  <link rel="alternate" href="https://zhuzhonghua.github.com/2013/07/%E5%9C%A8%E4%BD%BF%E7%94%A8jsfl%E6%97%B6%E5%87%BA%E9%94%99%E7%9A%84%E8%AE%B0%E5%BD%95.html?utm_source=all&amp;utm_medium=Atom" />
-  <id>urn:https-zhuzhonghua-github-com:-2013-07-E5-9C-A8-E4-BD-BF-E7-94-A8jsfl-E6-97-B6-E5-87-BA-E9-94-99-E7-9A-84-E8-AE-B0-E5-BD-95-html</id>
-  <published>2013-06-30T16:00:00Z</published>
-  <updated>2013-06-30T16:00:00Z</updated>
-  <author>
-   <name>ZhongHua</name></author>
-  <content type="html">
-&lt;p&gt;JSFL为何物，请自行Google&lt;/p&gt;
-
-&lt;p&gt;JSFL文件中的函数名，不要和文件名相同。 要不然在执行时，会出现JS错误。 这个问题查了我好久才发现的。 而且Google了也没结果，所以在此记录。&lt;/p&gt;</content></entry>
- <entry>
   <title type="text">编译使用SDL2.0</title>
   <link rel="alternate" href="https://zhuzhonghua.github.com/2013/07/%E7%BC%96%E8%AF%91%E4%BD%BF%E7%94%A8sdl2-0.html?utm_source=all&amp;utm_medium=Atom" />
   <id>urn:https-zhuzhonghua-github-com:-2013-07-E7-BC-96-E8-AF-91-E4-BD-BF-E7-94-A8sdl2-0-html</id>
@@ -286,6 +274,18 @@ int main(int argc, char* argv[])
 &lt;p&gt;刚开始编译时会遇到dlsym undefined reference 的问题，加上-ldl选项就OK了。&lt;/p&gt;
 
 &lt;p&gt;遇到clock_gettime undefined reference，那么加上-lrt的选项，就OK 了。&lt;/p&gt;</content></entry>
+ <entry>
+  <title type="text">在使用JSFL时出错的记录</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2013/07/%E5%9C%A8%E4%BD%BF%E7%94%A8jsfl%E6%97%B6%E5%87%BA%E9%94%99%E7%9A%84%E8%AE%B0%E5%BD%95.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2013-07-E5-9C-A8-E4-BD-BF-E7-94-A8jsfl-E6-97-B6-E5-87-BA-E9-94-99-E7-9A-84-E8-AE-B0-E5-BD-95-html</id>
+  <published>2013-06-30T16:00:00Z</published>
+  <updated>2013-06-30T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;JSFL为何物，请自行Google&lt;/p&gt;
+
+&lt;p&gt;JSFL文件中的函数名，不要和文件名相同。 要不然在执行时，会出现JS错误。 这个问题查了我好久才发现的。 而且Google了也没结果，所以在此记录。&lt;/p&gt;</content></entry>
  <entry>
   <title type="text">豆瓣FM Hunter 更新</title>
   <link rel="alternate" href="https://zhuzhonghua.github.com/2013/06/%E8%B1%86%E7%93%A3fm-hunter-%E6%9B%B4%E6%96%B0.html?utm_source=all&amp;utm_medium=Atom" />
