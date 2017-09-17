@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>SWF9文件格式-形状(SWF File Format Version9 - Shape)</title>
+    <meta name="description" content="Shape结构很紧凑，也很灵活。FP渲染起来效率很高。 和大多数的矢量格式一样，在Shape中定义的矢量也是由路径，也就是一组边，定义的。 路径可以是闭合的，也可以是开放的。路径中有直线，曲线，还有一些移动的指令。 指令可以使得，使用一个Shape结构定义好几个不相关的形状。  填充样式会影响由路径包围的区域的外观。SWF文件中的填充样式里包含颜色，渐变，还有位图图像。  线段样式会影响路径轮廓的外观。线段样式是关于笔画的粗细和颜色的。  大多数的矢量格式只允许一个路径中只能包含一种填充和线段样式。而SW...">
+    <meta name="author"      content="ZhongHua">
+    <meta name="keywords"    content="SWF">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://zhuzhonghua.github.com/2012/12/swf9%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F-%E5%BD%A2%E7%8A%B6-swf-file-format-version9-shape.html">
+    <link rel="next" href="/2012/11/swf9%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F-%E5%AD%97%E4%BD%93%E5%92%8C%E6%96%87%E6%9C%AC-swf-file-format-version9-fonts-and-text.html">
+    <link rel="prev" href="/2013/02/%E4%BD%BF%E7%94%A8cpp%E6%89%A9%E5%B1%95python.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-xxxxx', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <header class="navbar navbar-default navbar-inverse"
+            role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button"
+                  class="navbar-toggle"
+                  data-toggle="collapse"
+                  data-target=".our-nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/index.html" class="navbar-brand">好记性不如烂笔头</a>
+        </div>
+        <div class="collapse navbar-collapse our-nav-collapse"
+             role="navigation">
+          <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/index.html">All Posts</a></li>
+
+<li><a href="/tags/SWF.html">SWF</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/About.html">About</a>
+            </li> 
+            <li><a href="/feeds/all.atom.xml">Atom</a></li>
+            <li><a href="/feeds/all.rss.xml">RSS</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+          <article>
+  <header>
+    <h1>SWF9文件格式-形状(SWF File Format Version9 - Shape)</h1>
+  </header>
+
+<p>Shape结构很紧凑，也很灵活。FP渲染起来效率很高。 和大多数的矢量格式一样，在Shape中定义的矢量也是由路径，也就是一组边，定义的。 路径可以是闭合的，也可以是开放的。路径中有直线，曲线，还有一些移动的指令。 指令可以使得，使用一个Shape结构定义好几个不相关的形状。</p>
+
+<p>填充样式会影响由路径包围的区域的外观。SWF文件中的填充样式里包含颜色，渐变，还有位图图像。</p>
+
+<p>线段样式会影响路径轮廓的外观。线段样式是关于笔画的粗细和颜色的。</p>
+
+<p>大多数的矢量格式只允许一个路径中只能包含一种填充和线段样式。而SWF扩展了这个限制，允许每条边都有自己的填充和线段样式。但是如果填充样式在路径中间变化，那么结果是不可知的。</p>
+
+<p>Adobe Flash创作工具还支持每条边有两个样式，内边和外边，FillStyle0和FillStyle1。FillStyle0永远都是先应用，然后根据需要，决定是否应用FillStyle1。</p>
+
+<h1 id="shape-简介">Shape 简介</h1>
+
+<p>一个Shape由如下几种元素组成：</p>
+
+<ul>
+ <li>CharacterId－16位的数字，在字典里作为唯一标识。CharacterID可以在控制标签中使用，如在PlaceObject里。这样可以重用并且也可以和其他元素组合为更复杂的元素。
+  <br /></li>
+ <li>Bounding Box-包围Shape的矩形
+  <br /></li>
+ <li>Fill Style Array-在Shape中使用的填充样式的列表
+  <br /></li>
+ <li>Line Style Array-在Shape中使用的线段样式的列表
+  <br /></li>
+ <li>Shape Record Array-Shape Record的列表。Shape Record可以是直边，曲边，可以改变样式，移动当前点位置</li></ul>
+
+<h1 id="shape举例">Shape举例</h1>
+
+<p>下面的例子是一组Shape，但是可以由仅仅一个DefineShape标签定义。</p>
+
+<p><img src="/assets/shapeexample.png" alt="ShapeExample" /></p>
+
+<p>红圈，红方块还有绿色的圆边矩形都是闭合路径。曲线是一个开放路径。 红方块是由直线组成，红圈是由曲线组成，圆边矩形由曲线交叉直线组成。</p>
+
+<p>这里有两种填充样式，solid 红和solid 绿，两种线段样式，1像素黑和2像素黑。 红圈和红方块的线段样式和填充样式都一样。 圆边矩形和曲线有相同的线段样式。</p>
+
+<p>下面就是如何在SWF里描述这个例子：</p>
+
+<h3 id="定义填充样式">定义填充样式</h3>
+
+<ol>
+ <li>首先填充样式由FILLSTYLEARRAY定义，solid 红和solid 绿。</li>
+ <li>接下来是LINESTYLEARRAY，包含了1像素黑和2像素黑。</li>
+ <li>接下来是一组Shape Record。</li></ol>
+
+<p>所有的Shape Record结构相似，但是意义不同。Shape Record可以定义直边，曲边，样式改变和移动当前点。</p>
+
+<h3 id="定义曲线">定义曲线</h3>
+
+<ol>
+ <li>第一个Shape Record使用2像素宽的线段样式，然后设置StateMoveTo标签，把当前点移动到曲线的顶部。
+  <br /></li>
+ <li>接下来的Shape Record是一个曲边，在线段底部结束。路径没有闭合。</li></ol>
+
+<h3 id="定义红方块">定义红方块</h3>
+
+<ol>
+ <li>接下来的Shape Record使用1像素的线段样式，红色填充样式。然后把当前点移动到红方块的左上角。
+  <br /></li>
+ <li>下面的四个Shape Record都是直边。最后一个边必须在左上角结束。FP要求闭合图形必须互相衔接。也就是说第一个和最后一个点必须重合。</li></ol>
+
+<h3 id="定义红圈">定义红圈</h3>
+
+<ol>
+ <li>下一个Shape Record并不改变任何样式设定，但是会把当前点移动到红圈顶部。
+  <br /></li>
+ <li>接下来的8个Shape Record都是曲边。并且最后要停在开始点。</li></ol>
+
+<h3 id="定义绿色圆边矩形">定义绿色圆边矩形</h3>
+
+<ol>
+ <li>接下来的ShapeRecord使用2像素宽的线段样式，绿色填充样式。然后把当前点移动到绿矩形的左上角。</li>
+ <li>接下来的12个ShapeRecord是由StraightShapeRecord和CurvedShapeRecord交叉组成。路径在开始的地方结束。</li></ol>
+
+<h1 id="shape结构">Shape结构</h1>
+
+<h2 id="填充样式">填充样式</h2>
+
+<p>SWF支持3种非常基础的填充样式。</p>
+
+<ul>
+ <li>单色填充 简单的RGB或者RGBA颜色填充Shape的一部分，Alpha255意味着完全不透明填充。Alpha0意味着完全透明填充。在这之间的数值意味着部分透明。
+  <br /></li>
+ <li>渐进填充 渐进填充可以是线性渐进填充或者放射渐进填充。详细内容参考，Gradients一章。
+  <br /></li>
+ <li>位图填充 位图填充使用了一个位图ID。有两种类型：裁减的，平铺的。如果填充区域超过了位图边界，裁减位图填充就重复使用位图边缘的颜色。而平铺填充会重复使用该位图。</li></ul>
+
+<h2 id="fillstylearray">FILLSTYLEARRAY</h2>
+
+<p>填充样式数组枚举了一组填充样式。填充样式数组的格式如下：</p>
+
+<div class="figure"><img src="/assets/fillstylearray.png" alt="FILLSTYLEARRAY" />
+ <p class="caption">FILLSTYLEARRAY</p></div>
+
+<h2 id="fillstyle">FILLSTYLE</h2>
+
+<p>填充样式的格式如下：</p>
+
+<div class="figure"><img src="/assets/fillstyle1.png" alt="Fillstyle" />
+ <p class="caption">Fillstyle</p></div>
+
+<div class="figure"><img src="/assets/fillstyle2.png" alt="Fillstyle" />
+ <p class="caption">Fillstyle</p></div>
+
+<h2 id="线段样式">线段样式</h2>
+
+<p>线段样式数组枚举了一组线段样式。</p>
+
+<h2 id="linestylearray">LINESTYLEARRAY</h2>
+
+<p><img src="/assets/linestylearray.png" alt="LineStyleArray" /></p>
+
+<h2 id="linestyle">LINESTYLE</h2>
+
+<p>线段样式表示的是线段的颜色和宽度。</p>
+
+<p><img src="/assets/linestyle.png" alt="LineStyle" /></p>
+
+<h2 id="linestyle2">LINESTYLE2</h2>
+
+<p>LINESTYLE2建立在与LINESTYLE兼容的基础上，允许使用新类型的join和cap，还可以缩放，填充笔画。LINESTYLE2只能用于DefineShape4。</p>
+
+<p>LINESTYLE只允许圆连接和圆cap，LINESTYLE2允许miter join和bevel join，square cap和no cap。下面描述了完整的join和cap：</p>
+
+<p><img src="/assets/linestyle2joincap.png" alt="LineStyle2JoinCap" /></p>
+
+<p>在miter join中使用LINESTYLE2时，必须指定MiterLimitFactor，用来计算最大miter长度。</p>
+
+<p>最大miter长度 ＝ LINESTYLE2 MiterLimitFactor X LINESTYLE2 Width</p>
+
+<p>如果miter join超过了最大miter长度，FP会剪断。MiterLimitFactor的值是8.8格式。</p>
+
+<p>LINESTYLE2还包含一些选项来做像素微调，来校正垂直或者水平线段。</p>
+
+<p><img src="/assets/linestyle21.png" alt="LineStyle2" />
+ <br /><img src="/assets/linestyle22.png" alt="lineStyle2" />
+ <br /><img src="/assets/linestyle23.png" alt="LineStyle2" /></p>
+
+<h2 id="shape结构">Shape结构</h2>
+
+<p>SHAPE结构中没有填充样式和线段样式。</p>
+
+<h2 id="shape">SHAPE</h2>
+
+<p>SHAPE结构在DefineFont中使用，用来定义字型。</p>
+
+<p><img src="/assets/shape.png" alt="SHPAE" /></p>
+
+<h2 id="shapewithstyle">SHAPEWITHSTYLE</h2>
+
+<p>SHAPEWITHSTYLE扩展了SHAPE结构，包含了填充样式和线段样式。在DefineShape中使用。</p>
+
+<p><img src="/assets/shapewithstyle.png" alt="SHAPEWITHSTYLE" /></p>
+
+<p>下面的图描述了SHAPEWITHSTYLE的结构：</p>
+
+<p><img src="/assets/shapewithstylediagram.png" alt="SHAPEWITHSTYLEDIAGRAM" /></p>
+
+<p>首先定义填充样式数组和线段样式数组，只定义一次，后面可以引用。</p>
+
+<p>蓝色区域代表SHAPERECORD数组。 第一个SHAPERECORD从填充样式数组中选择一个，然后把当前点移动到SHAPE的开始。 之后是一组边来定义SHAPE。下一个SHAPERECORD重新选择了一个填充样式，并且之后的边都采用新的样式。</p>
+
+<p>此标签完全是“自治”标签，所有引用的样式都是在本标签内定义的。</p>
+
+<h2 id="shape-records">Shape Records</h2>
+
+<p>有四种类型的SHAPERECORD：</p>
+
+<ol>
+ <li>End Shape Record</li>
+ <li>Style Change Record
+  <br /></li>
+ <li>Straight Edge Record
+  <br /></li>
+ <li>Curved Edge Record</li></ol>
+
+<p>在一组SHAPERECORD内，每一个独立的SHAPERECORD都是字节对齐的。 在下一个SHAPERECORD开始之前，前一个SHAPERECORD都是先对齐到字节。</p>
+
+<p>每一个SHAPERECORD都是由一个TYPEFLAG开始的。 如果TYPEFLAG的值是0，那么此SHAPERECORD就是“非edge”的，之后的5位提供具体信息。</p>
+
+<h2 id="end-shape-record">End Shape Record</h2>
+
+<p>End Shape Record简单的表明ShapeRecord数组结束，它的TypeFlag为0，并且之后的5位也是0。</p>
+
+<p><img src="/assets/endshaperecord.png" alt="EndShpeRecord" /></p>
+
+<h2 id="style-change-record">Style Change Record</h2>
+
+<p>Style Change Record也是一个“非edge”Record，它可以做如下几件事情：</p>
+
+<ol>
+ <li>选择填充样式或线段样式。
+  <br /></li>
+ <li>移动当前点。
+  <br /></li>
+ <li>修改当前的填充样式和线段样式。</li></ol>
+
+<p>因为改变样式都发生在一条路径的最开始部分，因此在单个record内进行多个操作是比较有用的。 例如，假想一下DefineShape标签定义了一个红圈和蓝方块。在红圈闭合之后，需要移动当前点，改变当前样式。 Style Change Record可以在一个Record里做到这些动作。</p>
+
+<p><img src="/assets/stylechangerecord1.png" alt="StyleChangeRecord" />
+ <br /><img src="/assets/stylechangerecord2.png" alt="StyleChangeRecord" />
+ <br /><img src="/assets/stylechangerecord3.png" alt="StyleChangeRecord" /></p>
+
+<p>在第一个shape record中，movedeltax 和movedeltay是和shape的起始处相关的。
+ <br />在之后的shape record中，movedeltax 和movedeltay是和当前点相关的。</p>
+
+<p>样式数组从下标1开始，而不是从0开始。FillStyle＝1引用的是填充样式数组的第一个样式，FillStyle＝2引用的是第二个。 等等。填充样式的下标0表示没有填充，线段样式的下标0表示没有笔画。 最开始，填充样式和线段样式的下标都是0。</p>
+
+<h2 id="fillstyle0和fillstyle1">FillStyle0和FillStyle1</h2>
+
+<p>Flash创作工具支持每条边2个样式：FillStyle0和FillStyle1。 对于不重叠不交叉的Shape，应该使用FillStyle0。 对于重叠的Shape，情况比较复杂。</p>
+
+<p>例如，如果一个Shape由两个重叠方块组成，并且只定义了FillStyle0，FP会在重叠的地方渲染一个洞。 这个区域可以使用FillStyle1。在这种情况下，对于任何方向向量，Fillstyle0是左边的颜色，FillStyle1是右边的颜色。</p>
+
+<p><img src="/assets/fillstyle01.png" alt="FillStyle01" /></p>
+
+<h2 id="edge-record">Edge Record</h2>
+
+<p>Edge Record的TypeFlag是1。内含两种类型：直的，弯的，由StraightFlag标识。</p>
+
+<h2 id="straightedgerecord">StraightEdgeRecord</h2>
+
+<p>StraightEdgeRecord存储的是XY增量。 把增量添加到当前的位置，构成了新位置。 在原来的点和现在的点之间画一条线。</p>
+
+<p>此Record支持三种类型的线：</p>
+
+<ol>
+ <li>任意线
+  <br /></li>
+ <li>水平线
+  <br /></li>
+ <li>垂直线</li></ol>
+
+<p>任意线存储的是XY增量，其它两种线只存储一个轴的增量。</p>
+
+<div class="figure"><img src="/assets/straightedgerecord.png" alt="StraightEdgeRecord" />
+ <p class="caption">StraightEdgeRecord</p></div>
+
+<h2 id="curvededgerecord">CurvedEdgeRecord</h2>
+
+<p>SWF文件和大多数其他的类似文件格式最大的不同在于使用的是平方贝塞尔曲线，而不是立方贝塞尔曲线。 PostScript跟大多数的画图软件一样，使用的是立方贝塞尔曲线。 SWF文件之所以使用平方贝塞尔是因为可以更紧凑，更高效。</p>
+
+<p>下面的图展示了两种曲线：</p>
+
+<div class="figure"><img src="/assets/quadraticcubicbeziercurves.png" alt="QuadraticCubicBezierCurves" />
+ <p class="caption">QuadraticCubicBezierCurves</p></div>
+
+<p>平方贝塞尔曲线有三个点：2个on-curve定位点，1个off-curve控制点。 立方贝塞尔曲线有四个点：2个on-curve定位点，2个off-curve控制点。</p>
+
+<p>curved-edge record存储了两个XY增量。三个点的计算方式如下：</p>
+
+<p>1 第一个定位点是当前的位置。
+ <br />2 控制点是当前位置 plus Control增量。
+ <br />3 另一个定位点是当前位置 plus Control增量 plus Anchor增量。</p>
+
+<p>最后一个定位点成为了新的当前点。</p>
+
+<div class="figure"><img src="/assets/curveedgerecord.png" alt="CurveEdgeRecord" />
+ <p class="caption">CurveEdgeRecord</p></div>
+
+<h2 id="平方和立方贝塞尔曲线之间的转换">平方和立方贝塞尔曲线之间的转换</h2>
+
+<p>把off-curve控制点用两个off-curve控制点替换。 两个off-curve控制点分别放在两个on-curve定位点和原来的off-curve控制点之间。 新的off-curve控制点在线段的2/3处，距离原来的off-curve控制点更近。可参见上图。</p>
+
+<p>平方贝塞尔曲线只能近似模拟立方贝塞尔曲线，因为一个是三阶曲线，一个是二阶曲线。 这个过程中会递归地分割曲线，直到两个类型的曲线误差可以接受。</p>
+
+<p>这里有一些讨论关于立方贝塞尔曲线由平方贝塞尔曲线模拟的：</p>
+
+<ul>
+ <li>Converting Bezier Curves to Quadratic Splines at stevehollasch.com/cgindex/curves/cbez-quadspline.html</li>
+ <li>TrueType Reference Manual, Converting Outlines to the TrueType Format at developer.apple.com/fonts/TTRefMan/RM08/appendixE.html</li></ul>
+
+<h2 id="shape-标签">Shape 标签</h2>
+
+<h2 id="defineshape">DefineShape</h2>
+
+<p>由DefineShape定义的Shape可以由后面的控制标签使用，如PlaceObject。 ShapeID作为唯一标识索引。 ShapeBounds是包含了Shape的矩形区域。 SHAPEWITHSTYLE包含了所有的路径，填充和线段样式。</p>
+
+<p>最低版本要求是SWF1。</p>
+
+<div class="figure"><img src="/assets/defineshape.png" alt="DefineShape" />
+ <p class="caption">DefineShape</p></div>
+
+<h2 id="defineshape2">DefineShape2</h2>
+
+<p>DefineShape2扩展了DefineShape，支持多余255种样式，一个Shape中有多个样式表。</p>
+
+<p>最低版本呢要求是SWF2。</p>
+
+<div class="figure"><img src="/assets/defineshape2.png" alt="DefineShape2" />
+ <p class="caption">DefineShape2</p></div>
+
+<h2 id="defineshape3">DefineShape3</h2>
+
+<p>DefineShape3扩展了DefineShape2，支持RGBA颜色。</p>
+
+<p>最低的版本要求是SWF3。</p>
+
+<div class="figure"><img src="/assets/defineshape3.png" alt="DefineShape3" />
+ <p class="caption">DefineShape3</p></div>
+
+<h2 id="defineshape4">DefineShape4</h2>
+
+<p>DefineShape4扩展了DefineShape3，使用了一个新的线段样式。 LINESTYLE2允许使用新类型的join和caps，还有缩放选项和填充一个笔画。</p>
+
+<p>DefineShape4除了指定Shape边界，还指定了边的边界。 就像Shape边界在笔画外围计算，边的边界是在边的外围计算，参看下图。 EdgeBounds字段辅助FP计算特定的布局。</p>
+
+<div class="figure"><img src="/assets/edgebounds.png" alt="EdgeBounds" />
+ <p class="caption">EdgeBounds</p></div>
+
+<p>另外DefineShape4还添加了两个标记，UseNonScalingStrokes，UsesScalingStrokes。 这些标记可以帮助FP创建更好的重绘区域。</p>
+
+<p>最低版本要求SWF8。</p>
+
+<div class="figure"><img src="/assets/defineshape4.png" alt="DefineShape4" />
+ <p class="caption">DefineShape4</p></div>
+  <footer>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <p>Site generated by <a href="https://github.com/greghendershott/frog">Frog</a></p>
+        <p><em>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

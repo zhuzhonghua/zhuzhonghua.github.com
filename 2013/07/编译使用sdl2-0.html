@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>编译使用SDL2.0</title>
+    <meta name="description" content="SDL2.0 可以支持非英文的输入。 也有第三方的朋友做了一个SDL插件也支持非英文输入。 这里记录一下在尝试过程中遇到一些编译问题。  参照文档写了一个demo  `#include &quot;../include/SDL.h&quot; //The event structure SDL_Event event; char text[1024]; SDL_Surface *screen = NULL; const int SCREEN_WIDTH = 640; const int SCREEN_HEIGHT = 480...">
+    <meta name="author"      content="ZhongHua">
+    <meta name="keywords"    content="">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://zhuzhonghua.github.com/2013/07/%E7%BC%96%E8%AF%91%E4%BD%BF%E7%94%A8sdl2-0.html">
+    <link rel="next" href="/2013/06/%E8%B1%86%E7%93%A3fm-hunter-%E6%9B%B4%E6%96%B0.html">
+    <link rel="prev" href="/2013/07/%E5%9C%A8%E4%BD%BF%E7%94%A8jsfl%E6%97%B6%E5%87%BA%E9%94%99%E7%9A%84%E8%AE%B0%E5%BD%95.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-xxxxx', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <header class="navbar navbar-default navbar-inverse"
+            role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button"
+                  class="navbar-toggle"
+                  data-toggle="collapse"
+                  data-target=".our-nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/index.html" class="navbar-brand">好记性不如烂笔头</a>
+        </div>
+        <div class="collapse navbar-collapse our-nav-collapse"
+             role="navigation">
+          <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/index.html">All Posts</a></li>
+
+<li><a href="/tags/SWF.html">SWF</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/About.html">About</a>
+            </li> 
+            <li><a href="/feeds/all.atom.xml">Atom</a></li>
+            <li><a href="/feeds/all.rss.xml">RSS</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+          <article>
+  <header>
+    <h1>编译使用SDL2.0</h1>
+  </header>
+
+<p>SDL2.0 可以支持非英文的输入。 也有第三方的朋友做了一个SDL插件也支持非英文输入。 这里记录一下在尝试过程中遇到一些编译问题。</p>
+
+<p>参照文档写了一个demo</p>
+
+<pre><code>#include "../include/SDL.h"
+
+//The event structure
+SDL_Event event;
+char text[1024];
+SDL_Surface *screen = NULL;
+const int SCREEN_WIDTH = 640;
+const int SCREEN_HEIGHT = 480;
+const int SCREEN_BPP = 32;
+
+#include &lt;string&gt;
+
+std::string composition;
+int cursor;
+int selection_len = 0;
+
+
+#include "SDL.h"
+
+int main(int argc, char* argv[])
+{
+    SDL_Window* window;
+    SDL_Renderer* renderer;
+
+    // Initialize SDL.
+    if (SDL_Init(SDL_INIT_VIDEO) &lt; 0)
+            return 1;
+
+    // Create the window where we will draw.
+    window = SDL_CreateWindow("SDL_RenderClear",
+                    SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+                    512, 512,
+                    SDL_WINDOW_SHOWN);
+
+    // We must call SDL_CreateRenderer in order for draw calls to affect this window.
+    renderer = SDL_CreateRenderer(window, -1, 0);
+
+    // Select the color for drawing. It is set to red here.
+    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+
+    // Clear the entire screen to our selected color.
+    SDL_RenderClear(renderer);
+
+    // Up until now everything was drawn behind the scenes.
+    // This will show the new, red contents of the window.
+    SDL_RenderPresent(renderer);
+
+	SDL_StartTextInput();
+	
+    while (true)
+    {
+        if (SDL_PollEvent(&amp;event))
+        {
+            switch (event.type)
+            {
+                case SDL_TEXTINPUT:
+                    /* Add new text onto the end of our text */
+                    strcat(text, event.text.text);
+                    break;
+                case SDL_TEXTEDITING:
+                    /*
+                    Update the composition text.
+                    Update the cursor position.
+                    Update the selection length (if any).
+                    */
+                    composition = event.edit.text;
+                    cursor = event.edit.start;
+                    selection_len = event.edit.length;
+                    break;
+            }
+        }
+
+    }
+    // Give us time to see the window.
+    SDL_Delay(1000);
+
+    // Always be sure to clean up
+    SDL_Quit();
+    return 0;
+}
+
+</code></pre>
+
+<p>Makefile 这样写的</p>
+
+<pre><code>all:
+	g++ -g testime.cpp -I/home/zhuzhonghua/work/SDL/include /home/zhuzhonghua/work/SDL/build/.libs/libSDL2.a /home/zhuzhonghua/work/SDL/build/libSDL2main.a -lpthread -lGL -lGLU -lm -L/usr/lib/x86_64-linux-gnu -lrt -ldl</code></pre>
+
+<p>demo写的有问题，需要写一个退出函数，要不然总是关不掉。</p>
+
+<p>本人喜欢静态编译，所以就全部使用的.a文件。</p>
+
+<p>刚开始编译时会遇到dlsym undefined reference 的问题，加上-ldl选项就OK了。</p>
+
+<p>遇到clock_gettime undefined reference，那么加上-lrt的选项，就OK 了。</p>
+  <footer>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <p>Site generated by <a href="https://github.com/greghendershott/frog">Frog</a></p>
+        <p><em>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

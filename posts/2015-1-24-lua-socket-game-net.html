@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>2015-1-24-lua-socket-game-net</title>
+    <meta name="description" content="`Title: luasocket简单使用入门 Date: 20145-01-24T00:00:00`使用luasocket可以简单的完成游戏中对于网络的需求 简单，小巧，不用自己再去写一遍c++的socket层，对于懒人，很适用 https://gist.github.com/zhuzhonghua/653de49ab24f5915e12d 创建socket，设置参数，尤其是timeout，这样可以避免阻塞 `local sockInst = socket.tcp();   sockInst:setti...">
+    <meta name="author"      content="ZhongHua">
+    <meta name="keywords"    content="">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://zhuzhonghua.github.com/posts/2015-1-24-lua-socket-game-net.html">
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-xxxxx', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <header class="navbar navbar-default navbar-inverse"
+            role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button"
+                  class="navbar-toggle"
+                  data-toggle="collapse"
+                  data-target=".our-nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/index.html" class="navbar-brand">好记性不如烂笔头</a>
+        </div>
+        <div class="collapse navbar-collapse our-nav-collapse"
+             role="navigation">
+          <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/index.html">All Posts</a></li>
+
+<li><a href="/tags/SWF.html">SWF</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/About.html">About</a>
+            </li> 
+            <li><a href="/feeds/all.atom.xml">Atom</a></li>
+            <li><a href="/feeds/all.rss.xml">RSS</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+
+<pre><code>Title: luasocket简单使用入门
+Date: 20145-01-24T00:00:00</code></pre>
+
+<p>使用luasocket可以简单的完成游戏中对于网络的需求 简单，小巧，不用自己再去写一遍c++的socket层，对于懒人，很适用</p>
+
+<p><a href="https://gist.github.com/zhuzhonghua/653de49ab24f5915e12d">https://gist.github.com/zhuzhonghua/653de49ab24f5915e12d</a></p>
+
+<p>创建socket，设置参数，尤其是timeout，这样可以避免阻塞</p>
+
+<pre><code>local sockInst = socket.tcp();  
+sockInst:settimeout(0);
+sockInst:setoption('keepalive', true)
+</code></pre>
+
+<hr />
+
+<p>不再使用时需要close</p>
+
+<pre><code>sockInst:close()
+</code></pre>
+
+<hr />
+
+<p>连接对应的ip和port，根据代码可以看到两个提示来表明连接已经成功</p>
+
+<pre><code>local __succ, __status = sockInst:connect("127.0.0.1", 40234)
+
+if __succ == 1 or __status == "already connected" then	
+	print('tryconnect socket connected')
+	onConnected()
+else
+	print('====================================socket connected fail try again');
+	connStatus = SOCK_STATUS.CONNECTING
+end  
+</code></pre>
+
+<hr />
+
+<p>在update中调用select，来检测是否有数据到达，或者是否可以发送数据了</p>
+
+<pre><code>if connStatus == SOCK_STATUS.CONNECTING or connStatus == SOCK_STATUS.CONNECTED then
+	-- body
+	local arr = {sockInst}
+	local r, s, e = socket.select(arr, arr, 0)
+
+	if r and #r &gt;= 1 and r[1] == sockInst then  
+	    local recvData, recvError, recvParticialData = sockInst:receive(1024);  
+	  
+	    if recvError == 'closed' then  
+	    	print('recv socket disconnect ')
+	        ClientSocket.onDisconnect()
+	        return;  
+	    end  
+
+	    if recvData and #recvData &gt; 0 then  
+	    	print('recvdata len='..#recvData)
+	        recvBuffer = recvBuffer .. recvData 
+	    elseif recvParticialData and #recvParticialData &gt; 0 then  
+	    	print('recvparticialdata len='..#recvParticialData)
+	        recvBuffer = recvBuffer .. recvParticialData
+	    end
+	end  
+
+	if s and #s &gt;= 1 and s[1] == sockInst then  
+	    if connStatus==SOCK_STATUS.CONNECTING then  
+	        -- 执行到此，说明连接已经成功了  
+	        --print('select send socket connect success');
+	        --onConnected()
+	    end  
+	  
+	    -- 可以调用send
+	    if connStatus == SOCK_STATUS.CONNECTED then
+	    	handleOutData()
+	    end		
+	end
+end	
+</code></pre>
+
+<hr />
+
+<ol>
+ <li>
+  <p>判断连接是否成功，看quick-cocos2d-x官方的例子上，这个地方可以判断连接成功，但实际测的效果来看，ios，服务器未开，也可以进入这段代码，所以干脆注释掉，只是用connect中的返回值来判别，连接是否成功</p>
+  <pre><code>if connStatus==SOCK_STATUS.CONNECTING then  
+        -- 执行到此，说明连接已经成功了  
+        --print('select send socket connect success');
+        --onConnected()
+end  </code></pre></li>
+ <li>
+  <p>强关服务器，luasocket无法监测到连接已经断开，所以需要在heartbeat中自己判断连接是否有效，不停发送heartbeat，然后根据上次接收消息的时间，来判断是否连接还有效</p></li>
+ <li>
+  <p>当监测到连接已经断开(比如地铁信号不好)，需要再次连接服务器时，需要创建新的socket，而不能继续使用原来的socket调用connect方法</p></li></ol>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <p>Site generated by <a href="https://github.com/greghendershott/frog">Frog</a></p>
+        <p><em>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

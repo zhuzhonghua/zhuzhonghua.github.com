@@ -1,0 +1,1265 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">好记性不如烂笔头: 好记性不如烂笔头</title>
+ <link rel="self" href="https://zhuzhonghua.github.com/feeds/all.atom.xml" />
+ <link href="https://zhuzhonghua.github.com/index.html" />
+ <id>urn:https-zhuzhonghua-github-com:-index-html</id>
+ <updated>2015-11-19T16:00:00Z</updated>
+ <entry>
+  <title type="text">GNash的DefineBitsTag.cpp中的StreamAdapter类</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2015/11/gnash%E7%9A%84definebitstag-cpp%E4%B8%AD%E7%9A%84streamadapter%E7%B1%BB.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2015-11-gnash-E7-9A-84definebitstag-cpp-E4-B8-AD-E7-9A-84streamadapter-E7-B1-BB-html</id>
+  <published>2015-11-19T16:00:00Z</published>
+  <updated>2015-11-19T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;gnash/libcore/swf/DefineBitsTag.cpp 中定义了一个StreamAdapter类&lt;/p&gt;
+
+&lt;p&gt;这个类最重要的一个方法是read，定义时会设置最大长度
+ &lt;br /&gt;读取的长度超过了最大长度，就截掉
+ &lt;br /&gt;在读取image data 时非常有用&lt;/p&gt;
+
+&lt;p&gt;在使用libjpeg读image data时，并没有提供固定长度，而是提供了一个buffer，不知道终止位置在哪
+ &lt;br /&gt;通过StreamAdapter方法，避免读取越界，影响后续tag的读取，甚至宕机&lt;/p&gt;
+
+&lt;p&gt;readDefineBitsJpeg2也就是tagtype=21时，通过StreamAdapter::getFile方法生成IOChannel，最大长度设置为tag的结束位置
+ &lt;br /&gt;调用Input::readImageData方法读取数据
+ &lt;br /&gt;根据type为JPEG类型，创建JpegInput
+ &lt;br /&gt;readScanline时，会调用在JpegInput的构造方法里通过rw_source_IOChannel::setup设置的fill_input_buffer方法&lt;/p&gt;
+
+&lt;p&gt;在fill_input_buffer中，IO_BUF_SIZE指示了buffer大小&lt;/p&gt;
+
+&lt;p&gt;于是读取jpeg数据时，就不会读越界，尤其当swf时compress模式时&lt;/p&gt;</content></entry>
+ <entry>
+  <title type="text">Tamarin的执行流程</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2014/12/tamarin%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2014-12-tamarin-E7-9A-84-E6-89-A7-E8-A1-8C-E6-B5-81-E7-A8-8B-html</id>
+  <published>2014-12-25T16:00:00Z</published>
+  <updated>2014-12-25T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;div class="figure"&gt;&lt;img src="/assets/tamarin_routine.png" alt="tamarin_routine" /&gt;
+ &lt;p class="caption"&gt;tamarin_routine&lt;/p&gt;&lt;/div&gt;</content></entry>
+ <entry>
+  <title type="text">解析swf文件格式</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2014/12/%E8%A7%A3%E6%9E%90swf%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2014-12-E8-A7-A3-E6-9E-90swf-E6-96-87-E4-BB-B6-E6-A0-BC-E5-BC-8F-html</id>
+  <published>2014-12-16T16:00:00Z</published>
+  <updated>2014-12-16T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;&lt;a href="https://github.com/zhuzhonghua/utils/blob/master/parseSWF.py"&gt;https://github.com/zhuzhonghua/utils/blob/master/parseSWF.py&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;为了加深理解swf文件格式，使用python，参考swf spec 9，解析了其中的大部分tag&lt;/p&gt;
+
+&lt;p&gt;还有一些tag没有完全解析对，后面研究到那部分时，再做修改&lt;/p&gt;</content></entry>
+ <entry>
+  <title type="text">使用Nodejs开发网络游戏服务器</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2014/08/%E4%BD%BF%E7%94%A8nodejs%E5%BC%80%E5%8F%91%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2014-08-E4-BD-BF-E7-94-A8nodejs-E5-BC-80-E5-8F-91-E7-BD-91-E7-BB-9C-E6-B8-B8-E6-88-8F-E6-9C-8D-E5-8A-A1-E5-99-A8-html</id>
+  <published>2014-08-18T16:00:00Z</published>
+  <updated>2014-08-18T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;Nodejs基于Google的V8引擎，用于开发后端。以前Js只是用于前端编程。从此之后，前端和后端就统一了，都使用js来开发，从此也模糊了前后端的划分。&lt;/p&gt;
+
+&lt;p&gt;Nodejs天生的异步编程，也就天生满足异步Socket，所以非常适合做网络服务。&lt;/p&gt;
+
+&lt;p&gt;写了一个基本的类库，简化游戏服务器开发中关于网络底层的开发&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/zhuzhonghua/Episode"&gt;https://github.com/zhuzhonghua/Episode&lt;/a&gt;&lt;/p&gt;</content></entry>
+ <entry>
+  <title type="text">在项目中使用Nodejs</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2014/08/%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8nodejs.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2014-08-E5-9C-A8-E9-A1-B9-E7-9B-AE-E4-B8-AD-E4-BD-BF-E7-94-A8nodejs-html</id>
+  <published>2014-08-01T16:00:00Z</published>
+  <updated>2014-08-01T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;最近玩起了nodejs，准备用nodejs+cpp一起来写一套服务器，应对当前的需求；多进程的框架，进程间通信使用tcp socket。&lt;/p&gt;
+
+&lt;p&gt;先来分享一段自己写的log相关的代码 &lt;a href="https://gist.github.com/zhuzhonghua/d2367390a8134578db41"&gt;https://gist.github.com/d2367390a8134578db41.git&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在应用中如下使用&lt;/p&gt;
+
+&lt;blockquote&gt;
+ &lt;p&gt;LOG(&amp;ldquo;recv a message &amp;rdquo;+123);&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+ &lt;p&gt;ERROR(&amp;ldquo;error! wrong option&amp;rdquo;);&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+ &lt;p&gt;CRASH(&amp;ldquo;exception &amp;rdquo;)&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;如果需要其他类型的日志，只需要照着模板再写一套即可，比如INFO什么的。&lt;/p&gt;
+
+&lt;blockquote&gt;
+ &lt;ol&gt;
+  &lt;li&gt;其中使用了fs.appendFile来写文件。&lt;/li&gt;
+  &lt;li&gt;文件名需要添加日期后缀，这样避免一个文件过大，导致阅读不方便。&lt;/li&gt;
+  &lt;li&gt;每一行日志前都有一段时间标签，方便以后查日志。&lt;/li&gt;
+  &lt;li&gt;在调用LOG时，根据队列的长度，来确定是否触发appendFile事件，以及什么时候再次触发。这样能保证单个文件，同时只有一个写操作。&lt;/li&gt;&lt;/ol&gt;&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+ &lt;blockquote&gt;
+  &lt;p&gt;4.1 如果LOG之后，发现队列长度只有1，那么说明这是第一条或者当前唯一的一条日志，那么应该触发appenFile。 4.2 如果在还没写完的情况下，多次调用LOG，那么队列长度肯定要大于1。appendFile事件肯定已经在4.1的情况下触发了，只需要在appendFile完成之后，再次触发appendFile就可以继续写当前缓存的日志。这是通过process.nextTick来实现的。本次的LOG操作就不用再触发appendFile了。&lt;/p&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;针对这种nodej这种单线程异步事件操作，在很多需要IO的地方都可以用这种思路，比如写Socket操作这种。&lt;/p&gt;
+
+&lt;p&gt;前面分享的代码有很多是冗余的，因为也简单够用，所以也没整理。&lt;/p&gt;
+
+&lt;p&gt;轻拍砖。&lt;/p&gt;</content></entry>
+ <entry>
+  <title type="text">XUI 是一个能够让你使用flash cs这样的富媒体创作工具，来制作cocos2d-x 和 cocos2d-html5手游的工具</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2014/01/xui-%E6%98%AF%E4%B8%80%E4%B8%AA%E8%83%BD%E5%A4%9F%E8%AE%A9%E4%BD%A0%E4%BD%BF%E7%94%A8flash-cs%E8%BF%99%E6%A0%B7%E7%9A%84%E5%AF%8C%E5%AA%92%E4%BD%93%E5%88%9B%E4%BD%9C%E5%B7%A5%E5%85%B7-%E6%9D%A5%E5%88%B6%E4%BD%9Ccocos2d-x-%E5%92%8C-cocos2d-html5%E6%89%8B%E6%B8%B8%E7%9A%84%E5%B7%A5%E5%85%B7.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2014-01-xui-E6-98-AF-E4-B8-80-E4-B8-AA-E8-83-BD-E5-A4-9F-E8-AE-A9-E4-BD-A0-E4-BD-BF-E7-94-A8flash-cs-E8-BF-99-E6-A0-B7-E7-9A-84-E5-AF-8C-E5-AA-92-E4-BD-93-E5-88-9B-E4-BD-9C-E5-B7-A5-E5-85-B7-E6-9D-A5-E5-88-B6-E4-BD-9Ccocos2d-x-E5-92-8C-cocos2d-html5-E6-89-8B-E6-B8-B8-E7-9A-84-E5-B7-A5-E5-85-B7-html</id>
+  <published>2014-01-04T16:00:00Z</published>
+  <updated>2014-01-04T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;以前在读founders at work时，对其中的restless programmer这个词很有感触
+ &lt;br /&gt;就是各种折腾
+ &lt;br /&gt;前段时间，自己折腾了一个这样的工具&lt;/p&gt;
+
+&lt;p&gt;一个能够让你使用flash cs这样的富媒体创作工具，来制作cocos2d-x 和 cocos2d-html5手游的工具&lt;/p&gt;
+
+&lt;h4 id="项目地址在这里"&gt;项目地址在这里&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/zhuzhonghua/XUI"&gt;https://github.com/zhuzhonghua/XUI&lt;/a&gt;&lt;/p&gt;</content></entry>
+ <entry>
+  <title type="text">使用flash开发cocos2d-x的app</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2013/11/%E4%BD%BF%E7%94%A8flash%E5%BC%80%E5%8F%91cocos2d-x%E7%9A%84app.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2013-11-E4-BD-BF-E7-94-A8flash-E5-BC-80-E5-8F-91cocos2d-x-E7-9A-84app-html</id>
+  <published>2013-11-23T16:00:00Z</published>
+  <updated>2013-11-23T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;使用flash做cocos2d-x的app的工具基本上告一个段落，做了一段视频&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.tudou.com/programs/view/iz10aSfMeVk/?resourceId=0_06_02_99"&gt;http://www.tudou.com/programs/view/iz10aSfMeVk/?resourceId=0_06_02_99&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;接下来还不知道要怎么做，要么卖出去，要么开源。&lt;/p&gt;
+
+&lt;p&gt;不过可以肯定的是，我得自己先使用它，完善它，所以准备用自己的工具做一个app。&lt;/p&gt;</content></entry>
+ <entry>
+  <title type="text">Html5Test Project</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2013/10/html5test-project.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2013-10-html5test-project-html</id>
+  <published>2013-10-30T16:00:00Z</published>
+  <updated>2013-10-30T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;前段时间想做html5游戏相关的工作，但是发现没有很好的可视化编辑器。&lt;/p&gt;
+
+&lt;p&gt;于是自己做了一个工具，使用flash cs设计界面，做一个工具导出html5代码和资源。&lt;/p&gt;
+
+&lt;p&gt;以后准备把相关的测试都放在这里做个演示。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/zhuzhonghua/XUI"&gt;https://github.com/zhuzhonghua/XUI&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;根据完成度，来决定是否把这个导出资源和代码的工具开源。&lt;/p&gt;</content></entry>
+ <entry>
+  <title type="text">在使用JSFL时出错的记录</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2013/07/%E5%9C%A8%E4%BD%BF%E7%94%A8jsfl%E6%97%B6%E5%87%BA%E9%94%99%E7%9A%84%E8%AE%B0%E5%BD%95.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2013-07-E5-9C-A8-E4-BD-BF-E7-94-A8jsfl-E6-97-B6-E5-87-BA-E9-94-99-E7-9A-84-E8-AE-B0-E5-BD-95-html</id>
+  <published>2013-06-30T16:00:00Z</published>
+  <updated>2013-06-30T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;JSFL为何物，请自行Google&lt;/p&gt;
+
+&lt;p&gt;JSFL文件中的函数名，不要和文件名相同。 要不然在执行时，会出现JS错误。 这个问题查了我好久才发现的。 而且Google了也没结果，所以在此记录。&lt;/p&gt;</content></entry>
+ <entry>
+  <title type="text">编译使用SDL2.0</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2013/07/%E7%BC%96%E8%AF%91%E4%BD%BF%E7%94%A8sdl2-0.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2013-07-E7-BC-96-E8-AF-91-E4-BD-BF-E7-94-A8sdl2-0-html</id>
+  <published>2013-06-30T16:00:00Z</published>
+  <updated>2013-06-30T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;SDL2.0 可以支持非英文的输入。 也有第三方的朋友做了一个SDL插件也支持非英文输入。 这里记录一下在尝试过程中遇到一些编译问题。&lt;/p&gt;
+
+&lt;p&gt;参照文档写了一个demo&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#include "../include/SDL.h"
+
+//The event structure
+SDL_Event event;
+char text[1024];
+SDL_Surface *screen = NULL;
+const int SCREEN_WIDTH = 640;
+const int SCREEN_HEIGHT = 480;
+const int SCREEN_BPP = 32;
+
+#include &amp;lt;string&amp;gt;
+
+std::string composition;
+int cursor;
+int selection_len = 0;
+
+
+#include "SDL.h"
+
+int main(int argc, char* argv[])
+{
+    SDL_Window* window;
+    SDL_Renderer* renderer;
+
+    // Initialize SDL.
+    if (SDL_Init(SDL_INIT_VIDEO) &amp;lt; 0)
+            return 1;
+
+    // Create the window where we will draw.
+    window = SDL_CreateWindow("SDL_RenderClear",
+                    SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+                    512, 512,
+                    SDL_WINDOW_SHOWN);
+
+    // We must call SDL_CreateRenderer in order for draw calls to affect this window.
+    renderer = SDL_CreateRenderer(window, -1, 0);
+
+    // Select the color for drawing. It is set to red here.
+    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+
+    // Clear the entire screen to our selected color.
+    SDL_RenderClear(renderer);
+
+    // Up until now everything was drawn behind the scenes.
+    // This will show the new, red contents of the window.
+    SDL_RenderPresent(renderer);
+
+	SDL_StartTextInput();
+	
+    while (true)
+    {
+        if (SDL_PollEvent(&amp;amp;event))
+        {
+            switch (event.type)
+            {
+                case SDL_TEXTINPUT:
+                    /* Add new text onto the end of our text */
+                    strcat(text, event.text.text);
+                    break;
+                case SDL_TEXTEDITING:
+                    /*
+                    Update the composition text.
+                    Update the cursor position.
+                    Update the selection length (if any).
+                    */
+                    composition = event.edit.text;
+                    cursor = event.edit.start;
+                    selection_len = event.edit.length;
+                    break;
+            }
+        }
+
+    }
+    // Give us time to see the window.
+    SDL_Delay(1000);
+
+    // Always be sure to clean up
+    SDL_Quit();
+    return 0;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Makefile 这样写的&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;all:
+	g++ -g testime.cpp -I/home/zhuzhonghua/work/SDL/include /home/zhuzhonghua/work/SDL/build/.libs/libSDL2.a /home/zhuzhonghua/work/SDL/build/libSDL2main.a -lpthread -lGL -lGLU -lm -L/usr/lib/x86_64-linux-gnu -lrt -ldl&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;demo写的有问题，需要写一个退出函数，要不然总是关不掉。&lt;/p&gt;
+
+&lt;p&gt;本人喜欢静态编译，所以就全部使用的.a文件。&lt;/p&gt;
+
+&lt;p&gt;刚开始编译时会遇到dlsym undefined reference 的问题，加上-ldl选项就OK了。&lt;/p&gt;
+
+&lt;p&gt;遇到clock_gettime undefined reference，那么加上-lrt的选项，就OK 了。&lt;/p&gt;</content></entry>
+ <entry>
+  <title type="text">豆瓣FM Hunter 更新</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2013/06/%E8%B1%86%E7%93%A3fm-hunter-%E6%9B%B4%E6%96%B0.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2013-06-E8-B1-86-E7-93-A3fm-hunter-E6-9B-B4-E6-96-B0-html</id>
+  <published>2013-06-25T16:00:00Z</published>
+  <updated>2013-06-25T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;但是后来在新浪上搭建的服务器不能用了，于是努力实现了本地下载。&lt;/p&gt;
+
+&lt;p&gt;首先参考了别人的代码，把xpi文件(其实就是zip文件)打开，阅读里面下载相关的代码。&lt;/p&gt;
+
+&lt;p&gt;1.点击下载时，弹出对话框&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function getFilePicker(path)
+{
+    var fp = Cc["@mozilla.org/filepicker;1"].getService(Ci.nsIFilePicker)
+    fp.init(win, 'Save Douban Music', fp.modeSave)
+	fp.defaultExtension = 'mp3';
+	fp.defaultString = path;
+	fp.appendFilter('MP3', '*.mp3');
+	var rv = fp.show()
+	if (rv == fp.returnOK || rv == fp.returnReplace) {
+		return fp
+	}
+    else{
+        return null;
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里需要注意的一个地方就是Cc和Ci分别代表了Components.classes和Components.interfaces。 记得前面var {Cc, Ci} = require(&amp;ldquo;chrome&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt;参数path其实就是文件名，我在这里使用了标题title。&lt;/p&gt;
+
+&lt;p&gt;2.接下来就要写入文件了。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var fp = getFilePicker(name);
+if(!fp) return;
+
+var file = fp.file;
+
+var ios = Cc["@mozilla.org/network/io-service;1"].getService(Ci.nsIIOService);
+var url = ios.newURI(u, null, null);
+var channel = ios.newChannelFromURI(url);
+var observer = {
+  onStreamComplete : function(aLoader, aContext, aStatus, aLength, aResult) {
+      	var stream = Cc["@mozilla.org/network/safe-file-output-stream;1"].createInstance(Ci.nsIFileOutputStream);
+          stream.init(file, -1, -1, 0);
+          var bstream = Cc["@mozilla.org/binaryoutputstream;1"].createInstance(Ci.nsIBinaryOutputStream);
+
+          bstream.setOutputStream(stream);    
+          bstream.writeByteArray(aResult, aLength);
+          if (stream instanceof Ci.nsISafeOutputStream) {
+             stream.finish();
+          }else {
+              stream.close();
+          }
+      }
+}
+var sl = Cc["@mozilla.org/network/stream-loader;1"].createInstance(Ci.nsIStreamLoader);
+sl.init(observer);
+channel.asyncOpen(sl, channel);&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其实我也是在网上照抄一些代码，大体懂得一些含义，异步加载url地址，获得数据之后，写入文件。&lt;/p&gt;
+
+&lt;p&gt;等以后需要了，再进行更新吧。目前够用了。&lt;/p&gt;
+
+&lt;p&gt;Just For Fun&lt;/p&gt;</content></entry>
+ <entry>
+  <title type="text">豆瓣FM Hunter</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2013/06/%E8%B1%86%E7%93%A3fm-hunter.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2013-06-E8-B1-86-E7-93-A3fm-hunter-html</id>
+  <published>2013-06-21T16:00:00Z</published>
+  <updated>2013-06-21T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;前两天在听豆瓣电台，想把听到的歌都下载下来。 于是做了一个火狐浏览器的插件，doubanfmhunter。&lt;/p&gt;
+
+&lt;p&gt;这里介绍一下主要用到的点，完整代码在&lt;a href="https://builder.addons.mozilla.org/package/190551/latest/"&gt;https://builder.addons.mozilla.org/package/190551/latest/&lt;/a&gt;。因为用的是firefox的addon builder，所以放到github上倒麻烦，就不放了。&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;
+  &lt;p&gt;首先要通过firefox的调试平台看到请求的GET地址，也就是播放的MP3的地址。&lt;/p&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;使用events监听http-on-modify-request事件。 当接收到类似1里面监听的url地址时，记录下来该地址。&lt;/p&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;搭建一个sae的后台，想下载该MP3时，请求该SAE后台下载该MP3.&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;遇到一些问题，还没有时间去深入研究，如果路过的人知道答案，告知在下，不胜感激。&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;
+  &lt;p&gt;通过调试发现，豆瓣电台应该是先请求一个带playlist的地址，返回一个json，里面有很多的mp3地址，以及专辑信息。 然后再请求一个mp3地址。但是请求的mp3地址并不在返回的json里，所以也不知道他们是怎么选择这个mp3地址的。&lt;/p&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;api文档里说text-streams是在io下面，也就是require(&amp;ldquo;io/text-streams&amp;rdquo;)。 但是就是编译不通过，后来下载代码发现看类库的代码，才知道写成require(&amp;ldquo;text-streams&amp;rdquo;)。 但是遇到byte-streams时，不管使用require(&amp;ldquo;io/byte-streams&amp;rdquo;)或者require(&amp;ldquo;byte-streams&amp;rdquo;)，都不行，所以最后只能把byte-streams里的ByteReader的代码拿出来，改改用。&lt;/p&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;在使用这里的代码去监听baidu的mp3时，总是出现错误，还未深入研究。&lt;/p&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;如果想监听http-on-examine-response事件，需要注意一点的是这个事件是在数据到达之前就会触发的。所以这时要写一个listener，在代码里有。&lt;/p&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;本来想通过本地直接下载，window.location.href="data:xxx"之类的方式达到下载的目的，可是试了很多方法都没成功。最后只能通过在SAE上建立一应用来达到下载文件的目的。这个是我最想解决的。&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</content></entry>
+ <entry>
+  <title type="text">Founders At Work读后感</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2013/03/founders-at-work%E8%AF%BB%E5%90%8E%E6%84%9F.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2013-03-founders-at-work-E8-AF-BB-E5-90-8E-E6-84-9F-html</id>
+  <published>2013-03-02T16:00:00Z</published>
+  <updated>2013-03-02T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;前段时间连续看了好几本书。 乔布斯传看了一半英文，看了一半中文。 黑客与画家看的是英文。 黑客-计算机革命的英雄看的是英文。 DOOM启世录，中文。 FoundersAtWorks，英文。&lt;/p&gt;
+
+&lt;p&gt;看英文的速度还是有点慢，需要继续练习。&lt;/p&gt;
+
+&lt;p&gt;YC创始人杰西卡，PG的妻子，采访了N多曾经的创业家。我看过之后，激情澎湃。 原来他们早期是这样的，而不止是一个神话般的存在。&lt;/p&gt;
+
+&lt;p&gt;1.有想法就去大胆实践出来。根据实际情况调整也好，改变策略也好。最重要的是写出来上线。&lt;/p&gt;
+
+&lt;p&gt;paypal最开始只是做加密，后来根据情况调整为做支付。&lt;/p&gt;
+
+&lt;p&gt;以前看陈士駿的多少个月赚多少个亿，其中讲到paypal，而且还说，现在硅谷很多的创业者曾经都是paypal的同事。 当时就感觉paypal真牛X。现在更加详细的了解一些过程。&lt;/p&gt;
+
+&lt;p&gt;hotmail当时也是调整过来的，做个人信息数据库，又因为个人方便，做web的邮件，之后又把这个想法作为创业点子。&lt;/p&gt;
+
+&lt;p&gt;Flickr甚至是在创业写游戏的过程中，临时兴起，做的那么一个项目。 这个时候，我最喜欢一个词restless。 因为我发现，我就是特别喜欢折腾，restless。但是我少一份坚持，坚持把东西做完，上线。&lt;/p&gt;
+
+&lt;p&gt;即使不是创业，在普通的学习生活中也可以使用同样的思路。 比如在工作中学习英语。不像在学校，有老师带着学习，有大把的时间，有很好的氛围。 看到有人通过美剧学习，自己也想这样。看到新东方的老师提倡背单词，虽然枯燥，也想坚持下去。 看到有人听歌学习，也想模仿。最后也不知道哪个适合自己，哪个也没做成。&lt;/p&gt;
+
+&lt;p&gt;所以简单粗暴直接点，想背单词，那就坚持背下去。在这过程中，觉得怎样适合自己，再做下一步的调整。 就像创业一样，有想法，先实践出来。之后根据情况，调整。&lt;/p&gt;
+
+&lt;p&gt;HotOrNot的创始人甚至在找工作的过程中，有了想法，实践出来，上线。 后来因为服务器限制，调整策略，不再允许上传图片，而是上传链接。 虽然损失了一批用户，但是保住了当时他们的站。用一句中国俗语，那就是舍卒保帅。&lt;/p&gt;
+
+&lt;p&gt;比如我前端时间做的站也是最开始设计让用户自己上传文件，还做了文件大小限制。 后来调整为从别的地方抓取文件。这个策略是改了，只可惜，目前还没时间正式上线。&lt;/p&gt;
+
+&lt;p&gt;2， 创业不是一定要辞职。&lt;/p&gt;
+
+&lt;p&gt;网上看到很多人为了创业，在家做游戏APP，辞职。最后失败，甚至生活都一塌糊涂，都快离婚了。 并不是所有创业的人都是一门心思只能干创业的。&lt;/p&gt;
+
+&lt;p&gt;Hotmail的创始人刚开始做个人信息数据库时，就是一边上班一边创业，之后调整为一个人上班，一个人全职创业。 全职创业的人有家庭需要养活，由另外一名创始人上班，然后分一部分薪酬。&lt;/p&gt;
+
+&lt;p&gt;Excite(一个搜索引擎)的几个创始人聚在一起，有了想法，也是一边上班一边一点一点写自己的代码。&lt;/p&gt;
+
+&lt;p&gt;所以这里可能给我们提个醒，除非你能有投资，或者一人吃饱全家不饿，只要是真正想创业的，也可以一边上班，养家糊口，一边业余时间创业。&lt;/p&gt;
+
+&lt;p&gt;3， 产品一定要简单快速。&lt;/p&gt;
+
+&lt;p&gt;PG在它的博客中强力推荐Lisp。他说这就是他创业成功，或者快于对手产品上线的秘密武器。 他推荐Lisp不是为了让别人转向Lisp编程，而是坚定那些Lisp学习者的信心。 而我就被坚定了信心。 我最开始接触Lisp，还是从Emacs开始。但是一直都没有深入学习。自从看了PG的文章，我开始深入学习Lisp了。&lt;/p&gt;
+
+&lt;p&gt;37signals很早就成立了，之后有位哥们进入公司，做一个项目管理工程。 他原来是用php的，后来选择Ruby来开发这个工程，之后把一些公共部分提取到一个地方。 最后把这些公共部分作为一个框架发布了，就是ROR。 目标就是让人能够简单快速的开发一个应用。&lt;/p&gt;
+
+&lt;p&gt;4， 不要担心自己的年龄。&lt;/p&gt;
+
+&lt;p&gt;曾经我一度后悔自己的大学岁月其实可以过得更充实。 应该尝试去创业。那个时候真的是黄金岁月，没有压力，大把的时间。 后来看到Adobe创始人，准备创业时都快40了。&lt;/p&gt;
+
+&lt;p&gt;看到这里，我就不能再给自己找这个接口了。&lt;/p&gt;
+
+&lt;p&gt;就总结这么多吧。其实在读的过程中，读到一个词一句话一篇故事时，都是很有感触的。 只是读的过程中，有诸多限制，没法记录下当时的想法，就这样吧。&lt;/p&gt;</content></entry>
+ <entry>
+  <title type="text">使用CPP扩展Python</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2013/02/%E4%BD%BF%E7%94%A8cpp%E6%89%A9%E5%B1%95python.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2013-02-E4-BD-BF-E7-94-A8cpp-E6-89-A9-E5-B1-95python-html</id>
+  <published>2013-02-05T16:00:00Z</published>
+  <updated>2013-02-05T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;基本需求是这样的，当&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;const char* p = NULL;
+if(!PyArg_ParseTuple(args, "s", &amp;amp;p))
+  return NULL;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;看python帮助文档，当在PyArg_ParseTuple中使用格式字符串s时，一定要传入指针的地址。 不能为该指针分配存储空间。char str[100]，这样肯定是不行的。 通过该调用，该指针就指向了一个已经存在的对象。&lt;/p&gt;
+
+&lt;p&gt;于是我想，把指针，字符串地址保存起来，需要时，就可以直接输出Python虚拟机内的一个字符串了。 这样不用自己分配内存，管理内存了。 关于引用计数问题，既然是指针指向了一个已经存在的对象，理所当然的认为Python虚拟机会自己搞定引用计数问题。&lt;/p&gt;
+
+&lt;p&gt;经过实践&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int i = 0;
+
+static PyObject*
+test_test(PyObject* self, PyObject* args)
+{
+  return Py_BuildValue("i", i++);
+}
+
+const char* ptest[10];
+
+static PyObject*
+test_str(PyObject* self, PyObject* args)
+{
+  const char* p = NULL;
+  if(!PyArg_ParseTuple(args, "s", &amp;amp;p))
+    return NULL;
+
+  ptest[i] = p;
+
+  Py_RETURN_NONE;
+}
+
+static PyObject*
+test_flush(PyObject* self, PyObject* args)
+{
+  for(int j = 0; j &amp;lt; 10; ++j){
+    printf("%d=%s\n", j, ptest[j]);
+  }
+  Py_RETURN_NONE;
+}
+
+static PyMethodDef testMethods[] = {
+  {"test",     test_test,       METH_VARARGS, "hello world test"},
+  {"str",      test_str,        METH_VARARGS, "hello world test"},
+  {"flush",    test_flush,      METH_VARARGS, "hello world test"},
+  {NULL, NULL, 0, NULL}
+};
+
+PyMODINIT_FUNC
+inittest(void)
+{
+  (void)Py_InitModule("test", testMethods);
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面是cpp代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import test
+
+for i in range(10):
+    strs = "nihao"+str(i)
+    test.str(strs)
+    test.test()
+
+test.flush()    &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这是测试用的py代码。&lt;/p&gt;
+
+&lt;p&gt;结果证明，偶是错误的。 形式主义害死人啊。&lt;/p&gt;
+
+&lt;p&gt;仔细想想，如果在这种情况下，虚拟机可以自己搞定引用计数问题， 也就是PyArg_ParseTuple(args, &amp;ldquo;s&amp;rdquo;, &amp;amp;p)这段代码增加虚拟机内字符串对象的引用计数，什么时候削减该对象的引用呢？ 如果需要自己手动调用delete的话，在写代码时也不符合成对编程，也就是new/delete,malloc/free成对出现的良好习惯。 忽略strdup这个东东。&lt;/p&gt;
+
+&lt;p&gt;而且文档里说，指针指向已经存在的一个对象，并没有说引用计数的问题。 而且传入一个指针就想增加引用计数，也不合情理。 如果增加引用计数，cpp代码又没有主动调用delete或者free，导致的内存泄漏，是虚拟机的责任，还是自己代码的责任？ 如果你是设计者，你会怎么简单有效暴力的解决这个问题？！&lt;/p&gt;
+
+&lt;p&gt;所以告诫自己，这个地方要自己管理内存。&lt;/p&gt;
+
+&lt;p&gt;=====================================================&lt;/p&gt;
+
+&lt;p&gt;补充：&lt;/p&gt;
+
+&lt;p&gt;PyArg_ParseTuple中的关于传递object对象的格式字符串是大写o，不是0，也不是小写o。是大写O。&lt;/p&gt;
+
+&lt;p&gt;=====================================================&lt;/p&gt;
+
+&lt;p&gt;同样可想而知，如果在CPP内分配了一段内存，如new char[]，通过buildvalue传递给py时，自己也要记得delete。&lt;/p&gt;</content></entry>
+ <entry>
+  <title type="text">SWF9文件格式-形状(SWF File Format Version9 - Shape)</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2012/12/swf9%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F-%E5%BD%A2%E7%8A%B6-swf-file-format-version9-shape.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2012-12-swf9-E6-96-87-E4-BB-B6-E6-A0-BC-E5-BC-8F-E5-BD-A2-E7-8A-B6-swf-file-format-version9-shape-html</id>
+  <published>2012-12-20T16:00:00Z</published>
+  <updated>2012-12-20T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;Shape结构很紧凑，也很灵活。FP渲染起来效率很高。 和大多数的矢量格式一样，在Shape中定义的矢量也是由路径，也就是一组边，定义的。 路径可以是闭合的，也可以是开放的。路径中有直线，曲线，还有一些移动的指令。 指令可以使得，使用一个Shape结构定义好几个不相关的形状。&lt;/p&gt;
+
+&lt;p&gt;填充样式会影响由路径包围的区域的外观。SWF文件中的填充样式里包含颜色，渐变，还有位图图像。&lt;/p&gt;
+
+&lt;p&gt;线段样式会影响路径轮廓的外观。线段样式是关于笔画的粗细和颜色的。&lt;/p&gt;
+
+&lt;p&gt;大多数的矢量格式只允许一个路径中只能包含一种填充和线段样式。而SWF扩展了这个限制，允许每条边都有自己的填充和线段样式。但是如果填充样式在路径中间变化，那么结果是不可知的。&lt;/p&gt;
+
+&lt;p&gt;Adobe Flash创作工具还支持每条边有两个样式，内边和外边，FillStyle0和FillStyle1。FillStyle0永远都是先应用，然后根据需要，决定是否应用FillStyle1。&lt;/p&gt;
+
+&lt;h1 id="shape-简介"&gt;Shape 简介&lt;/h1&gt;
+
+&lt;p&gt;一个Shape由如下几种元素组成：&lt;/p&gt;
+
+&lt;ul&gt;
+ &lt;li&gt;CharacterId－16位的数字，在字典里作为唯一标识。CharacterID可以在控制标签中使用，如在PlaceObject里。这样可以重用并且也可以和其他元素组合为更复杂的元素。
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;Bounding Box-包围Shape的矩形
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;Fill Style Array-在Shape中使用的填充样式的列表
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;Line Style Array-在Shape中使用的线段样式的列表
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;Shape Record Array-Shape Record的列表。Shape Record可以是直边，曲边，可以改变样式，移动当前点位置&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h1 id="shape举例"&gt;Shape举例&lt;/h1&gt;
+
+&lt;p&gt;下面的例子是一组Shape，但是可以由仅仅一个DefineShape标签定义。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/shapeexample.png" alt="ShapeExample" /&gt;&lt;/p&gt;
+
+&lt;p&gt;红圈，红方块还有绿色的圆边矩形都是闭合路径。曲线是一个开放路径。 红方块是由直线组成，红圈是由曲线组成，圆边矩形由曲线交叉直线组成。&lt;/p&gt;
+
+&lt;p&gt;这里有两种填充样式，solid 红和solid 绿，两种线段样式，1像素黑和2像素黑。 红圈和红方块的线段样式和填充样式都一样。 圆边矩形和曲线有相同的线段样式。&lt;/p&gt;
+
+&lt;p&gt;下面就是如何在SWF里描述这个例子：&lt;/p&gt;
+
+&lt;h3 id="定义填充样式"&gt;定义填充样式&lt;/h3&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;首先填充样式由FILLSTYLEARRAY定义，solid 红和solid 绿。&lt;/li&gt;
+ &lt;li&gt;接下来是LINESTYLEARRAY，包含了1像素黑和2像素黑。&lt;/li&gt;
+ &lt;li&gt;接下来是一组Shape Record。&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;所有的Shape Record结构相似，但是意义不同。Shape Record可以定义直边，曲边，样式改变和移动当前点。&lt;/p&gt;
+
+&lt;h3 id="定义曲线"&gt;定义曲线&lt;/h3&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;第一个Shape Record使用2像素宽的线段样式，然后设置StateMoveTo标签，把当前点移动到曲线的顶部。
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;接下来的Shape Record是一个曲边，在线段底部结束。路径没有闭合。&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 id="定义红方块"&gt;定义红方块&lt;/h3&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;接下来的Shape Record使用1像素的线段样式，红色填充样式。然后把当前点移动到红方块的左上角。
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;下面的四个Shape Record都是直边。最后一个边必须在左上角结束。FP要求闭合图形必须互相衔接。也就是说第一个和最后一个点必须重合。&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 id="定义红圈"&gt;定义红圈&lt;/h3&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;下一个Shape Record并不改变任何样式设定，但是会把当前点移动到红圈顶部。
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;接下来的8个Shape Record都是曲边。并且最后要停在开始点。&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 id="定义绿色圆边矩形"&gt;定义绿色圆边矩形&lt;/h3&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;接下来的ShapeRecord使用2像素宽的线段样式，绿色填充样式。然后把当前点移动到绿矩形的左上角。&lt;/li&gt;
+ &lt;li&gt;接下来的12个ShapeRecord是由StraightShapeRecord和CurvedShapeRecord交叉组成。路径在开始的地方结束。&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h1 id="shape结构"&gt;Shape结构&lt;/h1&gt;
+
+&lt;h2 id="填充样式"&gt;填充样式&lt;/h2&gt;
+
+&lt;p&gt;SWF支持3种非常基础的填充样式。&lt;/p&gt;
+
+&lt;ul&gt;
+ &lt;li&gt;单色填充 简单的RGB或者RGBA颜色填充Shape的一部分，Alpha255意味着完全不透明填充。Alpha0意味着完全透明填充。在这之间的数值意味着部分透明。
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;渐进填充 渐进填充可以是线性渐进填充或者放射渐进填充。详细内容参考，Gradients一章。
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;位图填充 位图填充使用了一个位图ID。有两种类型：裁减的，平铺的。如果填充区域超过了位图边界，裁减位图填充就重复使用位图边缘的颜色。而平铺填充会重复使用该位图。&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h2 id="fillstylearray"&gt;FILLSTYLEARRAY&lt;/h2&gt;
+
+&lt;p&gt;填充样式数组枚举了一组填充样式。填充样式数组的格式如下：&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/assets/fillstylearray.png" alt="FILLSTYLEARRAY" /&gt;
+ &lt;p class="caption"&gt;FILLSTYLEARRAY&lt;/p&gt;&lt;/div&gt;
+
+&lt;h2 id="fillstyle"&gt;FILLSTYLE&lt;/h2&gt;
+
+&lt;p&gt;填充样式的格式如下：&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/assets/fillstyle1.png" alt="Fillstyle" /&gt;
+ &lt;p class="caption"&gt;Fillstyle&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/assets/fillstyle2.png" alt="Fillstyle" /&gt;
+ &lt;p class="caption"&gt;Fillstyle&lt;/p&gt;&lt;/div&gt;
+
+&lt;h2 id="线段样式"&gt;线段样式&lt;/h2&gt;
+
+&lt;p&gt;线段样式数组枚举了一组线段样式。&lt;/p&gt;
+
+&lt;h2 id="linestylearray"&gt;LINESTYLEARRAY&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src="/assets/linestylearray.png" alt="LineStyleArray" /&gt;&lt;/p&gt;
+
+&lt;h2 id="linestyle"&gt;LINESTYLE&lt;/h2&gt;
+
+&lt;p&gt;线段样式表示的是线段的颜色和宽度。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/linestyle.png" alt="LineStyle" /&gt;&lt;/p&gt;
+
+&lt;h2 id="linestyle2"&gt;LINESTYLE2&lt;/h2&gt;
+
+&lt;p&gt;LINESTYLE2建立在与LINESTYLE兼容的基础上，允许使用新类型的join和cap，还可以缩放，填充笔画。LINESTYLE2只能用于DefineShape4。&lt;/p&gt;
+
+&lt;p&gt;LINESTYLE只允许圆连接和圆cap，LINESTYLE2允许miter join和bevel join，square cap和no cap。下面描述了完整的join和cap：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/linestyle2joincap.png" alt="LineStyle2JoinCap" /&gt;&lt;/p&gt;
+
+&lt;p&gt;在miter join中使用LINESTYLE2时，必须指定MiterLimitFactor，用来计算最大miter长度。&lt;/p&gt;
+
+&lt;p&gt;最大miter长度 ＝ LINESTYLE2 MiterLimitFactor X LINESTYLE2 Width&lt;/p&gt;
+
+&lt;p&gt;如果miter join超过了最大miter长度，FP会剪断。MiterLimitFactor的值是8.8格式。&lt;/p&gt;
+
+&lt;p&gt;LINESTYLE2还包含一些选项来做像素微调，来校正垂直或者水平线段。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/linestyle21.png" alt="LineStyle2" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/linestyle22.png" alt="lineStyle2" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/linestyle23.png" alt="LineStyle2" /&gt;&lt;/p&gt;
+
+&lt;h2 id="shape结构"&gt;Shape结构&lt;/h2&gt;
+
+&lt;p&gt;SHAPE结构中没有填充样式和线段样式。&lt;/p&gt;
+
+&lt;h2 id="shape"&gt;SHAPE&lt;/h2&gt;
+
+&lt;p&gt;SHAPE结构在DefineFont中使用，用来定义字型。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/shape.png" alt="SHPAE" /&gt;&lt;/p&gt;
+
+&lt;h2 id="shapewithstyle"&gt;SHAPEWITHSTYLE&lt;/h2&gt;
+
+&lt;p&gt;SHAPEWITHSTYLE扩展了SHAPE结构，包含了填充样式和线段样式。在DefineShape中使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/shapewithstyle.png" alt="SHAPEWITHSTYLE" /&gt;&lt;/p&gt;
+
+&lt;p&gt;下面的图描述了SHAPEWITHSTYLE的结构：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/shapewithstylediagram.png" alt="SHAPEWITHSTYLEDIAGRAM" /&gt;&lt;/p&gt;
+
+&lt;p&gt;首先定义填充样式数组和线段样式数组，只定义一次，后面可以引用。&lt;/p&gt;
+
+&lt;p&gt;蓝色区域代表SHAPERECORD数组。 第一个SHAPERECORD从填充样式数组中选择一个，然后把当前点移动到SHAPE的开始。 之后是一组边来定义SHAPE。下一个SHAPERECORD重新选择了一个填充样式，并且之后的边都采用新的样式。&lt;/p&gt;
+
+&lt;p&gt;此标签完全是“自治”标签，所有引用的样式都是在本标签内定义的。&lt;/p&gt;
+
+&lt;h2 id="shape-records"&gt;Shape Records&lt;/h2&gt;
+
+&lt;p&gt;有四种类型的SHAPERECORD：&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;End Shape Record&lt;/li&gt;
+ &lt;li&gt;Style Change Record
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;Straight Edge Record
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;Curved Edge Record&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;在一组SHAPERECORD内，每一个独立的SHAPERECORD都是字节对齐的。 在下一个SHAPERECORD开始之前，前一个SHAPERECORD都是先对齐到字节。&lt;/p&gt;
+
+&lt;p&gt;每一个SHAPERECORD都是由一个TYPEFLAG开始的。 如果TYPEFLAG的值是0，那么此SHAPERECORD就是“非edge”的，之后的5位提供具体信息。&lt;/p&gt;
+
+&lt;h2 id="end-shape-record"&gt;End Shape Record&lt;/h2&gt;
+
+&lt;p&gt;End Shape Record简单的表明ShapeRecord数组结束，它的TypeFlag为0，并且之后的5位也是0。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/endshaperecord.png" alt="EndShpeRecord" /&gt;&lt;/p&gt;
+
+&lt;h2 id="style-change-record"&gt;Style Change Record&lt;/h2&gt;
+
+&lt;p&gt;Style Change Record也是一个“非edge”Record，它可以做如下几件事情：&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;选择填充样式或线段样式。
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;移动当前点。
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;修改当前的填充样式和线段样式。&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;因为改变样式都发生在一条路径的最开始部分，因此在单个record内进行多个操作是比较有用的。 例如，假想一下DefineShape标签定义了一个红圈和蓝方块。在红圈闭合之后，需要移动当前点，改变当前样式。 Style Change Record可以在一个Record里做到这些动作。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/stylechangerecord1.png" alt="StyleChangeRecord" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/stylechangerecord2.png" alt="StyleChangeRecord" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/stylechangerecord3.png" alt="StyleChangeRecord" /&gt;&lt;/p&gt;
+
+&lt;p&gt;在第一个shape record中，movedeltax 和movedeltay是和shape的起始处相关的。
+ &lt;br /&gt;在之后的shape record中，movedeltax 和movedeltay是和当前点相关的。&lt;/p&gt;
+
+&lt;p&gt;样式数组从下标1开始，而不是从0开始。FillStyle＝1引用的是填充样式数组的第一个样式，FillStyle＝2引用的是第二个。 等等。填充样式的下标0表示没有填充，线段样式的下标0表示没有笔画。 最开始，填充样式和线段样式的下标都是0。&lt;/p&gt;
+
+&lt;h2 id="fillstyle0和fillstyle1"&gt;FillStyle0和FillStyle1&lt;/h2&gt;
+
+&lt;p&gt;Flash创作工具支持每条边2个样式：FillStyle0和FillStyle1。 对于不重叠不交叉的Shape，应该使用FillStyle0。 对于重叠的Shape，情况比较复杂。&lt;/p&gt;
+
+&lt;p&gt;例如，如果一个Shape由两个重叠方块组成，并且只定义了FillStyle0，FP会在重叠的地方渲染一个洞。 这个区域可以使用FillStyle1。在这种情况下，对于任何方向向量，Fillstyle0是左边的颜色，FillStyle1是右边的颜色。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/fillstyle01.png" alt="FillStyle01" /&gt;&lt;/p&gt;
+
+&lt;h2 id="edge-record"&gt;Edge Record&lt;/h2&gt;
+
+&lt;p&gt;Edge Record的TypeFlag是1。内含两种类型：直的，弯的，由StraightFlag标识。&lt;/p&gt;
+
+&lt;h2 id="straightedgerecord"&gt;StraightEdgeRecord&lt;/h2&gt;
+
+&lt;p&gt;StraightEdgeRecord存储的是XY增量。 把增量添加到当前的位置，构成了新位置。 在原来的点和现在的点之间画一条线。&lt;/p&gt;
+
+&lt;p&gt;此Record支持三种类型的线：&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;任意线
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;水平线
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;垂直线&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;任意线存储的是XY增量，其它两种线只存储一个轴的增量。&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/assets/straightedgerecord.png" alt="StraightEdgeRecord" /&gt;
+ &lt;p class="caption"&gt;StraightEdgeRecord&lt;/p&gt;&lt;/div&gt;
+
+&lt;h2 id="curvededgerecord"&gt;CurvedEdgeRecord&lt;/h2&gt;
+
+&lt;p&gt;SWF文件和大多数其他的类似文件格式最大的不同在于使用的是平方贝塞尔曲线，而不是立方贝塞尔曲线。 PostScript跟大多数的画图软件一样，使用的是立方贝塞尔曲线。 SWF文件之所以使用平方贝塞尔是因为可以更紧凑，更高效。&lt;/p&gt;
+
+&lt;p&gt;下面的图展示了两种曲线：&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/assets/quadraticcubicbeziercurves.png" alt="QuadraticCubicBezierCurves" /&gt;
+ &lt;p class="caption"&gt;QuadraticCubicBezierCurves&lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;平方贝塞尔曲线有三个点：2个on-curve定位点，1个off-curve控制点。 立方贝塞尔曲线有四个点：2个on-curve定位点，2个off-curve控制点。&lt;/p&gt;
+
+&lt;p&gt;curved-edge record存储了两个XY增量。三个点的计算方式如下：&lt;/p&gt;
+
+&lt;p&gt;1 第一个定位点是当前的位置。
+ &lt;br /&gt;2 控制点是当前位置 plus Control增量。
+ &lt;br /&gt;3 另一个定位点是当前位置 plus Control增量 plus Anchor增量。&lt;/p&gt;
+
+&lt;p&gt;最后一个定位点成为了新的当前点。&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/assets/curveedgerecord.png" alt="CurveEdgeRecord" /&gt;
+ &lt;p class="caption"&gt;CurveEdgeRecord&lt;/p&gt;&lt;/div&gt;
+
+&lt;h2 id="平方和立方贝塞尔曲线之间的转换"&gt;平方和立方贝塞尔曲线之间的转换&lt;/h2&gt;
+
+&lt;p&gt;把off-curve控制点用两个off-curve控制点替换。 两个off-curve控制点分别放在两个on-curve定位点和原来的off-curve控制点之间。 新的off-curve控制点在线段的2/3处，距离原来的off-curve控制点更近。可参见上图。&lt;/p&gt;
+
+&lt;p&gt;平方贝塞尔曲线只能近似模拟立方贝塞尔曲线，因为一个是三阶曲线，一个是二阶曲线。 这个过程中会递归地分割曲线，直到两个类型的曲线误差可以接受。&lt;/p&gt;
+
+&lt;p&gt;这里有一些讨论关于立方贝塞尔曲线由平方贝塞尔曲线模拟的：&lt;/p&gt;
+
+&lt;ul&gt;
+ &lt;li&gt;Converting Bezier Curves to Quadratic Splines at stevehollasch.com/cgindex/curves/cbez-quadspline.html&lt;/li&gt;
+ &lt;li&gt;TrueType Reference Manual, Converting Outlines to the TrueType Format at developer.apple.com/fonts/TTRefMan/RM08/appendixE.html&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h2 id="shape-标签"&gt;Shape 标签&lt;/h2&gt;
+
+&lt;h2 id="defineshape"&gt;DefineShape&lt;/h2&gt;
+
+&lt;p&gt;由DefineShape定义的Shape可以由后面的控制标签使用，如PlaceObject。 ShapeID作为唯一标识索引。 ShapeBounds是包含了Shape的矩形区域。 SHAPEWITHSTYLE包含了所有的路径，填充和线段样式。&lt;/p&gt;
+
+&lt;p&gt;最低版本要求是SWF1。&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/assets/defineshape.png" alt="DefineShape" /&gt;
+ &lt;p class="caption"&gt;DefineShape&lt;/p&gt;&lt;/div&gt;
+
+&lt;h2 id="defineshape2"&gt;DefineShape2&lt;/h2&gt;
+
+&lt;p&gt;DefineShape2扩展了DefineShape，支持多余255种样式，一个Shape中有多个样式表。&lt;/p&gt;
+
+&lt;p&gt;最低版本呢要求是SWF2。&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/assets/defineshape2.png" alt="DefineShape2" /&gt;
+ &lt;p class="caption"&gt;DefineShape2&lt;/p&gt;&lt;/div&gt;
+
+&lt;h2 id="defineshape3"&gt;DefineShape3&lt;/h2&gt;
+
+&lt;p&gt;DefineShape3扩展了DefineShape2，支持RGBA颜色。&lt;/p&gt;
+
+&lt;p&gt;最低的版本要求是SWF3。&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/assets/defineshape3.png" alt="DefineShape3" /&gt;
+ &lt;p class="caption"&gt;DefineShape3&lt;/p&gt;&lt;/div&gt;
+
+&lt;h2 id="defineshape4"&gt;DefineShape4&lt;/h2&gt;
+
+&lt;p&gt;DefineShape4扩展了DefineShape3，使用了一个新的线段样式。 LINESTYLE2允许使用新类型的join和caps，还有缩放选项和填充一个笔画。&lt;/p&gt;
+
+&lt;p&gt;DefineShape4除了指定Shape边界，还指定了边的边界。 就像Shape边界在笔画外围计算，边的边界是在边的外围计算，参看下图。 EdgeBounds字段辅助FP计算特定的布局。&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/assets/edgebounds.png" alt="EdgeBounds" /&gt;
+ &lt;p class="caption"&gt;EdgeBounds&lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;另外DefineShape4还添加了两个标记，UseNonScalingStrokes，UsesScalingStrokes。 这些标记可以帮助FP创建更好的重绘区域。&lt;/p&gt;
+
+&lt;p&gt;最低版本要求SWF8。&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/assets/defineshape4.png" alt="DefineShape4" /&gt;
+ &lt;p class="caption"&gt;DefineShape4&lt;/p&gt;&lt;/div&gt;</content></entry>
+ <entry>
+  <title type="text">SWF9文件格式-字体和文本(SWF File Format Version9 - Fonts and Text)</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2012/11/swf9%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F-%E5%AD%97%E4%BD%93%E5%92%8C%E6%96%87%E6%9C%AC-swf-file-format-version9-fonts-and-text.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2012-11-swf9-E6-96-87-E4-BB-B6-E6-A0-BC-E5-BC-8F-E5-AD-97-E4-BD-93-E5-92-8C-E6-96-87-E6-9C-AC-swf-file-format-version9-fonts-and-text-html</id>
+  <published>2012-11-12T16:00:00Z</published>
+  <updated>2012-11-12T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;SWF8支持很多渲染文本的方法。在SWF6之后，所有的文本都使用Unicode编码，避免了文本和字符串在不同地区之间的区别。提醒一下，尽管FP是完全支持Unicode的，但是它仅仅支持从左到右的简单文本，还不支持Hebrew，Arabic，Thai等其它复杂的文本。&lt;/p&gt;
+
+&lt;h1 id="字型文本和设备文本"&gt;字型文本和设备文本&lt;/h1&gt;
+
+&lt;p&gt;SWF支持两种文本类型：字型文本和设备文本。字型文本通过在SWF中嵌入字符形状实现，设备文本使用的是各自平台的文本渲染功能。&lt;/p&gt;
+
+&lt;p&gt;字型文本在所有平台上看起来都一样。并且可以使用标准反锯齿功能。在SWF8之后，也可以使用高级文本渲染引擎实现。相对设备文本，使用字型文本会让生成的SWF文件更大，尤其是在一个很大的字符集里使用了很多字符。&lt;/p&gt;
+
+&lt;p&gt;设备字体由操作系统本身实现反锯齿效果，不同平台表现不一样。有两种方式指定设备文本：通过字体名称在系统中查找，或使用一个特殊的字体名称，映射到系统的高可用字体，尽量选择相近的字体。&lt;/p&gt;
+
+&lt;p&gt;字型文本字符通过DefineFont，DefineFont2，DefineFont3定义。设备文本字体通过DefineFont和DefineFontInfo一起定义，或者直接通过DefineFont2定义。定义设备文本字体的DefineFont2，如果用于动态文本的话，不需要包含任何字符图像。DefineFont和DefineFont2标签可以同时为某些文本提供字型文本支持，并且为其它文本提供设备文本支持，只要提供了图像和字符编码。&lt;/p&gt;
+
+&lt;h1 id="静态文本和动态文本"&gt;静态文本和动态文本&lt;/h1&gt;
+
+&lt;p&gt;文本可以被定义为静态的，或者在SWF4之后，动态的。动态文本可以在运行时改变，并且还可以编辑。动态文本可以模拟几乎静态文本的所有特性。除了静态文本精确的单个字符的位置，如果不考虑实现难度和版本兼容性的话。动态文本还有很多静态文本没有的格式化功能。丰富的格式化功能由HTML的一个子集支持。&lt;/p&gt;
+
+&lt;p&gt;静态文本通过DefineText定义。动态文本通过DefineEditText定义。这两个标签都可以引用DefineFont或者DefineFont2来获取字符来源。DefineEditText使用DefineFont2，而不是DefineFont。DefineText既可以使用DefineFont也可以使用DefineFont2。&lt;/p&gt;
+
+&lt;p&gt;DefineEditText提供了一个标记，来指明使用字型文本还是设备文本(译者注：如果有谁知道这个标记请告诉我，我没找到)，而DefineText并没有。这意味着在静态文本中，SWF没办法指明使用字型文本还是设备文本。这个问题由运行时标记解决。一般情况下，所有静态文本都使用字型文本。当FP插件被嵌入到HTML页面中，一个叫devicefont的HTML标签选项会让FP把所有静态文本都渲染成设备文本。字型文本作为后备。DefineEditText能够指明使用静态文本还是字型文本的能力是被认为好于DefineText的另一个原因。&lt;/p&gt;
+
+&lt;h1 id="字型文本"&gt;字型文本&lt;/h1&gt;
+
+&lt;h2 id="字型定义"&gt;字型定义&lt;/h2&gt;
+
+&lt;p&gt;字型是在一个称为EMSquare的标准坐标空间里定义的。相同的字型集合被用于每一个给定的字体大小。为了以不同的大小渲染字型，FP通过把EM坐标缩放到点阵坐标。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/glyphdefinitions.png" alt="glyphdef" /&gt;&lt;/p&gt;
+
+&lt;p&gt;字型字体－不使用高级文本渲染引擎－没有包含任何提高小字体可读性的提示信息。然而反锯齿会很好的提高缩小字体的可读性。即使在12点的大小时(看作100％)，字型文本还是易读的。12点或更低，在渲染可读文本时，建议采用高级反锯齿。这样小字体也会有很好的可读性，并且还会包含额外字体元信息来提高渲染效果。&lt;/p&gt;
+
+&lt;p&gt;TTF可以很好的转为SWF字型。一个简单的算法是使用Quadratic Bezier 曲线替换Quadratic B－splines。&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;左边是TTF中Arial的字符b的字型。它是由弯曲的和直线的边组成。方块指示的是on-curve点，x指示的是off-curve点。黑圈是字型的参考点。蓝色边框线指示的是字型的轮廓。&lt;/p&gt;
+
+&lt;h2 id="em-square"&gt;EM Square&lt;/h2&gt;
+
+&lt;p&gt;EMSquare 是想象的空间，用于字型大小和对齐。EMSquare足够大，包含了所有字型，包括重音字型。包括字体的上部，下部，还有一些额外空间来避免文本线的冲突。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/emsquare.png" alt="emsquare" /&gt;&lt;/p&gt;
+
+&lt;p&gt;SWF字型是在1024＊1024的空间中定义的。其它来源的字型(如TTF)会有不同的EMSquare。为了使用这些字型，应该缩放到1024大小。&lt;/p&gt;
+
+&lt;h2 id="把ttf转换为swf字型"&gt;把TTF转换为SWF字型&lt;/h2&gt;
+
+&lt;p&gt;TTF字型是使用Quadratic B－Splines定义的，这可以很容易的转换为SWF字型的Quadratic Bezier曲线。&lt;/p&gt;
+
+&lt;p&gt;一个TTF B－splines是由一个on-curve点和很多off-curve点，再跟着一个on-curve点组成的。两个off-curve点的中点保证在曲线上。SWF的Bezier曲线是由一个on-curve点和一个off-curve点，再跟一个on-curve点组成。&lt;/p&gt;
+
+&lt;p&gt;从TTF到SWF曲线的转换就是在两个off-curve点的中点插入一个on-curve点。&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;下面是4个点的B－splines，P0和P3是on-curve点，P1和P2是连续的off-curve点。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/bsplines.png" alt="bsplines" /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个曲线可以由两个Bezier曲线组成，在P1和P2的中点插入M，结果就是两个Bezier曲线，P0P1M和MP2P3。&lt;/p&gt;
+
+&lt;p&gt;完整的转换过程描述如下：&lt;/p&gt;
+
+&lt;p&gt;1，Y坐标反向（TTF中Y向上，SWF中Y向下）
+ &lt;br /&gt;2，把TTF中EMSquare坐标缩放到SWFEMSquare坐标中。
+ &lt;br /&gt;3，在每对off-curve的中点插入on-curve点。&lt;/p&gt;
+
+&lt;h2 id="字距和差值信息"&gt;字距和差值信息&lt;/h2&gt;
+
+&lt;p&gt;字距指的是两个字型之间的水平距离。有些字体系统在每个字体定义时都存储了字距信息。SWF文件存储的是每个字型实例(字型文本块的每个字符)的字距信息。这样称为差值。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/kerning.png" alt="kerning" /&gt;&lt;/p&gt;
+
+&lt;p&gt;在前面的例子里，A字型和V字型重叠了。这种情况下，差值要比A的宽度窄。&lt;/p&gt;
+
+&lt;h2 id="高级文本渲染引擎"&gt;高级文本渲染引擎&lt;/h2&gt;
+
+&lt;p&gt;字型可以使用普通的FP渲染器渲染，或者在SWF8之后，使用高级文本渲染引擎渲染。&lt;/p&gt;
+
+&lt;p&gt;高级文本渲染引擎是一种在FP渲染器里的高质量文本渲染器。对于文本来说，这个高级系统相对一般的渲染器有如下优势：&lt;/p&gt;
+
+&lt;ul&gt;
+ &lt;li&gt;即使小字体也可读
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;即使小字体看起来也美观
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;对于非常清晰的文本(左对齐的动态文本)支持像素对齐
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;提高了字型字体的性能
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;支持液晶屏幕的子像素渲染&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;高级文本渲染引擎的一个局限是，它没有字型文本那样的动画效果。&lt;/p&gt;
+
+&lt;p&gt;高级文本渲染引擎使用Continuous Stroke Modulation(CSM)参数来调整表现。CSM是一种笔画粗细和边缘锐度的连续调整。CSM使用两种渲染参数：内部和外部切断。这些参数的最佳值是有很大的主观性，并且依赖于用户的喜好，照明条件，显示属性，字样，前景和背景颜色，还有大小。然而大部分情况下，可以通过一小部分内插值的方法来实现高质量效果。&lt;/p&gt;
+
+&lt;p&gt;创建了高级反锯齿边缘的功能，含有外切断(在这之下，边缘不画)和内切断(在这之上，边缘不透明)。在两个切断值之间是一个线性函数，从外切断的0到内切断的最大值。&lt;/p&gt;
+
+&lt;p&gt;调整内外切断的值会影响笔画粗细和边缘锐度。两个参数之间的空间是经典的反锯齿方法中的过滤半径的两倍。窄一些的空间提供了更锐利的边缘，而宽一些的空间提供了更柔和的边缘。空间是0时，生成的图像是双层图像；当空间很大时，会生成像水一样的边缘。一般的，在小字体情况下，用户喜欢锐利的，高对比度的边缘；而对于动画效果的文本和大字体，喜欢更柔和的边缘。&lt;/p&gt;
+
+&lt;p&gt;外切断是负值，内切断是正值，中点一般在0左右。把中点调向负的方向，会增加笔画粗细；调向正的方向，会减少笔画粗细。外切断应该永远小于等于内切断。&lt;/p&gt;
+
+&lt;p&gt;FP创建了一个CSM的表格，为每个高级反锯齿字体提供文本大小和文本颜色。这个表格提供了一个CSM设置的集合，包含了很大范围的字体大小。你还可以定义一个用户自定义的表格，来代替默认值，使用AS的函数，setAdvancedAntiAliasingTable()&lt;/p&gt;
+
+&lt;h2 id="definefont-和-definetext"&gt;DefineFont 和 DefineText&lt;/h2&gt;
+
+&lt;p&gt;在SWF文件格式支持的四种文本类型中，最复杂的是静态字型文本。其它类型使用的是定义静态字型文本的简单变形。&lt;/p&gt;
+
+&lt;p&gt;静态字型文本使用两个TAG定义：&lt;/p&gt;
+
+&lt;ul&gt;
+ &lt;li&gt;DefineFont定义字型集合
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;DefineText定义使用那个字体显示的文本字符串&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;DefineFont标签定义了所有用户DefineText的字型。DefineFont包含了一组SHAPERECORD，描述了字型的边缘。这些SHAPERECORD同样用于DefineShape，定义的是非文本内容。为了把文件大小降到最低，只有使用的字型才会包含进来。DefineText存储的是实际要显示的文本字符串，由字型下标表示。还有文本的包围盒，转换矩阵，属性如颜色，大小。&lt;/p&gt;
+
+&lt;p&gt;DefineText包含了一组TEXTRECORD。TEXTRECORD记录了字体，颜色，大小，还有下一个字符的XY坐标。这个类型会应用到接下来的所有字符，直到另一个TEXTRECORD出现。TEXTRECORD还包含一组下标，引用了当前字体的字型表。字符不是由字符编码引用，而是由字型表的下标引用。字型数据还包含文本中每个字符的差值。&lt;/p&gt;
+
+&lt;h2 id="静态字型文本举例"&gt;静态字型文本举例&lt;/h2&gt;
+
+&lt;p&gt;考虑一下使用24大小，以Arial字体显示bob。&lt;/p&gt;
+
+&lt;p&gt;首先使用DefineFont定义字型。字型表有两个SHAPERECORD。0位置是小写B的形状，1位置是小写o的形状。(第二个b重复了，不需要再定义)DefineFont还包括一个唯一ID，接下来的DefineText可以引用。&lt;/p&gt;
+
+&lt;p&gt;第二，使用DefineText定义文本。TEXTRECORD设置第一个字符的位置，选择Arial字体，设置大小为24，这样字体被缩放到正确大小。(字型是在EMSquare坐标系中定义的，大小是DefineText的一部分)还包含一组GLYPHENTRY。每一个GLYPHENTRY都引用字体形状数组的一个下标。在这个例子里，第一个GLYPHENTRY引用下标0(对应字符b)，第二个引用下标1(o)，第三个引用下标0(b)。每个GLYPHENTRY还包含差值来精确定位字型的位置。&lt;/p&gt;
+
+&lt;p&gt;下面的图描述了DefineText如何与DefineFont交互。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/definetextfont.png" alt="definetextfont" /&gt;&lt;/p&gt;
+
+&lt;h1 id="字体标签"&gt;字体标签&lt;/h1&gt;
+
+&lt;h2 id="definefont"&gt;DefineFont&lt;/h2&gt;
+
+&lt;p&gt;DefineFont定义了特定字体的每个字型的边框形状。只有在DefineText中使用的字型才会被定义。DefineFont不能用于动态文本。动态文本需要DefineFont2。&lt;/p&gt;
+
+&lt;p&gt;最低文件版本是SWF1。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/definefont.png" alt="definefont" /&gt;&lt;/p&gt;
+
+&lt;p&gt;字体ID唯一标识了这个字体。可以用于DefineText引用。在SWF文件中字体ID也必须唯一。&lt;/p&gt;
+
+&lt;p&gt;如果DefineFontInfo和DefineFont一起的话，要注意DefineFont中的字型顺序要和DefineFontInfo中的字符顺序一致，以字符码排序。OffsetTable和GlyphShapeTable一起使用。这两个表有相同数量的条目，offsets中的顺序和shape中的顺序，一一对应。OffsetTable指定了在GlyphShapeTable中的位置。每一个Offset条目存储的是offset table开始到相应shape的差值(BYTES)。因为GlyphShapeTable与OffsetTable相邻，那么每个表格中的条目数量(字体定义的字型数目)可以通过offsettable中的第一个条目除以2得到（译者注：读者可以自己计算一下，提示：offsetTable中条目的类型。如果不懂，可以联系译者）。&lt;/p&gt;
+
+&lt;p&gt;在GlyphShapeTable中的每一个SHAPE的第一个STYLECHANGERECORD不使用LineStyle和LineStyles字段。这种情况下，这两个字段都被设为1。&lt;/p&gt;
+
+&lt;h2 id="definefontinfo"&gt;DefineFontInfo&lt;/h2&gt;
+
+&lt;p&gt;DefineFontInfo定义的是字型字体到设备字体的一个映射。提供了一个字体名和样式，传到平台的文本的渲染引擎，还有一个字符编码表格指定了相应字体的字型，这样可以把DefineText的字型下标转换为字符串。&lt;/p&gt;
+
+&lt;p&gt;DefineFontInfo并不会强制把字型文本转换为设备文本。它仅仅是可以这样做。实际是根据devicefont的值或者DefineText中的UseOutlines的值来决定。如果设备字体不可用，FP会继续用字型字体。&lt;/p&gt;
+
+&lt;p&gt;最低版本要求是SWF1。&lt;/p&gt;
+
+&lt;div class="figure"&gt;&lt;img src="/assets/definefontinfo1.png" alt="definefontinfo" /&gt;
+ &lt;p class="caption"&gt;definefontinfo&lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src="/assets/definefontinfo2.png" alt="definefontinfo" /&gt;&lt;/p&gt;
+
+&lt;p&gt;CodeTable中的条目必须是字码的升序排序。同时CodeTable中条目的顺序必须和引用的DefineFont中的字型顺序一致。这也要求DefineFont中的字型顺序要保持一致。&lt;/p&gt;
+
+&lt;p&gt;SWF6和之后的文件中的文本都要求Unicode文本编码。这样所有的字符编码表都用的是UCS－2(UCS－2是第一个UTF－16的64K字符码)。这种编码为每个字符使用固定2字节大小。这就是说，如果DefineFontInfo出现在SWF6或之后的文件中，那么FontFlagsWideCodes一定被设为1，FontFlagsShiftJIS和FontFlagsANSI一定设为0，CodeTable一定使用的是UI16的UCS－2的编码组成。&lt;/p&gt;
+
+&lt;p&gt;另外一点是在SWF6和之后的文件中，字体名一定是用UTF8编码的。在SWF5或之前，文件名是以平台特定的方式编码的，使用系统的码页。平台会使用当前的码页来显示，这样导致不一样的平台之间的显示不一样。如果平台是ANSI系统，字体名称就是ANSI字符串。如果平台是日本的Shift－JIS系统，字体名就会被翻译为Shift－JIS字符串。还有很多其他平台的码页。这种本地依赖非常不好，这也是为什么SWF6转向了统一编码。需要注意的是DefineFontInfo中的字体名不是空字符串结尾的。而是通过FontNameLen来定义长度的。FontNameLen指定了FontName需要的字节数，这不一定要和字符数量一致，因为有些编码，每个字符会使用多于1个字节。&lt;/p&gt;
+
+&lt;p&gt;字体名是逐字使用的，直接传入平台的字体系统，定位字体。然而有很多特殊的间接字体名是,根据不同平台映射到不同的字体的。这些间接映射是硬编码到平台特定的FP中的，这些字体是在平台默认字体和最可用字体之间选择的。或者这样考虑，间接映射是为了让所有平台看起来尽可能一致。&lt;/p&gt;
+
+&lt;p&gt;下面的表就是支持的间接映射字体名。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/westernfonts.png" alt="western" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/japanesefonts.png" alt="japanese" /&gt;&lt;/p&gt;
+
+&lt;h2 id="definefontinfo2"&gt;DefineFontInfo2&lt;/h2&gt;
+
+&lt;p&gt;当生成SWF6或之后的文件时，建议使用DefineFontInfo2，而不是DefineFontInfo。DefineFontInfo2和DefineFontInfo是一样的，除了它增加了一个language code字段。如果使用DefineFontInfo，这个字段被认为是0，这将会导致，平台不一样，表现不一样。&lt;/p&gt;
+
+&lt;p&gt;最小的版本要求是SWF6。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/definefontinfo22.png" alt="definefontinf2" /&gt;&lt;/p&gt;
+
+&lt;h2 id="definefont2"&gt;DefineFont2&lt;/h2&gt;
+
+&lt;p&gt;DefineFont2扩展了DefineFont功能。包括：&lt;/p&gt;
+
+&lt;ul&gt;
+ &lt;li&gt;OffsetTable中32位的条目，可以有多于64K的字型字体。
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;合并DefineFontInfo的功能，映射到设备字体。
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;提高了动态文本的字体规格。&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;DefineFont2是唯一能用于动态文本的标签。&lt;/p&gt;
+
+&lt;p&gt;最小的版本要求是SWF3。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/definefont21.png" alt="definefont2" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/definefont22.png" alt="definefont2" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/definefont23.png" alt="definefont2" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/definefont24.png" alt="definefont2" /&gt;&lt;/p&gt;
+
+&lt;p&gt;在SWF6和之后的文件中，DefineFont2和DefineFontInfo一样，要求Unicode。CodeTable(还有OffsetTable，GlyphTable， FontAdvanceTable)必须以字码顺序排序。如果DefineFont2仅仅用于动态文本，并且也不需要字型渲染，那么NumGlyphs被设置为0，并且忽略所有相关条目。这样会减少DefineFont2的大小。没有字型的DefineFont2不能够显示静态文本(需要字型索引)和字型文本(需要字型形状定义)。&lt;/p&gt;
+
+&lt;p&gt;布局信息(ascent, descent, leading, advance table, bounds table, kerning table)仅仅对动态文本有用。此信息代替了用于静态字型文本的每个字符的布局信息。DefineFont2中的布局信息是相当标准的字体规格信息，可以从标准的字体定义中抽取，如TTF。&lt;/p&gt;
+
+&lt;p&gt;就像在DefineFont里一样，DefineFont2里每个SHAPE的第一个STYLECHANGERECORD也不使用LineStyle和LineStyles字段，并且也被设置为1。&lt;/p&gt;
+
+&lt;p&gt;DefeinFont2还保留了字体边框表和字距表。这些信息在FP7之后就不用了，但是必须被保留下来，为了DefineFont2的一致性。为FontBoundTable提供一个最小的RECT，把KerningCount永远设置为0，这样可以忽略掉FontKerningTable。&lt;/p&gt;
+
+&lt;h2 id="definefont3"&gt;DefineFont3&lt;/h2&gt;
+
+&lt;p&gt;DefineFont3是和DefineFontAlignZones一起在SWF8中引入的。当使用高级反锯齿功能时，DefineFontAlignZones是可选的，但是推荐使用；它会修改DefineFont3的行为。&lt;/p&gt;
+
+&lt;p&gt;DefineFont3扩展了DefineFont2的功能，通过把GlyphShapeTable中的SHAPE坐标提高20倍。所有的EMSquare坐标在导出时，都乘以20，这样就可以精确到1/20个单位。这可以定义更精确的字型，有更好的可视效果。&lt;/p&gt;
+
+&lt;p&gt;最低的版本要求是SWF8。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/definefont31.png" alt="definefont3" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/definefont32.png" alt="definefont3" /&gt;  &lt;img src="/assets/definefont33.png" alt="definefont3" /&gt;  &lt;img src="/assets/definefont34.png" alt="definefont3" /&gt;&lt;/p&gt;
+
+&lt;h2 id="definefontalignzones"&gt;DefineFontAlignZones&lt;/h2&gt;
+
+&lt;p&gt;DefineFongAlignZones可以修改DefineFont3。高级文本渲染引擎使用alignment zones来建立字型边界，实现像素对齐。alignment zones对于高质量的字体很重要。&lt;/p&gt;
+
+&lt;p&gt;Alignment Zones为每个有很强横竖感的字型都定义了一个包围盒。盒子是通过x坐标，粗细，y坐标，高度描述的。高度或粗细很小时，被设置为0。&lt;/p&gt;
+
+&lt;p&gt;例如考虑一下字母I。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/definefontalignzonesi.png" alt="I" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I在底部和顶部有很强烈的水平感。在主干的边缘，而不是在条形顶部或者衬线上，有很强烈的垂直感。在字母中心块上的强烈横竖感，决定了alignment zones。&lt;/p&gt;
+
+&lt;p&gt;最低的版本要求是SWF8。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/definefontalignmentzones.png" alt="definefontalignmentzones" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/zonerecord.png" alt="zonerecord" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/zonedata.png" alt="zonedata" /&gt;&lt;/p&gt;
+
+&lt;h3 id="kerning-record"&gt;Kerning Record&lt;/h3&gt;
+
+&lt;p&gt;Kerning Record定义的是在EMSquare坐标系中，两个字型的距离。某对字型更近或更远的话，看起来会更美观。FontKerningCode1和FontKerningCode2是两边的字符编码。FontKerningAdjustment字段有符号的整数，会加在左边字符的差值上。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/kerningrecord.png" alt="kerningrecord" /&gt;&lt;/p&gt;
+
+&lt;h2 id="definefontname"&gt;DefineFontName&lt;/h2&gt;
+
+&lt;p&gt;DefineFontName包含了嵌入在SWF文件里的字体名和版权信息。&lt;/p&gt;
+
+&lt;p&gt;最低的版本要求是SWF9。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/definefontname1.png" alt="definefontname" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/definefontname2.png" alt="definefontname" /&gt;&lt;/p&gt;
+
+&lt;h1 id="静态文本标签"&gt;静态文本标签&lt;/h1&gt;
+
+&lt;h2 id="definetext"&gt;DefineText&lt;/h2&gt;
+
+&lt;p&gt;DefineText定义了一块静态文本。描述了字体，大小，颜色和每个字符的精确位置。&lt;/p&gt;
+
+&lt;p&gt;最低的版本要求是SWF1。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/definetext.png" alt="definetext" /&gt;&lt;/p&gt;
+
+&lt;p&gt;TextBounds字段是一个矩形区域，包含了这个文本块的所有字符。&lt;/p&gt;
+
+&lt;p&gt;GlyphBits和AdvanceBits定义了用于GlyphIndex和GlyhAdvance字段(GLYPHRECORD中的条目里的)的位数。&lt;/p&gt;
+
+&lt;h3 id="textrecord"&gt;TextRecord&lt;/h3&gt;
+
+&lt;p&gt;一个TEXTRECORD指定了接下来的文本样式。可以被用于选择字体，改变字体颜色，改变大小，插入换行，或者设置下一个字符的XY坐标。直到下一个TEXTRECORD出现。&lt;/p&gt;
+
+&lt;p&gt;TEXTRECORD还定义了文本的所有字符。字符是通过索引到当前字体的字型表，而不是字符编码。每一个TEXTRECORD都包含一组字符，共享相同的样式，并且在同一行上。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/textrecord.png" alt="textrecord" /&gt;&lt;/p&gt;
+
+&lt;p&gt;FondID字段用于选择前面定义的字体。唯一标识DefineFont或者DefineFont2的ID。&lt;/p&gt;
+
+&lt;p&gt;TextHeight字段定义了字体的高度，用TWIPS单位。如50像素就是TextHeight＝1000。&lt;/p&gt;
+
+&lt;p&gt;XOffset字段定义了文本框矩形左边到字型引用点(EMSquare中第一个曲线段偏离的点)的偏移。一般引用点都在底部，接近字型的左边(参看GlyphText的例子)。XOffset一般用来创建缩进文本或者非左对齐文本。如果没有指定XOffset，那就默认0。&lt;/p&gt;
+
+&lt;p&gt;YOffset字段定义了文本矩形上边到字型引用点的偏移。这个字段一般用于插入断行，把文本移动到新行的开始。&lt;/p&gt;
+
+&lt;p&gt;GlyphCount字段定义了字符个数，还有GLYPHENTRY表格的大小。&lt;/p&gt;
+
+&lt;h3 id="glyphentry"&gt;GlyphEntry&lt;/h3&gt;
+
+&lt;p&gt;GlyphEntry描述的是单个字符，由一个引用到当前字体字型表的索引和差值组成。差值就是当前字符引用点到下一个字符引用点的水平距离。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/glyphentry.png" alt="glyphentry" /&gt;&lt;/p&gt;
+
+&lt;h2 id="definetext2"&gt;DefineText2&lt;/h2&gt;
+
+&lt;p&gt;DefineText2几乎和DefineText是一样的。唯一的区别是在DefineText2中的TEXTRECORD使用RGBA来定义字体颜色。这可以产生半透明甚至全透明的字符。&lt;/p&gt;
+
+&lt;p&gt;由DefineText2定义的文本永远使用字型渲染。设备文本永远不包含透明性。&lt;/p&gt;
+
+&lt;p&gt;最小的版本要求是SWF3。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/definetext21.png" alt="definetext2" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/definetext22.png" alt="definetext2" /&gt;&lt;/p&gt;
+
+&lt;h1 id="动态文本标签"&gt;动态文本标签&lt;/h1&gt;
+
+&lt;h2 id="defineedittext"&gt;DefineEditText&lt;/h2&gt;
+
+&lt;p&gt;DefineEditText定义的是动态文本对象，或者文本域。&lt;/p&gt;
+
+&lt;p&gt;文本域和AS里的变量名关联在一起。可以读写变量内容，并且和显示保持一致。如果ReadOnly没有设置，那么用户就可以交互的修改内容。&lt;/p&gt;
+
+&lt;p&gt;这里使用的字体一定是DefineFont2定义的，而不能是DefineFont。&lt;/p&gt;
+
+&lt;p&gt;最低的版本要求是SWF4。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/defineedittext1.png" alt="defineedittext" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/defineedittext2.png" alt="defineedittext" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/defineedittext3.png" alt="defineedittext" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/defineedittext4.png" alt="defineedittext" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/defineedittext5.png" alt="defineedittext" /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果HTML字段设置了，InitialText的内容就会被解释为HTML的一个子集。下面是所有支持的标签。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/html1.png" alt="html" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/html2.png" alt="html" /&gt;&lt;/p&gt;
+
+&lt;h2 id="csmtextsettings"&gt;CSMTextSettings&lt;/h2&gt;
+
+&lt;p&gt;除了高级文本渲染，渲染引擎还支持修改文本域的标签。CSMTextSetting会修改前面的DefineText，DefineText2，DefineEditText。CSMTextSettings可以打开或者关闭文本域的反锯齿，还可以用于定义quality和option。&lt;/p&gt;
+
+&lt;p&gt;最低的版本要求是SWF8。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/csmtextsettings1.png" alt="csmtextsetting" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/csmtextsettings2.png" alt="csmtextsetting" /&gt;
+ &lt;br /&gt;&lt;img src="/assets/csmtextsettings3.png" alt="csmtextsetting" /&gt;&lt;/p&gt;
+
+&lt;p&gt;粗细和锐度字段会应用到特定文本域，这会覆盖那个文本域的默认值。&lt;/p&gt;
+
+&lt;p&gt;在渲染时，通过如下方式计算：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/csmtextsettingcalc.png" alt="csmtextsettingcalc" /&gt;&lt;/p&gt;
+
+&lt;p&gt;计算时使用字体大小会生成更加线性的缩放效果，并且进行很明显的文本缩放时，线性缩放会生成不好的近似效果。进行文本缩放时最好使用默认表格作为反锯齿表格。&lt;/p&gt;</content></entry>
+ <entry>
+  <title type="text">在mingw环境下编译最新版本gcc gdb</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2012/06/%E5%9C%A8mingw%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%BC%96%E8%AF%91%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%ACgcc-gdb.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2012-06-E5-9C-A8mingw-E7-8E-AF-E5-A2-83-E4-B8-8B-E7-BC-96-E8-AF-91-E6-9C-80-E6-96-B0-E7-89-88-E6-9C-ACgcc-gdb-html</id>
+  <published>2012-06-06T16:00:00Z</published>
+  <updated>2012-06-06T16:00:00Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;由于比较喜欢GCC的东西，又必须做WIN下的程序，但是考虑到效率问题 
+ &lt;br /&gt; 1，使用LINUX交叉编译MINGW下的程序 
+ &lt;br /&gt; 2，直接使用MINGW和MSYS编译WIN程序&lt;/p&gt;
+
+&lt;p&gt;使用交叉编译的方法，在网上搜到的比较麻烦，而且又不是做嵌入式开发，必须用交叉编译; 
+ &lt;br /&gt; 所以决定使用第二种方法。&lt;/p&gt;
+
+&lt;p&gt;目前已经成功编译了GDB7.4.1和最新的BINUTILS，还有MPC，MPFR，等GCC需要依赖的库。 
+ &lt;br /&gt; 晚上回去看一下GCC4.7.0的编译情况。&lt;/p&gt;
+
+&lt;p&gt;不过在公司已经使用MINGW-GET拿到了GDB7.4和GCC4.6.2,而且使用正常。&lt;/p&gt;
+
+&lt;p&gt;2012-06-08&lt;/p&gt;
+
+&lt;p&gt;昨晚回去，出现了诡异的dllcrt2.o文件找不到的问题 
+ &lt;br /&gt; 由于时间有限，又急着建立开发环境，所以决定把公司里使用mingw-get的版本拿回去。 
+ &lt;br /&gt; 奇怪的是，家里使用mingw-get无法获取各种包，也就是不能用。&lt;/p&gt;
+
+&lt;p&gt;今天在公司，不甘心，利用业余时间终于把这个问题搞定。&lt;/p&gt;
+
+&lt;p&gt;网上也有人遇到这个问题，文件是有的，在/mingw/lib下&lt;/p&gt;
+
+&lt;p&gt;刚开始使用LDFLAGS无效，后来使用GCC_EXEC_PREFIX连configure都无法通过。&lt;/p&gt;
+
+&lt;p&gt;在这个命令的下面看到了，LIBRARY_PATH，于是灵光一现，配置好/mingw/lib&lt;/p&gt;
+
+&lt;p&gt;结果编译了一个下午, 公司的电脑还算好的。&lt;/p&gt;
+
+&lt;p&gt;自己编译GCC真不是玩的。花的时间太久了。&lt;/p&gt;
+
+&lt;p&gt;不过总算了解了自己的一个心病。&lt;/p&gt;
+
+&lt;p&gt;而且在网上差资料，关于dllcrt2.o的东西，都是外文。这里也算有个中文的关于这个的资料吧。&lt;/p&gt;
+
+&lt;p&gt;tips:&lt;/p&gt;
+
+&lt;p&gt;1, BINUTILS要使用最新版本，这个编译起来很快。 
+ &lt;br /&gt; 要不然会出现unknown-pseudo .cfi_sections 2, 还有它依赖的其他库文件&lt;/p&gt;
+
+&lt;p&gt;其他问题就不大了，祝各位看官好运&lt;/p&gt;</content></entry></feed>
