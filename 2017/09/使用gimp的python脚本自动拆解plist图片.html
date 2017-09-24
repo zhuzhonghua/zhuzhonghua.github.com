@@ -3,15 +3,15 @@
   <head>
 
     <meta charset="utf-8">
-    <title>GNash的DefineBitsTag.cpp中的StreamAdapter类</title>
-    <meta name="description" content="gnash/libcore/swf/DefineBitsTag.cpp 中定义了一个StreamAdapter类  这个类最重要的一个方法是read，定义时会设置最大长度  读取的长度超过了最大长度，就截掉  在读取image data 时非常有用  在使用libjpeg读image data时，并没有提供固定长度，而是提供了一个buffer，不知道终止位置在哪  通过StreamAdapter方法，避免读取越界，影响后续tag的读取，甚至宕机  readDefineBitsJpeg2也就是tagtype...">
+    <title>使用gimp的python脚本自动拆解plist图片</title>
+    <meta name="description" content="需要用到的函数  pdb.gimp_file_load 打开文件  pdb.gimp_image_crop 裁剪某一区域  pdb.gimp_image_duplicate 拷贝副本，在副本上操作，不影响原图，可以重复拷贝  pdb.gimp_file_save 保存操作的图像   ` filename=&quot;somepngfile&quot; filexml=&quot;someplistfile&quot; outpath=&quot;someoutputpath&quot; from gimpfu import * # 导入 gimp 里需要操作图像的...">
     <meta name="author"      content="ZhongHua">
-    <meta name="keywords"    content="SWF">
+    <meta name="keywords"    content="gimp, python">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="https://zhuzhonghua.github.com/2015/11/gnash%E7%9A%84definebitstag-cpp%E4%B8%AD%E7%9A%84streamadapter%E7%B1%BB.html">
-    <link rel="next" href="/2014/12/tamarin%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.html">
-    <link rel="prev" href="/2017/09/%E4%BD%BF%E7%94%A8gimp%E7%9A%84python%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A7%A3plist%E5%9B%BE%E7%89%87.html">
+    <link rel="canonical" href="https://zhuzhonghua.github.com/2017/09/%E4%BD%BF%E7%94%A8gimp%E7%9A%84python%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A7%A3plist%E5%9B%BE%E7%89%87.html">
+    <link rel="next" href="/2015/11/gnash%E7%9A%84definebitstag-cpp%E4%B8%AD%E7%9A%84streamadapter%E7%B1%BB.html">
+
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -87,26 +87,55 @@
 
           <article>
   <header>
-    <h1>GNash的DefineBitsTag.cpp中的StreamAdapter类</h1>
+    <h1>使用gimp的python脚本自动拆解plist图片</h1>
   </header>
 
-<p>gnash/libcore/swf/DefineBitsTag.cpp 中定义了一个StreamAdapter类</p>
+<p>需要用到的函数</p>
 
-<p>这个类最重要的一个方法是read，定义时会设置最大长度
- <br />读取的长度超过了最大长度，就截掉
- <br />在读取image data 时非常有用</p>
+<p>pdb.gimp_file_load 打开文件
+ <br />pdb.gimp_image_crop 裁剪某一区域
+ <br />pdb.gimp_image_duplicate 拷贝副本，在副本上操作，不影响原图，可以重复拷贝
+ <br />pdb.gimp_file_save 保存操作的图像</p>
 
-<p>在使用libjpeg读image data时，并没有提供固定长度，而是提供了一个buffer，不知道终止位置在哪
- <br />通过StreamAdapter方法，避免读取越界，影响后续tag的读取，甚至宕机</p>
+<div class="brush: python">
+ <pre><code>
+filename="somepngfile"
+filexml="someplistfile"
+outpath="someoutputpath"
 
-<p>readDefineBitsJpeg2也就是tagtype=21时，通过StreamAdapter::getFile方法生成IOChannel，最大长度设置为tag的结束位置
- <br />调用Input::readImageData方法读取数据
- <br />根据type为JPEG类型，创建JpegInput
- <br />readScanline时，会调用在JpegInput的构造方法里通过rw_source_IOChannel::setup设置的fill_input_buffer方法</p>
+from gimpfu import * # 导入 gimp 里需要操作图像的库
+import plistlib # 操作 plist文件
+import re # 正则表达式
 
-<p>在fill_input_buffer中，IO_BUF_SIZE指示了buffer大小</p>
+num = re.compile(r'\d+') # 只要数字，width, height, offsetx, offsety，都是整型
 
-<p>于是读取jpeg数据时，就不会读越界，尤其当swf时compress模式时</p>
+image = pdb.gimp_file_load(filename, filename, run_mode=RUN_NONINTERACTIVE) # 加载原texture图像
+
+pl = plistlib.readPlist(filexml) # 读取plist文件
+frames = pl['frames'] # 只需要frames里的字典
+print "key count "+str(len(frames.keys())) 
+
+count = 0
+for k in frames.keys():
+	count = count +1
+    try:
+		v = frames[k] # k 是PNG名, v就是它对应的width,height,offsetx,offsety
+	    outname = outpath+k
+		frame = v['frame'] # 具体存储对应信息的字段
+		whxy = num.findall(frame)
+		offx = int(whxy[0])
+		offy = int(whxy[1])
+		width = int(whxy[2])
+		height = int(whxy[3])
+		new_img = pdb.gimp_image_duplicate(image) # 创建图像副本
+		pdb.gimp_image_crop(new_img, width, height, offx, offy) # 裁剪副本里对应的区域
+		drawable=pdb.gimp_image_get_active_drawable(new_img) 
+		pdb.gimp_file_save(new_img, drawable, outname, outname) # 保存对应的文件
+		print str(count)+" success "+k
+	except Exception as e: # 不知道什么原因，有些文件会出错，加上异常保护，不影响后面其他的文件拆解
+		print str(count)+" fail "+k
+		print e
+  </code></pre></div>
   <footer>
   </footer>
 </article>

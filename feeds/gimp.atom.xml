@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">好记性不如烂笔头: Posts tagged 'gimp'</title>
+ <link rel="self" href="https://zhuzhonghua.github.com/feeds/gimp.atom.xml" />
+ <link href="https://zhuzhonghua.github.com/tags/gimp.html" />
+ <id>urn:https-zhuzhonghua-github-com:-tags-gimp-html</id>
+ <updated>2017-09-24T05:02:31Z</updated>
+ <entry>
+  <title type="text">使用gimp的python脚本自动拆解plist图片</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2017/09/%E4%BD%BF%E7%94%A8gimp%E7%9A%84python%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A7%A3plist%E5%9B%BE%E7%89%87.html?utm_source=gimp&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2017-09-E4-BD-BF-E7-94-A8gimp-E7-9A-84python-E8-84-9A-E6-9C-AC-E8-87-AA-E5-8A-A8-E6-8B-86-E8-A7-A3plist-E5-9B-BE-E7-89-87-html</id>
+  <published>2017-09-24T05:02:31Z</published>
+  <updated>2017-09-24T05:02:31Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;需要用到的函数&lt;/p&gt;
+
+&lt;p&gt;pdb.gimp_file_load 打开文件
+ &lt;br /&gt;pdb.gimp_image_crop 裁剪某一区域
+ &lt;br /&gt;pdb.gimp_image_duplicate 拷贝副本，在副本上操作，不影响原图，可以重复拷贝
+ &lt;br /&gt;pdb.gimp_file_save 保存操作的图像&lt;/p&gt;
+
+&lt;div class="brush: python"&gt;
+ &lt;pre&gt;&lt;code&gt;
+filename="somepngfile"
+filexml="someplistfile"
+outpath="someoutputpath"
+
+from gimpfu import * # 导入 gimp 里需要操作图像的库
+import plistlib # 操作 plist文件
+import re # 正则表达式
+
+num = re.compile(r'\d+') # 只要数字，width, height, offsetx, offsety，都是整型
+
+image = pdb.gimp_file_load(filename, filename, run_mode=RUN_NONINTERACTIVE) # 加载原texture图像
+
+pl = plistlib.readPlist(filexml) # 读取plist文件
+frames = pl['frames'] # 只需要frames里的字典
+print "key count "+str(len(frames.keys())) 
+
+count = 0
+for k in frames.keys():
+	count = count +1
+    try:
+		v = frames[k] # k 是PNG名, v就是它对应的width,height,offsetx,offsety
+	    outname = outpath+k
+		frame = v['frame'] # 具体存储对应信息的字段
+		whxy = num.findall(frame)
+		offx = int(whxy[0])
+		offy = int(whxy[1])
+		width = int(whxy[2])
+		height = int(whxy[3])
+		new_img = pdb.gimp_image_duplicate(image) # 创建图像副本
+		pdb.gimp_image_crop(new_img, width, height, offx, offy) # 裁剪副本里对应的区域
+		drawable=pdb.gimp_image_get_active_drawable(new_img) 
+		pdb.gimp_file_save(new_img, drawable, outname, outname) # 保存对应的文件
+		print str(count)+" success "+k
+	except Exception as e: # 不知道什么原因，有些文件会出错，加上异常保护，不影响后面其他的文件拆解
+		print str(count)+" fail "+k
+		print e
+  &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content></entry></feed>

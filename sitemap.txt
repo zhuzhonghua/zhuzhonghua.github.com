@@ -6,6 +6,7 @@ https://zhuzhonghua.github.com/2014/12/%E8%A7%A3%E6%9E%90swf%E6%96%87%E4%BB%B6%E
 https://zhuzhonghua.github.com/2013/10/html5test-project.html
 https://zhuzhonghua.github.com/2012/11/swf9%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F-%E5%AD%97%E4%BD%93%E5%92%8C%E6%96%87%E6%9C%AC-swf-file-format-version9-fonts-and-text.html
 https://zhuzhonghua.github.com/2013/06/%E8%B1%86%E7%93%A3fm-hunter-%E6%9B%B4%E6%96%B0.html
+https://zhuzhonghua.github.com/2017/09/%E4%BD%BF%E7%94%A8gimp%E7%9A%84python%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A7%A3plist%E5%9B%BE%E7%89%87.html
 https://zhuzhonghua.github.com/2015/11/gnash%E7%9A%84definebitstag-cpp%E4%B8%AD%E7%9A%84streamadapter%E7%B1%BB.html
 https://zhuzhonghua.github.com/2012/06/%E5%9C%A8mingw%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%BC%96%E8%AF%91%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%ACgcc-gdb.html
 https://zhuzhonghua.github.com/2013/11/%E4%BD%BF%E7%94%A8flash%E5%BC%80%E5%8F%91cocos2d-x%E7%9A%84app.html

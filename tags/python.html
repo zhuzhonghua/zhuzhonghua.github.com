@@ -3,15 +3,15 @@
   <head>
 
     <meta charset="utf-8">
-    <title>GNash的DefineBitsTag.cpp中的StreamAdapter类</title>
-    <meta name="description" content="gnash/libcore/swf/DefineBitsTag.cpp 中定义了一个StreamAdapter类  这个类最重要的一个方法是read，定义时会设置最大长度  读取的长度超过了最大长度，就截掉  在读取image data 时非常有用  在使用libjpeg读image data时，并没有提供固定长度，而是提供了一个buffer，不知道终止位置在哪  通过StreamAdapter方法，避免读取越界，影响后续tag的读取，甚至宕机  readDefineBitsJpeg2也就是tagtype...">
+    <title>Posts tagged 'python'</title>
+    <meta name="description" content="Posts tagged 'python'">
     <meta name="author"      content="ZhongHua">
-    <meta name="keywords"    content="SWF">
+    <meta name="keywords"    content="python">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="https://zhuzhonghua.github.com/2015/11/gnash%E7%9A%84definebitstag-cpp%E4%B8%AD%E7%9A%84streamadapter%E7%B1%BB.html">
-    <link rel="next" href="/2014/12/tamarin%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.html">
-    <link rel="prev" href="/2017/09/%E4%BD%BF%E7%94%A8gimp%E7%9A%84python%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A7%A3plist%E5%9B%BE%E7%89%87.html">
+    <link rel="canonical" href="https://zhuzhonghua.github.com/tags/python.html">
+
+
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -19,9 +19,9 @@
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <!-- Feeds -->
     <link rel="alternate" type="application/atom+xml"
-          href="/feeds/all.atom.xml" title="Atom Feed">
+          href="/feeds/python.atom.xml" title="Atom Feed">
     <link rel="alternate" type="application/rss+xml"
-          href="/feeds/all.rss.xml" title="RSS Feed">
+          href="/feeds/python.rss.xml" title="RSS Feed">
     <!-- JS -->
     <script type="text/javascript">
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -69,8 +69,8 @@
             <li>
               <a href="/About.html">About</a>
             </li> 
-            <li><a href="/feeds/all.atom.xml">Atom</a></li>
-            <li><a href="/feeds/all.rss.xml">RSS</a></li>
+            <li><a href="/feeds/python.atom.xml">Atom</a></li>
+            <li><a href="/feeds/python.rss.xml">RSS</a></li>
           </ul>
         </div>
       </div>
@@ -83,32 +83,12 @@
 
 
 
-
+          <h1>Posts tagged <em>python</em></h1>
 
           <article>
   <header>
-    <h1>GNash的DefineBitsTag.cpp中的StreamAdapter类</h1>
+    <h2><a href='/2017/09/%E4%BD%BF%E7%94%A8gimp%E7%9A%84python%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A7%A3plist%E5%9B%BE%E7%89%87.html'>使用gimp的python脚本自动拆解plist图片</a></h2>
   </header>
-
-<p>gnash/libcore/swf/DefineBitsTag.cpp 中定义了一个StreamAdapter类</p>
-
-<p>这个类最重要的一个方法是read，定义时会设置最大长度
- <br />读取的长度超过了最大长度，就截掉
- <br />在读取image data 时非常有用</p>
-
-<p>在使用libjpeg读image data时，并没有提供固定长度，而是提供了一个buffer，不知道终止位置在哪
- <br />通过StreamAdapter方法，避免读取越界，影响后续tag的读取，甚至宕机</p>
-
-<p>readDefineBitsJpeg2也就是tagtype=21时，通过StreamAdapter::getFile方法生成IOChannel，最大长度设置为tag的结束位置
- <br />调用Input::readImageData方法读取数据
- <br />根据type为JPEG类型，创建JpegInput
- <br />readScanline时，会调用在JpegInput的构造方法里通过rw_source_IOChannel::setup设置的fill_input_buffer方法</p>
-
-<p>在fill_input_buffer中，IO_BUF_SIZE指示了buffer大小</p>
-
-<p>于是读取jpeg数据时，就不会读越界，尤其当swf时compress模式时</p>
-  <footer>
-  </footer>
 </article>
         </div>
       </div>
