@@ -4,7 +4,101 @@
  <link rel="self" href="https://zhuzhonghua.github.com/feeds/all.atom.xml" />
  <link href="https://zhuzhonghua.github.com/index.html" />
  <id>urn:https-zhuzhonghua-github-com:-index-html</id>
- <updated>2017-09-24T05:02:31Z</updated>
+ <updated>2017-10-11T05:45:01Z</updated>
+ <entry>
+  <title type="text">Realm Of Racket-猜数字</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2017/10/realm-of-racket-%E7%8C%9C%E6%95%B0%E5%AD%97.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2017-10-realm-of-racket-E7-8C-9C-E6-95-B0-E5-AD-97-html</id>
+  <published>2017-10-11T05:45:01Z</published>
+  <updated>2017-10-11T05:45:01Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;(A First Racket Program)&lt;/p&gt;
+
+&lt;p&gt;猜数字，最简单，最古老的游戏
+ &lt;br /&gt;游戏虽然简单，但是用上了二分查找的方法&lt;/p&gt;
+
+&lt;p&gt;假设数字是18，大概过程是这样&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;(guess)  
+50  
+&amp;gt;(smaller)  
+25  
+&amp;gt;(smaller))  
+12  
+&amp;gt;(bigger)  
+18  &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;三个基本功能，(guess),(smaller),(bigger)&lt;/p&gt;
+
+&lt;p&gt;首先定义上下边界
+ &lt;br /&gt;用define定义变量&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;(define lower 1)  
+&amp;gt;lower  
+1  
+&amp;gt;(define upper 100)  
+&amp;gt;upper  
+100  &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;用define定义函数, 基本形式是&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(define (function-name argument-name ...)
+  function-body-expression
+  function-body-expression
+...)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;guess的定义如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(define (guess)
+  (quotient (+ lower upper) 2))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;guess函数没有参数，直接写(guess), 接下来就是取lower和upper的中间值&lt;/p&gt;
+
+&lt;p&gt;smaller的定义&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(define (smaller)
+  (set! upper (max lower (sub1 (guess))))
+  (guess))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;set!读作set-bang，基本形式&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(set! variable expression)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;给variable赋值expression
+ &lt;br /&gt;smaller先算出新的upper，然后再赋值给upper，然后再展示新的(guess)值&lt;/p&gt;
+
+&lt;p&gt;bigger的定义&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(define (bigger)
+  (set! lower (min upper (add1 (guess))))
+  (guess))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;与smaller类似，计算新的lower，然后展示新的(guess)&lt;/p&gt;
+
+&lt;p&gt;main函数&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(define (start n m)
+  (set! lower (min n m))
+  (set! upper (max n m))
+  (guess))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;跟上面的guess对比，start有参数，(start n m)
+ &lt;br /&gt;使用min和max，参数的顺序可以任意&lt;/p&gt;
+
+&lt;p&gt;假设我们猜的数字是19&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;(start 1 30)
+15
+&amp;gt;(bigger))
+23
+&amp;gt;(smaller)
+19)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;总结：
+ &lt;br /&gt;1. 使用define定义变量和函数，函数分有参数和无参数
+ &lt;br /&gt;2. 使用set!改变变量的值&lt;/p&gt;</content></entry>
  <entry>
   <title type="text">使用gimp的python脚本自动拆解plist图片</title>
   <link rel="alternate" href="https://zhuzhonghua.github.com/2017/09/%E4%BD%BF%E7%94%A8gimp%E7%9A%84python%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A7%A3plist%E5%9B%BE%E7%89%87.html?utm_source=all&amp;utm_medium=Atom" />
