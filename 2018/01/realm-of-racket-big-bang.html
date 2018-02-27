@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Realm Of Racket - (big-bang)</title>
+    <meta name="description" content="(big-bang):  上一次的程序是命令行式的，这次写一些GUI(gooey)的程序  这次使用Racket里自带的2htdp/universe 2htdp/image  `#lang racket (require 2htdp/universe 2htdp/image) (big-bang 0 	(on-tick add-3-to-state) 	(to-draw draw-a-ufo-onto-an-empty-scene))   	` big-bang 创造了一个World, World是由状态...">
+    <meta name="author"      content="ZhongHua">
+    <meta name="keywords"    content="RealmOfRacket, Lisp, Racket">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://zhuzhonghua.github.com/2018/01/realm-of-racket-big-bang.html">
+    <link rel="next" href="/2017/10/realm-of-racket-%E7%8C%9C%E6%95%B0%E5%AD%97.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-xxxxx', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <header class="navbar navbar-default navbar-inverse"
+            role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button"
+                  class="navbar-toggle"
+                  data-toggle="collapse"
+                  data-target=".our-nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/index.html" class="navbar-brand">好记性不如烂笔头</a>
+        </div>
+        <div class="collapse navbar-collapse our-nav-collapse"
+             role="navigation">
+          <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/index.html">All Posts</a></li>
+
+<li><a href="/tags/gimp.html">gimp</a></li>
+
+<li><a href="/tags/Lisp.html">Lisp</a></li>
+
+<li><a href="/tags/python.html">python</a></li>
+
+<li><a href="/tags/Racket.html">Racket</a></li>
+
+<li><a href="/tags/RealmOfRacket.html">RealmOfRacket</a></li>
+
+<li><a href="/tags/SWF.html">SWF</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/About.html">About</a>
+            </li> 
+            <li><a href="/feeds/all.atom.xml">Atom</a></li>
+            <li><a href="/feeds/all.rss.xml">RSS</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+          <article>
+  <header>
+    <h1>Realm Of Racket - (big-bang)</h1>
+  </header>
+
+<h1 id="big-bang">(big-bang)</h1>
+
+<p>上一次的程序是命令行式的，这次写一些GUI(gooey)的程序
+ <br />这次使用Racket里自带的2htdp/universe 2htdp/image</p>
+
+<pre><code>#lang racket
+(require 2htdp/universe 2htdp/image)
+
+(big-bang 0
+	(on-tick add-3-to-state)
+	(to-draw draw-a-ufo-onto-an-empty-scene))  
+	</code></pre>
+
+<p>big-bang 创造了一个World, World是由状态和视图组成</p>
+
+<pre><code>(define (add-3-to-state current-state)
+	(+ current-state 3))  
+	</code></pre>
+
+<p>add&ndash;3-to-state 把当前状态+3，然后返回，big-bang会把add&ndash;3-to-state返回的值标记为下一个状态</p>
+
+<pre><code>(define (draw-a-ufo-onto-an-empty-scene current-state)
+	(place-image IMAGE-of-UFO (/ WIDTH 2) current-state
+		(empty-scene WIDTH HEIGHT)))  
+		</code></pre>
+
+<p>draw-a-ufo-onto-an-empty-scene 把ufo的图片根据 current-state 绘制到特定位置
+ <br />当图片落地时，动画得停下来</p>
+
+<pre><code>(define (state-is-300 current-state)
+	(&gt;= current-state 300))
+	
+(big-bang 0
+	(on-tick add-3-to-state)
+	(to-draw draw-a-ufo-onto-an-empty-scene)
+	(stop-when state-is-300))
+	</code></pre>
+
+<p>使用state-is&ndash;300和big-bang的stop-when来修改World的状态和视图</p>
+
+<pre><code>(big-bang state-expression
+	(to-draw draw-function)
+	(on-tick tick-function)
+	(on-key key-function)
+	(stop-when stop-function optional-last-scene))
+	
+	</code></pre>
+
+<p>big-bang大致长这样，state-expression是WOrld的初始状态，to-draw是把当前状态绘制到屏幕上，on-tick就是每tick调用的函数，on-key是当有输入操作，如键盘鼠标或者其他输入设备，调用的函数，在key-function里可以对状态进行修改，stop-when就是想让世界停下来的一个函数判断</p>
+
+<p>该示例的完整源码在 {Racket的安装目录}/share/pkgs/realm/chapter5/ufo-source.rkt里</p>
+
+<h1 id="写一个gui版本的猜数字游戏">写一个GUI版本的猜数字游戏</h1>
+
+<p>好的数据结构会让程序有很大的不同</p>
+
+<pre><code>struct interval (small big))
+</code></pre>
+
+<p>代表猜数字的上下限</p>
+
+<pre><code>(define HELP-TEXT
+	(text " for larger numbers, for smaller ones"
+		TEXT-SIZE
+		"blue"))
+(define HELP-TEXT2
+	(text "Press = when your number is guessed; q to quit."
+		TEXT-SIZE
+		"blue"))
+(define COLOR "red")
+</code></pre>
+
+<p>游戏指令</p>
+
+<pre><code>(define MT-SC
+	(place-image/align
+		HELP-TEXT TEXT-X TEXT-UPPER-Y "left" "top"
+		(place-image/align
+			HELP-TEXT2 TEXT-X TEXT-LOWER-Y "left" "bottom"
+			(empty-scene WIDTH HEIGHT))))
+			</code></pre>
+
+<p>定义常量，作为游戏的背景</p>
+
+<pre><code>(define (start lower upper)
+	(big-bang (interval lower upper)
+		(on-key deal-with-guess)
+		(to-draw render)
+		(stop-when single? render-last-scene)))
+		</code></pre>
+
+<p>这个可以作为Main函数</p>
+
+<pre><code>(define (deal-with-guess w key)
+	(cond [(key=? key "up") (bigger w)]
+		[(key=? key "down") (smaller w)]
+		[(key=? key "q") (stop-with w)]
+		[(key=? key "=") (stop-with w)]
+		[else w]))  
+		</code></pre>
+
+<p>deal-with-guess 根据不同的key返回不同的状态</p>
+
+<pre><code>(define (smaller w)
+	(interval (interval-small w)
+		(max (interval-small w) (sub1 (guess w)))))  
+		
+(define (bigger w)
+	(interval (min (interval-big w) (add1 (guess w)))
+		(interval-big w)))  
+		</code></pre>
+
+<p>smaller和bigger都是创建了新的interval结构体</p>
+
+<pre><code>(define (guess w)
+	(quotient (+ (interval-small w) (interval-big w)) 2))  
+	</code></pre>
+
+<p>guess函数取结构的上下限，加起来然后/2</p>
+
+<pre><code>(define (render w)
+	(overlay (text (number-&gt;string (guess w)) SIZE COLOR) MT-SC))  
+	</code></pre>
+
+<p>render把猜的数字展示到MT-SC定义的背景上</p>
+
+<pre><code>(define (render-last-scene w)
+	(overlay (text "End" SIZE COLOR) MT-SC))
+	</code></pre>
+
+<p>当游戏结束调用的函数</p>
+
+<pre><code>(define (single? w)
+	(= (interval-small w) (interval-big w)))  
+	</code></pre>
+
+<p>single?比较上下限，决定是否结束游戏</p>
+
+<p>猜数字的GUI版本的完整代码在 {Racket的安装目录}/share/pkgs/realm/chapter5/source.rkt</p>
+  <footer>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <a href="/About.html">捐赠，buy me a cup of coffee</a>
+        <hr />
+        <p>Site generated by <a href="https://github.com/greghendershott/frog">Frog</a></p>
+        <p><em>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
