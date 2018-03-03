@@ -1,35 +1,125 @@
-<?xml version="1.0" encoding="utf-8"?> 
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
- <title type="text">好记性不如烂笔头: Posts tagged 'Python'</title>
- <link rel="self" href="https://zhuzhonghua.github.com/feeds/Python.atom.xml" />
- <link href="https://zhuzhonghua.github.com/tags/Python.html" />
- <id>urn:https-zhuzhonghua-github-com:-tags-Python-html</id>
- <updated>2018-03-03T16:00:22Z</updated>
- <entry>
-  <title type="text">用Python模拟双色球抽奖</title>
-  <link rel="alternate" href="https://zhuzhonghua.github.com/2018/03/%E7%94%A8python%E6%A8%A1%E6%8B%9F%E5%8F%8C%E8%89%B2%E7%90%83%E6%8A%BD%E5%A5%96.html?utm_source=Python&amp;utm_medium=Atom" />
-  <id>urn:https-zhuzhonghua-github-com:-2018-03-E7-94-A8python-E6-A8-A1-E6-8B-9F-E5-8F-8C-E8-89-B2-E7-90-83-E6-8A-BD-E5-A5-96-html</id>
-  <published>2018-03-03T16:00:22Z</published>
-  <updated>2018-03-03T16:00:22Z</updated>
-  <author>
-   <name>ZhongHua</name></author>
-  <content type="html">
-&lt;ol&gt;
- &lt;li&gt;抓取历史开奖的双色球号码
-  &lt;br /&gt;&lt;/li&gt;
- &lt;li&gt;模拟生成N注彩票，并且过滤掉历史上开奖的号
-  &lt;br /&gt;&lt;/li&gt;
- &lt;li&gt;把模拟出来的彩票写入sqlite数据&lt;/li&gt;&lt;/ol&gt;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
 
-&lt;p&gt;用Python3写
- &lt;br /&gt;需要用到几个python库
- &lt;br /&gt;1. requests (pip3 install requests) 网络库
- &lt;br /&gt;2. bs4 (pip3 install bs4) BeautifulSoup，方便分析抓取内容
- &lt;br /&gt;3. sqlite3 (pip3 install sqlite3) 数据库&lt;/p&gt;
+    <meta charset="utf-8">
+    <title>用Python模拟双色球抽奖</title>
+    <meta name="description" content="抓取历史开奖的双色球号码    模拟生成N注彩票，并且过滤掉历史上开奖的号      把模拟出来的彩票写入sqlite数据  用Python3写  需要用到几个python库  1. requests (pip3 install requests) 网络库  2. bs4 (pip3 install bs4) BeautifulSoup，方便分析抓取内容  3. sqlite3 (pip3 install sqlite3) 数据库  获取历史所有期号:  `def get_all_option():   ...">
+    <meta name="author"      content="ZhongHua">
+    <meta name="keywords"    content="Python, 双色球, 大乐透, 彩票">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://zhuzhonghua.github.com/2018/03/%E7%94%A8python%E6%A8%A1%E6%8B%9F%E5%8F%8C%E8%89%B2%E7%90%83%E6%8A%BD%E5%A5%96.html">
+    <link rel="next" href="/2018/01/realm-of-racket-big-bang.html">
 
-&lt;h1 id="获取历史所有期号"&gt;获取历史所有期号&lt;/h1&gt;
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-&lt;pre&gt;&lt;code&gt;def get_all_option():
+      ga('create', 'UA-xxxxx', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <header class="navbar navbar-default navbar-inverse"
+            role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button"
+                  class="navbar-toggle"
+                  data-toggle="collapse"
+                  data-target=".our-nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/index.html" class="navbar-brand">好记性不如烂笔头</a>
+        </div>
+        <div class="collapse navbar-collapse our-nav-collapse"
+             role="navigation">
+          <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/index.html">All Posts</a></li>
+
+<li><a href="/tags/gimp.html">gimp</a></li>
+
+<li><a href="/tags/Lisp.html">Lisp</a></li>
+
+<li><a href="/tags/python.html">python</a></li>
+
+<li><a href="/tags/Python.html">Python</a></li>
+
+<li><a href="/tags/Racket.html">Racket</a></li>
+
+<li><a href="/tags/RealmOfRacket.html">RealmOfRacket</a></li>
+
+<li><a href="/tags/SWF.html">SWF</a></li>
+
+<li><a href="/tags/%E5%8F%8C%E8%89%B2%E7%90%83.html">双色球</a></li>
+
+<li><a href="/tags/%E5%A4%A7%E4%B9%90%E9%80%8F.html">大乐透</a></li>
+
+<li><a href="/tags/%E5%BD%A9%E7%A5%A8.html">彩票</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/About.html">About</a>
+            </li> 
+            <li><a href="/feeds/all.atom.xml">Atom</a></li>
+            <li><a href="/feeds/all.rss.xml">RSS</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+          <article>
+  <header>
+    <h1>用Python模拟双色球抽奖</h1>
+  </header>
+
+<ol>
+ <li>抓取历史开奖的双色球号码
+  <br /></li>
+ <li>模拟生成N注彩票，并且过滤掉历史上开奖的号
+  <br /></li>
+ <li>把模拟出来的彩票写入sqlite数据</li></ol>
+
+<p>用Python3写
+ <br />需要用到几个python库
+ <br />1. requests (pip3 install requests) 网络库
+ <br />2. bs4 (pip3 install bs4) BeautifulSoup，方便分析抓取内容
+ <br />3. sqlite3 (pip3 install sqlite3) 数据库</p>
+
+<h1 id="获取历史所有期号">获取历史所有期号</h1>
+
+<pre><code>def get_all_option():
   # 彩票获取源
   url="http://kaijiang.500.com/shtml/ssq/18016.shtml"
   req = requests.get(url)
@@ -45,11 +135,11 @@
   for link_id in all_links:
     f.write(link_id.string+'\n')
   f.close()
-  &lt;/code&gt;&lt;/pre&gt;
+  </code></pre>
 
-&lt;h1 id="获取特定期号的号码"&gt;获取特定期号的号码&lt;/h1&gt;
+<h1 id="获取特定期号的号码">获取特定期号的号码</h1>
 
-&lt;pre&gt;&lt;code&gt;def get_ball(url, id):
+<pre><code>def get_ball(url, id):
   # 抓取id期号的号码
   req = requests.get(url, timeout=10)
   soup = BeautifulSoup(req.text, 'html.parser')
@@ -72,14 +162,14 @@
   f.write(id+"|"+",".join(red_balls)+"|"+",".join(blue_balls)+'\n')
   f.close()
   print("get  "+id)
-  
-  &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id="更新期号"&gt;更新期号&lt;/h1&gt;
+  </code></pre>
 
-&lt;p&gt;以后再使用时，只需要抓取缺失的期号&lt;/p&gt;
+<h1 id="更新期号">更新期号</h1>
 
-&lt;pre&gt;&lt;code&gt;def update_ids():
+<p>以后再使用时，只需要抓取缺失的期号</p>
+
+<pre><code>def update_ids():
   # 拿到所有期号
   url="http://kaijiang.500.com/shtml/ssq/18016.shtml"
   req = requests.get(url)
@@ -114,11 +204,11 @@
         print(e)
         with open('ssq_err_ids.txt', 'a+') as f:
           f.write(one+'\n')
-		  &lt;/code&gt;&lt;/pre&gt;
+		  </code></pre>
 
-&lt;h1 id="初始抓取"&gt;初始抓取&lt;/h1&gt;
+<h1 id="初始抓取">初始抓取</h1>
 
-&lt;pre&gt;&lt;code&gt;def main():
+<pre><code>def main():
   # 把所有期号读进来
   all_ids = []
   with open('ssq_all_ids.txt', 'r') as f:
@@ -138,21 +228,21 @@
       f.write(one_id+'\n')
       f.close()
 		  
-		  &lt;/code&gt;&lt;/pre&gt;
+		  </code></pre>
 
-&lt;p&gt;现在就可以运行&lt;/p&gt;
+<p>现在就可以运行</p>
 
-&lt;pre&gt;&lt;code&gt;get_all_option()
+<pre><code>get_all_option()
 main()
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;抓取所有历史开奖号码了&lt;/p&gt;
+<p>抓取所有历史开奖号码了</p>
 
-&lt;p&gt;接下来可以模拟开奖号码，写数据库了&lt;/p&gt;
+<p>接下来可以模拟开奖号码，写数据库了</p>
 
-&lt;h1 id="数据库脚本"&gt;数据库脚本&lt;/h1&gt;
+<h1 id="数据库脚本">数据库脚本</h1>
 
-&lt;pre&gt;&lt;code&gt;# 删除库的脚本
+<pre><code># 删除库的脚本
 sql_drop_guess = '''
 drop table guess;
 '''
@@ -184,11 +274,11 @@ CREATE TABLE guess (
           n11,n12,n13,n14,n15,n16,n17,n18,n19,n20,
           n21,n22,n23,n24,n25,n26,n27,n28,n29,n30,n31,n32,n33)
 );
-'''&lt;/code&gt;&lt;/pre&gt;
+'''</code></pre>
 
-&lt;h1 id="删库和建库代码"&gt;删库和建库代码&lt;/h1&gt;
+<h1 id="删库和建库代码">删库和建库代码</h1>
 
-&lt;pre&gt;&lt;code&gt;def drop_guess_table():
+<pre><code>def drop_guess_table():
   # 连接数据库文件
   conn = sqlite3.connect(dbname)
   # 执行脚本
@@ -209,14 +299,14 @@ def create_guess_db():
   # 关闭数据库文件
   conn.close()
   print('create db success')
-  &lt;/code&gt;&lt;/pre&gt;
+  </code></pre>
 
-&lt;p&gt;dbname 会定义成一个全局变量
- &lt;br /&gt;双色球每周会开3期，所以每天一个数据库文件，就可以了&lt;/p&gt;
+<p>dbname 会定义成一个全局变量
+ <br />双色球每周会开3期，所以每天一个数据库文件，就可以了</p>
 
-&lt;h1 id="把历史开奖号读进来"&gt;把历史开奖号读进来&lt;/h1&gt;
+<h1 id="把历史开奖号读进来">把历史开奖号读进来</h1>
 
-&lt;pre&gt;&lt;code&gt;def get_all_history():
+<pre><code>def get_all_history():
   # 读取历史开奖号码文件
   lines = []
   with open('ssq_hit_ids.txt') as f:
@@ -224,7 +314,7 @@ def create_guess_db():
 
   all_red=set()
   for line in lines:
-    if len(line) &amp;lt;= 0:
+    if len(line) &lt;= 0:
       continue
     # 摘取红号  
     red_balls = line.split('|')[1].split(',')
@@ -237,11 +327,11 @@ def create_guess_db():
     all_red.add(','.join(str_red_balls))
 
   return all_red
-  &lt;/code&gt;&lt;/pre&gt;
+  </code></pre>
 
-&lt;h1 id="生成一组红号"&gt;生成一组红号&lt;/h1&gt;
+<h1 id="生成一组红号">生成一组红号</h1>
 
-&lt;pre&gt;&lt;code&gt;def gen_one():
+<pre><code>def gen_one():
   # 33个红球
   # 这里可以优化，比如想杀号，定胆的情况下
   all_red_balls = list(range(1,33+1))
@@ -267,17 +357,17 @@ def create_guess_db():
   gen_red_balls.append(all_red_balls.pop(index))
 
   gen_red_balls.sort()
-  return gen_red_balls&lt;/code&gt;&lt;/pre&gt;
+  return gen_red_balls</code></pre>
 
-&lt;h1 id="生成n注并过滤历史开奖号"&gt;生成N注，并过滤历史开奖号&lt;/h1&gt;
+<h1 id="生成n注并过滤历史开奖号">生成N注，并过滤历史开奖号</h1>
 
-&lt;pre&gt;&lt;code&gt;def gen():
+<pre><code>def gen():
   # 拿到历史开奖号
   red_history = get_all_history()
   all_red_balls = {}
   # run_count是指定的模拟多少注	  
   global run_count
-  while run_count &amp;gt; 0:
+  while run_count &gt; 0:
     run_count -= 1
     in_history = True
     while in_history:
@@ -291,21 +381,21 @@ def create_guess_db():
         in_history = False
   print("gen all balls")
   return all_red_balls
-  &lt;/code&gt;&lt;/pre&gt;
+  </code></pre>
 
-&lt;h1 id="准备写入数据库"&gt;准备写入数据库&lt;/h1&gt;
+<h1 id="准备写入数据库">准备写入数据库</h1>
 
-&lt;p&gt;数据库列辅助函数&lt;/p&gt;
+<p>数据库列辅助函数</p>
 
-&lt;pre&gt;&lt;code&gt;def get_ball_col(ball):
-  if int(ball) &amp;lt; 10:
+<pre><code>def get_ball_col(ball):
+  if int(ball) &lt; 10:
     return 'n0'+ball
   else:
-    return 'n'+ball&lt;/code&gt;&lt;/pre&gt;
+    return 'n'+ball</code></pre>
 
-&lt;h1 id="动态构造插入和更新数据库sql"&gt;动态构造插入和更新数据库SQL&lt;/h1&gt;
+<h1 id="动态构造插入和更新数据库sql">动态构造插入和更新数据库SQL</h1>
 
-&lt;pre&gt;&lt;code&gt;def get_sql_insert(ored, count):
+<pre><code>def get_sql_insert(ored, count):
   # ored 红球数组
   # count 对应红球重复的个数
   col1 = get_ball_col(ored[0])
@@ -330,11 +420,11 @@ def get_sql_update(ored, count):
   sql = 'update guess set count=count+%s where '+col1+'=%s and '+col2+'=%s and '+col3+'=%s and '+col4+'=%s and '+col5+'=%s and '+col6+'=%s\
 '
   return sql % (count, ored[0], ored[1], ored[2], ored[3], ored[4], ored[5])
-  &lt;/code&gt;&lt;/pre&gt;
+  </code></pre>
 
-&lt;h1 id="写入数据库"&gt;写入数据库&lt;/h1&gt;
+<h1 id="写入数据库">写入数据库</h1>
 
-&lt;pre&gt;&lt;code&gt;def update_all_red_balls(all_red_balls):
+<pre><code>def update_all_red_balls(all_red_balls):
   # all_red_balls 所有模拟出的红球
   conn = sqlite3.connect(dbname)
   c = conn.cursor()
@@ -351,43 +441,61 @@ def get_sql_update(ored, count):
       c.execute(sql)
   conn.commit()
   conn.close()
-  &lt;/code&gt;&lt;/pre&gt;
+  </code></pre>
 
-&lt;p&gt;还有一种做法，每生成一组红号就写入数据库，通过try catch来插入或者更新
- &lt;br /&gt;这种方式，生成数量小的话，还可以接受，比如10万注，当生成上亿注时，这个效率就不可接受了
- &lt;br /&gt;第一版就是每生成一注就写数据库，跑1亿注，结果跑了48小时都没有跑完
- &lt;br /&gt;所以优化成现在这样，先把所有期望生成的彩票都生成，然后一次都写入数据库，效率提升了N倍&lt;/p&gt;
+<p>还有一种做法，每生成一组红号就写入数据库，通过try catch来插入或者更新
+ <br />这种方式，生成数量小的话，还可以接受，比如10万注，当生成上亿注时，这个效率就不可接受了
+ <br />第一版就是每生成一注就写数据库，跑1亿注，结果跑了48小时都没有跑完
+ <br />所以优化成现在这样，先把所有期望生成的彩票都生成，然后一次都写入数据库，效率提升了N倍</p>
 
-&lt;h1 id="运行"&gt;运行&lt;/h1&gt;
+<h1 id="运行">运行</h1>
 
-&lt;pre&gt;&lt;code&gt;dbname = "ssq-2018-3-1.db"
+<pre><code>dbname = "ssq-2018-3-1.db"
 run_count = 100000000
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;可以在每次运行之前先跑一遍&lt;/p&gt;
+<p>可以在每次运行之前先跑一遍</p>
 
-&lt;pre&gt;&lt;code&gt;update_ids()&lt;/code&gt;&lt;/pre&gt;
+<pre><code>update_ids()</code></pre>
 
-&lt;p&gt;更新历史开奖号
- &lt;br /&gt;每次新模拟，需要先创建数据库文件&lt;/p&gt;
+<p>更新历史开奖号
+ <br />每次新模拟，需要先创建数据库文件</p>
 
-&lt;pre&gt;&lt;code&gt;create_guess_db()
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code>create_guess_db()
+</code></pre>
 
-&lt;p&gt;如果操作失误，可以先删除数据库&lt;/p&gt;
+<p>如果操作失误，可以先删除数据库</p>
 
-&lt;pre&gt;&lt;code&gt;drop_guess_table()
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code>drop_guess_table()
+</code></pre>
 
-&lt;p&gt;或者修改 dbname，再创建 create_guess_db()&lt;/p&gt;
+<p>或者修改 dbname，再创建 create_guess_db()</p>
 
-&lt;pre&gt;&lt;code&gt;begin = datetime.datetime.now()
+<pre><code>begin = datetime.datetime.now()
 update_all_red_balls(gen())
 end = datetime.datetime.now()
 
 print((end-begin).total_seconds())
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;p&gt;记录开始时间，运行，然后记录结束时间，看看N注彩票运行了多久&lt;/p&gt;
+<p>记录开始时间，运行，然后记录结束时间，看看N注彩票运行了多久</p>
 
-&lt;p&gt;JUST FOR FUN!&lt;/p&gt;</content></entry></feed>
+<p>JUST FOR FUN!</p>
+  <footer>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <a href="/About.html">捐赠，buy me a cup of coffee</a>
+        <hr />
+        <p>Site generated by <a href="https://github.com/greghendershott/frog">Frog</a></p>
+        <p><em>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

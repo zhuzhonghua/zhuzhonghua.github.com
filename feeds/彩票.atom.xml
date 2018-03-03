@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
- <title type="text">好记性不如烂笔头: Posts tagged 'Python'</title>
- <link rel="self" href="https://zhuzhonghua.github.com/feeds/Python.atom.xml" />
- <link href="https://zhuzhonghua.github.com/tags/Python.html" />
- <id>urn:https-zhuzhonghua-github-com:-tags-Python-html</id>
+ <title type="text">好记性不如烂笔头: Posts tagged '彩票'</title>
+ <link rel="self" href="https://zhuzhonghua.github.com/feeds/%E5%BD%A9%E7%A5%A8.atom.xml" />
+ <link href="https://zhuzhonghua.github.com/tags/%E5%BD%A9%E7%A5%A8.html" />
+ <id>urn:https-zhuzhonghua-github-com:-tags-E5-BD-A9-E7-A5-A8-html</id>
  <updated>2018-03-03T16:00:22Z</updated>
  <entry>
   <title type="text">用Python模拟双色球抽奖</title>
-  <link rel="alternate" href="https://zhuzhonghua.github.com/2018/03/%E7%94%A8python%E6%A8%A1%E6%8B%9F%E5%8F%8C%E8%89%B2%E7%90%83%E6%8A%BD%E5%A5%96.html?utm_source=Python&amp;utm_medium=Atom" />
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2018/03/%E7%94%A8python%E6%A8%A1%E6%8B%9F%E5%8F%8C%E8%89%B2%E7%90%83%E6%8A%BD%E5%A5%96.html?utm_source=%E5%BD%A9%E7%A5%A8&amp;utm_medium=Atom" />
   <id>urn:https-zhuzhonghua-github-com:-2018-03-E7-94-A8python-E6-A8-A1-E6-8B-9F-E5-8F-8C-E8-89-B2-E7-90-83-E6-8A-BD-E5-A5-96-html</id>
   <published>2018-03-03T16:00:22Z</published>
   <updated>2018-03-03T16:00:22Z</updated>
