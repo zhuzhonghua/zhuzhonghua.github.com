@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>[译]Dumbcoin-基于教育目的的Python实现类比特币的区块链</title>
+    <meta name="description" content="原文地址 https://github.com/julienr/ipynb_playground/blob/master/bitcoin/dumbcoin/dumbcoin.ipynb  简介:  这是一本实验性质的手册，用Python实现了类比特币区块链的大多数概念。它并不安全，也不是真实的区块链，所以你不应该用它做任何其他事情，除了教育目的。  不考虑比特币的金融利弊，它的底层技术很有趣，原始论文也很容易理解。  或许你想要看看这本手册在HackerNews上的讨论。  引用:  我使用了比特币的最初...">
+    <meta name="author"      content="ZhongHua">
+    <meta name="keywords"    content="Python, Bitcoin, 比特币, dumbcoin, 区块链">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://zhuzhonghua.github.com/2018/03/-%E8%AF%91-dumbcoin-%E5%9F%BA%E4%BA%8E%E6%95%99%E8%82%B2%E7%9B%AE%E7%9A%84%E7%9A%84python%E5%AE%9E%E7%8E%B0%E7%B1%BB%E6%AF%94%E7%89%B9%E5%B8%81%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE.html">
+    <link rel="next" href="/2018/03/%E7%94%A8python%E6%A8%A1%E6%8B%9F%E5%8F%8C%E8%89%B2%E7%90%83%E6%8A%BD%E5%A5%96.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-xxxxx', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <header class="navbar navbar-default navbar-inverse"
+            role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button"
+                  class="navbar-toggle"
+                  data-toggle="collapse"
+                  data-target=".our-nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/index.html" class="navbar-brand">好记性不如烂笔头</a>
+        </div>
+        <div class="collapse navbar-collapse our-nav-collapse"
+             role="navigation">
+          <ul class="nav navbar-nav">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/index.html">All Posts</a></li>
+
+<li><a href="/tags/Bitcoin.html">Bitcoin</a></li>
+
+<li><a href="/tags/dumbcoin.html">dumbcoin</a></li>
+
+<li><a href="/tags/gimp.html">gimp</a></li>
+
+<li><a href="/tags/Lisp.html">Lisp</a></li>
+
+<li><a href="/tags/python.html">python</a></li>
+
+<li><a href="/tags/Python.html">Python</a></li>
+
+<li><a href="/tags/Racket.html">Racket</a></li>
+
+<li><a href="/tags/RealmOfRacket.html">RealmOfRacket</a></li>
+
+<li><a href="/tags/SWF.html">SWF</a></li>
+
+<li><a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE.html">区块链</a></li>
+
+<li><a href="/tags/%E5%8F%8C%E8%89%B2%E7%90%83.html">双色球</a></li>
+
+<li><a href="/tags/%E5%A4%A7%E4%B9%90%E9%80%8F.html">大乐透</a></li>
+
+<li><a href="/tags/%E5%BD%A9%E7%A5%A8.html">彩票</a></li>
+
+<li><a href="/tags/%E6%AF%94%E7%89%B9%E5%B8%81.html">比特币</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/About.html">About</a>
+            </li> 
+            <li><a href="/feeds/all.atom.xml">Atom</a></li>
+            <li><a href="/feeds/all.rss.xml">RSS</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+          <article>
+  <header>
+    <h1>[译]Dumbcoin-基于教育目的的Python实现类比特币的区块链</h1>
+  </header>
+
+<p>原文地址 https://github.com/julienr/ipynb_playground/blob/master/bitcoin/dumbcoin/dumbcoin.ipynb</p>
+
+<h1 id="简介">简介</h1>
+
+<p>这是一本实验性质的手册，用Python实现了类比特币区块链的大多数概念。它并不安全，也不是真实的区块链，所以你不应该用它做任何其他事情，除了教育目的。</p>
+
+<p>不考虑比特币的金融利弊，它的底层技术很有趣，原始论文也很容易理解。</p>
+
+<p>或许你想要看看这本手册在<a href="https://news.ycombinator.com/item?id=15945490">HackerNews</a>上的讨论。</p>
+
+<h1 id="引用">引用</h1>
+
+<p>我使用了<a href="https://bitcoin.org/bitcoin.pdf">比特币的最初论文</a>，还有<a href="http://www.michaelnielsen.org/ddi/how-the-bitcoin-protocol-actually-works/">Michael Nielsen比特币的解释</a>。<a href="https://en.bitcoin.it/wiki/Main_Page">比特币Wiki</a>是非常不错的技术资源。</p>
+
+<h1 id="内容">内容</h1>
+
+<ol>
+ <li>哈希函数和挖矿
+  <br /></li>
+ <li>难度
+  <br /></li>
+ <li>钱包
+  <br /></li>
+ <li>交易
+  <br /></li>
+ <li>区块
+  <br /></li>
+ <li>攻击
+  <br /></li>
+ <li>51%攻击
+  <br /></li>
+ <li>与比特币的不同</li></ol>
+
+<p>需要用到的库</p>
+
+<pre><code>import hashlib
+import random
+import string
+import json
+import binascii
+import numpy as np
+import pandas as pd
+import pylab as pl
+import logging
+%matplotlib inline</code></pre>
+
+<h1 id="哈希函数和挖矿">哈希函数和挖矿</h1>
+
+<p>我们先实现挖矿。这里我们使用SHA256哈希函数，因为SHA256的Python实现的很稳定。注意比特币使用了<a href="https://en.bitcoin.it/wiki/Hashcash">2轮SHA256算法</a>，而不是1轮。</p>
+
+<p>我们的哈希函数会把任意长度的字符串转换成固定长度的64进制字符串。例如</p>
+
+<pre><code>def sha256(message):
+	return hashlib.sha256(message.encode('ascii')).hexdigest()</code></pre>
+
+<p>挖矿的流程是：任意长度字符串x，找这样一个数字nonce，满足hash(x+nonce)产生的哈希值以特定字符串开始。</p>
+
+<p>这里我们挖一个特定的数字nonce，信息 &ldquo;hello bitcoin&rdquo; 连接上nonce产生的哈希值有至少两个前缀数字。</p>
+
+<pre><code>message = 'hello bitcoin'
+for nonce in range(1000):
+    digest = sha256(message + str(nonce))
+    if digest.startswith('11'):
+        print('Found nonce = %d' % nonce)
+        break
+print(sha256(message + str(nonce)))
+
+
+Found nonce = 32
+112c38d2fdb6ddaf32f371a390307ccc779cd92443b42c4b5c58fa548f63ed83
+</code></pre>
+
+<p>要求的前缀数字越多，越难找到特定nonce。在比特币里，这叫做挖矿难度。注意比特币并不要求前缀数字，而是要求哈希值必须低于某个特定值。但是原理是相同的。</p>
+
+<p>定义两个函数，后面使用：一个函数做哈希运算，一个函数针对字符串挖矿nonce</p>
+
+<pre><code>def dumb_hash(message):
+	"""
+    返回64进制字符串
+	"""
+	return sha256(message)
+			
+			
+def mine(message, difficulty=1):
+    """
+	输入给定字符串，找到nonce，满足hash(string+nonce)有特定难度的前缀
+				    
+    Returns: (nonce, niters)
+		nonce: The found nonce
+		niters: The number of iterations required to find the nonce
+	"""
+	assert difficulty &gt;= 1, "Difficulty of 0 is not possible"
+	i = 0
+	prefix = '1' * difficulty
+	while True:
+		nonce = str(i)
+		digest = dumb_hash(message + nonce)
+		if digest.startswith(prefix):
+			return nonce, i
+		i += 1
+		
+		</code></pre>
+
+<p>这样我们就可以在不同难度下挖矿了</p>
+
+<pre><code>nonce, niters = mine('42', difficulty=1)
+print('Took %d iterations' % niters)
+
+nonce, niters = mine('42', difficulty=3)
+print('Took %d iterations' % niters)
+
+
+Took 23 iterations
+Took 2272 iterations
+
+</code></pre>
+
+<p>例子中可以看到难度3的迭代次数要比难度1的迭代次数大很多。注意，运气好的话，第一个nonce（这里是0）就可以找到了。因此难度控制的是尝试的平均次数。基于此，我们可以做一个好看的图表。</p>
+
+<h1 id="难度表">难度表</h1>
+
+<p>对于每个难度等级，我们会针对多个字符串挖矿nonce。我们记录下每个难度的平均尝试次数。</p>
+
+<pre><code>def random_string(length=10):
+	return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(length))
+
+strings = [random_string() for i in range(50)]
+
+
+levels = range(1, 5)
+# An array of results with a row for each difficulty and a column for each test string
+results = pd.DataFrame(index=strings, columns=levels, dtype=np.int)
+results.fillna(value=0)
+
+#results = np.zeros((N_LEVELS, len(strings)), dtype=np.int)
+for level in levels:
+    for s in strings:
+		_, niters = mine(s, difficulty=level)
+		results[level][s] = niters
+
+
+pl.figure(figsize=(10, 5))
+ax = pl.subplot(111)
+ax.set_title('Number of iterations to mine a nonce for various difficulty')
+results.plot.box(showfliers=False, ax=ax)
+ax.set_xlabel('Difficulty')
+ax.set_ylabel('Iterations')
+
+</code></pre>
+
+<h1 id="钱包">钱包</h1>
+
+<p>在比特币里钱包是公钥私钥对。公钥私钥对解释 <a href="https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29">RSA</a>。</p>
+
+<p>公钥用于接受交易，私钥用于花钱。私钥签名交易，所有其他人都可以用公钥验证。</p>
+
+<p>在比特币里，钱包稍微复杂一点。钱包是多个公钥私钥对，钱包地址并不直接是公钥。这更好的保证隐私和安全，但是dumbcoin这里只用一个，公钥作为钱包地址。</p>
+
+<pre><code>import Crypto
+import Crypto.Random
+from Crypto.Hash import SHA
+from Crypto.PublicKey import RSA
+from Crypto.Signature import PKCS1_v1_5
+
+
+class Wallet(object):
+    """
+    钱包是公钥私钥对
+    """
+    def __init__(self):
+        random_gen = Crypto.Random.new().read
+        self._private_key = RSA.generate(1024, random_gen)
+        self._public_key = self._private_key.publickey()
+        self._signer = PKCS1_v1_5.new(self._private_key)
+
+    @property
+    def address(self):
+        """我们简单起见，公钥就是地址"""
+        return binascii.hexlify(self._public_key.exportKey(format='DER')).decode('ascii')
+
+    def sign(self, message):
+        """
+        用这个钱包签名message
+        """
+        h = SHA.new(message.encode('utf8'))
+        return binascii.hexlify(self._signer.sign(h)).decode('ascii')
+
+
+def verify_signature(wallet_address, message, signature):
+    """
+	检查message的签名signature是否由wallet_address签名
+    """
+    pubkey = RSA.importKey(binascii.unhexlify(wallet_address))
+    verifier = PKCS1_v1_5.new(pubkey)
+    h = SHA.new(message.encode('utf8'))
+    return verifier.verify(h, binascii.unhexlify(signature))
+
+
+# 测试一下
+w1 = Wallet()
+signature = w1.sign('foobar')
+assert verify_signature(w1.address, 'foobar', signature)
+assert not verify_signature(w1.address, 'rogue message', signature)
+
+</code></pre>
+
+<h1 id="做交易">做交易</h1>
+
+<p>在钱包之间交换钱，需要用到交易。交易是由下面3部分组成：</p>
+
+<ul>
+ <li>消费者 Spender，他会给交易签名，花他自己的钱
+  <br /></li>
+ <li>多个输入 input，是其他交易的输出。所有这些的接受者是消费者 Spender的钱包。
+  <br />要不然你就可以花其他人的钱了。
+  <br /></li>
+ <li>多个输出 output，每个都指定了钱数和接受者。</li></ul>
+
+<p>交易会包含交易费，这样刺激挖矿者在区块中包含该交易。费用就是输入数量和输出数量之间的差异。</p>
+
+<p>所有交易需要一个父节点，在架构里需要一个根节点。我们起名 GenesisTransaction</p>
+
+<pre><code>class TransactionInput(object):
+    """
+	交易输入，指向另一个交易的输出
+    """
+    def __init__(self, transaction, output_index):
+        self.transaction = transaction
+        self.output_index = output_index
+        assert 0 &lt;= self.output_index &lt; len(transaction.outputs)
+
+    def to_dict(self):
+        d = {
+            'transaction': self.transaction.hash(),
+            'output_index': self.output_index
+        }
+        return d
+
+    @property
+    def parent_output(self):
+        return self.transaction.outputs[self.output_index]
+
+
+class TransactionOutput(object):
+    """
+	交易输出，指定数量和接收者钱包
+    """
+    def __init__(self, recipient_address, amount):
+        self.recipient = recipient_address
+        self.amount = amount
+
+    def to_dict(self):
+        d = {
+            'recipient_address': self.recipient,
+            'amount': self.amount
+        }
+        return d
+
+
+def compute_fee(inputs, outputs):
+    """
+	通过总输入和总输出，计算交易费
+    """
+    total_in = sum(i.transaction.outputs[i.output_index].amount for i in inputs)
+    total_out = sum(o.amount for o in outputs)
+    assert total_out &lt;= total_in, "Invalid transaction with out(%f) &gt; in(%f)" % (total_out, total_in)
+    return total_in - total_out
+
+
+class Transaction(object):
+    def __init__(self, wallet, inputs, outputs):
+        """
+		创建交易，从指定钱包花钱
+        """
+        self.inputs = inputs
+        self.outputs = outputs
+        self.fee = compute_fee(inputs, outputs)
+        self.signature = wallet.sign(json.dumps(self.to_dict(include_signature=False)))
+
+    def to_dict(self, include_signature=True):
+        d = {
+            "inputs": list(map(TransactionInput.to_dict, self.inputs)),
+            "outputs": list(map(TransactionOutput.to_dict, self.outputs)),
+            "fee": self.fee
+        }
+        if include_signature:
+            d["signature"] = self.signature
+        return d
+
+    def hash(self):
+        return dumb_hash(json.dumps(self.to_dict()))
+
+
+class GenesisTransaction(Transaction):
+    """
+	第一笔交易是特定交易，没有输入，有25个比特币的输出
+    """
+    def __init__(self, recipient_address, amount=25):
+        self.inputs = []
+        self.outputs = [
+            TransactionOutput(recipient_address, amount)
+        ]
+        self.fee = 0
+        self.signature = 'genesis'
+
+    def to_dict(self, include_signature=False):
+        # TODO: Instead, should sign genesis transaction will well-known public key ?
+        assert not include_signature, "Cannot include signature of genesis transaction"
+        return super().to_dict(include_signature=False)</code></pre>
+
+<p>有了上面的类，我们可以在alice和bob之间做交易了</p>
+
+<pre><code>alice = Wallet()
+bob = Wallet()
+
+t1 = GenesisTransaction(alice.address)
+t2 = Transaction(
+    alice,
+    [TransactionInput(t1, 0)],
+    [TransactionOutput(bob.address, 2.0), TransactionOutput(alice.address, 22.0)]
+)
+assert np.abs(t2.fee - 1.0) &lt; 1e-5
+
+</code></pre>
+
+<p>在比特币里，并不会存储钱包的钱数。 会遍历交易链来计算你有多少。写一个函数来做这件事。</p>
+
+<pre><code>alice = Wallet()
+bob = Wallet()
+walter = Wallet()
+
+# This gives 25 coins to Alice
+t1 = GenesisTransaction(alice.address)
+
+# Of those 25, Alice will spend
+# Alice -- 5 --&gt; Bob
+#       -- 15 --&gt; Alice
+#       -- 5 --&gt; Walter
+t2 = Transaction(
+    alice,
+    [TransactionInput(t1, 0)],
+    [TransactionOutput(bob.address, 5.0), TransactionOutput(alice.address, 15.0), TransactionOutput(walter.address, 5.0)]
+)
+
+# Walter -- 5 --&gt; Bob
+t3 = Transaction(
+    walter,
+    [TransactionInput(t2, 2)],
+    [TransactionOutput(bob.address, 5.0)])
+
+# Bob -- 8 --&gt; Walter
+#     -- 1 --&gt; Bob
+#        1 fee
+t4 = Transaction(
+    bob,
+    [TransactionInput(t2, 0), TransactionInput(t3, 0)],
+    [TransactionOutput(walter.address, 8.0), TransactionOutput(bob.address, 1.0)]
+)
+
+transactions = [t1, t2, t3, t4]
+
+
+def compute_balance(wallet_address, transactions):
+    """
+	给定地址和交易链，计算地址的钱包余额
+    """
+    balance = 0
+    for t in transactions:
+        # Subtract all the money that the address sent out
+        for txin in t.inputs:
+            if txin.parent_output.recipient == wallet_address:
+                balance -= txin.parent_output.amount
+        # Add all the money received by the address
+        for txout in t.outputs:
+            if txout.recipient == wallet_address:
+                balance += txout.amount
+    return balance
+
+print("Alice  has %.02f dumbcoins" % compute_balance(alice.address, transactions))
+print("Bob    has %.02f dumbcoins" % compute_balance(bob.address, transactions))
+print("Walter has %.02f dumbcoins" % compute_balance(walter.address, transactions))
+
+
+Alice  has 15.00 dumbcoins
+Bob    has 1.00 dumbcoins
+Walter has 8.00 dumbcoins</code></pre>
+
+<p>还需要确认交易是否有效，这意味着：</p>
+
+<ul>
+ <li>你仅仅能花自己的钱。这意味着所有输入由交易的拥有者拥有。
+  <br /></li>
+ <li>确保你花的钱不会比你有的多。这是有上面的compute_fee检查。</li></ul>
+
+<p>函数</p>
+
+<pre><code>def verify_transaction(transaction):
+    """
+    确保交易是有效的
+    - 所有输入都属于相同的钱包
+    - 交易是由响应的钱包主人签名的
+    """
+    tx_message = json.dumps(transaction.to_dict(include_signature=False))
+    if isinstance(transaction, GenesisTransaction):
+        # TODO: We should probably be more careful about validating genesis transactions
+        return True
+
+    # Verify input transactions
+    for tx in transaction.inputs:
+        if not verify_transaction(tx.transaction):
+            logging.error("Invalid parent transaction")
+            return False
+
+    # Verify a single wallet owns all the inputs
+    first_input_address = transaction.inputs[0].parent_output.recipient
+    for txin in transaction.inputs[1:]:
+        if txin.parent_output.recipient != first_input_address:
+            logging.error(
+                "Transaction inputs belong to multiple wallets (%s and %s)" %
+                (txin.parent_output.recipient, first_input_address)
+            )
+            return False
+
+    if not verify_signature(first_input_address, tx_message, transaction.signature):
+        logging.error("Invalid transaction signature, trying to spend someone else's money ?")
+        return False
+
+    # Call compute_fee here to trigger an assert if output sum is great than input sum. Without this,
+    # a miner could put such an invalid transaction.
+    compute_fee(transaction.inputs, transaction.outputs)
+
+    return True
+	
+
+t1 = GenesisTransaction(alice.address)
+# This is an invalid transaction because bob is trying to spend alice's money
+# (alice was the recipient of the input - t1)
+t2 = Transaction(
+    bob,
+    [TransactionInput(t1, 0)],
+    [TransactionOutput(walter.address, 10.0)]
+)
+# This is valid, alice is spending her own money
+t3 = Transaction(
+    alice,
+    [TransactionInput(t1, 0)],
+    [TransactionOutput(walter.address, 10.0)]
+)
+
+assert verify_transaction(t1)
+assert not verify_transaction(t2)
+
+
+ERROR:root:Invalid transaction signature, trying to spend someone else's money ?
+
+
+assert verify_transaction(t3)
+</code></pre>
+
+<h1 id="把交易写入区块">把交易写入区块</h1>
+
+<p>我们现在有</p>
+
+<ul>
+ <li>定义钱包（公钥私钥对）
+  <br /></li>
+ <li>在钱包之间创建交易
+  <br /></li>
+ <li>验证交易（检查交易的签名）</li></ul>
+
+<p>剩下来需要把交易放入区块，让挖矿者挖矿区块。挖区块由两部分组成：</p>
+
+<ul>
+ <li>验证区块中的交易
+  <br /></li>
+ <li>找到一个nonce，区块的哈希以几个0开始</li></ul>
+
+<p>并且挖矿根据规则会生成钱，第一个区块GenesisTransaction会给25个币给任意地址。挖矿者会添加交易，把交易产生的费用传递给任意地址。</p>
+
+<pre><code>BLOCK_INCENTIVE = 25 # 挖矿区块得到的币数
+DIFFICULTY = 2
+
+
+def compute_total_fee(transactions):
+    """返回交易的总费用"""
+    return sum(t.fee for t in transactions)
+
+
+class Block(object):
+    def __init__(self, transactions, ancestor, miner_address, skip_verif=False):
+        """
+        Args:
+            transactions: 包含在区块中的交易
+            ancestor: 上一个区块
+            miner_address: 挖矿者的钱包. 区块奖励地址，交易费会存储在这里
+        """
+        reward = compute_total_fee(transactions) + BLOCK_INCENTIVE
+        self.transactions = [GenesisTransaction(miner_address, amount=reward)] + transactions
+        self.ancestor = ancestor
+
+        if not skip_verif:
+            assert all(map(verify_transaction, transactions))
+
+        json_block = json.dumps(self.to_dict(include_hash=False))
+        self.nonce, _ = mine(json_block, DIFFICULTY)
+        self.hash = dumb_hash(json_block + self.nonce)
+
+    def fee(self):
+        """返回该区块的交易费"""
+        return compute_total_fee(self.transactions)
+
+    def to_dict(self, include_hash=True):
+        d = {
+            "transactions": list(map(Transaction.to_dict, self.transactions)),
+            "previous_block": self.ancestor.hash,
+        }
+        if include_hash:
+            d["nonce"] = self.nonce
+            d["hash"] = self.hash
+        return d
+
+
+class GenesisBlock(Block):
+    """
+	区块链中的第一个区块，没有祖先
+    """
+    def __init__(self, miner_address):
+        super(GenesisBlock, self).__init__(transactions=[], ancestor=None, miner_address=miner_address)
+
+    def to_dict(self, include_hash=True):
+        d = {
+            "transactions": [],
+            "genesis_block": True,
+        }
+        if include_hash:
+            d["nonce"] = self.nonce
+            d["hash"] = self.hash
+        return d</code></pre>
+
+<p>类似验证交易，还需要验证区块</p>
+
+<pre><code>def verify_block(block, genesis_block, used_outputs=None):
+    """
+    验证区块的有效性：
+    - 验证哈希以指定数量的数字开头
+    - 验证相同交易的输出没有使用两次
+    - 验证所有交易有效
+    - 验证验证第一笔交易是 GenesisTransaction，钱数是 BLOCK_INCENTIVE + total_fee
+
+    Args:
+        block: 需要验证的区块
+        genesis_block: The genesis block (由所有人共享)
+        used_outputs: 在这之上的交易中的所有输出
+    """
+    if used_outputs is None:
+        used_outputs = set()
+
+    # Verify hash
+    prefix = '1' * DIFFICULTY
+    if not block.hash.startswith(prefix):
+        logging.error("Block hash (%s) doesn't start with prefix %s" % (block.hash, prefix))
+        return False
+    if not all(map(verify_transaction, block.transactions)):
+        return False
+
+    # Verify that transactions in this block don't use already spent outputs
+    #
+    # Note that we could move this in verify_transaction, but this would require some passing the used_outputs
+    # around more. So we do it here for simplicity
+    for transaction in block.transactions:
+        for i in transaction.inputs:
+            if i.parent_output in used_outputs:
+                logging.error("Transaction uses an already spent output : %s" % json.dumps(i.parent_output.to_dict()))
+                return False
+            used_outputs.add(i.parent_output)
+
+    # Verify ancestors up to the genesis block
+    if not (block.hash == genesis_block.hash):
+        if not verify_block(block.ancestor, genesis_block, used_outputs):
+            logging.error("Failed to validate ancestor block")
+            return False
+
+    # Verify the first transaction is the miner's reward
+    tx0 = block.transactions[0]
+    if not isinstance(tx0, GenesisTransaction):
+        logging.error("Transaction 0 is not a GenesisTransaction")
+        return False
+    if not len(tx0.outputs) == 1:
+        logging.error("Transactions 0 doesn't have exactly 1 output")
+        return False
+    reward = compute_total_fee(block.transactions[1:]) + BLOCK_INCENTIVE
+    if not tx0.outputs[0].amount == reward:
+        logging.error("Invalid amount in transaction 0 : %d, expected %d" % (tx0.outputs[0].amount, reward))
+        return False
+
+    # Only the first transaction shall be a genesis
+    for i, tx in enumerate(block.transactions):
+        if i == 0:
+            if not isinstance(tx, GenesisTransaction):
+                logging.error("Non-genesis transaction at index 0")
+                return False  
+        elif isinstance(tx, GenesisTransaction):
+            logging.error("GenesisTransaction (hash=%s) at index %d != 0", tx.hash(), i)
+            return False
+    return True
+	
+	
+alice = Wallet()
+bob = Wallet()
+walter = Wallet()
+
+genesis_block = GenesisBlock(miner_address=alice.address)
+print("genesis_block : " + genesis_block.hash + " with fee=" + str(genesis_block.fee()))
+
+t1 = genesis_block.transactions[0]
+t2 = Transaction(
+    alice,
+    [TransactionInput(t1, 0)],
+    [TransactionOutput(bob.address, 5.0), TransactionOutput(alice.address, 15.0), TransactionOutput(walter.address, 5.0)]
+)
+t3 = Transaction(
+    walter,
+    [TransactionInput(t2, 2)],
+    [TransactionOutput(bob.address, 5.0)])
+
+t4 = Transaction(
+    bob,
+    [TransactionInput(t2, 0), TransactionInput(t3, 0)],
+    [TransactionOutput(walter.address, 8.0), TransactionOutput(bob.address, 1.0)]
+)
+
+block1 = Block([t2], ancestor=genesis_block, miner_address=walter.address)
+print("block1        : " + block1.hash + " with fee=" + str(block1.fee()))
+
+block2 = Block([t3, t4], ancestor=block1, miner_address=walter.address)
+print("block2        : " + block2.hash + " with fee=" + str(block2.fee()))		
+
+</code></pre>
+
+<p>genesis_block : 1162dce8ffec3acf13ce61109f121922eee8cceeea4784aa9d90dc6ec0e0fa92 with fee=0
+ <br />block1 : 11af277c02c22a7e3c3a73102282ca5a0e01869b1d852527b6a842f0786ee8e3 with fee=0.0
+ <br />block2 : 119e461d393b793478c7c7cb9fa6feb54fca35865a398d017e541027a78a2e9a with fee=1.0</p>
+
+<pre><code>verify_block(block1, genesis_block)
+verify_block(block2, genesis_block)
+</code></pre>
+
+<p>True</p>
+
+<pre><code>def collect_transactions(block, genesis_block):
+    """递归收集该区块和祖先的所有交易"""
+    # Important : COPY block.transactions
+    transactions = [] + block.transactions
+    if block.hash != genesis_block.hash:
+        transactions += collect_transactions(block.ancestor, genesis_block)
+    return transactions
+
+transactions = collect_transactions(block2, genesis_block)
+
+# Alice mined 25 (from the genesis block) and gave 5 to bob and 5 to walter
+print("Alice  has %.02f dumbcoins" % compute_balance(alice.address, transactions))
+# Bob received 5 from alice and 5 from walter, but then back 8 to walter with a transaction fee of 1
+print("Bob    has %.02f dumbcoins" % compute_balance(bob.address, transactions))
+# Walter mined 2 blocks (2 * 25), received 8 from bob and go a transaction fee of 1 on block2
+print("Walter has %.02f dumbcoins" % compute_balance(walter.address, transactions))
+
+</code></pre>
+
+<p>Alice has 15.00 dumbcoins
+ <br />Bob has 1.00 dumbcoins
+ <br />Walter has 59.00 dumbcoins</p>
+
+<h1 id="攻击">攻击</h1>
+
+<p>如果挖矿者(walter)尝试花bob的钱，bob的区块不会验证通过</p>
+
+<pre><code>tx = Transaction(
+    walter,
+    [TransactionInput(t4, 1)],
+    [TransactionOutput(walter.address, 1.0)],
+)
+
+# Note that we have to use skip_verif=True to not trigger the assert in Block's constructor
+block = Block([tx], ancestor=block2, miner_address=walter.address, skip_verif=True)
+assert not verify_block(block, genesis_block)
+
+</code></pre>
+
+<p>ERROR:root:Invalid transaction signature, trying to spend someone else&rsquo;s money ?</p>
+
+<p>还有一种攻击是挖矿者尝试修改区块中的交易，也不会成功</p>
+
+<pre><code># This is a transaction signed by bob
+tx = Transaction(
+    bob,
+    [TransactionInput(t2, 0), TransactionInput(t3, 0)],
+    [TransactionOutput(walter.address, 8.0), TransactionOutput(bob.address, 1.0)]
+)
+# And modified by the miner
+tx.outputs[0].amount += 4
+block = Block([t3, tx], ancestor=block1, miner_address=walter.address, skip_verif=True)
+assert not verify_block(block, genesis_block)</code></pre>
+
+<p>ERROR:root:Invalid transaction signature, trying to spend someone else&rsquo;s money ?</p>
+
+<p>签名的交易可能重复，增加循环中的总钱数</p>
+
+<pre><code>block = Block([t3, t3, t4], ancestor=block1, miner_address=bob.address, skip_verif=True)
+assert not verify_block(block, genesis_block)</code></pre>
+
+<p>ERROR:root:Transaction uses an already spent output : {"recipient_address": &ldquo;30819f300d06092a864886f70d010101050003818d0030818902818100aec88246cc7e63c404c083b34ce153bdcf25749ec8d8764df14c0940ec795ce7522c9923e7aad577f60d346939e6c6aff45c432c6644cef675efb336fc24bdbb966d1448521537390b502c5677251e40c4a0d7b8ec9be732c21b9fe7bac7dc0f8551677645a6b89a8a39ac581fc2d440867f46994d1a52d1ddc1a22f67740f3f0203010001&rdquo;, &ldquo;amount&rdquo;: 5.0}</p>
+
+<h1 id="51攻击">51%攻击</h1>
+
+<p>到目前为止账目是自我完整的，钱是只能由所有者花费。 但是还有个缺陷，没有账目中心，相信哪一个？规则是相信最长的那个区块链。</p>
+
+<pre><code># Let's start again with the same example transactions and blocks as above
+alice = Wallet()
+bob = Wallet()
+walter = Wallet()
+
+genesis_block = GenesisBlock(miner_address=alice.address)
+
+t1 = genesis_block.transactions[0]
+t2 = Transaction(
+    alice,
+    [TransactionInput(t1, 0)],
+    [TransactionOutput(bob.address, 5.0), TransactionOutput(alice.address, 15.0), TransactionOutput(walter.address, 5.0)]
+)
+t3 = Transaction(
+    walter,
+    [TransactionInput(t2, 2)],
+    [TransactionOutput(bob.address, 5.0)])
+
+t4 = Transaction(
+    bob,
+    [TransactionInput(t2, 0), TransactionInput(t3, 0)],
+    [TransactionOutput(walter.address, 8.0), TransactionOutput(bob.address, 1.0)]
+)
+
+block1 = Block([t2], ancestor=genesis_block, miner_address=walter.address)
+block2 = Block([t3, t4], ancestor=block1, miner_address=walter.address)</code></pre>
+
+<p>上面的t4，bob发了8个币给walter。假设walter是个商人，他卖给bob一个很好的车，交换了8个币。bob有了一辆车，walter有8个币。</p>
+
+<p>bob感觉有点穷，他不想在block2中花费8个币。他修改了一下历史，他给自己交易，然后挖矿了自己的区块。</p>
+
+<pre><code>t4_malicious = Transaction(
+    bob,
+    [TransactionInput(t2, 0), TransactionInput(t3, 0)],
+    [TransactionOutput(bob.address, 8.0), TransactionOutput(bob.address, 1.0)]
+)
+block2_malicious = Block([t3, t4_malicious], ancestor=block1, miner_address=bob.address)
+print(verify_block(block2_malicious, genesis_block))</code></pre>
+
+<p>True</p>
+
+<p>block2_malicious还没有被网络接受，它还没超过最长的账目block2。更多的交易发生了，在后面的区块挖矿。刚好bob挖矿了新的区块使用上一个交易。</p>
+
+<pre><code>t6 = Transaction(
+    alice,
+    [TransactionInput(t2, 1)],
+    [TransactionOutput(walter.address, 5.0), TransactionOutput(alice.address, 10.0)]
+)
+
+block3_malicious = Block([t6], ancestor=block2_malicious, miner_address=bob.address)</code></pre>
+
+<p>在比特币中的规则，是相信区块链中最长的。我们找一下哪个是最长的。</p>
+
+<pre><code>def chain_length(block):
+    if block.ancestor is None:
+        return 1
+    else:
+        return 1 + chain_length(block.ancestor)
+
+print("Chain length for block2           : %d" % chain_length(block2))
+print("Chain length for block3_malicious : %d " % chain_length(block3_malicious))</code></pre>
+
+<p>Chain length for block2 : 3
+ <br />Chain length for block3_malicious : 4</p>
+
+<p>接受的账目是block3_malicious，因为它是最长的。bob成功的重写了账目。另外它还是有一辆车，用8个币在walter那交易得来的。walter接受的8个币的交易被认为非法，导致walter并没有拥有8个币。</p>
+
+<p>这就是51%攻击，或者大多数攻击。</p>
+
+<p>然而walter通过计算 block3 = Block([t6], ancestor=block2, miner_address=walter.address)，block3应该由网络接受的。bob要么很幸运，很快找到了nonce，或者刚好比walter更快创建了更长的账目。</p>
+
+<p>从这个例子中得到三个有趣的结论：</p>
+
+<ul>
+ <li>即使有大多数的挖矿能力，攻击者只能改变他的一个交易数据。他没办法从空气中创造钱（这需要无效区块）或花了其他的人钱（他不能签名交易）。
+  <br /></li>
+ <li>这个工作的昂贵证据是需要花费足够的代码创建有效区块。如果证据是无足轻重的，网络可能就早被并发冲突给打乱了，也不会达成一致。
+  <br /></li>
+ <li>相信最长区块规则，就是需要在确认交易有效性之前，要等多个交易确认。交易的确认数量就是在上一笔交易后面有多少区块。等待的交易确认数越多，攻击者修改交易的代价就越大。</li></ul>
+
+<h1 id="与比特币的主要不同">与比特币的主要不同</h1>
+
+<p>就像前面解释的，这个例子并不是要做一个可使用的比特币实现，因此很多特性都没实现。</p>
+
+<ul>
+ <li>使用了公钥作为钱包地址，比特币更复杂。
+  <br /></li>
+ <li>比特币使用了ECDSA，这里使用了RSA。
+  <br /></li>
+ <li>比特币使用了两轮SHA256，这里使用了一轮。
+  <br /></li>
+ <li>比特币的交易使用了<a href="https://en.bitcoin.it/wiki/Script">脚本语言</a>，这里只是简单的一个交易输出有一个数量。
+  <br /></li>
+ <li>比特币需要传播区块给所有节点。整块传播并没有在这里写。参考<a href="https://en.bitcoin.it/wiki/Satoshi_Client_Node_Discovery">Client Node Discovery</a>和<a href="https://en.bitcoin.it/wiki/Protocol_documentation">Protocol documentation</a>。
+  <br /></li>
+ <li>比特币使用了<a href="https://en.wikipedia.org/wiki/Merkle_tree">Merkle tree</a>来存储。</li></ul>
+
+<h1 id="安全问题">安全问题</h1>
+
+<p>出了前面说的不同，这个实现还有很多安全因素</p>
+
+<ul>
+ <li>使用浮点数运算会产生很多问题。（精度损失）
+  <br /></li>
+ <li>这里的JSON序列化不够跨平台。例如在不同平台的相同交易的两次序列化会产生不同，（行尾，关键字顺序，空格）
+  <br /></li>
+ <li>这里实现的挖矿方法会因为整数溢出死循环</li></ul>
+  <footer>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <a href="/About.html">捐赠，buy me a cup of coffee</a>
+        <hr />
+        <p>Site generated by <a href="https://github.com/greghendershott/frog">Frog</a></p>
+        <p><em>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
