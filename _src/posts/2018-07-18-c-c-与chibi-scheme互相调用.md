@@ -7,6 +7,7 @@
 chibi-scheme是scheme/lisp的一种实现，适合作为脚本语言嵌入到c/c++程序中
 
 [chibi-scheme官方文档](http://synthcode.com/scheme/chibi/#h2_EmbeddinginC)写的很清楚，只是没有实例
+
 [外国友人写的相关教程](http://klamp.works/2016/02/05/chibi-scheme-1.html)结合实例，写的很清楚
 
 [代码库地址](https://github.com/zhuzhonghua/chibi-scheme.git) 里的c2scheme目录是示例代码
@@ -40,11 +41,11 @@ callme.scm
 传递参数
 
 	arg_val = sexp_make_fixnum(4);
-  arg_sym = sexp_intern(ctx, "arg", -1);
+	arg_sym = sexp_intern(ctx, "arg", -1);
 	sexp_env_define(ctx, sexp_context_env(ctx), arg_sym, arg_val);
 	
 	file_path = sexp_c_string(ctx, "callme.scm", -1);
-  sexp_load(ctx, file_path, NULL);
+	sexp_load(ctx, file_path, NULL);
 
 接收返回值
 
@@ -143,4 +144,9 @@ c2scheme.c
 将来可以把函数的声明和实现统一规划到别的文件去，这里只是做个示例。
 
 完整代码及编译运行脚本在上面的仓库地址。
+
+注意 (import (chibi))  这是需要加载chibi-scheme的lib目录下的scm文件，默认搜索目录是./lib和.目录，所以当运行目录在别的地方时，需要添加module搜索目录  
+
+	sexp_add_module_directory(ctx, tmp=sexp_c_string(ctx,"../lib",-1), SEXP_TRUE);  
+
 

@@ -16,6 +16,7 @@ https://zhuzhonghua.github.com/2013/07/%E7%BC%96%E8%AF%91%E4%BD%BF%E7%94%A8sdl2-
 https://zhuzhonghua.github.com/2013/11/%E4%BD%BF%E7%94%A8flash%E5%BC%80%E5%8F%91cocos2d-x%E7%9A%84app.html
 https://zhuzhonghua.github.com/2013/06/%E8%B1%86%E7%93%A3fm-hunter.html
 https://zhuzhonghua.github.com/2018/03/%E7%94%A8python%E6%A8%A1%E6%8B%9F%E5%8F%8C%E8%89%B2%E7%90%83%E6%8A%BD%E5%A5%96.html
+https://zhuzhonghua.github.com/2018/07/c-c-%E4%B8%8Echibi-scheme%E4%BA%92%E7%9B%B8%E8%B0%83%E7%94%A8.html
 https://zhuzhonghua.github.com/2014/08/%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8nodejs.html
 https://zhuzhonghua.github.com/2013/03/founders-at-work%E8%AF%BB%E5%90%8E%E6%84%9F.html
 https://zhuzhonghua.github.com/2014/08/%E4%BD%BF%E7%94%A8nodejs%E5%BC%80%E5%8F%91%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8.html
