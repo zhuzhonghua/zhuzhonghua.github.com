@@ -1,6 +1,6 @@
     Title: c/c++与chibi-scheme互相调用
     Date: 2018-07-18T07:56:25
-    Tags: Lisp,scheme,chibi-scheme
+    Tags: Lisp,scheme,chibi-scheme,c/c++
 
 测试环境是mac
 
@@ -15,7 +15,7 @@ chibi-scheme是scheme/lisp的一种实现，适合作为脚本语言嵌入到c/c
 
 1. 加载scheme文件  
 2. 调用scheme函数代码，传递参数，接收返回值  
-3. scheme代码调用c/c++代码，传递参数，接收返回值
+3. scheme代码调用c/c++代码，传递参数，接收返回值  
 
 
 callme.scm
