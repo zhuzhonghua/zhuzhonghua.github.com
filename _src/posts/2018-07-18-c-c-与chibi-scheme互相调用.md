@@ -27,10 +27,13 @@ callme.scm
 	  (newline))
 
 
-#加载scheme文件
+#加载scheme文件  
+
+构造字符串，然后加载  
 
 	obj1 = sexp_c_string(ctx, "callme.scm", -1);
 	sexp_load(ctx, obj1, NULL);
+
 
 #调用scheme函数代码，传递参数，接收返回值
 
@@ -150,3 +153,6 @@ c2scheme.c
 	sexp_add_module_directory(ctx, tmp=sexp_c_string(ctx,"../lib",-1), SEXP_TRUE);  
 
 
+视频链接  
+[B站](https://www.bilibili.com/video/av27986565/)  
+[Youtube](https://youtu.be/g4kv1KNKFp0)  

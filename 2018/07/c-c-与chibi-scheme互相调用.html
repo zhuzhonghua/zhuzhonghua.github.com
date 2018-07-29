@@ -146,7 +146,10 @@
 
 <h1 id="加载scheme文件">加载scheme文件</h1>
 
-<p>obj1 = sexp_c_string(ctx, &ldquo;callme.scm&rdquo;, &ndash;1);  sexp_load(ctx, obj1, NULL);</p>
+<p>构造字符串，然后加载</p>
+
+<pre><code>obj1 = sexp_c_string(ctx, "callme.scm", -1);
+sexp_load(ctx, obj1, NULL);</code></pre>
 
 <h1 id="调用scheme函数代码传递参数接收返回值">调用scheme函数代码，传递参数，接收返回值</h1>
 
@@ -260,6 +263,10 @@ sexp sexp_init_library (sexp ctx, sexp self, sexp_sint_t n, sexp env, const char
 <p>注意 (import (chibi)) 这是需要加载chibi-scheme的lib目录下的scm文件，默认搜索目录是./lib和.目录，所以当运行目录在别的地方时，需要添加module搜索目录</p>
 
 <pre><code>sexp_add_module_directory(ctx, tmp=sexp_c_string(ctx,"../lib",-1), SEXP_TRUE);  </code></pre>
+
+<p>视频链接
+ <br /><a href="https://www.bilibili.com/video/av27986565/">B站</a>
+ <br /><a href="https://youtu.be/g4kv1KNKFp0">Youtube</a></p>
   <footer>
   </footer>
 </article>

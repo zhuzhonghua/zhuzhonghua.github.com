@@ -42,7 +42,10 @@
 
 &lt;h1 id="加载scheme文件"&gt;加载scheme文件&lt;/h1&gt;
 
-&lt;p&gt;obj1 = sexp_c_string(ctx, &amp;ldquo;callme.scm&amp;rdquo;, &amp;ndash;1);  sexp_load(ctx, obj1, NULL);&lt;/p&gt;
+&lt;p&gt;构造字符串，然后加载&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;obj1 = sexp_c_string(ctx, "callme.scm", -1);
+sexp_load(ctx, obj1, NULL);&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id="调用scheme函数代码传递参数接收返回值"&gt;调用scheme函数代码，传递参数，接收返回值&lt;/h1&gt;
 
@@ -155,4 +158,8 @@ sexp sexp_init_library (sexp ctx, sexp self, sexp_sint_t n, sexp env, const char
 
 &lt;p&gt;注意 (import (chibi)) 这是需要加载chibi-scheme的lib目录下的scm文件，默认搜索目录是./lib和.目录，所以当运行目录在别的地方时，需要添加module搜索目录&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sexp_add_module_directory(ctx, tmp=sexp_c_string(ctx,"../lib",-1), SEXP_TRUE);  &lt;/code&gt;&lt;/pre&gt;</description></item></channel></rss>
+&lt;pre&gt;&lt;code&gt;sexp_add_module_directory(ctx, tmp=sexp_c_string(ctx,"../lib",-1), SEXP_TRUE);  &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;视频链接
+ &lt;br /&gt;&lt;a href="https://www.bilibili.com/video/av27986565/"&gt;B站&lt;/a&gt;
+ &lt;br /&gt;&lt;a href="https://youtu.be/g4kv1KNKFp0"&gt;Youtube&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
