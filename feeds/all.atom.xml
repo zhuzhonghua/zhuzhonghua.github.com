@@ -4,7 +4,46 @@
  <link rel="self" href="https://zhuzhonghua.github.com/feeds/all.atom.xml" />
  <link href="https://zhuzhonghua.github.com/index.html" />
  <id>urn:https-zhuzhonghua-github-com:-index-html</id>
- <updated>2018-07-17T23:56:25Z</updated>
+ <updated>2018-08-20T10:16:54Z</updated>
+ <entry>
+  <title type="text">使用Racket(Scheme/Lisp)进行游戏服务器开发</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2018/08/%E4%BD%BF%E7%94%A8racket-scheme-lisp-%E8%BF%9B%E8%A1%8C%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2018-08-E4-BD-BF-E7-94-A8racket-scheme-lisp-E8-BF-9B-E8-A1-8C-E6-B8-B8-E6-88-8F-E6-9C-8D-E5-8A-A1-E5-99-A8-E5-BC-80-E5-8F-91-html</id>
+  <published>2018-08-20T10:16:54Z</published>
+  <updated>2018-08-20T10:16:54Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;&lt;a href="https://github.com/zhuzhonghua/racket_gameserver"&gt;Github仓库地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Racket作为Lisp方言，从它们的Blog&lt;a href="https://blog.racket-lang.org/index.html"&gt;Racket Blog&lt;/a&gt;就可以看出，社区非常活跃。&lt;/p&gt;
+
+&lt;p&gt;安装好Racket之后，使用racket main.rkt就可以运行服务器了。&lt;/p&gt;
+
+&lt;p&gt;附带一个使用nodejs的测试客户端，node testClient.js 可以连接上Racket服务器。&lt;/p&gt;
+
+&lt;p&gt;协议使用的Protobuf&lt;/p&gt;
+
+&lt;p&gt;(serve port-no)是主入口函数，port-no是服务器需要监听的端口。&lt;/p&gt;
+
+&lt;p&gt;(game-loop) 在单独线程中运行，使用custodians(守护)机制，来释放所有系统资源，streams，线程等&lt;/p&gt;
+
+&lt;p&gt;game-loop的处理流程&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;接收新来的连接(accept-conn)
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;接收并处理客户端发送的消息(read-conn)
+  &lt;br /&gt;&lt;/li&gt;
+ &lt;li&gt;发送给客户端的消息(flush-conn)&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;在read/write连接时，如果出错，使用with-handlers来处理网络异常。&lt;/p&gt;
+
+&lt;p&gt;在op.rkt中定义了示例消息号
+ &lt;br /&gt;在route.rkt中定义了消息路由，哪个消息号的消息，由哪个函数处理
+ &lt;br /&gt;在proto.rkt中定义了反序列化的消息，以供游戏逻辑代码使用&lt;/p&gt;
+
+&lt;p&gt;上面的定义比较简单粗暴，但是原理都是类似的&lt;/p&gt;</content></entry>
  <entry>
   <title type="text">c/c++与chibi-scheme互相调用</title>
   <link rel="alternate" href="https://zhuzhonghua.github.com/2018/07/c-c-%E4%B8%8Echibi-scheme%E4%BA%92%E7%9B%B8%E8%B0%83%E7%94%A8.html?utm_source=all&amp;utm_medium=Atom" />

@@ -3,14 +3,14 @@
   <head>
 
     <meta charset="utf-8">
-    <title>Posts tagged 'chibi-scheme'</title>
-    <meta name="description" content="Posts tagged 'chibi-scheme'">
+    <title>使用Racket(Scheme/Lisp)进行游戏服务器开发</title>
+    <meta name="description" content="Github仓库地址  Racket作为Lisp方言，从它们的BlogRacket Blog就可以看出，社区非常活跃。  安装好Racket之后，使用racket main.rkt就可以运行服务器了。  附带一个使用nodejs的测试客户端，node testClient.js 可以连接上Racket服务器。  协议使用的Protobuf  (serve port-no)是主入口函数，port-no是服务器需要监听的端口。  (game-loop) 在单独线程中运行，使用custodians(守护)机制，...">
     <meta name="author"      content="ZhongHua">
-    <meta name="keywords"    content="chibi-scheme">
+    <meta name="keywords"    content="Racket, Scheme, Lisp, 网络, 游戏, 服务器, 后端, 后台, 开发">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="https://zhuzhonghua.github.com/tags/chibi-scheme.html">
-
+    <link rel="canonical" href="https://zhuzhonghua.github.com/2018/08/%E4%BD%BF%E7%94%A8racket-scheme-lisp-%E8%BF%9B%E8%A1%8C%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91.html">
+    <link rel="next" href="/2018/07/c-c-%E4%B8%8Echibi-scheme%E4%BA%92%E7%9B%B8%E8%B0%83%E7%94%A8.html">
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
@@ -19,9 +19,9 @@
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <!-- Feeds -->
     <link rel="alternate" type="application/atom+xml"
-          href="/feeds/chibi-scheme.atom.xml" title="Atom Feed">
+          href="/feeds/all.atom.xml" title="Atom Feed">
     <link rel="alternate" type="application/rss+xml"
-          href="/feeds/chibi-scheme.rss.xml" title="RSS Feed">
+          href="/feeds/all.rss.xml" title="RSS Feed">
     <!-- JS -->
     <script type="text/javascript">
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -111,8 +111,8 @@
             <li>
               <a href="/About.html">About</a>
             </li> 
-            <li><a href="/feeds/chibi-scheme.atom.xml">Atom</a></li>
-            <li><a href="/feeds/chibi-scheme.rss.xml">RSS</a></li>
+            <li><a href="/feeds/all.atom.xml">Atom</a></li>
+            <li><a href="/feeds/all.rss.xml">RSS</a></li>
           </ul>
         </div>
       </div>
@@ -125,12 +125,45 @@
 
 
 
-          <h1>Posts tagged <em>chibi-scheme</em></h1>
+
 
           <article>
   <header>
-    <h2><a href='/2018/07/c-c-%E4%B8%8Echibi-scheme%E4%BA%92%E7%9B%B8%E8%B0%83%E7%94%A8.html'>c/c++与chibi-scheme互相调用</a></h2>
+    <h1>使用Racket(Scheme/Lisp)进行游戏服务器开发</h1>
   </header>
+
+<p><a href="https://github.com/zhuzhonghua/racket_gameserver">Github仓库地址</a></p>
+
+<p>Racket作为Lisp方言，从它们的Blog<a href="https://blog.racket-lang.org/index.html">Racket Blog</a>就可以看出，社区非常活跃。</p>
+
+<p>安装好Racket之后，使用racket main.rkt就可以运行服务器了。</p>
+
+<p>附带一个使用nodejs的测试客户端，node testClient.js 可以连接上Racket服务器。</p>
+
+<p>协议使用的Protobuf</p>
+
+<p>(serve port-no)是主入口函数，port-no是服务器需要监听的端口。</p>
+
+<p>(game-loop) 在单独线程中运行，使用custodians(守护)机制，来释放所有系统资源，streams，线程等</p>
+
+<p>game-loop的处理流程</p>
+
+<ol>
+ <li>接收新来的连接(accept-conn)
+  <br /></li>
+ <li>接收并处理客户端发送的消息(read-conn)
+  <br /></li>
+ <li>发送给客户端的消息(flush-conn)</li></ol>
+
+<p>在read/write连接时，如果出错，使用with-handlers来处理网络异常。</p>
+
+<p>在op.rkt中定义了示例消息号
+ <br />在route.rkt中定义了消息路由，哪个消息号的消息，由哪个函数处理
+ <br />在proto.rkt中定义了反序列化的消息，以供游戏逻辑代码使用</p>
+
+<p>上面的定义比较简单粗暴，但是原理都是类似的</p>
+  <footer>
+  </footer>
 </article>
         </div>
       </div>
