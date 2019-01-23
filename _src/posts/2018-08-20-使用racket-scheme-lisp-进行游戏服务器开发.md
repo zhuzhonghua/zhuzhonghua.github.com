@@ -28,4 +28,12 @@ game-loop的处理流程
 在route.rkt中定义了消息路由，哪个消息号的消息，由哪个函数处理  
 在proto.rkt中定义了反序列化的消息，以供游戏逻辑代码使用  
 
-上面的定义比较简单粗暴，但是原理都是类似的
+上面的定义比较简单粗暴，但是原理都是类似的  
+
+
+录了一些视频，一点一点讲解，从零开始写这个服务器代码  
+在持续更新中  
+
+[Youtube地址](https://www.youtube.com/playlist?list=PL3gfPn2A9HNGqA6RjVQhpNW8TjaRqOlEt)  
+
+[人人讲地址](https://h5.renrenjiang.cn/#/column?cid=19930&su=5799319)  
