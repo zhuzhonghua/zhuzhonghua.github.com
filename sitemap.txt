@@ -5,6 +5,7 @@ https://zhuzhonghua.github.com/2012/11/swf9%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F-
 https://zhuzhonghua.github.com/2018/03/-%E8%AF%91-dumbcoin-%E5%9F%BA%E4%BA%8E%E6%95%99%E8%82%B2%E7%9B%AE%E7%9A%84%E7%9A%84python%E5%AE%9E%E7%8E%B0%E7%B1%BB%E6%AF%94%E7%89%B9%E5%B8%81%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE.html
 https://zhuzhonghua.github.com/2013/07/%E5%9C%A8%E4%BD%BF%E7%94%A8jsfl%E6%97%B6%E5%87%BA%E9%94%99%E7%9A%84%E8%AE%B0%E5%BD%95.html
 https://zhuzhonghua.github.com/2018/01/realm-of-racket-big-bang.html
+https://zhuzhonghua.github.com/2020/02/%E7%94%A8python%E7%94%9F%E6%88%90makefile.html
 https://zhuzhonghua.github.com/2014/12/%E8%A7%A3%E6%9E%90swf%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F.html
 https://zhuzhonghua.github.com/2014/08/%E4%BD%BF%E7%94%A8nodejs%E5%BC%80%E5%8F%91%E7%BD%91%E7%BB%9C%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8.html
 https://zhuzhonghua.github.com/2017/09/%E4%BD%BF%E7%94%A8gimp%E7%9A%84python%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A7%A3plist%E5%9B%BE%E7%89%87.html
