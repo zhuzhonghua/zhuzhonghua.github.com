@@ -6,127 +6,19 @@
  <id>urn:https-zhuzhonghua-github-com:-index-html</id>
  <updated>2020-02-16T15:14:31Z</updated>
  <entry>
-  <title type="text">用Python生成Makefile</title>
-  <link rel="alternate" href="https://zhuzhonghua.github.com/2020/02/%E7%94%A8python%E7%94%9F%E6%88%90makefile.html?utm_source=all&amp;utm_medium=Atom" />
-  <id>urn:https-zhuzhonghua-github-com:-2020-02-E7-94-A8python-E7-94-9F-E6-88-90makefile-html</id>
+  <title type="text">用Python生成CMake</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2020/02/%E7%94%A8python%E7%94%9F%E6%88%90cmake.html?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2020-02-E7-94-A8python-E7-94-9F-E6-88-90cmake-html</id>
   <published>2020-02-16T15:14:31Z</published>
   <updated>2020-02-16T15:14:31Z</updated>
   <author>
    <name>ZhongHua</name></author>
   <content type="html">
-&lt;p&gt;用Python生成Makefile，更灵活，更直接。&lt;/p&gt;
+&lt;p&gt;CMake不支持shell命令输出，中间加一层python，可以方便的解决这个问题&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;#python3
+&lt;p&gt;比如sdl2-config &amp;mdash;cflags 和 sdl2-config &amp;mdash;lib 在mac和linux 下输出不一样，在cmake里使用就不太方便&lt;/p&gt;
 
-import sys
-import os
-import re
-
-#all src dirs
-dirs = [".", "xxx"]
-temp_dir = "temp"
-target = "yourtarget"
-cpp_flags = os.popen("xxx shell command").read().replace("\n","")+" -S -Wall -Wextra -Wpedantic -Dxxx -Ixx -ixxx"	
-cpp_libs = os.popen("shell command").read().replace("\n","")+" -lxxx -Lxxx"
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;dirs包含了目录列表，也可以更直接的递归获取所有目录，还可以添加别的非当前目录。&lt;/p&gt;
-
-&lt;p&gt;temp_dir 临时文件的目录，主要是中间文件，xxx.o之类的。&lt;/p&gt;
-
-&lt;p&gt;target 生成的目标&lt;/p&gt;
-
-&lt;p&gt;cpp_flags和cpp_libs分别是编译期和链接期需要用到的，可以使用shell command结果作为参数。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;############################
-#create tempdir
-if not os.path.exists(temp_dir):
-	os.make_dirs(temp_dir)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;创建临时目录&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;xxx_src = """
-xxx/abc.c
-xxx/def.c
-"""
-
-#########################################
-#split line
-cpp_files = []
-for one_dir in dirs:
-	cpp_files = cpp_files + [one_dir+"/"+cpp for cpp in os.listdir(one_dir) if cpp.endswith('.cpp') or cpp.endswith('.c') or cpp.endswith('.cc')]
-
-cpp_files = cpp_files + xxx_src.split()&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;获取到所有的cpp文件列表，包括遍历得到文件和单独指定的文件&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;get_temp_o = lambda cpp:temp_dir+"/"+cpp.replace("./","").replace(".cpp",".o").replace(".cc",".o").replace(".c",".o").replace("/",".")
-	
-objs = list(map(get_temp_o, cpp_files))&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;把“./”去掉，再把“.cpp”,“.cc”,“.c”等后缀换成“.o”，再把中间目录的“/”换成“.”，便于生成中间文件&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;phony = """
-.PHONY: clean all
-all:$(TARGET)
-""".replace("$(TARGET)", target)
-
-flags = """
-CPPFLAGS := $(cpp_flags)
-CPPLIBS := $(cpp_libs)
-
-""".replace("$(cpp_flags)", cpp_flags).replace("$(cpp_libs)", cpp_libs)&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;字符串替换Makefile指令&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;def get_gen_temp_o(cpp):
-	cmd = "g++ -MM $(CPPFLAGS) "+cpp
-	return os.popen(cmd.replace("$(CPPFLAGS)", cpp_flags)).read()+"\tg++ -c $&amp;lt; -o $@ $(CPPFLAGS)\n".replace("$(CPPFLAGS)", cpp_flags)
-	
-def write_temp_o(make_file, cpp_files):
-	for cpp in cpp_files:		
-		temp_o = get_temp_o(cpp)		
-		make_file.write(re.sub(r'^.*\.o\s*:', temp_o+":", get_gen_temp_o(cpp)))
-		make_file.write("\n")
-		print(temp_o+":"+cpp)
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;get_gen_temp_o辅助函数获取cpp文件的依赖文件&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;target_cmd = """
-$(TARGET):$(OBJS)
-	g++ $(OBJS) -o $@ $(CPPLIBS)
-""".replace("$(TARGET)", target).replace("$(OBJS)", " ".join(objs))
-
-clean_cmd = """
-clean:
-	rm -f *.d; \
-	rm -f *.o; \
-	rm -f $(TARGET)
-""".replace("$(TARGET)", target)
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;makefile指令生成目标和清理动作&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;with open("Makefile", "w") as make_file:
-	print("start write makefile")
-	make_file.write(phony)
-	print(phony)
-	make_file.write(flags)
-	print(flags)
-	write_temp_o(make_file, cpp_files)
-	make_file.write(target_cmd)
-	print(target_cmd)
-	make_file.write(clean_cmd)
-	print(clean_cmd)
-	print("end write makefile")
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;最后把所有指令写入Makefile中&lt;/p&gt;</content></entry>
+&lt;p&gt;这一部分使用python 动态生成就解决了这个问题&lt;/p&gt;</content></entry>
  <entry>
   <title type="text">使用Racket(Scheme/Lisp)进行游戏服务器开发</title>
   <link rel="alternate" href="https://zhuzhonghua.github.com/2018/08/%E4%BD%BF%E7%94%A8racket-scheme-lisp-%E8%BF%9B%E8%A1%8C%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91.html?utm_source=all&amp;utm_medium=Atom" />
