@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">好记性不如烂笔头: Posts tagged '日语 汉字 Kanji 假名 平假名 片假名 显示 隐藏 学习 漢字 平仮名　片仮名'</title>
+ <link rel="self" href="https://zhuzhonghua.github.com/feeds/%E6%97%A5%E8%AF%AD-%E6%B1%89%E5%AD%97-Kanji-%E5%81%87%E5%90%8D-%E5%B9%B3%E5%81%87%E5%90%8D-%E7%89%87%E5%81%87%E5%90%8D-%E6%98%BE%E7%A4%BA-%E9%9A%90%E8%97%8F-%E5%AD%A6%E4%B9%A0-%E6%BC%A2%E5%AD%97-%E5%B9%B3%E4%BB%AE%E5%90%8D-%E7%89%87%E4%BB%AE%E5%90%8D.atom.xml" />
+ <link href="https://zhuzhonghua.github.com/tags/%E6%97%A5%E8%AF%AD-%E6%B1%89%E5%AD%97-Kanji-%E5%81%87%E5%90%8D-%E5%B9%B3%E5%81%87%E5%90%8D-%E7%89%87%E5%81%87%E5%90%8D-%E6%98%BE%E7%A4%BA-%E9%9A%90%E8%97%8F-%E5%AD%A6%E4%B9%A0-%E6%BC%A2%E5%AD%97-%E5%B9%B3%E4%BB%AE%E5%90%8D-%E7%89%87%E4%BB%AE%E5%90%8D.html" />
+ <id>urn:https-zhuzhonghua-github-com:-tags-E6-97-A5-E8-AF-AD-E6-B1-89-E5-AD-97-Kanji-E5-81-87-E5-90-8D-E5-B9-B3-E5-81-87-E5-90-8D-E7-89-87-E5-81-87-E5-90-8D-E6-98-BE-E7-A4-BA-E9-9A-90-E8-97-8F-E5-AD-A6-E4-B9-A0-E6-BC-A2-E5-AD-97-E5-B9-B3-E4-BB-AE-E5-90-8D-E7-89-87-E4-BB-AE-E5-90-8D-html</id>
+ <updated>2020-07-24T15:14:31Z</updated>
+ <entry>
+  <title type="text">隐藏和显示日语文章中的汉字的假名注音</title>
+  <link rel="alternate" href="https://zhuzhonghua.github.com/2020/07/%E9%9A%90%E8%97%8F%E5%92%8C%E6%98%BE%E7%A4%BA%E6%97%A5%E8%AF%AD%E6%96%87%E7%AB%A0%E4%B8%AD%E7%9A%84%E6%B1%89%E5%AD%97%E7%9A%84%E5%81%87%E5%90%8D%E6%B3%A8%E9%9F%B3.html?utm_source=%E6%97%A5%E8%AF%AD-%E6%B1%89%E5%AD%97-Kanji-%E5%81%87%E5%90%8D-%E5%B9%B3%E5%81%87%E5%90%8D-%E7%89%87%E5%81%87%E5%90%8D-%E6%98%BE%E7%A4%BA-%E9%9A%90%E8%97%8F-%E5%AD%A6%E4%B9%A0-%E6%BC%A2%E5%AD%97-%E5%B9%B3%E4%BB%AE%E5%90%8D-%E7%89%87%E4%BB%AE%E5%90%8D&amp;utm_medium=Atom" />
+  <id>urn:https-zhuzhonghua-github-com:-2020-07-E9-9A-90-E8-97-8F-E5-92-8C-E6-98-BE-E7-A4-BA-E6-97-A5-E8-AF-AD-E6-96-87-E7-AB-A0-E4-B8-AD-E7-9A-84-E6-B1-89-E5-AD-97-E7-9A-84-E5-81-87-E5-90-8D-E6-B3-A8-E9-9F-B3-html</id>
+  <published>2020-07-24T15:14:31Z</published>
+  <updated>2020-07-24T15:14:31Z</updated>
+  <author>
+   <name>ZhongHua</name></author>
+  <content type="html">
+&lt;p&gt;写一段脚本，可以隐藏和显示日语文章中的汉字的假名注音&lt;/p&gt;
+
+&lt;p&gt;这是隐藏脚本&lt;/p&gt;
+
+&lt;div class="brush: javascript"&gt;
+ &lt;pre&gt;&lt;code&gt;(function(){
+rts = document.getElementsByTagName("rt")
+for (var i = 0; i &amp;lt; rts.length; i++) { rts[i].style.visibility="hidden"; }
+})()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这是显示脚本&lt;/p&gt;
+
+&lt;div class="brush: javascript"&gt;
+ &lt;pre&gt;&lt;code&gt;(function(){
+rts = document.getElementsByTagName("rt")
+for (var i = 0; i &amp;lt; rts.length; i++) { rts[i].style.visibility=""; }
+})()&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;"rt"是专门显示拼音小字的标签，如果是使用别的标签，可以换成对应的&lt;/p&gt;
+
+&lt;p&gt;还可以显示和隐藏对应的中文翻译&lt;/p&gt;
+
+&lt;p&gt;这是隐藏脚本&lt;/p&gt;
+
+&lt;div class="brush: javascript"&gt;
+ &lt;pre&gt;&lt;code&gt;(function(tag){
+function visi2(parent, tag_str) {
+tags = tag_str.split("\.");
+if (tags.length == 1) {
+	var spans = parent.getElementsByTagName(tags[0]);
+	for (var j = 0; j &amp;lt; spans.length; j++) {
+		spans[j].style.visibility="hidden";
+	}
+} else {
+	var sections = parent.getElementsByTagName(tags[0]);
+	for (var i = 0; i &amp;lt; sections.length; i++) {
+		visi2(sections[i], tag_str.substr(tag_str.indexOf(".")+1));
+	}
+}
+}
+
+visi2(document, tag);
+})("p.span.strong")&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这是显示脚本&lt;/p&gt;
+
+&lt;div class="brush: javascript"&gt;
+ &lt;pre&gt;&lt;code&gt;(function(tag){
+function visi2(parent, tag_str) {
+tags = tag_str.split("\.");
+if (tags.length == 1) {
+	var spans = parent.getElementsByTagName(tags[0]);
+	for (var j = 0; j &amp;lt; spans.length; j++) {
+		spans[j].style.visibility="";
+	}
+} else {
+	var sections = parent.getElementsByTagName(tags[0]);
+	for (var i = 0; i &amp;lt; sections.length; i++) {
+		visi2(sections[i], tag_str.substr(tag_str.indexOf(".")+1));
+	}
+}
+}
+
+visi2(document, tag);
+})("p.span.strong")&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这里的翻译使用的section下的span标签，如果是别的标签，需要换成对应的&lt;/p&gt;
+
+&lt;p&gt;这里使用的示例网页是这个&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://mp.weixin.qq.com/s?__biz=MzU1MDk5MDEzMg==&amp;amp;mid=2247487368&amp;amp;idx=1&amp;amp;sn=f17e12106eddabd16c2f068081619c20&amp;amp;chksm=fb9977d3cceefec5840872d0b238e24d56c448a1faf5e2a7d61e97a9f93cfd805141f14b05f9&amp;amp;mpshare=1&amp;amp;scene=1&amp;amp;srcid=0723taabGGMHlVIHkdzSLCd5&amp;amp;sharer_sharetime=1595508220622&amp;amp;sharer_shareid=c180129588ac15ab0faf86a78e9b3863&amp;amp;key=9ae93b5dab71cae07fbbb49b010125373f8ee78b8012506959bfcecdce7fba68eeb343ac5555d8778695a7b0933dea50ef470fe8818db4cfbc2af74214ce47dd9e03189c395cdc0e9313f12fa787218e&amp;amp;ascene=1&amp;amp;uin=MTY5OTcxMTU2Mg%3D%3D&amp;amp;devicetype=Windows+10+x64&amp;amp;version=62090529&amp;amp;lang=zh_CN&amp;amp;exportkey=AYZjY3bSJOnanV5vPPRfTTE%3D&amp;amp;pass_ticket=wcQnTu8Gi6Ol9pnejeca9zt36PSMxNR99I8v64XXIZQP6cQ1m18zXTXDHL36EHN2"&gt;示例&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;把这里的脚本包装成Chrome插件，更方便使用&lt;/p&gt;
+
+&lt;p&gt; https://github.com/zhuzhonghua/hidegana&lt;/p&gt;</content></entry></feed>
