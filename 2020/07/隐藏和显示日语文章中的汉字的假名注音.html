@@ -3,15 +3,15 @@
   <head>
 
     <meta charset="utf-8">
-    <title>用Python生成CMake</title>
-    <meta name="description" content="CMake不支持shell命令输出，中间加一层python，可以方便的解决这个问题  比如sdl2-config --cflags 和 sdl2-config --lib 在mac和linux 下输出不一样，在cmake里使用就不太方便  这一部分使用python 动态生成就解决了这个问题...">
+    <title>隐藏和显示日语文章中的汉字的假名注音</title>
+    <meta name="description" content="写一段脚本，可以隐藏和显示日语文章中的汉字的假名注音  这是隐藏脚本   `(function(){ rts = document.getElementsByTagName(&quot;rt&quot;) for (var i = 0; i < rts.length; i++) { rts[i].style.visibility=&quot;hidden&quot;; } })()`  这是显示脚本   `(function(){ rts = document.getElementsByTagName(&quot;rt&quot;) for (var i = 0;...">
     <meta name="author"      content="ZhongHua">
-    <meta name="keywords"    content="Python Makefile cmake automake xmake make">
+    <meta name="keywords"    content="日语 汉字 Kanji 假名 平假名 片假名 显示 隐藏 学习 漢字 平仮名　片仮名">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="https://zhuzhonghua.github.com/2020/02/%E7%94%A8python%E7%94%9F%E6%88%90cmake.html">
-    <link rel="next" href="/2018/08/%E4%BD%BF%E7%94%A8racket-scheme-lisp-%E8%BF%9B%E8%A1%8C%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91.html">
-    <link rel="prev" href="/2020/07/%E9%9A%90%E8%97%8F%E5%92%8C%E6%98%BE%E7%A4%BA%E6%97%A5%E8%AF%AD%E6%96%87%E7%AB%A0%E4%B8%AD%E7%9A%84%E6%B1%89%E5%AD%97%E7%9A%84%E5%81%87%E5%90%8D%E6%B3%A8%E9%9F%B3.html">
+    <link rel="canonical" href="https://zhuzhonghua.github.com/2020/07/%E9%9A%90%E8%97%8F%E5%92%8C%E6%98%BE%E7%A4%BA%E6%97%A5%E8%AF%AD%E6%96%87%E7%AB%A0%E4%B8%AD%E7%9A%84%E6%B1%89%E5%AD%97%E7%9A%84%E5%81%87%E5%90%8D%E6%B3%A8%E9%9F%B3.html">
+    <link rel="next" href="/2020/02/%E7%94%A8python%E7%94%9F%E6%88%90cmake.html">
+
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -133,14 +133,84 @@
 
           <article>
   <header>
-    <h1>用Python生成CMake</h1>
+    <h1>隐藏和显示日语文章中的汉字的假名注音</h1>
   </header>
 
-<p>CMake不支持shell命令输出，中间加一层python，可以方便的解决这个问题</p>
+<p>写一段脚本，可以隐藏和显示日语文章中的汉字的假名注音</p>
 
-<p>比如sdl2-config &mdash;cflags 和 sdl2-config &mdash;lib 在mac和linux 下输出不一样，在cmake里使用就不太方便</p>
+<p>这是隐藏脚本</p>
 
-<p>这一部分使用python 动态生成就解决了这个问题</p>
+<div class="brush: javascript">
+ <pre><code>(function(){
+rts = document.getElementsByTagName("rt")
+for (var i = 0; i &lt; rts.length; i++) { rts[i].style.visibility="hidden"; }
+})()</code></pre></div>
+
+<p>这是显示脚本</p>
+
+<div class="brush: javascript">
+ <pre><code>(function(){
+rts = document.getElementsByTagName("rt")
+for (var i = 0; i &lt; rts.length; i++) { rts[i].style.visibility=""; }
+})()</code></pre></div>
+
+<p>"rt"是专门显示拼音小字的标签，如果是使用别的标签，可以换成对应的</p>
+
+<p>还可以显示和隐藏对应的中文翻译</p>
+
+<p>这是隐藏脚本</p>
+
+<div class="brush: javascript">
+ <pre><code>(function(tag){
+function visi2(parent, tag_str) {
+tags = tag_str.split("\.");
+if (tags.length == 1) {
+	var spans = parent.getElementsByTagName(tags[0]);
+	for (var j = 0; j &lt; spans.length; j++) {
+		spans[j].style.visibility="hidden";
+	}
+} else {
+	var sections = parent.getElementsByTagName(tags[0]);
+	for (var i = 0; i &lt; sections.length; i++) {
+		visi2(sections[i], tag_str.substr(tag_str.indexOf(".")+1));
+	}
+}
+}
+
+visi2(document, tag);
+})("p.span.strong")</code></pre></div>
+
+<p>这是显示脚本</p>
+
+<div class="brush: javascript">
+ <pre><code>(function(tag){
+function visi2(parent, tag_str) {
+tags = tag_str.split("\.");
+if (tags.length == 1) {
+	var spans = parent.getElementsByTagName(tags[0]);
+	for (var j = 0; j &lt; spans.length; j++) {
+		spans[j].style.visibility="";
+	}
+} else {
+	var sections = parent.getElementsByTagName(tags[0]);
+	for (var i = 0; i &lt; sections.length; i++) {
+		visi2(sections[i], tag_str.substr(tag_str.indexOf(".")+1));
+	}
+}
+}
+
+visi2(document, tag);
+})("p.span.strong")</code></pre></div>
+
+<p>这里的翻译使用的section下的span标签，如果是别的标签，需要换成对应的</p>
+
+<p>这里使用的示例网页是这个</p>
+
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU1MDk5MDEzMg==&amp;mid=2247487368&amp;idx=1&amp;sn=f17e12106eddabd16c2f068081619c20&amp;chksm=fb9977d3cceefec5840872d0b238e24d56c448a1faf5e2a7d61e97a9f93cfd805141f14b05f9&amp;mpshare=1&amp;scene=1&amp;srcid=0723taabGGMHlVIHkdzSLCd5&amp;sharer_sharetime=1595508220622&amp;sharer_shareid=c180129588ac15ab0faf86a78e9b3863&amp;key=9ae93b5dab71cae07fbbb49b010125373f8ee78b8012506959bfcecdce7fba68eeb343ac5555d8778695a7b0933dea50ef470fe8818db4cfbc2af74214ce47dd9e03189c395cdc0e9313f12fa787218e&amp;ascene=1&amp;uin=MTY5OTcxMTU2Mg%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090529&amp;lang=zh_CN&amp;exportkey=AYZjY3bSJOnanV5vPPRfTTE%3D&amp;pass_ticket=wcQnTu8Gi6Ol9pnejeca9zt36PSMxNR99I8v64XXIZQP6cQ1m18zXTXDHL36EHN2">示例</a></p>
+
+<p>把这里的脚本包装成Chrome插件，更方便使用</p>
+
+<p> https://github.com/zhuzhonghua/hidegana</p>
   <footer>
   </footer>
 </article>
