@@ -3,15 +3,15 @@
   <head>
 
     <meta charset="utf-8">
-    <title>隐藏和显示日语文章中的汉字的假名注音</title>
-    <meta name="description" content="写一段脚本，可以隐藏和显示日语文章中的汉字的假名注音  这是隐藏脚本   `(function(){ rts = document.getElementsByTagName(&quot;rt&quot;) for (var i = 0; i < rts.length; i++) { rts[i].style.visibility=&quot;hidden&quot;; } })()`  这是显示脚本   `(function(){ rts = document.getElementsByTagName(&quot;rt&quot;) for (var i = 0;...">
+    <title>增加两个Anki快捷键，设定样式和跳转【Front，Back】</title>
+    <meta name="description" content="在 Anki 输入要背的单词，更方便，脱离鼠标      首先下载 Customize Keyboard Shortcuts     在 Tools > Add-ons > Custom Shortcuts 查看文件   找到 config.json 添加  `&quot;editor mark selection&quot;:&quot;Ctrl+H&quot;, &quot;editor change focus to Back&quot;:&quot;Ctrl+1&quot;, &quot;editor change focus to Front&quot;:&quot;Ctrl+0&quot;` Ctrl+H 就是...">
     <meta name="author"      content="ZhongHua">
-    <meta name="keywords"    content="日语 汉字 Kanji 假名 平假名 片假名 显示 隐藏 学习 漢字 平仮名　片仮名">
+    <meta name="keywords"    content="ANKI 附加组件 组件 自定义 命令 快捷键 跳转 样式 Back Front">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="https://zhuzhonghua.github.com/2020/07/%E9%9A%90%E8%97%8F%E5%92%8C%E6%98%BE%E7%A4%BA%E6%97%A5%E8%AF%AD%E6%96%87%E7%AB%A0%E4%B8%AD%E7%9A%84%E6%B1%89%E5%AD%97%E7%9A%84%E5%81%87%E5%90%8D%E6%B3%A8%E9%9F%B3.html">
-    <link rel="next" href="/2020/02/%E7%94%A8python%E7%94%9F%E6%88%90cmake.html">
-    <link rel="prev" href="/2020/10/%E5%A2%9E%E5%8A%A0%E4%B8%A4%E4%B8%AAanki%E5%BF%AB%E6%8D%B7%E9%94%AE-%E8%AE%BE%E5%AE%9A%E6%A0%B7%E5%BC%8F%E5%92%8C%E8%B7%B3%E8%BD%AC-front-back.html">
+    <link rel="canonical" href="https://zhuzhonghua.github.com/2020/10/%E5%A2%9E%E5%8A%A0%E4%B8%A4%E4%B8%AAanki%E5%BF%AB%E6%8D%B7%E9%94%AE-%E8%AE%BE%E5%AE%9A%E6%A0%B7%E5%BC%8F%E5%92%8C%E8%B7%B3%E8%BD%AC-front-back.html">
+    <link rel="next" href="/2020/07/%E9%9A%90%E8%97%8F%E5%92%8C%E6%98%BE%E7%A4%BA%E6%97%A5%E8%AF%AD%E6%96%87%E7%AB%A0%E4%B8%AD%E7%9A%84%E6%B1%89%E5%AD%97%E7%9A%84%E5%81%87%E5%90%8D%E6%B3%A8%E9%9F%B3.html">
+
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -135,84 +135,76 @@
 
           <article>
   <header>
-    <h1>隐藏和显示日语文章中的汉字的假名注音</h1>
+    <h1>增加两个Anki快捷键，设定样式和跳转【Front，Back】</h1>
   </header>
 
-<p>写一段脚本，可以隐藏和显示日语文章中的汉字的假名注音</p>
+<p>在 Anki 输入要背的单词，更方便，脱离鼠标</p>
 
-<p>这是隐藏脚本</p>
+<ol>
+ <li>
+  <p>首先下载 <a href="https://ankiweb.net/shared/info/24411424">Customize Keyboard Shortcuts</a></p></li>
+ <li>
+  <p>在 Tools &gt; Add-ons &gt; Custom Shortcuts 查看文件</p></li></ol>
 
-<div class="brush: javascript">
- <pre><code>(function(){
-rts = document.getElementsByTagName("rt")
-for (var i = 0; i &lt; rts.length; i++) { rts[i].style.visibility="hidden"; }
-})()</code></pre></div>
+<p>找到 config.json 添加</p>
 
-<p>这是显示脚本</p>
+<pre><code>"editor mark selection":"Ctrl+H",
+"editor change focus to Back":"Ctrl+1",
+"editor change focus to Front":"Ctrl+0"</code></pre>
 
-<div class="brush: javascript">
- <pre><code>(function(){
-rts = document.getElementsByTagName("rt")
-for (var i = 0; i &lt; rts.length; i++) { rts[i].style.visibility=""; }
-})()</code></pre></div>
+<p>Ctrl+H 就是设定样式</p>
 
-<p>"rt"是专门显示拼音小字的标签，如果是使用别的标签，可以换成对应的</p>
+<p>Ctrl+1 跳转Back输入框</p>
 
-<p>还可以显示和隐藏对应的中文翻译</p>
+<p>Ctrl+0 跳转Front输入框</p>
 
-<p>这是隐藏脚本</p>
-
-<div class="brush: javascript">
- <pre><code>(function(tag){
-function visi2(parent, tag_str) {
-tags = tag_str.split("\.");
-if (tags.length == 1) {
-	var spans = parent.getElementsByTagName(tags[0]);
-	for (var j = 0; j &lt; spans.length; j++) {
-		spans[j].style.visibility="hidden";
-	}
-} else {
-	var sections = parent.getElementsByTagName(tags[0]);
-	for (var i = 0; i &lt; sections.length; i++) {
-		visi2(sections[i], tag_str.substr(tag_str.indexOf(".")+1));
-	}
-}
-}
-
-visi2(document, tag);
-})("p.span.strong")</code></pre></div>
-
-<p>这是显示脚本</p>
+<ol>
+ <li>找到 cs_functions.py 添加两个函数</li></ol>
 
 <div class="brush: javascript">
- <pre><code>(function(tag){
-function visi2(parent, tag_str) {
-tags = tag_str.split("\.");
-if (tags.length == 1) {
-	var spans = parent.getElementsByTagName(tags[0]);
-	for (var j = 0; j &lt; spans.length; j++) {
-		spans[j].style.visibility="";
-	}
-} else {
-	var sections = parent.getElementsByTagName(tags[0]);
-	for (var i = 0; i &lt; sections.length; i++) {
-		visi2(sections[i], tag_str.substr(tag_str.indexOf(".")+1));
-	}
-}
-}
+ <pre><code>def editor_mark_selection(self):
+	self.toggleBold()
+	self.toggleUnderline()
+	self.onForeground()
+	
+def change_focus_to(self, num):
+	self.web.setFocus()
+	self.web.eval("focusField(%d);" % num)</code></pre></div>
 
-visi2(document, tag);
-})("p.span.strong")</code></pre></div>
+<p>editor_mark_selection 用于设定样式，加粗+加下划线+设置颜色</p>
 
-<p>这里的翻译使用的section下的span标签，如果是别的标签，需要换成对应的</p>
+<p>change_focus_to 用于跳转不用的Field</p>
 
-<p>这里使用的示例网页是这个</p>
+<p>在 editor_sToF 函数的 sdict 字典中添加</p>
 
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzU1MDk5MDEzMg==&amp;mid=2247487368&amp;idx=1&amp;sn=f17e12106eddabd16c2f068081619c20&amp;chksm=fb9977d3cceefec5840872d0b238e24d56c448a1faf5e2a7d61e97a9f93cfd805141f14b05f9&amp;mpshare=1&amp;scene=1&amp;srcid=0723taabGGMHlVIHkdzSLCd5&amp;sharer_sharetime=1595508220622&amp;sharer_shareid=c180129588ac15ab0faf86a78e9b3863&amp;key=9ae93b5dab71cae07fbbb49b010125373f8ee78b8012506959bfcecdce7fba68eeb343ac5555d8778695a7b0933dea50ef470fe8818db4cfbc2af74214ce47dd9e03189c395cdc0e9313f12fa787218e&amp;ascene=1&amp;uin=MTY5OTcxMTU2Mg%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090529&amp;lang=zh_CN&amp;exportkey=AYZjY3bSJOnanV5vPPRfTTE%3D&amp;pass_ticket=wcQnTu8Gi6Ol9pnejeca9zt36PSMxNR99I8v64XXIZQP6cQ1m18zXTXDHL36EHN2">示例</a></p>
+<pre><code>"editor mark selection": (lambda: editor_mark_selection(self),),
+"editor change focus to Back": (lambda: change_focus_to(self, 1),),
+"editor change focus to Front": (lambda: change_focus_to(self, 0),),</code></pre>
 
-<p>把这里的脚本包装成Chrome插件，更方便使用</p>
+<ol>
+ <li>找到custom_shortcuts.py 添加两个函数</li></ol>
 
-<p> https://github.com/zhuzhonghua/hidegana</p>
+<pre><code>def editor_mark_selection(self):
+	self.toggleBold()
+	self.toggleUnderline()
+	self.onForeground()
+	
+def change_focus_to(self, num):
+	self.web.setFocus()
+	self.web.eval("focusField(%d);" % num)</code></pre>
+
+<p>与上面的两个函数一致</p>
+
+<p>在 cs_editor_setupShortcuts 函数的 cuts 数组中添加</p>
+
+<pre><code>(config_scuts["editor mark selection"], lambda: editor_mark_selection(self)),
+(config_scuts["editor change focus to Back"], lambda: change_focus_to(self, 1)),
+(config_scuts["editor change focus to Front"], lambda: change_focus_to(self, 0))</code></pre>
+
+<p>注意Python的语法错误</p>
+
+<ol>
+ <li>重启 Anki 就可以使用快捷键了，Enjoy Hacking</li></ol>
   <footer>
   </footer>
 </article>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>好记性不如烂笔头: Posts tagged 'ANKI 附加组件 组件 自定义 命令 快捷键 跳转 样式 Back Front'</title>
+  <description>好记性不如烂笔头: Posts tagged 'ANKI 附加组件 组件 自定义 命令 快捷键 跳转 样式 Back Front'</description>
+  <link>https://zhuzhonghua.github.com/tags/ANKI-%E9%99%84%E5%8A%A0%E7%BB%84%E4%BB%B6-%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89-%E5%91%BD%E4%BB%A4-%E5%BF%AB%E6%8D%B7%E9%94%AE-%E8%B7%B3%E8%BD%AC-%E6%A0%B7%E5%BC%8F-Back-Front.html</link>
+  <lastBuildDate>Sat, 24 Oct 2020 09:14:31 UT</lastBuildDate>
+  <pubDate>Sat, 24 Oct 2020 09:14:31 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>增加两个Anki快捷键，设定样式和跳转【Front，Back】</title>
+   <link>https://zhuzhonghua.github.com/2020/10/%E5%A2%9E%E5%8A%A0%E4%B8%A4%E4%B8%AAanki%E5%BF%AB%E6%8D%B7%E9%94%AE-%E8%AE%BE%E5%AE%9A%E6%A0%B7%E5%BC%8F%E5%92%8C%E8%B7%B3%E8%BD%AC-front-back.html?utm_source=ANKI-%E9%99%84%E5%8A%A0%E7%BB%84%E4%BB%B6-%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89-%E5%91%BD%E4%BB%A4-%E5%BF%AB%E6%8D%B7%E9%94%AE-%E8%B7%B3%E8%BD%AC-%E6%A0%B7%E5%BC%8F-Back-Front&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-zhuzhonghua-github-com:-2020-10-E5-A2-9E-E5-8A-A0-E4-B8-A4-E4-B8-AAanki-E5-BF-AB-E6-8D-B7-E9-94-AE-E8-AE-BE-E5-AE-9A-E6-A0-B7-E5-BC-8F-E5-92-8C-E8-B7-B3-E8-BD-AC-front-back-html</guid>
+   <pubDate>Sat, 24 Oct 2020 09:14:31 UT</pubDate>
+   <author>ZhongHua</author>
+   <description>
+&lt;p&gt;在 Anki 输入要背的单词，更方便，脱离鼠标&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;
+  &lt;p&gt;首先下载 &lt;a href="https://ankiweb.net/shared/info/24411424"&gt;Customize Keyboard Shortcuts&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;在 Tools &amp;gt; Add-ons &amp;gt; Custom Shortcuts 查看文件&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;找到 config.json 添加&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;"editor mark selection":"Ctrl+H",
+"editor change focus to Back":"Ctrl+1",
+"editor change focus to Front":"Ctrl+0"&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ctrl+H 就是设定样式&lt;/p&gt;
+
+&lt;p&gt;Ctrl+1 跳转Back输入框&lt;/p&gt;
+
+&lt;p&gt;Ctrl+0 跳转Front输入框&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;找到 cs_functions.py 添加两个函数&lt;/li&gt;&lt;/ol&gt;
+
+&lt;div class="brush: javascript"&gt;
+ &lt;pre&gt;&lt;code&gt;def editor_mark_selection(self):
+	self.toggleBold()
+	self.toggleUnderline()
+	self.onForeground()
+	
+def change_focus_to(self, num):
+	self.web.setFocus()
+	self.web.eval("focusField(%d);" % num)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;editor_mark_selection 用于设定样式，加粗+加下划线+设置颜色&lt;/p&gt;
+
+&lt;p&gt;change_focus_to 用于跳转不用的Field&lt;/p&gt;
+
+&lt;p&gt;在 editor_sToF 函数的 sdict 字典中添加&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;"editor mark selection": (lambda: editor_mark_selection(self),),
+"editor change focus to Back": (lambda: change_focus_to(self, 1),),
+"editor change focus to Front": (lambda: change_focus_to(self, 0),),&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;找到custom_shortcuts.py 添加两个函数&lt;/li&gt;&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;def editor_mark_selection(self):
+	self.toggleBold()
+	self.toggleUnderline()
+	self.onForeground()
+	
+def change_focus_to(self, num):
+	self.web.setFocus()
+	self.web.eval("focusField(%d);" % num)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;与上面的两个函数一致&lt;/p&gt;
+
+&lt;p&gt;在 cs_editor_setupShortcuts 函数的 cuts 数组中添加&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(config_scuts["editor mark selection"], lambda: editor_mark_selection(self)),
+(config_scuts["editor change focus to Back"], lambda: change_focus_to(self, 1)),
+(config_scuts["editor change focus to Front"], lambda: change_focus_to(self, 0))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意Python的语法错误&lt;/p&gt;
+
+&lt;ol&gt;
+ &lt;li&gt;重启 Anki 就可以使用快捷键了，Enjoy Hacking&lt;/li&gt;&lt;/ol&gt;</description></item></channel></rss>
