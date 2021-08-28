@@ -4,9 +4,35 @@
   <title>好记性不如烂笔头: 好记性不如烂笔头</title>
   <description>好记性不如烂笔头: 好记性不如烂笔头</description>
   <link>https://zhuzhonghua.github.com/index.html</link>
-  <lastBuildDate>Sat, 24 Oct 2020 09:14:31 UT</lastBuildDate>
-  <pubDate>Sat, 24 Oct 2020 09:14:31 UT</pubDate>
+  <lastBuildDate>Sat, 28 Aug 2021 05:30:43 UT</lastBuildDate>
+  <pubDate>Sat, 28 Aug 2021 05:30:43 UT</pubDate>
   <ttl>1800</ttl>
+  <item>
+   <title>分享雅思100句7000单词Anki牌组和Anki复习音频前进后退插件</title>
+   <link>https://zhuzhonghua.github.com/2021/08/%E5%88%86%E4%BA%AB%E9%9B%85%E6%80%9D100%E5%8F%A57000%E5%8D%95%E8%AF%8Danki%E7%89%8C%E7%BB%84%E5%92%8Canki%E5%A4%8D%E4%B9%A0%E9%9F%B3%E9%A2%91%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E6%8F%92%E4%BB%B6.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-zhuzhonghua-github-com:-2021-08-E5-88-86-E4-BA-AB-E9-9B-85-E6-80-9D100-E5-8F-A57000-E5-8D-95-E8-AF-8Danki-E7-89-8C-E7-BB-84-E5-92-8Canki-E5-A4-8D-E4-B9-A0-E9-9F-B3-E9-A2-91-E5-89-8D-E8-BF-9B-E5-90-8E-E9-80-80-E6-8F-92-E4-BB-B6-html</guid>
+   <pubDate>Sat, 28 Aug 2021 05:30:43 UT</pubDate>
+   <author>ZhongHua</author>
+   <description>
+&lt;h2 id="雅思100句学习7000单词制作成anki牌组"&gt;雅思100句学习7000单词制作成ANKI牌组&lt;/h2&gt;
+
+&lt;p&gt;牌组下载地址 &lt;a href="https://ankiweb.net/shared/info/776854782"&gt;ANKI牌组&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;参考网站 &lt;a href="https://github.com/HuangJiaLian/BulkImportToAnki"&gt;PDF&lt;/a&gt; 和 &lt;a href="https://kaoshi.7139.com/1575/01/67514.html"&gt;补充&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;PDF里的句子不全，还有一些错误，使用补充里的信息填补。&lt;/p&gt;
+
+&lt;h2 id="音频前进后退插件-control-audio-back-forward"&gt;音频前进后退插件 Control Audio Back Forward&lt;/h2&gt;
+
+&lt;p&gt;下载地址 &lt;a href="https://ankiweb.net/shared/info/1969882468"&gt;Control Audio Back Forward&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;参考另外一个插件，看Anki源码，魔改的一个满足自己需要的插件，原插件信息在简介里&lt;/p&gt;
+
+&lt;p&gt;按键 8 -》 暂停播放音频&lt;/p&gt;
+
+&lt;p&gt;按键【 -》 后退5秒&lt;/p&gt;
+
+&lt;p&gt;按键 】-》 前进5秒&lt;/p&gt;</description></item>
   <item>
    <title>增加两个Anki快捷键，设定样式和跳转【Front，Back】</title>
    <link>https://zhuzhonghua.github.com/2020/10/%E5%A2%9E%E5%8A%A0%E4%B8%A4%E4%B8%AAanki%E5%BF%AB%E6%8D%B7%E9%94%AE-%E8%AE%BE%E5%AE%9A%E6%A0%B7%E5%BC%8F%E5%92%8C%E8%B7%B3%E8%BD%AC-front-back.html?utm_source=all&amp;utm_medium=RSS</link>
