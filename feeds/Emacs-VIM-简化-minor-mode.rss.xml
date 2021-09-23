@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>好记性不如烂笔头: Posts tagged 'Emacs VIM 简化 minor-mode'</title>
+  <description>好记性不如烂笔头: Posts tagged 'Emacs VIM 简化 minor-mode'</description>
+  <link>https://zhuzhonghua.github.com/tags/Emacs-VIM-%E7%AE%80%E5%8C%96-minor-mode.html</link>
+  <lastBuildDate>Thu, 23 Sep 2021 15:58:47 UT</lastBuildDate>
+  <pubDate>Thu, 23 Sep 2021 15:58:47 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>写一个VIM简化版本的Emacs的Minor-Mode</title>
+   <link>https://zhuzhonghua.github.com/2021/09/%E5%86%99%E4%B8%80%E4%B8%AAvim%E7%AE%80%E5%8C%96%E7%89%88%E6%9C%AC%E7%9A%84emacs%E7%9A%84minor-mode.html?utm_source=Emacs-VIM-%E7%AE%80%E5%8C%96-minor-mode&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-zhuzhonghua-github-com:-2021-09-E5-86-99-E4-B8-80-E4-B8-AAvim-E7-AE-80-E5-8C-96-E7-89-88-E6-9C-AC-E7-9A-84emacs-E7-9A-84minor-mode-html</guid>
+   <pubDate>Thu, 23 Sep 2021 15:58:47 UT</pubDate>
+   <author>ZhongHua</author>
+   <description>
+&lt;p&gt;创建文件me-mode.el，放在.emacs.d里的elisp目录。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(define-minor-mode me-local-mode
+  "simplified vim minor mode"
+  :init-value nil
+  :global 1
+  :lighter " me"
+  :keymap me-local-mode-map)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;定义minor mode&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defvar me-local-mode-map
+  (make-keymap))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;定义keymap&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-mode-disable ()
+  "Disable my evil mode on special occation"
+  (interactive)
+  (me-local-mode -1))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;定义disable函数&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-mode-enable ()
+  "auto enable my evil mode when evil mode"
+  (interactive)  
+  (if (and (not (bound-and-true-p me-local-mode))
+           (/= (point) (line-beginning-position)))
+      (backward-char))
+  (me-local-mode 1))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;定义enable函数，当前行不为空时，回退一个字符&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(add-hook 'minibuffer-setup-hook 'me-mode-disable)
+(add-hook 'minibuffer-exit-hook 'me-mode-enable)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;minibuffer对应处理&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(provide 'me-mode)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在文件最后写上provide&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(require 'me-mode)
+(global-set-key [escape] 'me-mode-enable)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在init.el里require，并绑定ESC&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-dummy-bind ()
+  (interactive)
+  (message "dummy key"))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;定义函数，屏蔽所有不需要的按键&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(define-key me-local-mode-map (kbd "t") 'me-dummy-bind)
+(define-key me-local-mode-map (kbd "T") 'me-dummy-bind)
+(define-key me-local-mode-map (kbd "U") 'me-dummy-bind)
+(define-key me-local-mode-map (kbd "X") 'me-dummy-bind)
+(define-key me-local-mode-map (kbd "Y") 'me-dummy-bind)
+(define-key me-local-mode-map (kbd "z") 'me-dummy-bind)
+(define-key me-local-mode-map (kbd "Z") 'me-dummy-bind)
+(define-key me-local-mode-map (kbd "DEL") 'me-dummy-bind)
+(define-key me-local-mode-map (kbd "RET") 'me-dummy-bind)
+(define-key me-local-mode-map (kbd "SPC") 'me-dummy-bind)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;所有不需要响应的按键，都屏蔽&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-move-beginning ()
+  "move beginning and tab"
+  (interactive)
+  (move-beginning-of-line nil)
+  (indent-for-tab-command))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;(define-key me-local-mode-map (kbd "0") 'me-move-beginning)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;当按下0时移动到行首，并tab一下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(define-key me-local-mode-map (kbd "&amp;lt;") 'beginning-of-buffer)
+(define-key me-local-mode-map (kbd "&amp;gt;") 'end-of-buffer)
+(define-key me-local-mode-map (kbd "$") 'move-end-of-line)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt; 转到文件头 ，&amp;gt; 转到文件尾，$ 转到行尾&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(define-key me-local-mode-map (kbd "u") 'undo)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;u 代替C-x u&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(define-key me-local-mode-map (kbd "e") 'move-end-of-line)
+(define-key me-local-mode-map (kbd "h") 'backward-char)
+(define-key me-local-mode-map (kbd "i") 'me-mode-disable)
+(define-key me-local-mode-map (kbd "j") 'next-line)
+(define-key me-local-mode-map (kbd "k") 'previous-line)
+(define-key me-local-mode-map (kbd "l") 'forward-char)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;e 与 $ 一样，光标移至行尾，kjhl 上下左右，i 关闭 me-mode&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defvar-local me-pre-keystrokes '()
+  "record pre keystrokes to perform next operation")&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;有一些需要多个按键，比如 dw, dd, cw等等，需要把暂时用不上的放入这个list&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defvar-local me-line-selection-overlay nil
+  "the overlay of just line selection")&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用overlay技术，主要为大V命令用的&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defvar-local me-visual-begin-pos nil
+  "begin pos of the visual line")&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;配合大V命令使用，标记行选取的开始，需要计算&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defvar-local me-visual-end-pos nil
+  "end pos of the visual line")&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;配合大V命令使用，标记行选取的结束，需要计算&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-clear-keystrokes ()
+  "clear saved keystrokes"
+  (setq me-pre-keystrokes '()))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;多个按键触发了命令，需要清空保存的按键&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-advice-clear-everything ()
+  (me-clear-keystrokes)
+  ;;(message "clear keystrokes")
+  (if me-line-selection-overlay
+      (delete-overlay me-line-selection-overlay))
+  (setq me-line-selection-overlay nil)
+  (setq me-visual-begin-pos nil)
+  (setq me-visual-end-pos nil))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;清除所有自定义变量，保存的按键，大V用的overlay，起始结束位置&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(advice-add #'keyboard-quit :before #'me-advice-clear-everything)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用advice，加入C-g的后续函数列表，保证按下C-g，不污染任何后续操作&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(advice-add #'next-line :after #'me-advice-next-line)
+(advice-add #'previous-line :after #'me-advice-previous-line)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在大V按下的前提下，在上下行移动时，需要重新计算begin-pos和end-pos的位置&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-advice-next-line (&amp;amp;rest r)
+  "move next line check visual selection"
+  (if me-line-selection-overlay
+      (progn
+        (me-recalc-visual-pos-next-line)
+        (move-overlay me-line-selection-overlay me-visual-begin-pos me-visual-end-pos)
+        (overlay-put me-line-selection-overlay 'face 'region))))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-advice-previous-line (&amp;amp;rest r)
+  "move previous line check visual selection"
+  (if me-line-selection-overlay
+      (progn
+        (me-recalc-visual-pos-previous-line)
+        (move-overlay me-line-selection-overlay me-visual-begin-pos me-visual-end-pos)
+        (overlay-put me-line-selection-overlay 'face 'region))))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在有大Voverlay的前提下，先计算一下位置，在重新标记overlay&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-recalc-visual-pos-next-line ()
+  "only under visual line selection"
+  ;;(message "%s %s %s" (line-beginning-position) me-visual-begin-pos me-visual-end-pos)
+  (if (and (&amp;gt; (line-beginning-position) me-visual-begin-pos)
+           (&amp;lt; (line-beginning-position) me-visual-end-pos))
+      (setq me-visual-begin-pos (line-beginning-position))
+    (setq me-visual-end-pos (line-end-position))))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-recalc-visual-pos-previous-line ()
+  "only under visual line selection"
+  (if (and (&amp;gt; (line-end-position) me-visual-begin-pos)
+           (&amp;lt; (line-end-position) me-visual-end-pos))
+      (setq me-visual-end-pos (line-end-position))
+    (setq me-visual-begin-pos (line-beginning-position))))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;重新计算位置，分开往上和往下两个函数分开调用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-make-line-visual-selection ()
+  "start line visual selection"
+  (interactive)
+  (me-advice-clear-everything)
+  (me-refresh-visual-pos)
+  (if me-line-selection-overlay
+      (move-overlay me-line-selection-overlay me-visual-begin-pos me-visual-end-pos)
+    (setq me-line-selection-overlay
+          (make-overlay me-visual-begin-pos me-visual-end-pos)))
+  (overlay-put me-line-selection-overlay 'face 'region))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;(define-key me-local-mode-map (kbd "V") 'me-make-line-visual-selection)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;绑定到大V上，先清空所有自定义变量，在初始化一下起始和结束位置，之后构造overlay&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-refresh-visual-pos ()
+  "update the var's value"
+  (if me-visual-begin-pos
+      (let ((line-begin-pos-now (line-beginning-position)))
+        (setq me-visual-begin-pos (if (&amp;lt; line-begin-pos-now me-visual-begin-pos)
+                                   line-begin-pos-now
+                                 me-visual-begin-pos)))
+    (setq me-visual-begin-pos (line-beginning-position)))
+  (if me-visual-end-pos
+      (let ((line-end-pos-now (line-end-position)))
+        (setq me-visual-end-pos (if (&amp;gt; line-end-pos-now me-visual-end-pos)
+                                   line-end-pos-now
+                                 me-visual-end-pos)))
+    (setq me-visual-end-pos (line-end-position))))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;计算overlay的起始和结束位置&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(define-key me-local-mode-map (kbd "d") 'me-d-bind)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;绑定d按键&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-d-bind ()
+  "when press d"
+  (interactive)
+  (if (null (car me-pre-keystrokes)) ;; no pre keys
+      (cond  (mark-active ;; by set-mark-command
+             (kill-region (region-beginning) (region-end)))
+            (me-line-selection-overlay ;; by big V
+             (progn
+               (kill-region me-visual-begin-pos me-visual-end-pos)
+               (me-advice-clear-everything)))
+            (t
+             (push 'd me-pre-keystrokes)))
+    (if (eq 'd (car me-pre-keystrokes)) ;; double d
+        (progn
+          (me-trigger-dd)
+          (me-advice-clear-everything)))))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果没有前置按键比如dd这样的，则清除标记区域或者大V标记的overlay区域，要不然就push 到 list中，以备后续使用&lt;/p&gt;
+
+&lt;p&gt;如果有前置d按键，那么就触发dd，删除当前行操作，再清除所有自定义变量&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-trigger-dd ()
+  "check if can trigger dd operation"
+  (let ((empty-line? (eq (line-beginning-position)
+                         (line-end-position))))
+    (ignore-errors
+      (move-beginning-of-line nil)
+      (kill-line))
+    (if (not empty-line?)
+        (delete-char 1))))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;删除当前行，如果还剩一个字符，把那个字符也删了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(define-key me-local-mode-map (kbd "w") 'me-w-bind)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;绑定w按键&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-w-bind ()
+  "when press w"
+  (interactive)
+  (cond ((null (car me-pre-keystrokes))
+         (forward-word))
+        ((eq 'd (car me-pre-keystrokes))
+         (me-trigger-dw)
+         (me-advice-clear-everything))
+        ((eq 'c (car me-pre-keystrokes))
+         (me-trigger-dw)
+         (me-advice-clear-everything)
+         (me-mode-disable))))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果没有前置按键，只是往前移动一个单词。&lt;/p&gt;
+
+&lt;p&gt;如果前置按键是d，那么触发dw，删除一个字符，并把所有变量清除&lt;/p&gt;
+
+&lt;p&gt;如果前置按键是c，那么触发cw，删除一个字符，清空所有两边，并disable掉me-mode&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun me-trigger-dw ()
+  "kill one word"
+  (ignore-errors
+    (kill-region (point)
+                 (progn
+                   (forward-word)
+                   (point)))))&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;删除一个word，并忽略所有错误，防止影响后续函数调用&lt;/p&gt;
+
+&lt;p&gt;其他支持命令后续持续添加中，目前暂时够用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(define-key me-local-mode-map [escape] 'me-esc-bind)
+(define-key me-local-mode-map (kbd "0") 'move-beginning-of-line)
+(define-key me-local-mode-map (kbd "a") 'me-forward-char-insert)
+(define-key me-local-mode-map (kbd "A") 'me-line-end-insert)
+(define-key me-local-mode-map (kbd "b") 'backward-word)
+(define-key me-local-mode-map (kbd "c") 'me-c-bind)
+(define-key me-local-mode-map (kbd "d") 'me-d-bind)
+(define-key me-local-mode-map (kbd "e") 'move-end-of-line)
+(define-key me-local-mode-map (kbd "h") 'backward-char)
+(define-key me-local-mode-map (kbd "i") 'me-mode-disable)
+(define-key me-local-mode-map (kbd "j") 'next-line)
+(define-key me-local-mode-map (kbd "k") 'previous-line)
+(define-key me-local-mode-map (kbd "l") 'forward-char)
+(define-key me-local-mode-map (kbd "o") 'me-next-line-insert)
+(define-key me-local-mode-map (kbd "O") 'me-previous-line-insert)
+(define-key me-local-mode-map (kbd "p") 'me-p-bind)
+(define-key me-local-mode-map (kbd "P") 'me-upper-p-operation)
+(define-key me-local-mode-map (kbd "v") 'me-v-bind)
+(define-key me-local-mode-map (kbd "V") 'me-make-line-visual-selection)
+(define-key me-local-mode-map (kbd "w") 'me-w-bind)
+(define-key me-local-mode-map (kbd "W") 'forward-word)
+(define-key me-local-mode-map (kbd "x") 'me-x-bind)
+(define-key me-local-mode-map (kbd "u") 'undo)
+(define-key me-local-mode-map (kbd "y") 'me-y-bind)
+(define-key me-local-mode-map (kbd "&amp;lt;") 'beginning-of-buffer)
+(define-key me-local-mode-map (kbd "&amp;gt;") 'end-of-buffer)
+(define-key me-local-mode-map (kbd "$") 'move-end-of-line)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;当前支持的所有命令&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/zhuzhonghua/me-mode"&gt;github me-mode&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
